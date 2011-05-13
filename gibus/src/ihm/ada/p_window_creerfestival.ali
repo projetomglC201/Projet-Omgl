@@ -5,7 +5,7 @@ A -gnatA
 P SS ZX
 R nnnnnnnnnvnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnnvnnnnnnnnnnnnnvnnvnnnnnnnnnnnnnnnnnn
 
-U p_window_creerfestival%b  p_window_creerfestival.adb  6cbe114a NE OO PK IL
+U p_window_creerfestival%b  p_window_creerfestival.adb  27d70e16 NE OO PK IL
 W ada.tags%s		a-tags.adb		a-tags.ali
 W glade%s		glade.adb		glade.ali
 W glade.xml%s		glade-xml.adb		glade-xml.ali
@@ -110,8 +110,8 @@ D interfac.ads		20090409232307 a69cad5c
 D i-c.ads		20070406091342 bc3ef662
 D i-cstrin.ads		20090409232307 841d8a31
 D p_util_treeview.ads	20100331082247 f118f0fc
-D p_window_creerfestival.ads  20110513121635 bde111cd
-D p_window_creerfestival.adb  20110513121635 dcba0a68
+D p_window_creerfestival.ads  20110418111251 bde111cd
+D p_window_creerfestival.adb  20110513124431 97d31534
 D pango.ads		20091225112832 567c5424
 D pango-attributes.ads	20091225112832 21e060ad
 D pango-context.ads	20091225112832 dbda6b1f
@@ -175,16 +175,21 @@ X 73 gtkada.ads
 30K9*Gtkada 34e11 80|5r6 5r25
 X 74 gtkada-dialogs.ads
 37K16*Dialogs 128e19 80|5w13 5r32
+40M9*Message_Dialog_Buttons 81|24r15
+50m4*Button_OK{40M9} 81|26r69 26r79
+67n7*Confirmation{57E9} 81|26r56
+77V13*Message_Dialog{40M9} 81|26r24
 X 79 p_util_treeview.ads
 10K10*p_util_treeview 22e20 80|19w6 19r27
 X 80 p_window_creerfestival.ads
-21K9*P_window_creerfestival 25l5 25e27 81|4b14 28l5 28t27
+21K9*P_window_creerfestival 25l5 25e27 81|4b14 30l5 30t27
 22U13*init 81|9b11 16l5 16t9
 23U13*fermerFenetre 81|14r66 18b19 21l13 21t26
-24U13*validerfestival 81|15r66 23b19 26l13 26t28
+24U13*validerfestival 81|15r66 23b19 28l13 28t28
 X 81 p_window_creerfestival.adb
 7p1 windowcreerfestival{72|63P9} 13m9 20r25
 10p1 XML{28|40P9} 12m27 13r52 14r35 15r35
+24m9 b_box{74|40M9} 26m17
 X 89 system.ads
 37K9*System 80|3w6 3r18 89|153e11
 64M9*Address

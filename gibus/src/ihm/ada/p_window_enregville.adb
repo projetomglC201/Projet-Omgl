@@ -24,14 +24,14 @@ end init;
 	--Enregistre la ville, efface le contenu des entry et met à jour la liste
 	b_box:message_dialog_buttons;
 	begin
-		b_box:=message_dialog("Ville enregistrée !",Confirmation,Button_Ok,Button_Ok);
+		b_box:=message_dialog("Ville enregistrée !",Information,Button_Ok,Button_Ok);
 		--a completer
 	end villesuivante;
 ------------------------------------------------------------------------
 	procedure finenregistrementville is
 	b_box:message_dialog_buttons;
 	begin
-		b_box:=message_dialog("Ville enregistrée !",Confirmation,Button_Ok,Button_Ok);
+		b_box:=message_dialog("Ville enregistrée !",Information,Button_Ok,Button_Ok);
 		--enregistrement
 		Destroy(windowenregville);
 	end finenregistrementville;

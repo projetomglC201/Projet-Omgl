@@ -5,7 +5,7 @@ A -gnatA
 P SS ZX
 R nnnnnnnnnvnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnnvnnnnnnnnnnnnnvnnvnnnnnnnnnnnnnnnnnn
 
-U p_window_progfestival%b  p_window_progfestival.adb  7166dbc8 NE OO PK IL
+U p_window_progfestival%b  p_window_progfestival.adb  2c993f06 NE OO PK IL
 W ada.tags%s		a-tags.adb		a-tags.ali
 W glade%s		glade.adb		glade.ali
 W glade.xml%s		glade-xml.adb		glade-xml.ali
@@ -113,8 +113,8 @@ D interfac.ads		20090409232307 a69cad5c
 D i-c.ads		20070406091342 bc3ef662
 D i-cstrin.ads		20090409232307 841d8a31
 D p_util_treeview.ads	20100331082247 f118f0fc
-D p_window_progfestival.ads  20110513121635 91551071
-D p_window_progfestival.adb  20110513121635 edd6c156
+D p_window_progfestival.ads  20110509105654 91551071
+D p_window_progfestival.adb  20110513124908 b0292598
 D pango.ads		20091225112832 567c5424
 D pango-attributes.ads	20091225112832 21e060ad
 D pango-context.ads	20091225112832 dbda6b1f
@@ -189,23 +189,28 @@ X 75 gtkada.ads
 30K9*Gtkada 34e11 82|5r6 5r25
 X 76 gtkada-dialogs.ads
 37K16*Dialogs 128e19 82|5w13 5r32
+40M9*Message_Dialog_Buttons 83|71r15
+50m4*Button_OK{40M9} 83|73r74 73r84
+64n7*Information{57E9} 83|73r62
+77V13*Message_Dialog{40M9} 83|73r24
 X 81 p_util_treeview.ads
 10K10*p_util_treeview 22e20 82|20w6 20r27
 X 82 p_window_progfestival.ads
-22K9*P_window_progfestival 31l5 31e26 83|4b14 86l5 86t26
+22K9*P_window_progfestival 31l5 31e26 83|4b14 88l5 88t26
 23U13*init 83|9b11 23l5 23t9
-24U13*fermerFenetre 83|14r67 25b19 28l13 28t26 73r17
+24U13*fermerFenetre 83|14r67 25b19 28l13 28t26 75r17
 25U13*selectionregion1 83|15r67 22r9 30b19 45l13 45t29
 26U13*selectionregion2 83|47b19 62l13 62t29 67r17
 27U13*rechercherprog 83|16r66 64b19 68l13 68t27
-28U13*finprogrammation 83|17r67 70b19 74l13 74t29
-29U13*gojour2 83|18r64 76b19 79l13 79t20
-30U13*gojour1 83|19r63 81b19 84l13 84t20
+28U13*finprogrammation 83|17r67 70b19 76l13 76t29
+29U13*gojour2 83|18r64 78b19 81l13 81t20
+30U13*gojour1 83|19r63 83b19 86l13 86t20
 X 83 p_window_progfestival.adb
 6p1 windowprogfestival{74|63P9} 13m9 27r25
 7p1 XML{28|40P9} 12m27 13r51 14r35 15r35 16r35 17r35 18r35 19r35 33r53 34r53
 . 35r53 36r53 37r53 38r53 39r53 40r53 42r53 43r53 44r56 50r53 51r53 52r56
 . 54r69 55r53 56r53 57r53 58r53 59r53 60r53 61r53
+71m9 b_box{76|40M9} 73m17
 X 91 system.ads
 37K9*System 82|3w6 3r18 91|153e11
 64M9*Address
