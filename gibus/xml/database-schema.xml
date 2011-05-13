@@ -1,0 +1,217 @@
+<?xml version="1.0" 
+      encoding="ISO-8859-1" 
+      standalone="no"
+?>
+
+<!DOCTYPE database SYSTEM "http://www.virtual-worlds.biz/dtds/mill.dtd">
+
+<database name="basec201">
+
+        <table name="ville" description="Les villes">
+                <column name="nom_ville"  
+                        primaryKey="true"
+                        type="CHAR"
+                        size="45"
+                        description="Nom de la ville"
+                />
+
+                <column name="mel_contact"
+			required="true"
+                        default=""
+                        type="CHAR"
+                        size="100"
+                        description="Mel de l organisateur local"
+                />
+        </table>
+
+        <table name="festival" description="Les festivals">
+                <column name="id_festival"
+                        primaryKey="true"
+                        type="INTEGER"
+                        description="Identifiant d un festival"
+                />
+
+                 <column name="ville_festival"  
+                        required="true"
+                        type="CHAR"
+                        size="45"
+                        description="Nom de la ville"
+                />
+
+               <column name="date"
+                        type="DATE"
+                        required="true"
+                        default="0000-00-00"
+                />
+
+                <column name="lieu"  
+                        required="true"
+                        default=""
+                        type="CHAR"
+                        size="100"
+                        description="Lieu de deroulement du festival"
+                />
+
+                <column name="prix_place"
+                        required="true"
+                        type="INTEGER"
+                        description="Prix d une place dans le festival"
+                />
+
+                <foreign-key foreignTable="ville" onDelete="CASCADE">
+                        <reference foreign="nom_ville" local="ville_festival"/>
+                </foreign-key>
+
+        </table>
+
+        <table name="jour_festival" description="Les journees des festivals">
+                <column name="id_jour_festival"
+                        primaryKey="true"
+                        type="INTEGER"
+                        description="Identifiant d une journee de festival"
+                />
+
+                <column name="festival"
+                        required="true"
+                        type="INTEGER"
+                        description="Identifiant d un festival"
+                />
+				
+                <column name="num_ordre"
+                        required="true"
+                        type="INTEGER"
+                        description="numero de la journee dans le festival"
+                />
+
+                <column name="nbre_concert_max"
+                        required="true"
+                        type="INTEGER"
+                        description="Nombre max de concerts dans la journee"
+                />
+
+                <column name="heure_debut"
+                        required="true"
+                        type="INTEGER"
+                        description="Heure de debut des concerts dans la journee, au format HHMM"
+                />
+
+                <foreign-key foreignTable="festival" onDelete="CASCADE">
+                        <reference foreign="id_festival" local="festival"/>
+                </foreign-key>
+
+        </table>
+
+        <table name="groupe" description="Les groupes">
+                <column name="nom_groupe"  
+                        primaryKey="true"
+                        type="CHAR"
+                        size="100"
+                        description="Nom du groupe"
+                />
+
+                <column name="jour_festival"
+                        required="true"
+                        type="INTEGER"
+                        description="Identifiant d une journee de festival"
+                />
+
+                <column name="nom_contact"  
+                        required="true"
+                        default=""
+                        type="CHAR"
+                        size="50"
+                        description="Nom du contact dans le groupe"
+                />
+
+                <column name="coord_contact"  
+                        required="true"
+                        default=""
+                        type="CHAR"
+                        size="100"
+                        description="Coordonnees du contact dans le groupe"
+                />
+
+                <column name="adr_site"
+                        default=""
+                        type="CHAR"
+                        size="100"
+                        description="Site Internet du groupe"
+                />
+
+                <column name="ordre_passage"
+                        type="INTEGER"
+                        description="Ordre de passage du groupe dans la journee"
+                />
+
+                <column name="genre"
+                        default=""
+                        type="ENUM"
+                        values="hard pop fusion punk alternatif rockabilly"
+                        required="true"
+                        description="genre musical du groupe"
+                />
+
+                <foreign-key foreignTable="jour_festival" onDelete="CASCADE">
+                        <reference foreign="id_jour_festival" local="jour_festival"/>
+                </foreign-key>
+        </table>
+
+        <table name="gagnant_festival" description="Les gagnants des festivals">
+                 <column name="id_gagnant_festival"
+                        primaryKey="true"
+                        type="INTEGER"
+                        description="Identifiant du gagnant d un festival"
+                />
+               <column name="festival"
+                        required="true"
+                        type="INTEGER"
+                        description="Identifiant d un festival"
+                />
+				
+                <column name="groupe"  
+                        type="CHAR"
+                        required="true"
+                        size="100"
+                        description="Nom du groupe qui gagne le festival"
+                />
+
+                <foreign-key foreignTable="festival" onDelete="CASCADE">
+                        <reference foreign="id_festival" local="festival"/>
+                </foreign-key>
+
+                <foreign-key foreignTable="groupe">
+                        <reference foreign="nom_groupe" local="groupe"/>
+                </foreign-key>
+       </table>
+
+        <table name="grande_finale" description="La Grande Finale des Festivals">
+                <column name="id_finale"
+                        primaryKey="true"
+                        type="INTEGER"
+                        description="Identifiant de la finale"
+                />
+
+                <column name="date"
+                        type="DATE"
+                        required="true"
+                        default="0000-00-00"
+                />
+
+                <column name="prix_place"
+                        type="INTEGER"
+                        required="true"
+                        description="Prix d une place dans la finale"
+                />
+
+                <column name="gagnant_finale"  
+                        type="CHAR"
+                        size="100"
+                        description="Nom du groupe gagnant de la finale"
+                />
+
+                <foreign-key foreignTable="groupe">
+                        <reference foreign="nom_groupe" local="gagnant_finale"/>
+                </foreign-key>
+        </table>
+</database>
+

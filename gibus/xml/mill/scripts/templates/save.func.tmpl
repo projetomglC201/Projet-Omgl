@@ -1,0 +1,42 @@
+   $procedureHeader   
+      ps : sql.SQLHDBC := sql.SQL_NULL_HANDLE;
+      connection : dodbc.Database_Connection;
+      query : Unbounded_String := INSERT_PART & To_Unbounded_String(" ");
+      c : d.Criteria;
+      $tmpVariableWithAssignment;
+   begin
+      if( overwrite ) then
+         $retrieveByPK;
+         $existsCheck
+            $updateCall;
+            return;
+         end if;
+      end if;
+#for $cr in $allCriteria:
+      $cr;
+#end for;
+      query := query & "( "  & d.To_Crude_Array_Of_Values( c ) & " )";
+      Logger.info( "save; executing query" & To_String(query) );
+      begin
+         connection := get_connection;
+         ps := dodbc.Initialise_Prepared_Statement( connection.connection, query );       
+         SQLExecute( ps );
+         Logger.info( "save; execute query OK" );
+         
+      exception 
+         when Error : others =>
+            Logger.error( "save; execute query failed with message " & Exception_Information(Error)  );
+            Reraise_Occurrence(Error);
+      end;
+      begin
+         dodbc.Close_Prepared_Statement( ps );
+         dodbc.Disconnect( connection );
+      exception 
+         when Error : others =>
+            Logger.error( "save/close " & Exception_Information(Error)  );
+            Raise_Exception( d.DB_Exception'Identity, 
+               "save/close: exception " & Exception_Information(Error) );
+      end;
+      
+   end Save;
+

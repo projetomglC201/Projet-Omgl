@@ -1,0 +1,5 @@
+   procedure Delete( c : d.Criteria ) is
+   begin      
+      delete( d.to_string( c ) );
+      Logger.info( "delete criteria; execute query OK" );
+   end Delete;

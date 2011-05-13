@@ -1,0 +1,18 @@
+--
+-- Created by ada_generator.py on $date
+-- 
+
+with GNAT.Calendar.Time_IO;
+
+package body $name is
+
+   use ada.strings.Unbounded;
+   package tio renames GNAT.Calendar.Time_IO;
+
+#for $ts in $toStrings:
+$ts
+
+#end for;
+        
+
+end $name;

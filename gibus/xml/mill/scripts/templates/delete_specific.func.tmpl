@@ -1,0 +1,10 @@
+   $procedureHeader
+         c : d.Criteria;
+   begin  
+      #for $cr in $primaryKeyCriteria:
+      $cr;
+      #end for;
+      delete( c );
+      $assignToNullRecord;
+      Logger.info( "delete record; execute query OK" );
+   end Delete;

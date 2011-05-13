@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<config>
+        <propel>
+                <datasources>
+                        <!-- NB ONLY 1st one gets processed -->
+                        <datasource id="gibus">
+                                <adapter>postgres</adapter>
+                                <connection>
+                                        <hostspec>postgres-info</hostspec>
+                                        <database>basea101</database>
+                                        <username>usera101</username>
+                                        <password>p01</password>
+                                </connection>
+                        </datasource>
+                </datasources>
+        </propel>
+</config>
