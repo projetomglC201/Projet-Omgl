@@ -21,8 +21,10 @@ end init;
 	end fermerFenetre;
 --------------------------------------------------------------------------
 	procedure validerfestival is
+	b_box:message_dialog_buttons;
 	begin
-		null;
+		b_box:=message_dialog("Festival crée",Confirmation,Button_Ok,Button_Ok);
+		
 	end validerfestival;
 --------------------------------------------------------------------------
 end P_window_creerfestival;

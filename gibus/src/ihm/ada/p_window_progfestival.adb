@@ -68,8 +68,10 @@ end init;
 	end rechercherprog;
 ---------------------------------------------------------------------
 	procedure finprogrammation is
+	b_box:message_dialog_buttons;
 	begin
-		--a completer
+		b_box:=message_dialog("Festival programmée",Information,Button_Ok,Button_Ok);
+		
 		fermerfenetre;
 	end finprogrammation;
 -------------------------------------------------------------------------
