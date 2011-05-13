@@ -5,7 +5,7 @@ A -gnatA
 P SS ZX
 R nnnnnnnnnvnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnnvnnnnnnnnnnnnnvnnvnnnnnnnnnnnnnnnnnn
 
-U p_window_enreggroupe%b  p_window_enreggroupe.adb  69932671 NE OO PK IL
+U p_window_enreggroupe%b  p_window_enreggroupe.adb  e89ce7f1 NE OO PK IL
 W ada.tags%s		a-tags.adb		a-tags.ali
 W glade%s		glade.adb		glade.ali
 W glade.xml%s		glade-xml.adb		glade-xml.ali
@@ -110,8 +110,8 @@ D interfac.ads		20090409232307 a69cad5c
 D i-c.ads		20070406091342 bc3ef662
 D i-cstrin.ads		20090409232307 841d8a31
 D p_util_treeview.ads	20100331082247 f118f0fc
-D p_window_enreggroupe.ads  20110419112337 85ff84c7
-D p_window_enreggroupe.adb  20110513120921 e189a859
+D p_window_enreggroupe.ads  20110513121635 85ff84c7
+D p_window_enreggroupe.adb  20110513124915 608669d9
 D pango.ads		20091225112832 567c5424
 D pango-attributes.ads	20091225112832 21e060ad
 D pango-context.ads	20091225112832 dbda6b1f
@@ -175,16 +175,21 @@ X 73 gtkada.ads
 30K9*Gtkada 34e11 80|5r6 5r25
 X 74 gtkada-dialogs.ads
 37K16*Dialogs 128e19 80|5w13 5r32
+40M9*Message_Dialog_Buttons 81|28r25
+50m4*Button_OK{40M9} 81|30r74 30r84
+64n7*Information{57E9} 81|30r62
+77V13*Message_Dialog{40M9} 81|30r24
 X 79 p_util_treeview.ads
 10K10*p_util_treeview 22e20 80|19w6 19r27
 X 80 p_window_enreggroupe.ads
-21K9*P_window_enreggroupe 26l5 26e25 81|7b14 33l5 33t25
+21K9*P_window_enreggroupe 26l5 26e25 81|7b14 34l5 34t25
 22U13*init 81|12b11 20l5 20t9
 23U13*fermerFenetre 81|17r66 22b19 25l13 25t26
-24U13*enregistrergroupe 81|18r70 27b19 30l13 30t30
+24U13*enregistrergroupe 81|18r70 27b19 31l13 31t30
 X 81 p_window_enreggroupe.adb
 9p1 window{72|63P9} 16m9 24r25
 13p1 XML{28|40P9} 15m27 16r41 17r35 18r35
+28m17 b_box{74|40M9} 30m17
 X 89 system.ads
 37K9*System 80|3w6 3r18 89|153e11
 64M9*Address
