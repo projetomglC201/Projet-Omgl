@@ -8,9 +8,9 @@
                                 <adapter>postgres</adapter>
                                 <connection>
                                         <hostspec>postgres-info</hostspec>
-                                        <database>basea101</database>
-                                        <username>usera101</username>
-                                        <password>p01</password>
+                                        <database>basec201</database>
+                                        <username>userc201</username>
+                                        <password>chaussette</password>
                                 </connection>
                         </datasource>
                 </datasources>

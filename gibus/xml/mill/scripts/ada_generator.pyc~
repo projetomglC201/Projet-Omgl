@@ -1,424 +1,0 @@
-��
-�N�Hc           @   s{  d  Z  d d k l Z d d k Z d d k l Z d d k l Z d d k l	 Z	 l
- Z
- l Z l Z d Z
- d �  Z d	 �  Z d
- �  Z d �  Z d �  Z d
- �  Z e d � Z d �  Z d �  Z d �  Z d �  Z d �  Z d �  Z d �  Z d �  Z d �  Z d �  Z d �  Z  d �  Z! d �  Z" d �  Z# d �  Z$ d �  Z% d �  Z& d  �  Z' d! �  Z( d" �  Z) d# �  Z* d$ �  Z+ d% �  Z, d& �  Z- d' �  Z. d( �  Z/ d) �  Z0 d* �  Z1 d+ �  Z2 d, �  Z3 d- �  Z4 d. �  Z5 d/ �  Z6 d0 �  Z7 d1 �  Z8 d2 �  Z9 d3 �  Z: d4 �  Z; d5 �  Z< d6 �  Z= d7 �  Z> d8 �  Z? d9 �  Z@ d: �  ZA d; �  ZB d< �  ZC d= �  ZD d> �  ZE d? �  ZF d@ �  ZG dA �  ZH d S(B   sc
- code to generate our ada .ads and .adb files, using Cheetah templating system
- for the most part
-i����(   t   TemplateN(   t
-   WORKING_PATHS(   t
-   DataSource(   t
-   makePluralt	   adafyNamet   makePaddedStringt   INDENTix   c         C   s   d |  i  d | } | S(   Ns   procedure Add_sA   _To_Orderings( c : in out d.Criteria; direction : d.Asc_Or_Desc )(   t   adaName(   t   vart   endingt   s(    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeAddOrderingColumnDecl'   s    c         C   s`   t  d t i d � } t |  d � | _ d |  i d | _ d |  i d | _ t	 | � } | S(   Nt   files#   add_to_criterion_ordering.func.tmpls    iss7   elem : d.Order_By_Element := d.Make_Order_By_Element( "s   ", direction  )t   Add_t
-   _To_Orderings(
-   R    R   t
-   templatesPathR   t   headert   varnamet	   criterionR   t   functionNamet   str(   R   t   templateR
-   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeAddOrderingColumnBody+   s    c         C   s	   d GHd  S(   Nt    (    (   t   table(    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeUpdateStatement3   s    c         C   s   d |  i  d } d  S(   Ns   insert into s	    values( (   t   name(   R   R
-   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeInsertStatement7   s    c         C   sC   | o
- d } n
- |  i  �  } d |  i d |  i d | d | S(   Nt   Strings   procedure Add_s   ( c : in out d.Criteria; s    : sB   ; op : d.operation_type:= d.eq; join : d.join_type := d.join_and )(   t
-   getAdaTypeR   (   R   t   isStringR	   t   adaType(    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeCriteriaDecl:   s    
-c         C   sP   g  } x: |  i  D]/ } | i o | i |  i d | i � q q Wd i | � S(   Nt   .s   , (   t	   variablest   isPrimaryKeyt   appendR   t   join(   R   t   pksR   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makePrimaryKeySubmitFieldsA   s    
- 
-#c         C   s5  | o
- d } n
- |  i  �  } t d t i d � } |  i d j p |  i d j o | d |  i d } n, | d j o d	 |  i d } n
- |  i } |  i �  o d
- | } n d } d | d
- |  i d | } |  i �  o | d |  i	 7} n | d | _
- t |  | d � | _ |  i | _ t
- | � } | S(   NR   R   s   add_to_criterion.func.tmplt   BOOLEANt   ENUMs   'Pos( s    )t   Unbounded_Strings   To_String( t   make_criterion_element_s   d.make_Criterion_Elements   elem : d.Criterion := s   ( "s
-   ", op, join, s   , s    is(   R   R    R   R   t
-   schemaTypeR   t
-   isDecimalTypeR   t   isStringTypet   sizeR   R    R   R   (   R   R   R   R   t   valuet   functionR
-   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeCriteriaBodyI   s(    
- 
-	
-
-
-c         C   si   g  } x: |  i  D]/ } | i o | i | i d | i � q q Wd i | � } d | d |  i | S(   Ns    : s   ; s   function Retrieve_By_PK( s
-    ) return (   R"   R#   R$   R   R   R%   t   adaQualifiedOutputRecord(   R   R	   R&   R   t   pkFields(    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makePKHeaderd   s    
- 
-#c         C   s�   t  d t i d � } t |  d � | _ |  i | _ |  i d |  i | _	 t
- |  d d t � | _ |  i d |  i
- | _ |  i d |  i d | _ d	 |  i d
- | _ |  i | _ t | � } | S(   NR   s   retrieve_pk.func.tmpls    iss    : t   ct   primaryKeyOnlys    := s   .First_Element( l )s   not s   .is_empty( l )(   R    R   R   R5   t   functionHeadert   adaQualifiedListNamet   listTypeR   R3   t   variableDeclt   makeCriterionListt   Falset   primaryKeyCriteriat   adaQualifiedNullNamet
-   getNullRecordt   adaQualifiedContainerNamet   getFirstRecordt   notEmptyR   (   R   R   R
-   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt
-   makePKBodyl   s    c         C   so   t  d t i d � } t | d � | _ d | i d |  i | _ d | i | _	 | i | _ t
- | � } | S(   NR   s   get_next_free.func.tmpls    iss   select max( s    ) from t
-   Next_Free_(   R    R   R   t   makeNextFreeHeaderR8   R   R   t	   statementR   R   R   (   R   R   R   R
-   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeNextFreeFuncz   s    c         C   sx   t  d t i d � } |  i | _ t |  d � | _ d |  i d |  i | _ d | | _ |  i | _	 t
- | � } | S(   NR   s   is_null.func.tmpls    iss   return s    = s   use (   R    R   R   R   t   makeIsNullFuncHeaderR8   R?   t   returnStatementt   uset   nullNameR   (   R   t   adaDataPackageNameR   R
-   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeIsNullFunc�   s    
-c         C   s   d |  i  d |  i d | S(   Ns   function Is_Null( s    : s    ) return Boolean(   R   R3   (   R   R	   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyRI   �   s    c         C   s   d |  i  | S(   Ns+   function Retrieve( c : d.Criteria ) return (   R9   (   R   R	   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeRetrieveCHeader�   s    c         C   s8   t  d t i d � } t |  d � | _ t | � } | S(   NR   s   retrieve_by_c.func.tmpls    is(   R    R   R   RO   R8   R   (   R   R   R
-   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeRetrieveCFunc�   s    c         C   s   d |  i  | S(   Ns,   function Retrieve( sqlstr : String ) return (   R9   (   R   R	   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeRetrieveSHeader�   s    c         C   s   d |  i  d |  i d | S(   Ns   procedure Save( s    : s   ; overwrite : Boolean := True )(   R   R3   (   R   R	   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeSaveProcHeader�   s    c         C   s   d |  i  d |  i d | S(   Ns   procedure Update( s    : s    )(   R   R3   (   R   R	   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeUpdateProcHeader�   s    c         C   s   d |  i  d |  i d | S(   Ns   procedure Delete( s
-    : in out s    )(   R   R3   (   R   R	   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeDeleteSpecificProcHeader�   s    c         C   sb   t  d t i d � } t |  d � | _ t |  d d t � | _ t |  d d t � | _ t	 | � S(   NR   s   update.func.tmpls    ist   pk_cR7   t   values_ct   allButPrimaryKey(
-   R    R   R   RS   t   procedureHeaderR<   t   Truet
-   pkCriteriat
-   inputCriteriaR   (   R   R   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeUpdateProcBody�   s
-    c         C   s�   t  d t i d � } t |  d � | _ t |  d d t � | _ t |  � } |  i	 d | _
- d |  i	 d | _ d	 |  i	 d
- | _ |  i	 d |  i
- | _ |  i	 d | d
- | _ t | � } | S(
-   NR   s   save.func.tmpls    isR6   t   allt   _Tmps   if( not is_Null( s   _Tmp )) thens   Update( s    )s   _Tmp : s   _Tmp := retrieve_By_PK( (   R    R   R   RR   RX   R<   RY   t   allCriteriaR'   R   t   tmpVariablet   existsCheckt
-   updateCallR3   t   tmpVariableWithAssignmentt   retrieveByPKR   (   R   R   t
-   primaryKeyR
-   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeSaveProcBody�   s    c         C   sa   t  d t i d � } t |  d � | _ t |  d � | _ |  i d |  i | _	 t
- | � } | S(   NR   s   delete_specific.func.tmpls    isR6   s    := (   R    R   R   RT   RX   t   makePrimaryKeyCriterionR>   R   R?   t   assignToNullRecordR   (   R   R   R
-   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeDeleteSpecificProcBody�   s    c         C   s  t  d t i d � } d |  i d | _ d |  i d d | _ d } x� |  i D]� } | d	 7} t d
- d | i d } | i �  o | d
- | i d 7} n< | i	 �  o | d | i d 7} n | d | i d 7} | t
- |  i � j  o | d 7} n | i | 7_ qR Wt | � S(   NR   s   to_string.proc.tmpls   function To_String( rec : s    ) return String iss	   return  "s   : " &s
-i    i   i   t   "s    = " & s   To_String( rec.s    )s   tio.Image( rec.s   , tio.ISO_Date )s   rec.s   'Imgs    &
-(   R    R   R   R   RX   t	   returnStrR"   R   R.   t
-   isDateTypet   lenR   (   R   R   t   pR   R
-   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeToStringBody�   s"    
- 
-
-
-c         C   s   d |  i  d | S(   Ns   function Next_Free_s    return integer(   R   (   R   R	   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyRF   �   s    c         C   s*   d | d |  i  d |  i d | | S(   Ns   function Retrieve_Child_s   ( s    : s
-    ) return (   R   R3   (   R   t   referencingTableNamet   packagedAdaNameR	   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeChildRetrieveHeader�   s    c         C   s�   t  d t i d � } t |  | | d � | _ d | | _ | d } g  } xH t t | i � � D]1 } |  i	 d t
- | i | � } | i | � qa Wd i | � }	 d | d	 |	 d
- | _
- t | � }
- |
- S(   NR   s   retrieve_child.func.tmpls    ist   Retrieve_Child_t   _IOR!   s   , s   return s   .retrieve_By_PK( s    )(   R    R   R   Rr   R8   R   t   rangeRm   t	   localColsR   R   R$   R%   RJ   R   (   R   Rp   t   listAdaNamet   fkR   t   referencePackaget   localPKRn   t	   localNamet
-   localPKValuesR
-   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeChildRetrieveBody�   s    
-
- c         C   s0   d t  | � d |  i d |  i d | | S(   Ns   function Retrieve_Associated_s   ( s    : s
-    ) return (   R   R   R3   (   R   Rp   Rw   R	   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeAssociatedRetrieveHeader�   s    c         C   s�   t  d t i d � } t |  | | d � | _ g  | _ d t | � | _ | d } d | d | _ xx t	 t
- | i � � D]a } t | i | � } t | i
- | � } | d | d	 |  i d
- | d }	 | i i |	 � q{ Wt | � }
- |
- S(   NR   s   retrieve_associated.func.tmpls    ist   Retrieve_Associated_Rt   s   return s   .retrieve( c )s   .Add_s   ( c, R!   s    )(   R    R   R   R~   R8   R_   R   R   RJ   Ru   Rm   Rv   R   t   foreignColsR   R$   R   (   R   Rp   Rw   Rx   R   Ry   Rn   R{   t   foreignNamet   critR
-   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeAssociatedRetrieveBody�   s    	
- %c
-      C   s�  t  i | i d i �  } t | d � } t d t  i d � } | i d | _ g  | _ | i	 | _
- g  | _ g  | _ x� | i
- D]� } | i i t | d � � | i i t | t d � � | i �  o  | i i t | t d � � n | i o. | i �  o | i i t | d � � q q� q� Wt | d � | _ t | d � | _ t | d � | _ t | d � | _ t | d � | _  t! | d � | _" | i# | _$ | i | _% g  | _& t' i' i( �  | _) x� | i* D]� } | i* | } t+ | � } | i, o7 |  d | }	 t- | | |	 d � }
- | i& i |
- � q�|  d | d } t. | | | d � } | i& i | � q�W|  | _/ | i0 t1 | � � | i2 �  d  S(	   Ns   _io.adst   wR   s   io.ads.tmplRt   t   ;R!   s   _List.Vector(3   R   t   srcDirR   t   lowerR   R    R   t   IONamet   criteriaR?   RL   t   orderingStatementst   incr_integer_pk_fieldsR"   R$   R   R    R=   R.   RY   R#   t
-   isIntegerTypeRF   R5   t   pkFuncRI   t
-   isNullFuncRO   t   retrieveByCFuncRQ   t   retrieveBySFuncRR   t   saveFuncRT   t   deleteSpecificFuncR3   t   outputRecordTypet   outputRecordNamet
-   associatedt   datetimet   nowt   datet   childRelationsR   t
-   isOneToOneRr   R~   t   dataPackageNamet   writeR   t   close(
-   R�   R   t   outfileNamet   outfileR   R   R   Rx   Rp   Rq   t	   childFuncRw   t	   assocFunc(    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   make_io_ads
-  sR    			
- 
- 
-
-%	
- 
-
-	c         C   s
-  g  } d } d } x� |  i  D]� } | i | i � | d 7} | d d j o{ | t d d d i | � 7} | t |  i  � j  o | d 7} n | d 7} | t |  i  � j  o | d	 7} n g  } q q Wt | � d j o' | t d d d i | � d
- 7} n | S(   NR   i    i   i
-   i   Rj   s   , t   ,s    &
-s    "(   R"   R$   R   R   R%   Rm   (   R   t   selectsR
-   Rn   R   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   sqlVariablesList9  s$    
- 
-
-'c         C   s   d |  i  d } | S(   Ns.   DELETE_PART : constant String := "delete from s    "(   R   (   R   R
-   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeDeletePartStringL  s    c         C   sE   d d } | t  |  � 7} | d 7} | t d d |  i d 7} | S(   Ns,   SELECT_PART : constant String := "select " &s
-s    &
-i   s   "from s    " (   R�   R   R   (   R   R
-   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeSelectPartStringQ  s
-    
-
-c         C   sE   d |  i  d d } | t |  � 7} | d 7} | t d d 7} | S(   Ns.   INSERT_PART : constant String := "insert into s    (" &s
-s    &
-i   s
-   " ) values " (   R   R�   R   (   R   R
-   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeInsertPartStringX  s
-    
-c         C   s   d |  i  d } | S(   Ns)   UPDATE_PART : constant String := "update s    set  "(   R   (   R   R
-   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeUpdatePartString_  s    c         C   s�   g  } x� |  i  D]� } | d j p/ | d j o
- | i p | d j ob | i oW | i } | o |  i d | } n d | i d | d | d } | i | � q q W| S(	   s�
-         table,
-         criterionName,
-         includeAll,
-         qualifyVarname - add the ada table name to each entry
-        R]   R7   RW   R!   R
-   s   ( s   , s    )(   R"   R#   R   R$   (   R   t
-   criterionNamet
-   includeAllt   qualifyVarnamet   lR   R   t   critElement(    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyR<   d  s    
- 
-	!c         C   s   t  |  | d t � S(   NR7   (   R<   RY   (   R   R�   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyRg   w  s    c         C   s�  |
-} | i  �  ox t d d } | t d d 7} | t d d | d 7} | t d d | i d 7} | t d d	 | i d
- 7} n%| i �  o� |  i } t d d } | t d d 7} | t d d | d 7} | t d d | d 7} | t d d
- | i d 7} | t d d | i d 7} | t d d | i d
- 7} n`| i �  o� t d d } | t d d 7} | t d d 7} | t d d | d 7} | t d d
- | i d 7} | t d d 7} | t d d | i d
- 7} n� | i �  o� t d d } | t d d 7} | t d d 7} | t d d | d 7} | t d d
- | i d 7} | t d d 7} | t d d | i d
- 7} n d | i } | S(   s�
-         ODBC binding declarations for each type we support,
-
-         The rules here come from much trial end error and digging around on
-         the microsoft ODBC site.
-        i   s    dodbc.I_Out_Binding.SQLBindCol(
-i   s   StatementHandle  => ps,
-s   ColumnNumber     => s   ,
-s   TargetValue      => s	   'access,
-s   IndPtr           => s
-   _len'access )s   SQLBindCol(
-s   TargetType       => s#   TargetValuePtr   => To_SQLPOINTER( s   _access.all'address ),
-s   BufferLength     => s   _len,
-s   StrLen_Or_IndPtr => s"   TargetType       => SQL_C_DOUBLE,
-s   BufferLength     => 0,
-s*   TargetType       => SQL_C_TYPE_TIMESTAMP,
-s   FIXME: MISSED BINDING FOR VAR (   t   isIntegerTypeInODBCR   R   R.   t   supportedSqlCharTypet
-   isNumericTypeRl   R   (   t   databaseAdapterR   t   post   posStrt   bindingt   charType(    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeBinding{  sD    
-!
-	!
-!
-!
-c         C   sI  t  d t i d � } t |  d � | _ |  i | _ |  i d |  i | _	 |  i
- d |  i d | _ g  | _ g  | _
- g  | _ g  | _ g  | _ d } x�|  i D]�} | d 7} | i d	 | i } | i �  o' | d
- t d d t | i � � 7} n | i i | � | i d
- | i d } | i i | � t | i | | � } | i i | � | i �  p | i �  p
- | i �  o| i �  oJ | i d | i d } |  i d | i d | i d | i d }	 nM | i �  o? | i d | i d } |  i d | i d | i d }	 n | i �  oJ |  i d | i d | i d | i d }	 | i d | i d } n | i
- i | � n� | i d j o2 |  i d | i d
- | i d | i d }	 nW | i d j o' |  i d | i d | i d }	 n  |  i d | i d
- | i }	 | i i |	 � q� Wt | � }
- |
- S(   s�
-         table - Table class from table_model.py
-         database - complete enclosuing Database model from  table_model.py
-
-         Make a fuction that, for a given table (say 'fred'), takes an sql string as input (just the query part)
-         and returns a single
-         list of fred records (fred_list, as declared in the main database declarations ads file).
-         This version has wide_string handling jammed off
-         Structure is:
-            - declare local versions of all fred's variables
-            - declare aliases (pointers) to these variables, where needed
-            - declare length holders for each one
-            - make the query by appending the query part to a constant 'select part'
-            - prepare the query
-            - bind variables/aliase
-            - execute
-            - loop round, map the locals to one record
-            --    add the variable to the collection
-
-         There's a certain amount of trial an error in this..
-        R   s   retrieve_wstr.func.tmpls    iss    : s   .append( l, s    )i    i   s
-   : aliased s    := i   t   @s   _len : aliased SQLINTEGER := s   'Sizes   _access : Real_Access := s   'accessR!   s   := s   ( s
-   _access.all )s   _access : Timestamp_Access := s    := dodbc.Timestamp_To_Ada_Time( s    := Slice_To_Unbounded( s   , 1, Natural( s   _len ) )s   _access : String_Access := R)   s   'Val( R(   s    := Boolean'Val( (   R    R   R   RQ   R8   R9   R:   R   R3   R;   RA   t   addToMapt   aliasDeclarationst   pointerst   lenDeclarationst   mappingsFromAliasToRecordt   bindingsR"   t   odbcTypeR.   R   t   intR/   R$   R�   R�   t   isRealOrDecimalTypeRl   R   R,   R   (   R   t   databaseR   R�   R   t   aliast   len_declR�   t   pointert   mappingR
-   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeRetrieveSFunc�  sR    					
- 
-
-''
-2
-'
-.2'c   
-   C   s1  t  i | i d i �  } t | d � } t d t  i d � } t | � | _ t	 | � | _
- t | � | _ t
- | � | _ | i d | _ g  | _ | i | _ g  | _ g  | _ g  | _ g  | _ x7 | i D], } d | d | d } | i i | � q� Wx� | i D]� } | i i t | � � | i i t | � � | i �  o | i i t | t � � n | i o. | i �  o | i i t  | | � � q�qqWt! | � | _" t# | |  i$ � | _% t& | � | _' t( | |  � | _) t* | � | _+ t, | � | _- t. | � | _/ | i0 | _1 | i | _2 g  | _3 t4 i4 i5 �  | _6 x� | i7 D]� } | i7 | }	 t8 | � }
- | i i |
- d � |	 i9 o: |  i$ d	 |
- } t: | |
- | |	 � } | i3 i | � qO|  i$ d	 |
- d
- }
- t; | |
- |
- |	 � } | i3 i | � qOW|  i$ | _< | i= t> | � � | i? �  d S(   s�
-         Make the adb (ada body) file for the io procs given table e.g. fred_io.adb into src/
-         table - Table class from table_model.py
-         database - complete enclosuing Database model from  table_model.py
-        s   _io.adbR�   R   s   io.adb.tmplRt   s    function make_criterion_element_s*    is new d.Make_Decimal_Criterion_Element( s    )R!   s   _List.VectorN(@   R   R�   R   R�   R   R    R   R�   t
-   selectPartR�   t
-   insertPartR�   t
-   deletePartR�   t
-   updatePartR�   R�   R?   RL   R�   R�   t
-   localWithst   decimalDeclarationst   decimalTypesR$   R"   R2   R   R.   RY   R#   R�   RH   RD   R�   RN   RM   R�   RP   R�   R�   R�   R\   t
-   updateFuncRf   R�   Ri   R�   R3   R�   R�   R�   R�   R�   R�   R�   R   R�   R}   R�   R�   R�   R   R�   (   R�   R   R�   R�   R   t   dect   gentypeR   R   Rx   Rp   Rq   R�   Rw   R�   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   make_io_adb�  sj    					
- 
- 
-
-
-%	
- 
-
-c         C   s5   x. |  i  D]# } t |  i | � t |  | � q
- Wd S(   s9
-        database - complete enclosuing Database model from  table_model.py
-
-        Make all the records needed to handle writing to and from the database
-        there is one ads/adb pair per table in the database; for a table 'fred'
-        these are fred_io.ads and fred_io.adb
-         Write to src/
-        N(   t   tablesR�   RM   R�   (   R�   R   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeIO&  s
- c         C   s    |  i  d |  i d |  i �  S(   sx
-        var - Variable class from table_model.py
-        Declaration for a single element in a record
-        s    : s    := (   R   R   t   getDefaultAdaValue(   R   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeSingleAdaRecordElement3  s    c         C   s�   t  d d } | t  d d |  i d |  i t  d 7} | t  d d 7} | t  d d |  i d 7} | t  d d	 |  i d
- 7} | t  d d 7} | S(   s
-         table - Table class from table_model.py
-         Ada containers package declaration for a table; if table name is 'fred' gives you:
-         'package fred_list is new Ada.Containers.Vectors( element_type=>fred, index_type=>Positive );
-         (plus some comments)
-        i   s   --
-s   -- container for s    : s
-s   package s    is new Ada.Containers.Vectors
-i   s   (Element_Type => s   ,
-s   Index_Type => Positive );
-(   R   R   t   descriptiont	   MAXLENGTHt   adaContainerNameR   (   R   R
-   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeContainerPackage:  s    ,c         C   s   t  |  � d |  d S(   s�
-        adaName - a string like Variable_One
-        Return a declaration for a list of some type; something like 'freds : fred_List.vector'
-        s    : s   _List.Vector(   R   (   R   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeChildCollectionI  s    c         C   s,  t  d d } | t  d d |  i d |  i t  d 7} | t  d d 7} | t  d d |  i d 7} x- |  i D]" } | t  d t | � d	 7} qs Wxz |  i D]o } |  i | } t | � } | i	 o* | t  d | d
- | d | d	 7} q� | t  d t
- | � d	 7} q� W| t  d d 7} | S(
-   s�
-         table - Table class from table_model.py
-        Make the Ada record declaration for the given table. See table_model.py for the (very limited)  b
-        xml=>sql=>ada type mappings and defaults.
-        i   s   --
-s   -- record modelling s    : s
-s   type s    is record
-i   s   ;
-s   _Child :s	    := Null_s   end record;
-(   R   R   R�   R�   R   R"   R�   R�   R   R�   R�   (   R   R
-   R   R   Rx   R   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt
-   makeRecordP  s     ,
-  
- 
-
-* c         C   su   t  d d } | t  d d |  i d |  i t  d 7} | t  d d 7} | t  d d |  i d | d 7} | S(   Ni   s   --
-s   -- simple print routine for s    : s
-s   function To_String( rec : s    ) return String(   R   R   R�   R�   R   (   R   R	   R
-   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeToStringDeclg  s
-    ,%c      	   C   s\  t  d d } | t  d d |  i d |  i t  d 7} | t  d d 7} | t  d |  i d |  i d 7} g  } x7 |  i D], } | i t  d | i d	 | i �  � q� Wx| |  i	 D]q } |  i	 | } t
- | � } | i o! | i t  d | d
- | � q� | i t  d t | � d	 | d � q� W| d i
- | � 7} | d t  d d
- 7} | S(   su
-        Make a record that signals, effectively, Null, with some unlikely values for the primary key fields
-        i   s   --
-s   -- default value for s    : s
-s    : constant s    := (
-i   s    => s   _Child => Null_s   _List.Empty_Vectors   ,
-s   );
-(   R   R   R�   R�   t   adaNullNameR   R"   R$   R�   R�   R   R�   R   R%   (   R   R
-   t   elemsR   R   Rx   R   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeDefaultRecordDeclo  s$    ,$
- *
- 
-
-!+c         C   s�   |  i  } | i �  g  } xZ | D]R } t | � } | t | � 7} | t | � 7} | t | d � 7} | i | � q! Wt t i	 |  i
- i d d � } t d t i
- d � } | | _ |  i | _ t i i �  | _ | i t | � � | i d S(   s�
-         Write a .ads file containing all the data records and container declarations
-         writes to a file <database_name>_data.ads in the src output directory.
-        R�   s	   _data.adsR�   R   s
-   data.ads.tmplN(   R�   t   reverseR�   R�   R�   R�   R$   R   R   R�   t
-   dataSourceR�   R    R   t   recordsRM   R   R�   R�   R�   R�   R   R�   (   R�   t   rtabsR�   R   t   recordR�   R   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeDataADS�  s"    
-
-  	c         C   s�   |  i  } | i �  t d t i d � } g  | _ |  i | _ t i i	 �  | _
- x$ | D] } | i i t | � � qX Wt
- t i |  i i d d � } | i t | � � | i d S(   s�
-         Write a .ads file containing all the data record and container declarations
-         writes to a file <database_name>_data.adb in the src output directory.
-        R   s
-   data.adb.tmpls	   _data.adbR�   N(   R�   R�   R    R   R   t	   toStringsRM   R   R�   R�   R�   R$   Ro   R   R�   R�   R�   R�   R   R�   (   R�   R�   R   R   R�   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeDataADB�  s    
-
-	  c         C   so   t  t i d d � } t d t i d � } |  i d | _ t i i �  | _	 | i
- t | � � | i �  d S(   s�
-         Write an ads file with calls for getting passwords, usernames, database name
-         writes to src/environment.ads.
-        s   environment.adsR�   R   s   environment.ads.tmplt   _db_environmentN(
-   R   R   R�   R    R   R�   t	   unit_nameR�   R�   R�   R�   R   R�   (   t   runtimeR�   R   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeEnvironmentADS�  s    c         C   s�   t  t i d d � } t d t i d � } |  i d | _ |  i | _ |  i | _ |  i | _ t	 i	 i
- �  | _ | i t
- | � � | i �  d S(   s�
-         Write an adb file with calls for getting passwords, usernames, database name
-         writes to src/environment.adb.
-        s   environment.adbR�   R   s   environment.adb.tmplR�   N(   R   R   R�   R    R   R�   R�   t   passwordt   usernameR�   R�   R�   R�   R   R�   (   R�   R�   R   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeEnvironmentADB�  s    c         C   s�   t  t i d d � } t d t i d � } g  } x' |  i i �  D] } | i | i � qB W| | _	 g  } x' |  i
- i �  D] } | i | i � q{ W| | _ t i i
- �  | _ | i t | � � | i �  d S(   s�
-         Add declarations for any decimal types and enumerations to
-         an ads file already containing some package defintions, aliases,
-         and string types used throughout the output.
-         writes to src/base_types.ads
-        s   base_types.adsR�   R   s   base_types.ads.tmplN(   R   R   R�   R    R   R�   t   valuesR$   t   toAdaStringt   decimal_repst   enumeratedTypest	   enum_repsR�   R�   R�   R�   R   R�   (   R�   R�   R   t   decst   dt   enumst   e(    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeBaseTypesADS�  s     	 	c          C   s_   t  t i d d � }  t d t i d � } t i i �  | _ |  i t	 | � � |  i
- �  d S(   sV
-        Write a body for the common types declarations to src/base_types.adb
-        s   base_types.adbR�   R   s   base_types.adb.tmplN(   R   R   R�   R    R   R�   R�   R�   R�   R   R�   (   R�   R   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeBasicTypesADB�  s
-    c          C   s�   d d d g }  d d g } x� |  D]� } x� | D]} } t  t i | d | d � } t d t i d	 | d | d d
- � } t i i �  | _ | i t	 | � � | i
- �  q/ Wq" Wd S(   s�
-        Write versions of support files db_commons, db_commons-odbc and logger to src/
-        We just add some headers to each; otherwise they're uncustomised.
-        t
-   db_commonss   db_commons-odbct   loggert   adbt   adsR!   R�   R   R   t   tmplN(   R   R   R�   R    R   R�   R�   R�   R�   R   R�   (   t   targetst   extst   targett   extR�   R   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeCommons�  s      *c         C   s�   t  t i |  i i d d � } t d t i d � } t |  i i d � | _ t	 i	 i
- �  | _ | i t
- | � � | i �  d S(   s0
-         Write an  test case ads file
-        s	   _test.adsR�   R   s   test_case.ads.tmplt   _testN(   R   R   t   testsDirR�   R�   R    R   R   t   testNameR�   R�   R�   R�   R   R�   (   R�   R�   R   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   writeTestCaseADS�  s     c         C   s   d S(   NR   (    (   t   databaseNameR   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeChildTests  s    c         C   s  t  d t i d � } | i d } | i d } | i d } | i d } d | d | _ | | _ | d	 | i | _ | d	 | i	 | _
- d
- | d | _ | i d | _ | d
- | i d | _
- d | d | _ | d
- | i d | _ | i d | d | _ g  | _ g  | _ g  | _ | i d | d | _ | i d | d | _ | i d | d | _ | d
- | i d | d | _ x�| i D]~} | i oa | i �  o | d | i d } n( | d | i d
- | i d | i } | i i | � q�d | d }	 | i �  oU d | i }
- | d | i d  |
- d! }	 | i i | d | i d" |
- d! � n� | i �  o | d | i d# }	 nh | i �  o | d | i d$ }	 nB | i �  o4 d% t  | i! � d& } | d | i d
- | }	 n | i i |	 � q�Wt" | � S('   s(
-         Write an create test
-        R   s   create_test.proc.tmplt   _Create_Testt
-   _Test_Itemt
-   _test_lists   .Cursors
-   procedure s3   (  T : in out AUnit.Test_Cases.Test_Case'Class ) iss    : s   procedure Print( pos : s    ) is s   _io.Delete( criteria )s    := s   .element( pos )s   Logger.info( To_String( s    ))s   .Retrieve( criteria )s
-   .iterate( s   , print'Access )s
-   _io.Save( s	   , False )s    )s   _io.Delete( s
-   .element( s   , i )R!   s'    := To_Unbounded_String( "k_" & i'img )s   _io.Next_Free_s
-   -- missings
-    declaration s   dat fors    := To_Unbounded_String("s   ")s"    := To_Unbounded_String("Altered::s    := Ada.Calendar.Clocks    := 1010100.012s   10201.t   1(#   R    R   R   R   R�   RX   t   procNameR3   t   variableDeclarationR9   t   listDeclarationt   printHeadert
-   clearTablet   retrieveUsert   toStringt   adaIOPackageNamet   completeListStatementt   iteratet   createKeyStatementst   createDataStatementst   modifyDataStatementst
-   saveStatementt   updateStatementt   deleteStatementt   elementFromListR"   R#   R.   R$   Rl   t   isFloatingPointTypeR-   R�   t   scaleR   (   R	  R   R   R  R   t   listnamet   cursorR   t   keyt   assignt   datat   v(    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   makeCreateTest	  sV    
-
-
-
-				 
- 
-
-'
-
-+
-
-
-c         C   s�  t  t i |  i i d d � } t d t i d � } t |  i i d � | _ t |  i i d � | _	 g  | _
- g  | _ g  | _ g  | _
- g  | _ x� |  i D]� } | i
- i | i d � | i i d | i d	 d
- | i d � | i
- i t |  i i | � � t | i � d j oM | i i d | i d
- d | i d � | i i t |  i i | � � q� q� Wt i i �  | _ | i t | � � | i �  d S(   s0
-         Write an  test case ads file
-        s	   _test.adbR�   R   s   test_case.adb.tmplR  t   _DataRt   s   Register_Routine (T, s   _Create_Test'Access, s"   "Test of Creation and deletion of s   " );i    s   _Child_Retrieve_Test'Access, s   "Test of Finding Children of N(   R   R   R  R�   R�   R    R   R   R  t   datapackaget
-   dbPackagest   createRegisterst   childRegisterst   createTestst
-   childTestsR�   R$   R   R(  Rm   R�   R
-  R�   R�   R�   R�   R   R�   (   R�   R�   R   R   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   writeTestCaseADB@  s(     					
- **'c         C   s�   t  t i d d � } t d t i d � } t |  i i d � | _ t |  i i d � | _	 t
- i
- i �  | _ | i
- t | � � | i �  d S(   sB
-         Write the exe file bit (adb) for the test case
-        s	   suite.adbR�   R   s   suite.adb.tmplt   _Tests   _test.Test_CaseN(   R   R   R  R    R   R   R�   R�   t   testFilet   testCaseR�   R�   R�   R�   R   R�   (   R�   R�   R   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt
-   writeSuiteADBX  s    c          C   s_   t  t i d d � }  t d t i d � } t i i �  | _ |  i t	 | � � |  i
- �  d  S(   Ns   harness.adbR�   R   s   harness.adb.tmpl(   R   R   R  R    R   R�   R�   R�   R�   R   R�   (   R�   R   (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pyt   writeHarnessd  s
-    (I   t   __doc__t   Cheetah.TemplateR    R�   t   pathsR   t   table_modelR   t   utilsR   R   R   R   R�   R   R   R   R   R    R'   R=   R2   R5   RD   RH   RN   RI   RO   RP   RQ   RR   RS   RT   R\   Rf   Ri   Ro   RF   Rr   R}   R~   R�   R�   R�   R�   R�   R�   R�   R<   Rg   R�   R�   R�   R�   R�   R�   R�   R�   R�   R�   R�   R�   R�   R�   R�   R�   R  R  R
-  R(  R0  R4  R5  (    (    (    s5   /users/info/profs/culet/mill/scripts/ada_generator.pys   <module>   s�   "								
-									
-							/								+	B	>
-								
-		
-				7	
