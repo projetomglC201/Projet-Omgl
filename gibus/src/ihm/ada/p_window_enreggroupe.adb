@@ -25,8 +25,9 @@ end init;
 	end fermerFenetre;
 ---------------------------------------------------------------------------
 	procedure enregistrergroupe is
+		b_box : message_dialog_buttons;
 	begin
-		null;
+		b_box:=message_dialog("Groupe enregistré !",Confirmation,Button_Ok,Button_Ok);
 	end enregistrergroupe;
 -----------------------------------------------------------------------------
 
