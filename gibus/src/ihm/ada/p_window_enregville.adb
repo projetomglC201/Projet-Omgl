@@ -13,7 +13,8 @@ rang_ville: Gtk_Tree_Iter := Null_Iter; -- ligne dans le modèle
 procedure init is
 XML : Glade_XML;
 begin
-	Glade.XML.Gtk_New(XML, "./../glade/EnregistrerVilles.glade", "windowenregville");
+	Glade.XML.Gtk_New(XML, "./src/ihm/glade/EnregistrerVilles.glade", "windowenregville");
+	treeview_ville:=Gtk_Tree_View(Get_Widget(XML,"treeview1"));
 	windowenregville:=Gtk_Window(Get_Widget(XML,"windowenregville"));
 	Glade.XML.signal_connect (XML,"on_buttonAnnuler_clicked",fermerFenetre'address,Null_Address);
 	Glade.XML.signal_connect (XML,"on_buttonSuivant_clicked",villesuivante'address,Null_Address);
@@ -51,7 +52,7 @@ end init;
 			  ville := Ville_List.element( pos );
 			  append (modele_ville, rang_ville, Null_Iter);
 			  Set (modele_ville, rang_ville, 0, p_conversion.to_string(ville.Nom_Ville));
-			end alimente;
+		end alimente;
 
 	begin
 		

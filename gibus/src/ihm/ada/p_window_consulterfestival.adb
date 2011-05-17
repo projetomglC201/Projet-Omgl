@@ -9,7 +9,7 @@ procedure init is
 XML : Glade_XML;
 
 begin
-	Glade.XML.Gtk_New(XML, "./../glade/ConsulterFestival.glade", "windowconsulterfestival");
+	Glade.XML.Gtk_New(XML, "./src/ihm/glade/ConsulterFestival.glade", "windowconsulterfestival");
 	
 	windowconsulterfestival := Gtk_Window(Get_Widget(XML,"windowconsulterfestival"));
 	Glade.XML.signal_connect (XML,"on_buttonFermer_clicked",fermerFenetre'address,Null_Address);

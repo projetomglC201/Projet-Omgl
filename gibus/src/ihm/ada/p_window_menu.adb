@@ -8,7 +8,7 @@ windowmenu : Gtk_window;
 procedure init is
 XML : Glade_XML;
 begin
-	Glade.XML.Gtk_New(XML, "./../glade/menu.glade", "windowmenu");
+	Glade.XML.Gtk_New(XML, "./src/ihm/glade/menu.glade", "windowmenu");
 	
 	windowmenu := Gtk_Window(Get_Widget(XML,"windowmenu"));
 	

@@ -9,7 +9,7 @@ windowcreerfestival:gtk_window;
 procedure init is
 XML : Glade_XML;
 begin
-	Glade.XML.Gtk_New(XML, "./../glade/CreerFestival.glade", "windowcreerfestival");
+	Glade.XML.Gtk_New(XML, "./src/ihm/glade/CreerFestival.glade", "windowcreerfestival");
 	windowcreerfestival:=Gtk_Window(Get_Widget(XML,"windowcreerfestival"));
 	Glade.XML.signal_connect (XML,"on_buttonAnnuler_clicked",fermerFenetre'address,Null_Address);
 	Glade.XML.signal_connect (XML,"on_buttonValider_clicked",validerfestival'address,Null_Address);

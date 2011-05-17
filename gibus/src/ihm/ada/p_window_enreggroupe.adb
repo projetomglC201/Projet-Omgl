@@ -12,7 +12,7 @@ window:Gtk_window;
 procedure init is
 XML : Glade_XML;
 begin
-	Glade.XML.Gtk_New(XML, "./../glade/enregGroupe.glade", "windowenreggroupe");
+	Glade.XML.Gtk_New(XML, "./src/ihm/glade/enregGroupe.glade", "windowenreggroupe");
 	window := Gtk_Window(Get_Widget(XML,"windowenreggroupe"));
 	Glade.XML.signal_connect (XML,"on_buttonAnnuler_clicked",fermerFenetre'address,Null_Address);
 	Glade.XML.signal_connect (XML,"on_buttonEnregistrer_clicked",enregistrergroupe'address,Null_Address);

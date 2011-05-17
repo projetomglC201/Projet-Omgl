@@ -17,7 +17,7 @@ windowconsultgroupe:Gtk_window;
 		XML : Glade_XML;
 	begin
 	--Initialisation de la fenetre
-		Glade.XML.Gtk_New(XML, "./../glade/ConsultGroupe.glade", "windowconsultgroupe");
+		Glade.XML.Gtk_New(XML, "./src/ihm/glade/ConsultGroupe.glade", "windowconsultgroupe");
 		windowconsultgroupe:=Gtk_Window(Get_Widget(XML,"windowconsultgroupe"));
 	--connections aux handler
 		Glade.XML.signal_connect (XML,"on_buttonFermer_clicked",fermerFenetre'address,Null_Address);

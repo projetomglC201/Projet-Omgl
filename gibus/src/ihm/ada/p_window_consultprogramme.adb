@@ -10,7 +10,7 @@ windowconsultprogramme:gtk_window;
 procedure init is
 XML : Glade_XML;
 begin
-	Glade.XML.Gtk_New(XML, "./../glade/consultProgramme.glade", "windowconsulterprogramme");
+	Glade.XML.Gtk_New(XML, "./src/ihm/glade/consultProgramme.glade", "windowconsulterprogramme");
 	windowconsultprogramme:=Gtk_Window(Get_Widget(XML,"windowconsulterprogramme"));
 	
 		Glade.XML.signal_connect (XML,"on_buttonAnnuler_clicked",fermerFenetre'address,Null_Address);
