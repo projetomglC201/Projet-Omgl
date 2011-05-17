@@ -1,0 +1,160 @@
+V "GNAT Lib v4.4"
+A -gnatv
+A -gnato
+A -gnatA
+P SS ZX
+R nnnnnvvnnnnnnnnnnnnnvvvnnnnnnnnnnnnnnnvnnvnnnnnnnnnnnnnnnnvnvnnnnnnnnnnnnnnnn
+
+U base_types%b		base_types.adb		d4e12ce9 NE OO PK IL
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+
+U base_types%s		base_types.ads		50f8f9fc EE OO PK IL
+W ada%s			ada.ads			ada.ali
+W ada.calendar%s	a-calend.adb		a-calend.ali
+W ada.characters%s	a-charac.ads		a-charac.ali
+W ada.characters.conversions%s  a-chacon.adb	a-chacon.ali
+W ada.characters.latin_1%s  a-chlat1.ads	a-chlat1.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.finalization.list_controller%s  a-filico.adb  a-filico.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.bounded%s	a-strbou.adb		a-strbou.ali
+W ada.strings.maps%s	a-strmap.adb		a-strmap.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.strings.unbounded.text_io%s  a-suteio.adb	a-suteio.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W ada.text_io.decimal_aux%s  a-tideau.adb	a-tideau.ali
+W ada.text_io.float_aux%s  a-tiflau.adb		a-tiflau.ali
+W ada.text_io.integer_aux%s  a-tiinau.adb	a-tiinau.ali
+W system%s		system.ads		system.ali
+W system.fat_lflt%s	s-fatlfl.ads		s-fatlfl.ali
+W system.finalization_implementation%s  s-finimp.adb  s-finimp.ali
+W system.finalization_root%s  s-finroo.adb	s-finroo.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+
+D ada.ads		20070406091342 9c7dd3ea
+D a-calend.ads		20090409232307 19486c30
+D a-charac.ads		20070912115821 506ce725
+D a-chacon.ads		20090409232307 5ad6e116
+D a-chlat1.ads		20070912115821 e9ee6d0a
+D a-except.ads		20090409232307 b54b55de
+D a-finali.ads		20090409232307 9eaacebd
+D a-filico.ads		20090409232307 9299732a
+D a-ioexce.ads		20070406091342 be0900a0
+D a-stream.ads		20090409232307 34aca5be
+D a-string.ads		20070406091342 87b4230b
+D a-strbou.ads		20090409232307 1d1962a8
+D a-strbou.adb		20090409232307 7dda7242
+D a-strmap.ads		20090409232307 5253a637
+D a-strsup.ads		20090409232307 9dd84fea
+D a-strunb.ads		20090409232307 f0549c04
+D a-suteio.ads		20090409232307 d857a771
+D a-tags.ads		20090409232307 bfa07446
+D a-textio.ads		20090409232307 fe8af46e
+D a-tideau.ads		20090409232307 c3c47a4f
+D a-tideio.ads		20090409232307 14eafd1e
+D a-tideio.adb		20090409232307 1bd9e5c6
+D a-tiflau.ads		20090409232307 ce2abdd4
+D a-tiflio.ads		20090409232307 5d91823c
+D a-tiflio.adb		20090409232307 e2036cd2
+D a-tiinau.ads		20090409232307 2625f681
+D a-tiinio.ads		20090409232307 949a7272
+D a-tiinio.adb		20090409232307 cf5588a9
+D a-unccon.ads		20070406091342 51e09df2
+D base_types.ads	20110513115553 e4ff315f
+D base_types.adb	20110513115553 301e1db6
+D interfac.ads		20090409232307 a69cad5c
+D i-cstrea.ads		20090409232307 e1e064a9
+D system.ads		20101024233633 15e10948
+D s-crtl.ads		20090409232307 997234a1
+D s-exctab.ads		20090409232307 5c1c61ae
+D s-fatgen.ads		20090409232307 87841279
+D s-fatlfl.ads		20090409232307 e331b5cb
+D s-ficobl.ads		20090409232307 8bb681e5
+D s-finimp.ads		20090409232307 9449f4cb
+D s-finroo.ads		20090409232307 1408f9d1
+D s-parame.ads		20090409232307 f32e56e9
+D s-secsta.ads		20090409232307 7bae3621
+D s-soflin.ads		20090409232307 0c6fd39d
+D s-stache.ads		20090409232307 257b3be8
+D s-stalib.ads		20090409232307 52b793d5
+D s-stoele.ads		20090409232307 ed966df3
+D s-stoele.adb		20090409232307 e9998c78
+D s-stratt.ads		20090409232307 fef7c1da
+D s-traent.ads		20090409232307 bd5f2753
+D s-unstyp.ads		20090409232307 c0f9fae5
+D s-wchcon.ads		20090409232307 ab028799
+X 1 ada.ads
+16K9*Ada 19e8 30|4r6 5r6 6r6 7r6 8r6 9r6 10r6 11r6 12r6 16r8 17r8 18r8 22r26
+. 23r25 40r29 40r50 42r29 42r50 51r32 52r7 61r26 62r27 63r26 64r30 65r25
+X 2 a-calend.ads
+36K13*Calendar 358e17 30|12w10 40r33 40r54 42r33 42r54
+38I9*Time 30|40r42 42r42
+74V13*Time_Of{38I9} 30|40r63 42r63
+X 3 a-charac.ads
+16K13*Characters 18e19 30|10r10 11r10 22r30 23r29
+X 4 a-chacon.ads
+36K24*Conversions 86e31 30|10w21 22r41
+X 5 a-chlat1.ads
+20K24*Latin_1 298e27 30|11w21 23r40
+37e4*LF{character} 30|30r63 31r59
+40e4*CR{character} 30|30r54
+X 11 a-string.ads
+16K13*Strings 35e16 30|5r10 6r10 7r10 8r10 9w10 16r12 17r12 51r36 52r11 65r29
+X 12 a-strbou.ads
+39K21*Bounded 896e24 30|5w18 16r20 65r37
+46k12*Generic_Bounded_Length 894e30 30|65r45
+X 14 a-strmap.ads
+38K21*Maps 412e21 30|7w18 51r44 52r19
+47A9*Character_Set(boolean) 30|51r49
+100V13*To_Set{47A9} 30|52r24
+X 16 a-strunb.ads
+39K21*Unbounded 428e26 30|6r18 8w18 17r20
+42R9*Unbounded_String 395e14 30|38r29 54r25 56r87 31|6r87
+45r4*Null_Unbounded_String{42R9} 30|54r45
+57V13*To_Unbounded_String{42R9} 30|38r49 31|8r14 8r42
+111V13*Slice{string} 31|8r35
+X 17 a-suteio.ads
+39K31*Text_IO 61e34 30|6w28
+X 19 a-textio.ads
+48K13*Text_IO 506e16 30|4w10 18r12 61r30 62r31 63r30 64r34
+X 21 a-tideio.ads
+45k21*Decimal_IO 88e27 30|61r38
+X 24 a-tiflio.ads
+45k21*Float_IO 88e25 30|62r39
+X 27 a-tiinio.ads
+45k21*Integer_IO 84e27 30|63r38
+X 30 base_types.ads
+14K9*base_types 67l5 67e15 31|4b14 12l5 12t15
+22K12*wconv=22:41
+23K12*stda=23:40 30r49 30r58 31r54
+25F9*Real<long_float> 62r49
+26D9*Decimal 61r50
+30a4*DOS_NEW_LINE{string}
+31a4*UNIX_NEW_LINE{string}
+34E9*tgenre_Enum 34e76
+34n26*hard{34E9}
+34n32*pop{34E9}
+34n37*fusion{34E9}
+34n45*punk{34E9}
+34n51*alternatif{34E9}
+34n63*rockabilly{34E9}
+36i4*MISSING_I_KEY{integer}
+37a4*MISSING_S_KEY{string}
+38r4*MISSING_W_KEY{16|42R9}
+39N4*MISSING_R_KEY
+40i4*MISSING_T_KEY{2|38I9}
+42i4*FIRST_DATE{2|38I9}
+47e4*PADDING_CHAR{character} 52r33
+51a4*PADDING_CHAR_SET{14|47A9}
+54r4*Null_Wide{16|42R9}
+56V13*Slice_To_Unbounded{16|42R9} 56>33 56>45 56>63 31|6b13 9l8 9t26
+56s33 s{string} 31|6b33 8r63
+56i45 start{positive} 31|6b45 8r68
+56i63 stop{natural} 31|6b63 8r75
+61K12*fix_io[21|45]
+62K12*real_io[24|45]
+63K12*std_io[27|45]
+64K12*string_io=64:34
+65K12*Str80[12|46]
+

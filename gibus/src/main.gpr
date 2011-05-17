@@ -2,6 +2,6 @@ with "gtkada2";
 project main is
 	for Object_Dir use ".";
 	for Exec_Dir use ".";
-	for Source_Dirs use (".");
+	for Source_Dirs use (".","./ihm/ada","./appli/","./util/mill");
     for Main use ("main.adb");
 end main;
