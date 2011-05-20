@@ -19,15 +19,14 @@ package body p_appli_enregville is
 ------------------------------------------------------
 	procedure CreateVille (resultEntryNomVille : in Unbounded_String; resultEntryMail : Unbounded_String ) is
 	
-	
+	ville : tville;
 	begin
 		
 	
 	
 		ville:=(resultEntryNomVille,resultEntryMail,Festival_List.Empty_Vector);
 	
-	
-		Ville_io.Save(Ville_Item,false);
+		Ville_io.Save(Ville,false);
 	
 		exception
 		when GNU.DB.SQLCLI.INTEGRITY_VIOLATION => raise EXVilleExistante;
