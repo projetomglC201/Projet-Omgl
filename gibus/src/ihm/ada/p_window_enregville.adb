@@ -2,7 +2,7 @@
 with Glade.XML;use Glade.XML;
 with ada.text_io;
 
-package body P_window_enregville is
+package body p_window_enregville is
 
 XML : Glade_XML;
 windowenregville:gtk_window;
@@ -38,14 +38,30 @@ rang_ville: Gtk_Tree_Iter := Null_Iter; -- ligne dans le modèle
 	resultEntryNomVille:Unbounded_String;
 	resultEntryMail:Unbounded_String;
 	ville : Basec201_Data.tVille;
+	i : integer;
+	
 	begin
 		
 		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryNomVille"))),resultEntryNomVille);
 	
 		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryMail"))),resultEntryMail);
-		ville:=(resultEntryNomVille,resultEntryMail,Festival_List.Empty_Vector);
 		
-		CreateVille(Ville);
+		--Test de l'email
+			i := 1;
+			while i < length(resultEntryMail) and then element(resultEntryMail,i) /= '@' loop
+				i := i+1;			
+			end loop;
+			while i < length(resultEntryMail) and then element(resultEntryMail,i) /= '.' loop
+				i:= i+1;
+			end loop;
+			
+			if i = length(resultEntryMail) then
+				raise EX_MAIL_INCORRECT;
+			end if;
+		
+		--
+		
+		CreateVille(resultEntryNomVille,resultEntryMail);
 		
 				
 		
@@ -56,7 +72,10 @@ rang_ville: Gtk_Tree_Iter := Null_Iter; -- ligne dans le modèle
 		inittreeview;
 
 	exception
-		when INTEGRITY_VIOLATION => b_box:=message_dialog("Ville déjà existante !",Error,Button_Ok,Button_Ok);
+		when  EXVilleExistante => b_box:=message_dialog("Ville déjà existante !",Error,Button_Ok,Button_Ok); 
+		Set_Text(Gtk_Entry(Get_Widget(XML,"entryMail")),"");
+		Set_Text(Gtk_Entry(Get_Widget(XML,"entryNomVille")),"");
+		when EX_MAIL_INCORRECT => b_box:=message_dialog("Mail de format incorrect !",Error,Button_Ok,Button_Ok); 
 
 
 	end villesuivante;

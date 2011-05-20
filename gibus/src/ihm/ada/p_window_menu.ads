@@ -27,6 +27,9 @@ with p_window_progfestival;
 with p_window_consultprogramme;
 with p_window_enreggroupe;
 
+--Couche appli
+with p_appli_menu;
+
 
 package p_window_menu is  
 

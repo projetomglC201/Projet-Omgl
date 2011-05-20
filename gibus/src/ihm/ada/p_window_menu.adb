@@ -30,7 +30,9 @@ end init;
 	begin
 	b_box:=message_dialog("Êtes-vous sûr de vouloir reinit la base de donnée ?",Confirmation,Button_Yes or Button_No,Button_Yes);
 	case b_box is
-		when 1 => ecrire_ligne("Base reinitialisée"); -- + commande de reinit
+		when 1 => p_appli_menu.reinitDB;
+			ecrire_ligne("Base reinitialisée"); -- + commande de reinit
+				
 		when 2 => ecrire_ligne("Reinitialisation annulée"); -- null;
 		when others => null;
 	end case;

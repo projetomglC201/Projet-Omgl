@@ -21,6 +21,7 @@ with Ada.Containers.Vectors;
 with p_conversion; use p_conversion;
 
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with ada.calendar; use ada.calendar;
 
 package P_window_creerfestival is
   procedure init;

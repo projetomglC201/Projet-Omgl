@@ -4,8 +4,12 @@ with db_commons;
 package p_appli_enregville is
 
 
+EXVilleExistante:exception;
+
+
+
 function GetVillesExistantes return Basec201_Data.Ville_List.Vector;
-	procedure CreateVille (Ville_item : in Basec201_Data.tVille);
+procedure CreateVille (resultEntryNomVille : in Unbounded_String; resultEntryMail : Unbounded_String );
 
 
 

@@ -38,7 +38,7 @@ package ada_main is
    pragma Export (C, main, "main");
 
    type Version_32 is mod 2 ** 32;
-   u00001 : constant Version_32 := 16#a5b94499#;
+   u00001 : constant Version_32 := 16#b2257c33#;
    u00002 : constant Version_32 := 16#4b33036a#;
    u00003 : constant Version_32 := 16#03570e27#;
    u00004 : constant Version_32 := 16#fdd1129e#;
@@ -301,7 +301,7 @@ package ada_main is
    u00261 : constant Version_32 := 16#fd2bf8b3#;
    u00262 : constant Version_32 := 16#a1390e7d#;
    u00263 : constant Version_32 := 16#77e76e8c#;
-   u00264 : constant Version_32 := 16#6979ea6b#;
+   u00264 : constant Version_32 := 16#4e532405#;
    u00265 : constant Version_32 := 16#dc80ce83#;
    u00266 : constant Version_32 := 16#bb19d785#;
    u00267 : constant Version_32 := 16#55412952#;
@@ -399,8 +399,8 @@ package ada_main is
    u00359 : constant Version_32 := 16#69ec71ba#;
    u00360 : constant Version_32 := 16#575033ed#;
    u00361 : constant Version_32 := 16#bf556269#;
-   u00362 : constant Version_32 := 16#dceacef5#;
-   u00363 : constant Version_32 := 16#a2b88162#;
+   u00362 : constant Version_32 := 16#d02635b4#;
+   u00363 : constant Version_32 := 16#85924f0c#;
    u00364 : constant Version_32 := 16#189e788a#;
    u00365 : constant Version_32 := 16#584cab9f#;
    u00366 : constant Version_32 := 16#efd07bf2#;
@@ -495,18 +495,20 @@ package ada_main is
    u00455 : constant Version_32 := 16#56f013ce#;
    u00456 : constant Version_32 := 16#da61347b#;
    u00457 : constant Version_32 := 16#04e8fd7b#;
-   u00458 : constant Version_32 := 16#1599c57d#;
-   u00459 : constant Version_32 := 16#0b634a3d#;
-   u00460 : constant Version_32 := 16#5433a26e#;
-   u00461 : constant Version_32 := 16#ec447f7f#;
-   u00462 : constant Version_32 := 16#0542143b#;
-   u00463 : constant Version_32 := 16#69653848#;
+   u00458 : constant Version_32 := 16#041bdbc6#;
+   u00459 : constant Version_32 := 16#1ce5c31e#;
+   u00460 : constant Version_32 := 16#b8894d0a#;
+   u00461 : constant Version_32 := 16#e4dce326#;
+   u00462 : constant Version_32 := 16#a1789c3d#;
+   u00463 : constant Version_32 := 16#7bd2a89a#;
    u00464 : constant Version_32 := 16#f6fb9621#;
    u00465 : constant Version_32 := 16#96eb33f6#;
-   u00466 : constant Version_32 := 16#2c993f06#;
-   u00467 : constant Version_32 := 16#d8b23bc4#;
-   u00468 : constant Version_32 := 16#842c78ec#;
-   u00469 : constant Version_32 := 16#11b6422c#;
+   u00466 : constant Version_32 := 16#1923a960#;
+   u00467 : constant Version_32 := 16#96263252#;
+   u00468 : constant Version_32 := 16#2c993f06#;
+   u00469 : constant Version_32 := 16#d8b23bc4#;
+   u00470 : constant Version_32 := 16#842c78ec#;
+   u00471 : constant Version_32 := 16#11b6422c#;
 
    pragma Export (C, u00001, "mainB");
    pragma Export (C, u00002, "system__standard_libraryB");
@@ -973,10 +975,12 @@ package ada_main is
    pragma Export (C, u00463, "p_window_menuS");
    pragma Export (C, u00464, "p_esiutB");
    pragma Export (C, u00465, "p_esiutS");
-   pragma Export (C, u00466, "p_window_progfestivalB");
-   pragma Export (C, u00467, "p_window_progfestivalS");
-   pragma Export (C, u00468, "system__memoryB");
-   pragma Export (C, u00469, "system__memoryS");
+   pragma Export (C, u00466, "p_appli_menuB");
+   pragma Export (C, u00467, "p_appli_menuS");
+   pragma Export (C, u00468, "p_window_progfestivalB");
+   pragma Export (C, u00469, "p_window_progfestivalS");
+   pragma Export (C, u00470, "system__memoryB");
+   pragma Export (C, u00471, "system__memoryS");
 
    --  BEGIN ELABORATION ORDER
    --  ada%s
@@ -1441,6 +1445,8 @@ package ada_main is
    --  p_appli_creerfestival%b
    --  p_appli_enregville%s
    --  p_appli_enregville%b
+   --  p_appli_menu%s
+   --  p_appli_menu%b
    --  p_window_creerfestival%s
    --  p_window_creerfestival%b
    --  p_window_enregville%s

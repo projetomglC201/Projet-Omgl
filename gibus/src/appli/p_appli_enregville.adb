@@ -1,4 +1,5 @@
 with ada.text_io;
+with GNU.DB.SQLCLI;
 
 package body p_appli_enregville is
 
@@ -10,20 +11,27 @@ package body p_appli_enregville is
 
 	begin
 	
-	ada.text_io.put_line("Avant retrieve");
 	ListeVille:=Ville_io.retrieve(criteria);
-	ada.text_io.put_line("Apres retrieve");
 
 	return ListeVille;
 
 	end GetVillesExistantes;
 ------------------------------------------------------
-	procedure CreateVille ( Ville_item : in Basec201_Data.tVille) is
+	procedure CreateVille (resultEntryNomVille : in Unbounded_String; resultEntryMail : Unbounded_String ) is
 	
 	
 	begin
+		
+	
+	
+		ville:=(resultEntryNomVille,resultEntryMail,Festival_List.Empty_Vector);
+	
 	
 		Ville_io.Save(Ville_Item,false);
+	
+		exception
+		when GNU.DB.SQLCLI.INTEGRITY_VIOLATION => raise EXVilleExistante;
+	
 	end CreateVille;
 ---------------------------------------------------------------------------
 

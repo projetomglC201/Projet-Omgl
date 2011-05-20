@@ -158,10 +158,11 @@ package body ada_main is
       E259 : Boolean; pragma Import (Ada, E259, "p_window_consultgroupe_E");
       E262 : Boolean; pragma Import (Ada, E262, "p_window_consultprogramme_E");
       E457 : Boolean; pragma Import (Ada, E457, "p_window_enreggroupe_E");
-      E467 : Boolean; pragma Import (Ada, E467, "p_window_progfestival_E");
+      E469 : Boolean; pragma Import (Ada, E469, "p_window_progfestival_E");
       E451 : Boolean; pragma Import (Ada, E451, "ville_io_E");
       E363 : Boolean; pragma Import (Ada, E363, "p_appli_creerfestival_E");
       E461 : Boolean; pragma Import (Ada, E461, "p_appli_enregville_E");
+      E467 : Boolean; pragma Import (Ada, E467, "p_appli_menu_E");
       E264 : Boolean; pragma Import (Ada, E264, "p_window_creerfestival_E");
       E459 : Boolean; pragma Import (Ada, E459, "p_window_enregville_E");
       E463 : Boolean; pragma Import (Ada, E463, "p_window_menu_E");
@@ -516,11 +517,14 @@ package body ada_main is
       E259 := True;
       E262 := True;
       E457 := True;
-      E467 := True;
+      E469 := True;
       E451 := True;
       E363 := True;
+      p_appli_enregville'elab_spec;
       E461 := True;
+      E467 := True;
       E264 := True;
+      p_window_enregville'elab_spec;
       p_window_enregville'elab_body;
       E459 := True;
       E463 := True;
@@ -588,6 +592,7 @@ package body ada_main is
    --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/ville_io.o
    --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/p_appli_creerfestival.o
    --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/p_appli_enregville.o
+   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/p_appli_menu.o
    --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/p_window_creerfestival.o
    --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/p_window_enregville.o
    --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/p_window_menu.o

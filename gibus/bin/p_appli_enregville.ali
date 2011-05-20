@@ -6,22 +6,27 @@ A -gnatv
 A -gnato
 A -gnatA
 P SS ZX
-R nnnnnnnnnnnnnnnnnnnnnnvnnnnnvnnvnnnnnnvnnvnnnnnnnnnnnnnvnnvnnnnnnnnnnnnnnnnnn
+R nnnnnnnnnnnnnnnvnnvnnnvnnnnnvnnvnnnnnnvnnvnnnnnnnnnnnnnvnnvnvnnnnnnnnnnnnnnnn
 
-U p_appli_enregville%b	p_appli_enregville.adb	5433a26e NE OO PK IL
+U p_appli_enregville%b	p_appli_enregville.adb	b8894d0a NE OO PK IL
 W ada%s			ada.ads			ada.ali
-W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
-W system%s		system.ads		system.ali
+W gnu%s			gnu.ads			gnu.ali
+W gnu.db%s		gnu-db.ads		gnu-db.ali
+W gnu.db.sqlcli%s	gnu-db-sqlcli.adb	gnu-db-sqlcli.ali
 W system.finalization_implementation%s  s-finimp.adb  s-finimp.ali
 W system.finalization_root%s  s-finroo.adb	s-finroo.ali
 W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
 W system.soft_links%s	s-soflin.adb		s-soflin.ali
-W system.standard_library%s  s-stalib.adb	s-stalib.ali
 
-U p_appli_enregville%s	p_appli_enregville.ads	ec447f7f EE NE OO PK IL
+U p_appli_enregville%s	p_appli_enregville.ads	e4dce326 EE OO PK IL
+W ada.tags%s		a-tags.adb		a-tags.ali
 W basec201_data%s	basec201_data.adb	basec201_data.ali
 W db_commons%s		db_commons.adb		db_commons.ali
+W system%s		system.ads		system.ali
+W system.exception_table%s  s-exctab.adb	s-exctab.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
 W ville_io%s		ville_io.adb		ville_io.ali
 
 D ada.ads		20070406091342 9c7dd3ea
@@ -38,6 +43,7 @@ D a-ioexce.ads		20070406091342 be0900a0
 D a-stream.ads		20090409232307 34aca5be
 D a-string.ads		20070406091342 87b4230b
 D a-strbou.ads		20090409232307 1d1962a8
+D a-strfix.ads		20070406091342 253a46ca
 D a-strmap.ads		20090409232307 5253a637
 D a-strsup.ads		20090409232307 9dd84fea
 D a-strunb.ads		20090409232307 f0549c04
@@ -53,16 +59,24 @@ D a-unccon.ads		20070406091342 51e09df2
 D base_types.ads	20110513115553 e4ff315f
 D basec201_data.ads	20110513115553 71ef6054
 D db_commons.ads	20110513115554 bd9843a1
+D gnu.ads		20030516195148 2221f792
+D gnu-db.ads		20010322194205 764780f9
+D gnu-db-sqlcli.ads	20070824213701 e406bc71
+D gnu-db-sqlcli.adb	20100704164655 d1f3ba32 1:gnu-db-sqlcli.gpb
+D gnu-db-sqlcli-raise_sql_error.adb  20010805155210 fc4180a2 gnu.db.sqlcli.raise_sql_error
 D interfac.ads		20090409232307 a69cad5c
+D i-c.ads		20070406091342 bc3ef662
 D i-cstrea.ads		20090409232307 e1e064a9
-D p_appli_enregville.ads  20110518105146 a44e4cb4
-D p_appli_enregville.adb  20110520080421 0ef71ab4
+D p_appli_enregville.ads  20110520084923 acd6d0ed
+D p_appli_enregville.adb  20110520085219 f292555a
 D system.ads		20101024233633 15e10948
+D s-atacco.ads		20090409232307 60789a20
 D s-crtl.ads		20090409232307 997234a1
 D s-exctab.ads		20090409232307 5c1c61ae
 D s-ficobl.ads		20090409232307 8bb681e5
 D s-finimp.ads		20090409232307 9449f4cb
 D s-finroo.ads		20090409232307 1408f9d1
+D s-imgint.ads		20090409232307 f77d133c
 D s-parame.ads		20090409232307 f32e56e9
 D s-secsta.ads		20090409232307 7bae3621
 D s-soflin.ads		20090409232307 0c6fd39d
@@ -71,34 +85,46 @@ D s-stalib.ads		20090409232307 52b793d5
 D s-stoele.ads		20090409232307 ed966df3
 D s-stoele.adb		20090409232307 e9998c78
 D s-stratt.ads		20090409232307 fef7c1da
+D s-strops.ads		20090409232307 845f72d2
+D s-sopco3.ads		20090409232307 72ce1063
+D s-sopco4.ads		20090409232307 bc112723
+D s-sopco5.ads		20090409232307 191315e8
 D s-traent.ads		20090409232307 bd5f2753
 D s-unstyp.ads		20090409232307 c0f9fae5
 D s-wchcon.ads		20090409232307 ab028799
 D ville_io.ads		20110513115553 847d103e
 X 1 ada.ads
-16K9*Ada 19e8 33|1r6 13r9 15r9
+16K9*Ada 19e8 40|1r6 14r9 16r9
 X 7 a-convec.ads
-53R9*Vector 32|7r62[28|192] 33|6r56[28|192] 8r47[28|192]
-X 22 a-textio.ads
-48K13*Text_IO 506e16 33|1w10 13r13 15r13
-263U14*Put_Line 33|13r21 15r21
-X 28 basec201_data.ads
-14K9*Basec201_Data 210e18 32|2w6 2r25 7r37 8r48 33|8r22 21r49
-184R12*tVille 188e17 32|8r62 33|21r63
-192K15*Ville_List[7|43] 32|7r51 33|6r45 8r36
-X 29 db_commons.ads
-11K9*DB_Commons 125e15 32|3w6 33|9r18
-45R9*Criteria 123e14 33|9r29
-X 32 p_appli_enregville.ads
-4K9*p_appli_enregville 16l5 16e23 33|3b14 34l5 34t23
-7V10*GetVillesExistantes{7|53R9[28|192]} 33|6b18 19l13 19t32
-8U19*CreateVille 8>32 33|21b19 27l13 27t24
-8r32 Ville_item{28|184R12} 33|21b33 26r31
-X 33 p_appli_enregville.adb
-8r9 ListeVille{7|53R9[28|192]} 14m9 17r16
-9r9 criteria{29|45R9} 14r39
-X 51 ville_io.ads
-12K9*Ville_IO 32|1w6 33|14r21 26r17 51|88e13
-44V13*Retrieve{7|53R9[28|192]} 33|14r30
-55U14*Save 33|26r26
+53R9*Vector 39|11r62[29|192] 40|7r56[29|192] 9r47[29|192]
+X 23 a-textio.ads
+48K13*Text_IO 506e16 40|1w10 14r13 16r13
+263U14*Put_Line 40|14r21 16r21
+X 29 basec201_data.ads
+14K9*Basec201_Data 210e18 39|2w6 2r25 11r37 12r48 40|9r22 22r49
+184R12*tVille 188e17 39|12r62 40|22r63
+192K15*Ville_List[7|43] 39|11r51 40|7r45 9r36
+X 30 db_commons.ads
+11K9*DB_Commons 125e15 39|3w6 40|10r18
+45R9*Criteria 123e14 40|10r29
+X 31 gnu.ads
+43K9*GNU 48e8 40|2r6 30r22
+X 32 gnu-db.ads
+43K13*DB 45e11 40|2r10 30r26
+X 33 gnu-db-sqlcli.ads
+33K16*SQLCLI 1847e18 40|2w13 30r29
+299X4*Integrity_Violation 40|30r36
+X 39 p_appli_enregville.ads
+4K9*p_appli_enregville 20l5 20e23 40|4b14 39l5 39t23
+7X1*EXVilleExistante 40|30r65
+11V10*GetVillesExistantes{7|53R9[29|192]} 40|7b18 20l13 20t32
+12U19*CreateVille 12>32 40|22b19 32l13 32t24
+12r32 Ville_item{29|184R12} 40|22b33 27r31
+X 40 p_appli_enregville.adb
+9r9 ListeVille{7|53R9[29|192]} 15m9 18r16
+10r9 criteria{30|45R9} 15r39
+X 64 ville_io.ads
+12K9*Ville_IO 39|1w6 40|15r21 27r17 64|88e13
+44V13*Retrieve{7|53R9[29|192]} 40|15r30
+55U14*Save 40|27r26
 

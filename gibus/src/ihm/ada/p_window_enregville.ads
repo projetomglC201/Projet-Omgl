@@ -26,6 +26,8 @@ with p_conversion; use p_conversion;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 
 package P_window_enregville is
+
+  EX_MAIL_INCORRECT:exception;
   procedure init;
   procedure fermerFenetre;
   procedure villesuivante;
