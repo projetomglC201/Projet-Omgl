@@ -530,7 +530,7 @@ Alternatif</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <signal name="clicked" handler="on_buttonEnregister_clicked"/>
+                <signal name="clicked" handler="on_buttonEnregistrer_clicked"/>
               </widget>
               <packing>
                 <property name="expand">False</property>

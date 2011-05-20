@@ -55,7 +55,7 @@ rang_ville: Gtk_Tree_Iter := Null_Iter; -- ligne dans le modèle
 				i:= i+1;
 			end loop;
 			
-			if i = length(resultEntryMail) then
+			if i >= length(resultEntryMail) then
 				raise EX_MAIL_INCORRECT;
 			end if;
 		
