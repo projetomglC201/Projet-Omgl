@@ -53,6 +53,7 @@ rang_ville: Gtk_Tree_Iter := Null_Iter; -- ligne dans le modèle
 			if c <= 'a' then
 				c := character'val(character'pos(c)+16#20#);
 			end if;
+			replace_element(resultEntryNomVille,i,c);
 		end loop;
 
 		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryMail"))),resultEntryMail);

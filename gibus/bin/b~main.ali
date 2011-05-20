@@ -12,15 +12,15 @@ A -march=i586
 P ZX
 R nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvvnnvnnnnnnnnnnnnnnn
 
-U ada_main%b		b~main.adb		6c797473 NE OO PK IL
+U ada_main%b		b~main.adb		2f5288e0 NE OO PK IL
 W system%s		system.ads		system.ali
 W system.restrictions%s	s-restri.adb		s-restri.ali
 
-U ada_main%s		b~main.ads		2d945f20 EE NE OO PK IL
+U ada_main%s		b~main.ads		6ebfa3b3 EE NE OO PK IL
 W system%s		system.ads		system.ali
 
-D b~main.ads		20110520130407 38755668
-D b~main.adb		20110520130407 b97e4910
+D b~main.ads		20110520133901 7b5eaafb
+D b~main.adb		20110520133901 b97e4910
 D system.ads		20101024233633 15e10948
 D s-restri.ads		20090409232307 ed726b0b
 D s-rident.ads		20090409232307 e38f8060
