@@ -103,7 +103,7 @@ rang_ville: Gtk_Tree_Iter := Null_Iter; -- ligne dans le modèle
 	procedure finenregistrementville is
 	
 	begin
-		villesuivante;
+	
 		Destroy(windowenregville);
 	end finenregistrementville;
 ------------------------------------------------------------------------------
