@@ -1,0 +1,471 @@
+V "GNAT Lib v4.4"
+A -g
+A -gnatQ
+A -g
+A -gnatv
+A -gnato
+A -gnatA
+P SS ZX
+R nnnnnvvnnnnnnnnvvnvnnvvvnnnnvnnvnnnnnnvnnvnnnnnnnnnnnnnvnnvnnnnnnnnnnnnnnnnnn
+
+U grande_finale_io%b	grande_finale_io.adb	467ef56c NE OO PK IL
+W ada%s			ada.ads			ada.ali
+W ada.characters%s	a-charac.ads		a-charac.ali
+W ada.characters.conversions%s  a-chacon.adb	a-chacon.ali
+W ada.containers%s	a-contai.ads		a-contai.ali
+W ada.containers.vectors%s
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.finalization.list_controller%s  a-filico.adb  a-filico.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.maps%s	a-strmap.adb		a-strmap.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.strings.wide_fixed%s  a-stwifi.adb	a-stwifi.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W basec201_data%s	basec201_data.adb	basec201_data.ali
+W db_commons%s		db_commons.adb		db_commons.ali
+W db_commons.odbc%s	db_commons-odbc.adb	db_commons-odbc.ali
+W environment%s		environment.adb		environment.ali
+W gnu%s			gnu.ads			gnu.ali
+W gnu.db%s		gnu-db.ads		gnu-db.ali
+W gnu.db.sqlcli%s	gnu-db-sqlcli.adb	gnu-db-sqlcli.ali
+W gnu.db.sqlcli.bind%s	gnu-db-sqlcli-bind.adb	gnu-db-sqlcli-bind.ali
+W gnu.db.sqlcli.connection_attribute%s  gnu-db-sqlcli-connection_attribute.adb  gnu-db-sqlcli-connection_attribute.ali
+W gnu.db.sqlcli.environment_attribute%s  gnu-db-sqlcli-environment_attribute.adb  gnu-db-sqlcli-environment_attribute.ali
+W gnu.db.sqlcli.info%s	gnu-db-sqlcli-info.adb	gnu-db-sqlcli-info.ali
+W logger%s		logger.adb		logger.ali
+W system%s		system.ads		system.ali
+W system.finalization_implementation%s  s-finimp.adb  s-finimp.ali
+W system.finalization_root%s  s-finroo.adb	s-finroo.ali
+W system.parameters%s	s-parame.adb		s-parame.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W system.string_ops%s	s-strops.adb		s-strops.ali
+W text_io%s		text_io.ads		text_io.ali
+
+U grande_finale_io%s	grande_finale_io.ads	d38cdf85 EE NE OO PK IL
+W ada%s			ada.ads			ada.ali
+W ada.calendar%s	a-calend.adb		a-calend.ali
+W ada.containers%s	a-contai.ads		a-contai.ali
+W ada.containers.vectors%s
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W base_types%s		base_types.adb		base_types.ali
+W basec201_data%s	basec201_data.adb	basec201_data.ali
+W db_commons%s		db_commons.adb		db_commons.ali
+
+D ada.ads		20070406091342 9c7dd3ea
+D a-calend.ads		20090409232307 19486c30
+D a-charac.ads		20070912115821 506ce725
+D a-chacon.ads		20090409232307 5ad6e116
+D a-chlat1.ads		20070912115821 e9ee6d0a
+D a-contai.ads		20070406091342 7b35f559
+D a-cgarso.ads		20070406091342 943b3aae
+D a-convec.ads		20090409232307 317e4a8c
+D a-convec.adb		20090409232307 5aeb8a2b
+D a-except.ads		20090409232307 b54b55de
+D a-finali.ads		20090409232307 9eaacebd
+D a-filico.ads		20090409232307 9299732a
+D a-ioexce.ads		20070406091342 be0900a0
+D a-stream.ads		20090409232307 34aca5be
+D a-string.ads		20070406091342 87b4230b
+D a-strbou.ads		20090409232307 1d1962a8
+D a-strfix.ads		20070406091342 253a46ca
+D a-strmap.ads		20090409232307 5253a637
+D a-strsup.ads		20090409232307 9dd84fea
+D a-strunb.ads		20090409232307 f0549c04
+D a-suteio.ads		20090409232307 d857a771
+D a-stwifi.ads		20070606102030 c4500171
+D a-stwima.ads		20090409232307 0d039275
+D a-tags.ads		20090409232307 bfa07446
+D a-textio.ads		20090409232307 fe8af46e
+D a-tideio.ads		20090409232307 14eafd1e
+D a-tiflio.ads		20090409232307 5d91823c
+D a-tiinio.ads		20090409232307 949a7272
+D a-unccon.ads		20070406091342 51e09df2
+D a-uncdea.ads		20070406091342 dc667e6d
+D base_types.ads	20110513115553 e4ff315f
+D basec201_data.ads	20110513115553 71ef6054
+D db_commons.ads	20110513115554 bd9843a1
+D db_commons-odbc.ads	20110513115554 9a65b106
+D environment.ads	20110513115553 c8c1edf1
+D gnu.ads		20030516195148 2221f792
+D gnu-db.ads		20010322194205 764780f9
+D gnu-db-sqlcli.ads	20070824213701 e406bc71
+D gnu-db-sqlcli.adb	20100704164655 d1f3ba32 1:gnu-db-sqlcli.gpb
+D gnu-db-sqlcli-bind.ads  20010112233225 a65715c9
+D gnu-db-sqlcli-bind.adb  20030928142035 05b75295
+D gnu-db-sqlcli-connection_attribute.ads  20020530160135 de2ef279
+D gnu-db-sqlcli-dispatch.ads  20040508213613 2eba686b
+D gnu-db-sqlcli-dispatch.adb  20020511202730 8b3070cc
+D gnu-db-sqlcli-dispatch-a_bitmap.ads  20020530160135 a8503033
+D gnu-db-sqlcli-dispatch-a_bitmap.adb  20061212100828 12061a9b
+D gnu-db-sqlcli-dispatch-a_boolean.ads  20020530160135 dc44c882
+D gnu-db-sqlcli-dispatch-a_boolean.adb  20061212100828 c5663c7a
+D gnu-db-sqlcli-dispatch-a_boolean_string.ads  20020530160135 75ba9338
+D gnu-db-sqlcli-dispatch-a_boolean_string.adb  20061212100828 0ba4d452
+D gnu-db-sqlcli-dispatch-a_context.ads  20020530160135 2d2e71a2
+D gnu-db-sqlcli-dispatch-a_context.adb  20061212100828 49cd8b61
+D gnu-db-sqlcli-dispatch-a_enumerated.ads  20040508213552 6a9c3668
+D gnu-db-sqlcli-dispatch-a_enumerated.adb  20061212100828 372b31a2
+D gnu-db-sqlcli-dispatch-a_pointer.ads  20020530160135 70d722b9
+D gnu-db-sqlcli-dispatch-a_pointer.adb  20061212100828 1ed317d4
+D gnu-db-sqlcli-dispatch-a_string.ads  20020530160135 3fed703a
+D gnu-db-sqlcli-dispatch-a_string.adb  20061212100828 9a3e50cc
+D gnu-db-sqlcli-dispatch-a_unsigned.ads  20020530160135 35aa34df
+D gnu-db-sqlcli-dispatch-a_unsigned.adb  20061212100828 969b0ec8
+D gnu-db-sqlcli-dispatch-a_wide_string.ads  20020530160135 46bf7ba6
+D gnu-db-sqlcli-dispatch-a_wide_string.adb  20061212100828 6a9e62b7
+D gnu-db-sqlcli-environment_attribute.ads  20040508213631 fcc89d76
+D gnu-db-sqlcli-generic_attr.ads  20010726133407 ac0c8f29
+D gnu-db-sqlcli-generic_attr-bitmap_attribute.ads  20010726133407 7cfbae76
+D gnu-db-sqlcli-generic_attr-boolean_attribute.ads  20010726133407 133068f4
+D gnu-db-sqlcli-generic_attr-boolean_string_attribute.ads  20010726133407 6ad89c38
+D gnu-db-sqlcli-generic_attr-context_attribute.ads  20010726133407 8af03ba8
+D gnu-db-sqlcli-generic_attr-enumerated_attribute.ads  20010726133407 2c709868
+D gnu-db-sqlcli-generic_attr-pointer_attribute.ads  20010726133407 c9ed3207
+D gnu-db-sqlcli-generic_attr-string_attribute.ads  20010726133407 86f9140b
+D gnu-db-sqlcli-generic_attr-unsigned_attribute.ads  20010726133407 62637858
+D gnu-db-sqlcli-generic_attr-wide_string_attribute.ads  20010726133407 73497a0c
+D gnu-db-sqlcli-info.ads  20020530160136 d314e3da
+D gnu-db-sqlcli-raise_sql_error.adb  20010805155210 fc4180a2 gnu.db.sqlcli.raise_sql_error
+D gnu-db-sqlcli-statement_attribute.ads  20030928142035 d78247aa
+D grande_finale_io.ads	20110513115554 585382ce
+D grande_finale_io.adb	20110513115554 20f8b6e5
+D interfac.ads		20090409232307 a69cad5c
+D i-c.ads		20070406091342 bc3ef662
+D i-cstrea.ads		20090409232307 e1e064a9
+D logger.ads		20110513115554 d7e6c021
+D system.ads		20101024233633 15e10948
+D s-atacco.ads		20090409232307 60789a20
+D s-crtl.ads		20090409232307 997234a1
+D s-exctab.ads		20090409232307 5c1c61ae
+D s-ficobl.ads		20090409232307 8bb681e5
+D s-finimp.ads		20090409232307 9449f4cb
+D s-finroo.ads		20090409232307 1408f9d1
+D s-imgint.ads		20090409232307 f77d133c
+D s-parame.ads		20090409232307 f32e56e9
+D s-secsta.ads		20090409232307 7bae3621
+D s-soflin.ads		20090409232307 0c6fd39d
+D s-stache.ads		20090409232307 257b3be8
+D s-stalib.ads		20090409232307 52b793d5
+D s-stoele.ads		20090409232307 ed966df3
+D s-stoele.adb		20090409232307 e9998c78
+D s-stratt.ads		20090409232307 fef7c1da
+D s-strops.ads		20090409232307 845f72d2
+D s-sopco3.ads		20090409232307 72ce1063
+D s-sopco4.ads		20090409232307 bc112723
+D s-sopco5.ads		20090409232307 191315e8
+D s-string.ads		20090409232307 04f2ee70
+D s-ststop.ads		20090409232307 b2197cc3
+D s-traent.ads		20090409232307 bd5f2753
+D s-unstyp.ads		20090409232307 c0f9fae5
+D s-wchcon.ads		20090409232307 ab028799
+D text_io.ads		20070406091342 7c37c8ff
+X 1 ada.ads
+16K9*Ada 19e8 77|7r6 8r6 9r6 10r6 10r26 16r8 79r54 78|7r6 8r6 8r26 21r6 22r6
+. 23r6 24r6 25r6 27r6 34r8 35r8 36r8 461r54
+X 2 a-calend.ads
+36K13*Calendar 358e17 77|7w10 79r58 78|461r58
+38I9*Time 77|79r67 78|461r67
+X 3 a-charac.ads
+16K13*Characters 18e19 78|24r10
+X 4 a-chacon.ads
+36K24*Conversions 86e31 78|24w21
+X 6 a-contai.ads
+16K13*Containers 22e19 77|9r10 10w10 10r30 78|7r10 8w10 8r30
+20I9*Count_Type<integer> 77|34r90 78|163r90
+X 8 a-convec.ads
+43k24*Vectors 379e27 77|9w21 78|7w21
+53R9*Vector 77|28r78[32|30] 34r74[32|30] 45r80[32|30] 50r81[32|30] 78|149r78[32|30]
+. 163r74[32|30] 176r44[32|30] 194r80[32|30] 203r81[32|30] 208r44[32|30]
+85V13*Length{6|20I9} 78|166r33[32|30]
+91V13*Is_Empty{boolean} 78|152r33[32|30] 182r48[32|30]
+197U14*Append 78|273r46[32|30]
+241V13*First_Element{32|21R12} 78|183r60[32|30]
+X 10 a-except.ads
+53K13*Exceptions 351e19 78|21w10 35r12
+93U14*Raise_Exception 78|84r10 122r10 380r13
+99U14*Reraise_Occurrence 78|281r17 291r9 331r9 372r13 429r9 440r9
+107V13*Exception_Information{string} 78|83r39 85r50 123r54 328r60 371r72
+. 379r43 381r43 426r74 437r74
+X 15 a-string.ads
+16K13*Strings 35e16 77|8r10 16r12 78|22w10 23r10 25r10 27r10 34r12 36r12
+X 18 a-strmap.ads
+38K21*Maps 412e21 78|27w18
+X 20 a-strunb.ads
+39K21*Unbounded 428e26 77|8w18 16r20 78|25w18 34r20
+42R9*Unbounded_String 395e14 77|81r74 78|305r15 346r15 414r15 475r74
+57V13*To_Unbounded_String{42R9} 78|305r49 346r49 414r49
+63V13*To_String{string} 78|320r48 362r46 418r51 476r80
+86V13*"&"{42R9} 78|319r22 319r53 361r22 361r30 361r64 416r22
+90V13*"&"{42R9} 78|305r47 346r47 414r47
+X 22 a-stwifi.ads
+18K21*Wide_Fixed 245e27 78|23w18
+X 31 base_types.ads
+14K9*base_types 67e15 77|6w6 15r8 78|42r8 111r19 124r15
+25F9*Real<long_float> 78|205r38
+36i4*MISSING_I_KEY{integer} 78|111r30 124r26
+56V13*Slice_To_Unbounded{20|42R9} 78|272r45
+X 32 basec201_data.ads
+14K9*Basec201_Data 210e18 77|4w6 23r38 28r45 34r41 40r58 45r47 50r48 56r36
+. 61r45 78|4w6 135r38 136r8 138r30 149r45 150r8 163r41 164r8 175r58 176r11
+. 177r23 182r15 183r27 185r27 194r47 203r48 208r11 234r23 273r13 302r38 343r36
+. 348r27 392r45 397r24
+21R12*tGrande_Finale 26e17 77|23r52 40r72 56r50 61r59 78|135r52 175r72 177r37
+. 234r37 302r52 343r50 348r41 392r59
+22i10*Id_Finale{integer} 78|269m27 318r42 351r61 357r39 395r39
+23i10*Date{2|38I9} 78|270m27 312r41 358r34
+24i10*Prix_Place{integer} 78|271m27 313r47 359r40
+25r10*Gagnant_Finale{20|42R9} 78|272m27 314r51 360r44
+30K15*Grande_Finale_List[8|43] 77|28r59 34r55 45r61 50r62 78|149r59 152r14
+. 163r55 166r14 176r25 182r29 183r41 194r61 203r62 208r25 273r27
+36r7*Null_Grande_Finale{21R12} 78|138r44 185r41 397r38
+X 33 db_commons.ads
+11K9*DB_Commons 125e15 77|5w6 14r22 78|12w6 13r6 38r26
+36E9*Asc_Or_Desc 36e37 77|86r79 87r74 88r80 89r84 78|493r79 500r74 507r80
+. 514r84
+38E9*operation_type 38e59 77|78r80 79r80 80r82 81r99 82r89 78|454r80 461r80
+. 468r82 475r99 482r89
+38n55*eq{38E9} 77|78r99 79r99 80r101 81r118 82r108 78|454r99 461r99 468r101
+. 475r118 482r108
+42E9*join_type 42e43 77|78r112 79r112 80r114 81r131 82r121 78|454r112 461r112
+. 468r114 475r131 482r121
+42n24*join_and{42E9} 77|78r127 79r127 80r129 81r146 82r136 78|454r127 461r127
+. 468r129 475r146 482r136
+44R9*Criterion 108e14 78|455r13 462r13 469r13 476r13 483r13
+45R9*Criteria 123e14 77|45r29 65r28 78r42 79r37 80r43 81r47 82r47 86r55 87r50
+. 88r56 89r60 78|178r13 194r29 306r16 307r20 347r13 393r16 405r28 454r42
+. 461r37 468r43 475r47 482r47 493r55 500r50 507r56 514r60
+46R9*Order_By_Element 78|494r13 501r13 508r13 515r13
+49V13*make_Order_By_Element{46R9} 78|494r35 501r35 508r35 515r35
+52V13*make_Criterion_Element{44R9} 78|476r28 483r28
+58V13*make_Criterion_Element{44R9} 78|455r28 469r28
+68V13*make_Criterion_Element{44R9} 78|462r28
+84V13*To_String{string} 78|196r26 319r26 319r57 407r17
+89V13*To_Crude_Array_Of_Values{string} 78|361r34
+91U14*add_to_criteria 78|457r9 464r9 471r9 478r9 485r9
+92U14*add_to_criteria 78|496r9 503r9 510r9 517r9
+94X4*DB_Exception 78|84r29 122r29 380r32
+X 34 db_commons-odbc.ads
+8K20*ODBC 47e20 78|13w17 38r37
+12R9*Database_Connection 15e14 78|72r41 74r19 93r26 211r26 304r26 345r26
+. 413r26
+14m7*connection{38|323M12} 78|99r61 238r64 322r64 365r64 420r64
+17K12*I_Out_Binding[38|775] 78|100r13 239r16 251r16
+20r4*Null_Database_Connection{12R9} 78|74r48
+23V13*Connect{12R9} 78|76r20
+25U14*Disconnect 78|118r13 286r16 335r13 376r16 434r16
+27V13*Initialise_Prepared_Statement{38|323M12} 78|99r19 238r22
+28V13*Initialise_Prepared_Statement{38|323M12} 78|322r22 365r22 420r22
+31U14*Close_Prepared_Statement 78|117r13 285r16 334r13 375r16 433r16
+37U14*Next_Row 78|107r16 265r19
+45V13*timestamp_To_Ada_Time{2|38I9} 78|270r40
+X 35 environment.ads
+4K9*environment 10e16 78|10w6 77r13 78r13 79r13
+6V13*Get_Server_Name{string} 78|77r25
+7V13*Get_Username{string} 78|78r25
+8V13*Get_Password{string} 78|79r25
+X 36 gnu.ads
+43K9*GNU 48e8 78|15r6 16r6 17r6 18r6 19r6 39r24 40r29
+X 37 gnu-db.ads
+43K13*DB 45e11 78|15r10 16r10 17r10 18r10 19r10 39r28 40r33
+X 38 gnu-db-sqlcli.ads
+33K16*SQLCLI 1847e18 78|15w13 16r13 17r13 18r13 19r13 39r31 40r36
+39M9*SQLPOINTER
+41I9*SQLINTEGER<integer> 78|97r32 230r31 231r26 232r32 233r36
+50M9*SQLUSMALLINT
+117V13*To_SQLPOINTER{39M9} 78|248r33 260r33
+148R9*SQL_TIMESTAMP_STRUCT 156e14 78|204r43 217r21
+257X4*No_Data 78|277r15 326r15 424r23
+319M9*SQLHANDLE
+320m4*SQL_NULL_HANDLE{319M9} 78|92r31 209r23 303r31 344r31 412r31
+323M12*SQLHDBC{319M9} 78|92r16 209r12 303r16 344r16 412r16
+324M12*SQLHSTMT{319M9}
+594n29*SQL_C_CHAR{581E9} 78|259r33
+605n29*SQL_C_TYPE_TIMESTAMP{581E9} 78|246r33
+694M9*SQL_Column_Number<50M9>
+704U14*SQLBindCol 78|244r10 256r10
+704m26 StatementHandle{324M12} 78|245r13 257r13
+705m26 ColumnNumber{694M9} 78|247r13 258r13
+706e26 TargetType{581E9} 78|246r13 259r13
+707m26 TargetValuePtr{39M9} 78|248r13 260r13
+708i26 BufferLength{41I9} 78|249r13 261r13
+709p26 StrLen_Or_IndPtr(41I9) 78|250r13 262r13
+782U17*SQLBindCol 78|100r27[34|17] 239r30[34|17] 251r30[34|17]
+782m29 StatementHandle{324M12} 78|101r13[34|17] 240r13[34|17] 252r13[34|17]
+783m29 ColumnNumber{694M9} 78|102r13[34|17] 241r13[34|17] 253r13[34|17]
+784p29 TargetValue(integer) 78|103r13[34|17] 242r13[34|17] 254r13[34|17]
+785p29 IndPtr(41I9) 78|104r13[34|17] 243r13[34|17] 255r13[34|17]
+930U14*SQLExecute 78|105r7 263r10 323r10 366r10 421r10
+X 40 gnu-db-sqlcli-bind.ads
+33k23*Bind 73e23 78|16w20
+X 42 gnu-db-sqlcli-connection_attribute.ads
+45K23*Connection_Attribute 325e39 78|19w20
+X 63 gnu-db-sqlcli-environment_attribute.ads
+45K23*Environment_Attribute 185e40 78|18w20
+X 74 gnu-db-sqlcli-info.ads
+53K23*Info 2403e23 78|17w20 40r43
+X 77 grande_finale_io.ads
+12K9*Grande_Finale_IO 91l5 91e21 78|32b14 522l5 522t21
+14K12*d=14:22 45r27 65r26 78r40 78r78 78r97 78r110 78r125 79r35 79r78 79r97
+. 79r110 79r125 80r41 80r80 80r99 80r112 80r127 81r45 81r97 81r116 81r129
+. 81r144 82r45 82r87 82r106 82r119 82r134 86r53 86r77 87r48 87r72 88r54 88r78
+. 89r58 89r82 78|84r27 122r27 178r11 194r27 196r24 306r14 307r18 319r24 319r55
+. 347r11 361r32 380r30 393r14 405r26 407r15 454r40 454r78 454r97 454r110
+. 454r125 455r11 455r26 457r7 461r35 461r78 461r97 461r110 461r125 462r11
+. 462r26 464r7 468r41 468r80 468r99 468r112 468r127 469r11 469r26 471r7 475r45
+. 475r97 475r116 475r129 475r144 476r11 476r26 478r7 482r45 482r87 482r106
+. 482r119 482r134 483r11 483r26 485r7 493r53 493r77 494r11 494r33 496r7 500r48
+. 500r72 501r11 501r33 503r7 507r54 507r78 508r11 508r33 510r7 514r58 514r82
+. 515r11 515r33 517r7
+18V13*Next_Free_Id_Finale{integer} 78|91b13 125l8 125t27
+23V13*Is_Null{boolean} 23>22 78|135b13 139l8 139t15 352r18
+23r22 Grande_Finale{32|21R12} 78|135b22 138r14
+28V13*Is_Empty{boolean} 28>23 78|149b13 153l8 153t16
+28r23 Grande_Finale_Liste{8|53R9[32|30]} 78|149b23 152r42
+34V13*Card{6|20I9} 34>19 78|163b13 167l8 167t12
+34r19 Grande_Finale_Liste{8|53R9[32|30]} 78|163b19 166r40
+40V13*Retrieve_By_PK{32|21R12} 40>29 78|175b13 188l8 188t22 351r31
+40i29 Id_Finale{integer} 78|175b29 180r25
+45V13*Retrieve{8|53R9[32|30]} 45>23 78|181r12 194b13 197l8 197t16
+45r23 c{33|45R9} 78|194b23 196r37
+50V13*Retrieve{8|53R9[32|30]} 50>23 78|196r14 203b13 295l8 295t16
+50s23 sqlstr{string} 78|203b23 212r54
+56U14*Save 56>20 56>66 78|343b14 384l8 384t12
+56r20 Grande_Finale{32|21R12} 78|343b20 351r47 353r21 357r25 358r20 359r26
+. 360r30
+56b66 overwrite{boolean} 78|343b66 350r11
+61U14*Delete 61=22 78|392b14 399l8 399t14
+61r22 Grande_Finale{32|21R12} 78|392b22 395r25 397m7
+65U14*Delete 65>22 78|396r7 405b14 409l8 409t14
+65r22 c{33|45R9} 78|405b22 407r28
+69U14*Delete 69>22 78|407r7 411b14 443l8 443t14
+69s22 where_Clause{string} 78|411b22 416r24
+78U14*Add_Id_Finale 78=29 78>52 78>73 78>103 78|180r7 318r7 357r7 395r7 454b14
+. 458l8 458t21
+78r29 c{33|45R9} 78|454b29 457m26
+78i52 Id_Finale{integer} 78|454b52 455r75
+78e73 op{33|38E9} 78|454b73 455r65
+78e103 join{33|42E9} 78|454b103 455r69
+79U14*Add_Date 79=24 79>47 79>73 79>103 78|312r7 358r7 461b14 465l8 465t16
+79r24 c{33|45R9} 78|461b24 464m26
+79i47 Date{2|38I9} 78|461b47 462r70
+79e73 op{33|38E9} 78|461b73 462r60
+79e103 join{33|42E9} 78|461b103 462r64
+80U14*Add_Prix_Place 80=30 80>53 80>75 80>105 78|313r7 359r7 468b14 472l8
+. 472t22
+80r30 c{33|45R9} 78|468b30 471m26
+80i53 Prix_Place{integer} 78|468b53 469r76
+80e75 op{33|38E9} 78|468b75 469r66
+80e105 join{33|42E9} 78|468b105 469r70
+81U14*Add_Gagnant_Finale 81=34 81>57 81>92 81>122 78|314r7 360r7 475b14 479l8
+. 479t26
+81r34 c{33|45R9} 78|475b34 478m26
+81r57 Gagnant_Finale{20|42R9} 78|475b57 476r91
+81e92 op{33|38E9} 78|475b92 476r70
+81e122 join{33|42E9} 78|475b122 476r74
+82U14*Add_Gagnant_Finale 82=34 82>57 82>82 82>112 78|482b14 486l8 486t26
+82r34 c{33|45R9} 78|482b34 485m26
+82s57 Gagnant_Finale{string} 78|482b57 483r80
+82e82 op{33|38E9} 78|482b82 483r70
+82e112 join{33|42E9} 78|482b112 483r74
+86U14*Add_Id_Finale_To_Orderings 86=42 86>65 78|493b14 497l8 497t34
+86r42 c{33|45R9} 78|493b42 496m26
+86e65 direction{33|36E9} 78|493b65 494r71
+87U14*Add_Date_To_Orderings 87=37 87>60 78|500b14 504l8 504t29
+87r37 c{33|45R9} 78|500b37 503m26
+87e60 direction{33|36E9} 78|500b60 501r66
+88U14*Add_Prix_Place_To_Orderings 88=43 88>66 78|507b14 511l8 511t35
+88r43 c{33|45R9} 78|507b43 510m26
+88e66 direction{33|36E9} 78|507b66 508r72
+89U14*Add_Gagnant_Finale_To_Orderings 89=47 89>70 78|514b14 518l8 518t39
+89r47 c{33|45R9} 78|514b47 517m26
+89e70 direction{33|36E9} 78|514b70 515r76
+X 78 grande_finale_io.adb
+38K12 dodbc=38:37 72r35 73r11 74r13 74r42 76r14 93r20 99r13 100r7 107r10
+. 117r7 118r7 211r20 238r16 239r10 251r10 265r13 270r34 285r10 286r10 304r20
+. 322r16 334r7 335r7 345r20 365r16 375r10 376r10 413r20 420r16 433r10 434r10
+39K12 sql=39:31 41r8 92r12 92r27 97r28 303r12 303r27 344r12 344r27 412r12
+. 412r27
+40K12 sql_info=40:43
+50a4 SELECT_PART{string} 212r34
+57a4 INSERT_PART{string} 346r35
+65a4 DELETE_PART{string} 414r35
+70a4 UPDATE_PART{string} 305r35
+72V13 get_connection{34|12R9} 72b13 86l8 86t22 93r49 211r49 304r49 364r24
+. 419r24
+74r7 con{34|12R9} 76m7 80r14
+82r12 Error{10|66R9} 83r61 85r72
+92m7 ps{38|323M12} 99m7 101r33 105r19 107m26 117m39
+93r7 connection{34|12R9} 99r50 118m25
+94a7 query{string} 99r73
+95i7 ai{integer} 103m33 111r14 112m13 114m13 114r19 119r14
+96b7 has_data{boolean} 107m30 108r18
+97i7 output_len{38|41I9} 104m33
+121r12 Error{10|66R9} 123r76
+176r7 l{8|53R9[32|30]} 181m7 182r58 183r75
+177r7 Grande_Finale{32|21R12} 183m10 185m10 187r14
+178r7 c{33|45R9} 180m22 181r22
+204P12 Timestamp_Access(38|148R9) 225r21
+205P12 Real_Access(31|25F9)
+206P12 String_Access(string) 226r31
+208r7 l{8|53R9[32|30]} 273m54 294r14
+209m7 ps{38|323M12} 238m10 240r33 245r33 252r33 257r33 263r22 265m29 285m42
+210b7 has_data{boolean} 265m33 266r21
+211r7 connection{34|12R9} 238r53 286m28
+212a7 query{string} 236r53 238r76
+216i7 Id_Finale{integer} 230r45 242m33 269r40
+217r7 Date{38|148R9} 225m41 231r40
+218i7 Prix_Place{integer} 232r46 254m33 271r41
+219a7 Gagnant_Finale{string} 226m48 233r50 272r65
+225p7 Date_access{204P12} 248r48 270r63
+226p7 Gagnant_Finale_access{206P12} 260r48
+230i7 Id_Finale_len{38|41I9} 243m33
+231i7 Date_len{38|41I9} 250m33
+232i7 Prix_Place_len{38|41I9} 255m33
+233i7 Gagnant_Finale_len{38|41I9} 261r33 262m33 272r93
+234r7 Grande_Finale{32|21R12} 269m13 270m13 271m13 272m13 273r57
+278r15 Error{10|66R9} 281r36
+288r15 Error{10|66R9} 291r28
+302U14 Update 302b14 302>22 336l8 336t14 353r13
+302r22 Grande_Finale{32|21R12} 312r27 313r33 314r37 318r28
+303m7 ps{38|323M12} 322m10 323r22 334m39
+304r7 connection{34|12R9} 322r53 335m25
+305r7 query{20|42R9} 319m7 319r16 320r58 322r76
+306r7 pk_c{33|45R9} 318m22 319r68
+307r7 values_c{33|45R9} 312m17 313m23 314m27 319r37
+327r15 Error{10|66R9} 328r82 331r28
+344m7 ps{38|323M12} 365m10 366r22 375m42
+345r7 connection{34|12R9} 364m10 365r53 376m28
+346r7 query{20|42R9} 361m7 361r16 362r56 365r76
+347r7 c{33|45R9} 357m22 358m17 359m23 360m27 361r60
+348r7 Grande_Finale_Tmp{32|21R12} 351m10 352r27
+370r15 Error{10|66R9} 371r94 372r32
+378r15 Error{10|66R9} 379r65 381r65
+393r10 c{33|45R9} 395m22 396r15
+412m7 ps{38|323M12} 420m10 421r22 433m42
+413r7 connection{34|12R9} 419m10 420r53 434m28
+414r7 query{20|42R9} 416m7 416r16 418r61 420r76
+424r15 Error{10|66R9}
+425r15 Error{10|66R9} 426r96 429r28
+436r15 Error{10|66R9} 437r96 440r28
+455r4 elem{33|44R9} 457r29
+462r4 elem{33|44R9} 464r29
+469r4 elem{33|44R9} 471r29
+476r4 elem{33|44R9} 478r29
+483r4 elem{33|44R9} 485r29
+494r4 elem{33|46R9} 496r29
+501r4 elem{33|46R9} 503r29
+508r4 elem{33|46R9} 510r29
+515r4 elem{33|46R9} 517r29
+X 82 logger.ads
+8K9*Logger 78|30w6 83r10 236r7 275r10 320r7 324r10 328r13 362r7 367r10 371r13
+. 379r13 398r7 408r7 418r10 422r10 426r13 437r13 82|21e11
+17U14*info 78|236r14 275r17 320r14 324r17 362r14 367r17 398r14 408r14 418r17
+. 422r17
+19U14*error 78|83r17 328r20 371r20 379r20 426r20 437r20
+X 108 text_io.ads
+24K9*Text_IO=24:29 78|26w6
+

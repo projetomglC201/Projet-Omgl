@@ -1,0 +1,274 @@
+V "GNAT Lib v4.4"
+A -g
+A -gnatQ
+A -g
+A -gnatv
+A -gnato
+A -gnatA
+P SS ZX
+R nnnnnvvnnnnnnnnvvnvnnvvnnnnnnnnnnnnnnnvnnvnnnnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnnn
+
+U db_commons.odbc%b	db_commons-odbc.adb	bbcb7545 NE OO PK IL
+W ada%s			ada.ads			ada.ali
+W ada.calendar%s	a-calend.adb		a-calend.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W db_commons%s		db_commons.adb		db_commons.ali
+W gnu%s			gnu.ads			gnu.ali
+W gnu.db%s		gnu-db.ads		gnu-db.ali
+W gnu.db.sqlcli%s	gnu-db-sqlcli.adb	gnu-db-sqlcli.ali
+W gnu.db.sqlcli.environment_attribute%s  gnu-db-sqlcli-environment_attribute.adb  gnu-db-sqlcli-environment_attribute.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.string_ops%s	s-strops.adb		s-strops.ali
+W system.string_ops_concat_3%s  s-sopco3.adb	s-sopco3.ali
+W system.string_ops_concat_5%s  s-sopco5.adb	s-sopco5.ali
+W text_io%s		text_io.ads		text_io.ali
+
+U db_commons.odbc%s	db_commons-odbc.ads	d750e38d EE NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W base_types%s		base_types.adb		base_types.ali
+W db_commons%s		db_commons.adb		db_commons.ali
+W gnu%s			gnu.ads			gnu.ali
+W gnu.db%s		gnu-db.ads		gnu-db.ali
+W gnu.db.sqlcli%s	gnu-db-sqlcli.adb	gnu-db-sqlcli.ali  AD
+W system%s		system.ads		system.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+
+D ada.ads		20070406091342 9c7dd3ea
+D a-calend.ads		20090409232307 19486c30
+D a-charac.ads		20070912115821 506ce725
+D a-chacon.ads		20090409232307 5ad6e116
+D a-chlat1.ads		20070912115821 e9ee6d0a
+D a-contai.ads		20070406091342 7b35f559
+D a-convec.ads		20090409232307 317e4a8c
+D a-except.ads		20090409232307 b54b55de
+D a-finali.ads		20090409232307 9eaacebd
+D a-filico.ads		20090409232307 9299732a
+D a-ioexce.ads		20070406091342 be0900a0
+D a-stream.ads		20090409232307 34aca5be
+D a-string.ads		20070406091342 87b4230b
+D a-strbou.ads		20090409232307 1d1962a8
+D a-strfix.ads		20070406091342 253a46ca
+D a-strmap.ads		20090409232307 5253a637
+D a-strsup.ads		20090409232307 9dd84fea
+D a-strunb.ads		20090409232307 f0549c04
+D a-suteio.ads		20090409232307 d857a771
+D a-stwifi.ads		20070606102030 c4500171
+D a-stwima.ads		20090409232307 0d039275
+D a-tags.ads		20090409232307 bfa07446
+D a-textio.ads		20090409232307 fe8af46e
+D a-tideio.ads		20090409232307 14eafd1e
+D a-tiflio.ads		20090409232307 5d91823c
+D a-tiinio.ads		20090409232307 949a7272
+D a-unccon.ads		20070406091342 51e09df2
+D a-uncdea.ads		20070406091342 dc667e6d
+D base_types.ads	20110513115553 e4ff315f
+D db_commons.ads	20110513115554 bd9843a1
+D db_commons-odbc.ads	20110513115554 9a65b106
+D db_commons-odbc.adb	20110513115554 58d94b52
+D gnu.ads		20030516195148 2221f792
+D gnu-db.ads		20010322194205 764780f9
+D gnu-db-sqlcli.ads	20070824213701 e406bc71
+D gnu-db-sqlcli.adb	20100704164655 d1f3ba32 1:gnu-db-sqlcli.gpb
+D gnu-db-sqlcli-dispatch.ads  20040508213613 2eba686b
+D gnu-db-sqlcli-dispatch.adb  20020511202730 8b3070cc
+D gnu-db-sqlcli-dispatch-a_boolean.ads  20020530160135 dc44c882
+D gnu-db-sqlcli-dispatch-a_boolean.adb  20061212100828 c5663c7a
+D gnu-db-sqlcli-dispatch-a_enumerated.ads  20040508213552 6a9c3668
+D gnu-db-sqlcli-dispatch-a_enumerated.adb  20061212100828 372b31a2
+D gnu-db-sqlcli-dispatch-a_string.ads  20020530160135 3fed703a
+D gnu-db-sqlcli-dispatch-a_string.adb  20061212100828 9a3e50cc
+D gnu-db-sqlcli-dispatch-a_unsigned.ads  20020530160135 35aa34df
+D gnu-db-sqlcli-dispatch-a_unsigned.adb  20061212100828 969b0ec8
+D gnu-db-sqlcli-environment_attribute.ads  20040508213631 fcc89d76
+D gnu-db-sqlcli-generic_attr.ads  20010726133407 ac0c8f29
+D gnu-db-sqlcli-generic_attr-boolean_attribute.ads  20010726133407 133068f4
+D gnu-db-sqlcli-generic_attr-enumerated_attribute.ads  20010726133407 2c709868
+D gnu-db-sqlcli-generic_attr-string_attribute.ads  20010726133407 86f9140b
+D gnu-db-sqlcli-generic_attr-unsigned_attribute.ads  20010726133407 62637858
+D gnu-db-sqlcli-raise_sql_error.adb  20010805155210 fc4180a2 gnu.db.sqlcli.raise_sql_error
+D interfac.ads		20090409232307 a69cad5c
+D i-c.ads		20070406091342 bc3ef662
+D i-cstrea.ads		20090409232307 e1e064a9
+D system.ads		20101024233633 15e10948
+D s-atacco.ads		20090409232307 60789a20
+D s-crtl.ads		20090409232307 997234a1
+D s-exctab.ads		20090409232307 5c1c61ae
+D s-ficobl.ads		20090409232307 8bb681e5
+D s-finimp.ads		20090409232307 9449f4cb
+D s-finroo.ads		20090409232307 1408f9d1
+D s-imgint.ads		20090409232307 f77d133c
+D s-parame.ads		20090409232307 f32e56e9
+D s-secsta.ads		20090409232307 7bae3621
+D s-soflin.ads		20090409232307 0c6fd39d
+D s-stache.ads		20090409232307 257b3be8
+D s-stalib.ads		20090409232307 52b793d5
+D s-stoele.ads		20090409232307 ed966df3
+D s-stoele.adb		20090409232307 e9998c78
+D s-stratt.ads		20090409232307 fef7c1da
+D s-strops.ads		20090409232307 845f72d2
+D s-sopco3.ads		20090409232307 72ce1063
+D s-sopco4.ads		20090409232307 bc112723
+D s-sopco5.ads		20090409232307 191315e8
+D s-string.ads		20090409232307 04f2ee70
+D s-ststop.ads		20090409232307 b2197cc3
+D s-traent.ads		20090409232307 bd5f2753
+D s-unstyp.ads		20090409232307 c0f9fae5
+D s-wchcon.ads		20090409232307 ab028799
+D text_io.ads		20070406091342 7c37c8ff
+X 1 ada.ads
+16K9*Ada 19e8 31|6r6 10r8 43r46 45r76 32|7r6 8r6 10r6 15r8 16r8 26r28 57r46
+. 63r76
+X 2 a-calend.ads
+36K13*Calendar 358e17 31|43r50 45r80 32|10w10 26r32 57r50 63r80
+38I9*Time 31|43r59 45r89 32|26r41 57r59 63r89
+X 8 a-except.ads
+53K13*Exceptions 351e19 32|8w10 16r12
+93U14*Raise_Exception 32|74r10 85r13 106r10 121r10 133r10 148r10 157r10
+107V13*Exception_Information{string} 32|74r95 85r96 110r13 121r95 133r114
+. 148r92 157r96
+X 13 a-string.ads
+16K13*Strings 35e16 31|6r10 10r12 32|7r10 15r12
+X 18 a-strunb.ads
+39K21*Unbounded 428e26 31|6w18 10r20 32|7w18 15r20
+42R9*Unbounded_String 395e14 31|28r67 32|136r67
+63V13*To_String{string} 32|138r50
+X 29 base_types.ads
+14K9*base_types 67e15 31|5w6 5r22
+25F9*Real<long_float>
+X 30 db_commons.ads
+11K9*DB_Commons 125e15 31|8r9 47r5 32|9w6 13r14 23r14 32r12 44r42 160r5
+13F12*Real{29|25F9} 31|18r61 32|40r22
+19R9*Date_Time_Rec 27e14 31|44r77 32|31r77 32r23 44r53 58r12 64r11
+20i7*year{integer} 32|34m10 47r39
+21i7*month{integer} 32|35m10 48r41
+22i7*day{integer} 32|36m10 49r39
+23i7*hour{integer} 32|37m10 50r40
+24i7*minute{integer} 32|38m10 51r42
+25i7*second{integer} 32|39m10 52r42
+26f7*fraction{13F12} 32|40m10 53r49
+29V13*Date_Time_To_Ada_Time{2|38I9} 32|66r14
+30V13*Ada_Time_To_Date_Time{19R9} 32|58r29
+31V13*to_string{string} 32|23r25
+94X4*DB_Exception 32|74r27 85r30 106r27 121r27 133r27 148r27 157r27
+X 31 db_commons-odbc.ads
+8K20*ODBC 30|11k9 31|47l16 47e20 32|13b25 160l16 160t20
+12R9*Database_Connection 15e14 20r40 23r91 25r39 32|88r91 89r13 113r39
+13m7*environment{35|322M12} 21r9 32|91m60 92r32 97r43 117m42
+14m7*connection{35|323M12} 21r41 32|97m60 99r38 115r27 116m42
+17K12*I_Out_Binding[35|775]
+18K12*R_Out_Binding[35|837]
+20r4*Null_Database_Connection{12R9} 32|118r14
+23V13*Connect{12R9} 23>22 23>44 23>64 32|88b13 111l8 111t15
+23s22 Server_Name{string} 32|88b22 100r34 107r31
+23s44 User_Name{string} 32|88b44 101r34 108r30
+23s64 password{string} 32|88b64 102r34 109r29
+25U14*Disconnect 25=26 32|113b14 122l8 122t18
+25r26 con{12R9} 32|113b26 115r23 116m38 117m38 118m7
+27V13*Initialise_Prepared_Statement{35|323M12} 27>44 27>59 32|125b13 134l8
+. 134t37 138r14
+27m44 con{35|323M12} 32|125b44 128r41
+27s59 query{string} 32|125b59 129r31
+28V13*Initialise_Prepared_Statement{35|323M12} 28>44 28>59 32|136b13 139l8
+. 139t37
+28m44 con{35|323M12} 32|136b44 138r45
+28r59 query{18|42R9} 32|136b59 138r60
+31U14*Close_Prepared_Statement 31=40 32|142b14 149l8 149t32
+31m40 statement{35|323M12} 32|142b40 144m42 145m10
+33U14*Commit 33=22 32|152b14 158l8 158t14
+33m22 con{35|323M12} 32|152b22 154r19
+35U14*Execute 35=23 32|69b14 75l8 75t15
+35m23 ps{35|323M12} 32|69b23 71r21
+37U14*Next_Row 37=24 37=45 32|77b14 86l8 86t16
+37m24 ps{35|323M12} 32|77b24 79r18
+37b45 has_data{boolean} 32|77b45 80m7 83m13
+42V13*To_String{string} 42>24 32|21b13 24l8 24t17 28r14
+42r24 t{35|148R9} 32|21b24 23r59
+43V13*Ada_Time_To_Timestamp{35|148R9} 43>36 32|28r25 57b13 61l8 61t29
+43i36 adaTime{2|38I9} 32|57b36 58r52
+44V13*Timestamp_To_Date_Time{30|19R9} 44>37 32|23r35 31b13 42l8 42t30 64r28
+44r37 sqlTime{35|148R9} 32|31b37 34r27 35r28 36r26 37r27 38r29 39r29 40r28
+45V13*timestamp_To_Ada_Time{2|38I9} 45>36 32|63b13 67l8 67t29
+45r36 sqlTime{35|148R9} 32|63b36 64r52
+X 32 db_commons-odbc.adb
+18K12 dbenv=18:40 92r7 93r23 94r36 95r36
+26V13 To_String{string} 26b13 26>24 29l8 29t17
+26i24 t{2|38I9} 28r48
+32r7 dt{30|19R9} 34m7 35m7 36m7 37m7 38m7 39m7 40m7 41r14
+44V13 Date_Time_To_Timestamp{35|148R9} 44b13 44>37 55l8 55t30 60r14
+44r37 dt{30|19R9} 47r36 48r38 49r36 50r37 51r39 52r39 53r46
+45r7 sqlTime{35|148R9} 47m7 48m7 49m7 50m7 51m7 52m7 53m7 54r14
+58r7 dt{30|19R9} 60r38
+64r6 tr{30|19R9} 66r37
+73r12 Error{8|66R9} 74r117
+84r15 Error{8|66R9} 85r118
+89r7 con{31|12R9} 91m56 92r28 97r39 97m56 99r34 103r14
+105r12 Error{8|66R9} 110r35
+120r12 Error{8|66R9} 121r117
+126m7 statement{35|323M12} 128m46 129r20 130r14
+132r12 Error{8|66R9} 133r136
+147r12 Error{8|66R9} 148r114
+156r12 Error{8|66R9} 157r118
+X 33 gnu.ads
+43K9*GNU 31|4r6 4r25 17r33 18r33 31r59 32|4r6 5r6 18r26 33|48e8
+X 34 gnu-db.ads
+43K13*DB 31|4r10 4r29 17r37 18r37 31r63 32|4r10 5r10 18r30 34|45e11
+X 35 gnu-db-sqlcli.ads
+33K16*SQLCLI 31|4w13 4r32 17r40 18r40 31r66 32|4w13 5r13 18r33 35|1847e18
+47I9*SQLSMALLINT<short_integer> 32|47r23
+50M9*SQLUSMALLINT 32|48r24 49r22 50r23 51r25 52r25
+145I9*SQL_TIME_FRACTION<integer> 32|53r27
+148R9*SQL_TIMESTAMP_STRUCT 31|42r28 43r73 44r47 45r46 32|21r28 31r47 44r76
+. 45r17 57r73 63r46 35|156e14
+149i7*year{47I9} 32|34r35 47m15
+150m7*month{50M9} 32|35r36 48m15
+151m7*day{50M9} 32|36r34 49m15
+152m7*hour{50M9} 32|37r35 50m15
+153m7*minute{50M9} 32|38r37 51m15
+154m7*second{50M9} 32|39r37 52m15
+155i7*fraction{145I9} 32|40r36 53m15
+257X4*No_Data 32|82r15
+319M9*SQLHANDLE
+320m4*SQL_NULL_HANDLE{319M9} 31|21r24 21r55 32|91r39 145r23
+322M12*SQLHENV{319M9} 31|13r21
+323M12*SQLHDBC{319M9} 31|14r21 27r50 27r83 28r50 28r93 31r73 33r35 35r35
+. 37r36 32|69r35 77r36 125r50 125r83 126r19 136r50 136r93 142r59 152r35
+362n29*SQL_HANDLE_ENV{362E9} 32|91r23 117r22
+363n29*SQL_HANDLE_DBC{362E9} 32|97r23 116r22
+364n29*SQL_HANDLE_STMT{362E9} 32|128r24 144r25
+379U14*SQLAllocHandle 32|91r7 97r7 128r7
+388U14*SQLFreeHandle 32|116r7 117r7 144r10
+410U14*SQLConnect 32|98r7
+410m26 ConnectionHandle{323M12} 32|99r11
+411s26 ServerName{string} 32|100r16
+412s26 UserName{string} 32|101r16
+413s26 Authentication{string} 32|102r16
+430U14*SQLDisconnect 32|115r7
+775k12*IntegerBinding 31|17r47 35|800e22
+837k12*FloatBinding 31|18r47 35|862e20
+930U14*SQLExecute 32|71r8
+952U14*SQLFetch 32|79r7
+987U14*SQLPrepare 32|129r7
+1058U14*SQLCommit 32|154r7
+X 41 gnu-db-sqlcli-dispatch-a_enumerated.ads
+41R12*Info{50|36R9[40[47|149]]}
+X 47 gnu-db-sqlcli-environment_attribute.ads
+45K23*Environment_Attribute 32|5w20 18r40 47|185e40
+47n39*SQL_ATTR_ODBC_VERSION{47E9} 32|94r42
+144n30*SQL_OV_ODBC3{143E9} 32|95r42
+154R12*Environment_Attribute_ODBC_Version{41|41R12[149]} 32|93r29
+165U14*SQLSetEnvAttr 32|92r13
+X 48 gnu-db-sqlcli-generic_attr.ads
+72H9*Attribute_Value_Pair
+74e10*Attribute{47|47E9} 32|94r23[47|79]
+X 50 gnu-db-sqlcli-generic_attr-enumerated_attribute.ads
+36R9*Attribute_Value_Pair_Enum<48|72R9[47|79]>
+39e10*Value{47|143E9} 32|95r23[41|40[47|149]]
+X 82 text_io.ads
+24K9*Text_IO=24:29 32|11w6
+
