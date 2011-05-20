@@ -5,6 +5,7 @@ package p_appli_enregville is
 
 
 function GetVillesExistantes return Basec201_Data.Ville_List.Vector;
+	procedure CreateVille (Ville_item : in Basec201_Data.tVille);
 
 
 

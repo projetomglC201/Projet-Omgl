@@ -28,7 +28,7 @@
               </packing>
             </child>
             <child>
-              <widget class="GtkComboBox" id="combobox1">
+              <widget class="GtkComboBox" id="comboboxVille">
                 <property name="visible">True</property>
                 <property name="button_sensitivity">on</property>
               </widget>
@@ -170,7 +170,7 @@
               </packing>
             </child>
             <child>
-              <widget class="GtkEntry" id="entry1">
+              <widget class="GtkEntry" id="entryNbgroupes1">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="invisible_char">&#x2022;</property>
@@ -202,7 +202,7 @@
               </packing>
             </child>
             <child>
-              <widget class="GtkEntry" id="entry2">
+              <widget class="GtkEntry" id="entryNbgroupes2">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="invisible_char">&#x2022;</property>

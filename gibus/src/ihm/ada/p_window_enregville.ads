@@ -21,7 +21,9 @@ with p_util_treeview; use p_util_treeview;  -- utilitaire de gestion d'une treeV
 with p_appli_enregville; use p_appli_enregville;
 with Basec201_Data; use basec201_data;
 with Ada.Containers.Vectors;
-with p_conversion;
+with p_conversion; use p_conversion;
+
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 
 package P_window_enregville is
   procedure init;
