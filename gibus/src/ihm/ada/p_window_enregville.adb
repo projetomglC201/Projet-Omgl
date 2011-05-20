@@ -39,11 +39,21 @@ rang_ville: Gtk_Tree_Iter := Null_Iter; -- ligne dans le modèle
 	resultEntryMail:Unbounded_String;
 	ville : Basec201_Data.tVille;
 	i : integer;
-	
+	ex_PasNomVille,ex_PasMail: exception;
+	c:character;
 	begin
 		
 		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryNomVille"))),resultEntryNomVille);
-	
+		
+		if element(resultEntryNomVille,1) >= 'a' then
+			element(resultEntryNomVille,1) := character'value(character'pos(element(resultEntryNomVille,1)) -16#20#);
+		for i in 2..length(resultEntryNomVille) loop
+			c:= element(resultEntryNomVille,i)
+			if c <= 'a' then
+				c := character'value(character'pos(c)+16#20#);
+			end if;
+		end loop;
+
 		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryMail"))),resultEntryMail);
 		
 		--Test de l'email
@@ -55,10 +65,17 @@ rang_ville: Gtk_Tree_Iter := Null_Iter; -- ligne dans le modèle
 				i:= i+1;
 			end loop;
 			
-			if i >= length(resultEntryMail) then
+			if length(resultEntryMail) = 0 then
+				raise EX_PasMail;
+			if i = length(resultEntryMail) then
 				raise EX_MAIL_INCORRECT;
 			end if;
 		
+		--test du nomville
+		
+			if length(resultEntryNomVille) <= 0 then
+				raise ex_pasnomville;
+			end if;
 		--
 		
 		CreateVille(resultEntryNomVille,resultEntryMail);
@@ -76,7 +93,8 @@ rang_ville: Gtk_Tree_Iter := Null_Iter; -- ligne dans le modèle
 		Set_Text(Gtk_Entry(Get_Widget(XML,"entryMail")),"");
 		Set_Text(Gtk_Entry(Get_Widget(XML,"entryNomVille")),"");
 		when EX_MAIL_INCORRECT => b_box:=message_dialog("Mail de format incorrect !",Error,Button_Ok,Button_Ok); 
-
+		when ex_PasNomVille =>  b_box:=message_dialog("Vous n'avez pas saisi le nom de la ville !",Error,Button_Ok,Button_Ok);
+		when ex_PasMail =>  b_box:=message_dialog("Vous n'avez pas saisi l'adresse mail !",Error,Button_Ok,Button_Ok);
 
 	end villesuivante;
 ------------------------------------------------------------------------
