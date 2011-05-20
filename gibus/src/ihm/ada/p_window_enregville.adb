@@ -46,11 +46,12 @@ rang_ville: Gtk_Tree_Iter := Null_Iter; -- ligne dans le modèle
 		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryNomVille"))),resultEntryNomVille);
 		
 		if element(resultEntryNomVille,1) >= 'a' then
-			element(resultEntryNomVille,1) := character'value(character'pos(element(resultEntryNomVille,1)) -16#20#);
+			replace_element(resultEntryNomVille,1,(character'val(character'pos(element(resultEntryNomVille,1)) -16#20#)));
+		end if;
 		for i in 2..length(resultEntryNomVille) loop
-			c:= element(resultEntryNomVille,i)
+			c:= element(resultEntryNomVille,i);
 			if c <= 'a' then
-				c := character'value(character'pos(c)+16#20#);
+				c := character'val(character'pos(c)+16#20#);
 			end if;
 		end loop;
 
@@ -67,6 +68,7 @@ rang_ville: Gtk_Tree_Iter := Null_Iter; -- ligne dans le modèle
 			
 			if length(resultEntryMail) = 0 then
 				raise EX_PasMail;
+			end if;
 			if i = length(resultEntryMail) then
 				raise EX_MAIL_INCORRECT;
 			end if;

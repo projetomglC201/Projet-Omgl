@@ -136,25 +136,14 @@ D p_appli_enregville.ads  20110520114953 b4f34d59
 D p_appli_menu.ads	20110520114140 052ba878
 D p_conversion.ads	20110411141559 02c76134
 D p_util_treeview.ads	20100331082247 f118f0fc
-<<<<<<< HEAD
-D p_window_consulterfestival.ads  20110422120033 57f523b7
-D p_window_consultgroupe.ads  20110511104700 ceedc9ba
-D p_window_consultprogramme.ads  20110418112510 202e77c1
-D p_window_creerfestival.ads  20110520123555 ed50b747
-D p_window_enreggroupe.ads  20110419112337 85ff84c7
-D p_window_enregville.ads  20110520090307 8326bda7
-D p_window_menu.ads	20110520091920 68fe1f1b
-D p_window_progfestival.ads  20110509105654 91551071
-=======
 D p_window_consulterfestival.ads  20110513121635 57f523b7
 D p_window_consultgroupe.ads  20110513121635 ceedc9ba
 D p_window_consultprogramme.ads  20110513121635 202e77c1
-D p_window_creerfestival.ads  20110520114140 dd34eb37
+D p_window_creerfestival.ads  20110520124132 ed50b747
 D p_window_enreggroupe.ads  20110513121635 85ff84c7
 D p_window_enregville.ads  20110520114140 8326bda7
 D p_window_menu.ads	20110520114140 68fe1f1b
 D p_window_progfestival.ads  20110513121635 91551071
->>>>>>> 3b93e0b773aa771d1feff0398a37836252f1d77c
 D pango.ads		20091225112832 567c5424
 D pango-attributes.ads	20091225112832 21e060ad
 D pango-context.ads	20091225112832 dbda6b1f
