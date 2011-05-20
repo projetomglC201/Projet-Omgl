@@ -3,6 +3,7 @@ with Glade.XML;use Glade.XML;
 with System; use System;
 with Gtk.Main;
 with Gtkada.Dialogs;use Gtkada.Dialogs;
+with Glib; use Glib;
 
 -- pour gérer les composants de la fenetre
 with Gtk.Window; use Gtk.Window;
@@ -17,11 +18,16 @@ with Gtk.calendar; Use Gtk.calendar;
 
 with p_appli_creerfestival; use p_appli_creerfestival;
 with Basec201_Data; use basec201_data;
+with Ada.Containers; use Ada.Containers;
 with Ada.Containers.Vectors;
 with p_conversion; use p_conversion;
 
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with ada.calendar; use ada.calendar;
+with ville_io;
+with festival_io;
+with jour_festival_io;
+
 
 package P_window_creerfestival is
   procedure init;

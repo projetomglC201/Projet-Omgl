@@ -1,6 +1,6 @@
 --with tp_Intl; use tp_Intl;
 with Glade.XML;use Glade.XML;
-with base_type; use base_type;
+
 package body P_window_creerfestival is
 
 
@@ -23,23 +23,25 @@ end init;
 	procedure validerfestival is
 	b_box:message_dialog_buttons;
 	resultcomboboxVille:Unbounded_String;
---	resultcalendardatedebut: ?
+	resultcalendardatedebut:time;
 	resultEntryLieu:Unbounded_String;
-	resultentryPrixEntree:Unbounded_String;
+	resultentryPrixEntree:integer;
 	resultentryNbgroupes1:integer;
 	resultentryNbgroupes2:integer;
 	festival:tfestival;
 	jours : Jour_Festival_List.Vector;
 	jour1,jour2 : tJour_Festival;
 	an,mois,jour:Guint;
-	date:time;
+
 	resultentryHeure1:integer;
 	resultentryHeure2:integer;
+	IDFESTIVAL:integer:=festival_io.next_free_id_festival;
 	begin
 	
 	
 		to_ada_type(Get_Active_Text(Gtk_combo_box(Get_Widget(XML,"comboboxVille"))),resultcomboboxVille);
-		Get_Date(Gtk_calendar(Get_Widget(XML,"calendardatedebut")),an,mois,jour);	
+		Get_Date(Gtk_calendar(Get_Widget(XML,"calendardatedebut")),an,mois,jour);
+		resultcalendardatedebut:=Time_Of(integer(an),integer(mois),integer(jour));	
 		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryLieu"))),resultEntryLieu);
 	
 		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryPrixEntree"))),resultentryPrixEntree);
@@ -48,12 +50,13 @@ end init;
 		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryHeure1"))),resultentryHeure1);
 		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryHeure2"))),resultentryHeure2);
 
-		jour1 := (MISSING_I_KEY,MISSING_I_KEY,1,resultEntryNbGroupes1, heure,Groupe_List.Empty_Vector);
-		jour2 := (MISSING_I_KEY,MISSING_I_KEY,2,resultEntryNbGroupes2,heure,Groupe_List.Empty_Vector);
+		jour1 := (jour_festival_io.Next_Free_Id_Jour_Festival,IDFESTIVAL,1,resultEntryNbGroupes1, resultentryHeure1,Groupe_List.Empty_Vector);
+		jour2 := (jour_festival_io.Next_Free_Id_Jour_Festival+1,IDFESTIVAL,2,resultEntryNbGroupes2,resultentryHeure2,Groupe_List.Empty_Vector);
 		
-		jours := (jour1,jour2);
-	
-		festival:=(default, resultcomboboxVille, date, resultEntryLieu, resultEntryPrixEntree, jours, Gagnant_Festival_List.empty_vector);
+		--Ada.Containers.Vectors.Append (jours,jour1);
+		--Ada.Containers.Vectors.Append (jours,jour2);
+		
+		festival:=(IDFESTIVAL, resultcomboboxVille, resultcalendardatedebut, resultEntryLieu, resultEntryPrixEntree,jours, Gagnant_Festival_List.empty_vector);
 		
 		CreateFestival(festival);
 		
