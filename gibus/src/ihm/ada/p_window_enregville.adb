@@ -81,10 +81,9 @@ rang_ville: Gtk_Tree_Iter := Null_Iter; -- ligne dans le modèle
 	end villesuivante;
 ------------------------------------------------------------------------
 	procedure finenregistrementville is
-	b_box:message_dialog_buttons;
+	
 	begin
-		b_box:=message_dialog("Ville enregistrée !",Information,Button_Ok,Button_Ok);
-		--enregistrement
+		villesuivante;
 		Destroy(windowenregville);
 	end finenregistrementville;
 ------------------------------------------------------------------------------
@@ -101,15 +100,15 @@ rang_ville: Gtk_Tree_Iter := Null_Iter; -- ligne dans le modèle
 		end alimente;
 
 	begin
-		ada.text_io.put_line("Début");
+		
 		creerColonne("nomVille", treeView_ville, false);
-		ada.text_io.put_line("Colonne créée");
+		
 		creerModele(treeView_ville,modele_ville);
-		ada.text_io.put_line("Modele Créé");
+		
 		liste_ville := p_appli_enregville.GetVillesExistantes;
-		ada.text_io.put_line("Init liste ville");
+		
 		Ville_List.iterate(liste_ville, alimente'Access);
-		ada.text_io.put_line("Appel de alimente");
+		
 		
 	
 	end inittreeview;

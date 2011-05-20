@@ -1,6 +1,6 @@
 --with tp_Intl; use tp_Intl;
 with Glade.XML;use Glade.XML;
-
+with base_type; use base_type;
 package body P_window_creerfestival is
 
 

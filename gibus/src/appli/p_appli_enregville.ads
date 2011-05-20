@@ -1,6 +1,7 @@
 with ville_io;
 with basec201_data; use basec201_data;
 with db_commons;
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 package p_appli_enregville is
 
 
