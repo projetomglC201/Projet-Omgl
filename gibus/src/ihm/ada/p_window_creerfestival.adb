@@ -53,8 +53,7 @@ end init;
 		jour1 := (jour_festival_io.Next_Free_Id_Jour_Festival,IDFESTIVAL,1,resultEntryNbGroupes1, resultentryHeure1,Groupe_List.Empty_Vector);
 		jour2 := (jour_festival_io.Next_Free_Id_Jour_Festival+1,IDFESTIVAL,2,resultEntryNbGroupes2,resultentryHeure2,Groupe_List.Empty_Vector);
 		
-		.Append (jours,jour1);
-		Ada.Containers.Vectors.Append (jours,jour2);
+
 		
 		festival:=(IDFESTIVAL, resultcomboboxVille, resultcalendardatedebut, resultEntryLieu, resultEntryPrixEntree, Jour_Festival_List.empty_vector, Gagnant_Festival_List.empty_vector);
 		
