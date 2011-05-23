@@ -523,7 +523,6 @@ package body ada_main is
       p_appli_enregville'elab_spec;
       E461 := True;
       E467 := True;
-      p_window_creerfestival'elab_body;
       E264 := True;
       p_window_enregville'elab_spec;
       p_window_enregville'elab_body;
@@ -571,34 +570,34 @@ package body ada_main is
    end;
 
 --  BEGIN Object file/option list
-   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/base_types.o
-   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/basec201_data.o
-   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/db_commons.o
-   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/environment.o
-   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/db_commons-odbc.o
-   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/logger.o
-   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/jour_festival_io.o
-   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/groupe_io.o
-   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/grande_finale_io.o
-   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/gagnant_festival_io.o
-   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/festival_io.o
-   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/p_esiut.o
-   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/p_conversion.o
-   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/p_util_treeview.o
-   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/p_window_consulterfestival.o
-   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/p_window_consultgroupe.o
-   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/p_window_consultprogramme.o
-   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/p_window_enreggroupe.o
-   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/p_window_progfestival.o
-   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/ville_io.o
-   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/p_appli_creerfestival.o
-   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/p_appli_enregville.o
-   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/p_appli_menu.o
-   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/p_window_creerfestival.o
-   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/p_window_enregville.o
-   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/p_window_menu.o
-   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/main.o
-   --   -L/users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/
+   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/base_types.o
+   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/basec201_data.o
+   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/db_commons.o
+   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/environment.o
+   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/db_commons-odbc.o
+   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/logger.o
+   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/jour_festival_io.o
+   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/groupe_io.o
+   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/grande_finale_io.o
+   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/gagnant_festival_io.o
+   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/festival_io.o
+   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/p_esiut.o
+   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/p_conversion.o
+   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/p_util_treeview.o
+   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/p_window_consulterfestival.o
+   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/p_window_consultgroupe.o
+   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/p_window_consultprogramme.o
+   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/p_window_enreggroupe.o
+   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/p_window_progfestival.o
+   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/ville_io.o
+   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/p_appli_creerfestival.o
+   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/p_appli_enregville.o
+   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/p_appli_menu.o
+   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/p_window_creerfestival.o
+   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/p_window_enregville.o
+   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/p_window_menu.o
+   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/main.o
+   --   -L/users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/
    --   -L/usr/lib/ada/adalib/gnadecommon/
    --   -L/usr/lib/ada/adalib/gnadeodbc/
    --   -L/usr/lib/ada/adalib/aunit/

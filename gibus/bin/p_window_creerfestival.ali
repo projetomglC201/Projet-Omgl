@@ -6,14 +6,14 @@ A -gnatv
 A -gnato
 A -gnatA
 P SS ZX
-R nnnnnvvnnvnnnnnvnnvnnnnvnnnnnnnvnnnnnnvnnvnnnnnnnnnnnnnvnnvnvnnnnnnnnnnnnnnnn
+R nnnnnvvnnvnnnnnvnnvnnnnvnnnnnnnvnnnnnnvnnvnnnnnnnnnnnnnvnnvnnnnnnnnnnnnnnnnnn
 
-U p_window_creerfestival%b  p_window_creerfestival.adb  e5690b54 OO PK IL
+U p_window_creerfestival%b  p_window_creerfestival.adb  5c3dc887 NE OO PK IL
 W ada.exceptions%s	a-except.adb		a-except.ali
 W ada.finalization.list_controller%s  a-filico.adb  a-filico.ali
 W ada.tags%s		a-tags.adb		a-tags.ali
 W glade%s		glade.adb		glade.ali
-W glade.xml%s		glade-xml.adb		glade-xml.ali  AD
+W glade.xml%s		glade-xml.adb		glade-xml.ali
 W system%s		system.ads		system.ali
 W system.finalization_implementation%s  s-finimp.adb  s-finimp.ali
 W system.finalization_root%s  s-finroo.adb	s-finroo.ali
@@ -80,10 +80,10 @@ D a-tiflio.ads		20090409232307 5d91823c
 D a-tiinio.ads		20090409232307 949a7272
 D a-unccon.ads		20070406091342 51e09df2
 D a-uncdea.ads		20070406091342 dc667e6d
-D base_types.ads	20110513115553 e4ff315f
-D basec201_data.ads	20110513115553 71ef6054
-D db_commons.ads	20110513115554 bd9843a1
-D festival_io.ads	20110513115553 cfbf0da9
+D base_types.ads	20110513121635 e4ff315f
+D basec201_data.ads	20110513121635 71ef6054
+D db_commons.ads	20110513121635 bd9843a1
+D festival_io.ads	20110513121635 cfbf0da9
 D gdk.ads		20091225112831 c70a781f
 D gdk-bitmap.ads	20091225112831 21c4d147
 D gdk-color.ads		20091225112831 25c4c95e
@@ -155,11 +155,11 @@ D interfac.ads		20090409232307 a69cad5c
 D i-c.ads		20070406091342 bc3ef662
 D i-cstrin.ads		20090409232307 841d8a31
 D i-cstrea.ads		20090409232307 e1e064a9
-D jour_festival_io.ads	20110513115553 52750015
-D p_appli_creerfestival.ads  20110523104226 33593be2
+D jour_festival_io.ads	20110513121635 52750015
+D p_appli_creerfestival.ads  20110523105140 33593be2
 D p_conversion.ads	20110411141559 02c76134
-D p_window_creerfestival.ads  20110523101812 5d0ae7f0
-D p_window_creerfestival.adb  20110523102326 b586e64b
+D p_window_creerfestival.ads  20110523105140 5d0ae7f0
+D p_window_creerfestival.adb  20110523105920 0cd22598
 D pango.ads		20091225112832 567c5424
 D pango-attributes.ads	20091225112832 21e060ad
 D pango-context.ads	20091225112832 dbda6b1f
@@ -186,36 +186,36 @@ D s-traent.ads		20090409232307 bd5f2753
 D s-unstyp.ads		20090409232307 c0f9fae5
 D s-wchcon.ads		20090409232307 ab028799
 D unchconv.ads		20070406091342 34860a55
-D ville_io.ads		20110513115553 847d103e
+D ville_io.ads		20110513121635 847d103e
 X 1 ada.ads
 16K9*Ada 19e8 106|21r6 21r26 22r6 25r6 25r33 26r6 26r24
 X 2 a-calend.ads
 36K13*Calendar 358e17 106|26w10 26r28
-38I9*Time 107|27r33
-74V13*Time_Of{38I9} 107|45r42
+38I9*Time 107|28r33
+74V13*Time_Of{38I9} 107|46r42
 X 6 a-contai.ads
 16K13*Containers 22e19 106|21w10 21r30 22r10
 X 7 a-convec.ads
 43k24*Vectors 379e27 106|22w21
-53R9*Vector 107|33r36[29|127] 70r32[29|192]
-59r4*Empty_Vector{53R9[29|91]} 107|54r137[29|91] 55r138[29|91] 59r145[29|127]
-. 59r181[29|58]
+53R9*Vector 107|34r36[29|127] 71r32[29|192]
+59r4*Empty_Vector{53R9[29|91]} 107|55r137[29|91] 56r138[29|91] 60r145[29|127]
+. 60r181[29|58]
 X 13 a-string.ads
 16K13*Strings 35e16 106|25r10 25r37
 X 17 a-strunb.ads
 39K21*Unbounded 428e26 106|25w18 25r45
-42R9*Unbounded_String 395e14 107|26r29 28r25
+42R9*Unbounded_String 395e14 107|27r29 29r25
 X 29 basec201_data.ads
 14K9*Basec201_Data 210e18 106|20w6 20r25
-58K15*Gagnant_Festival_List[7|43] 107|59r159
-91K15*Groupe_List[7|43] 107|54r125 55r126
-116R12*tJour_Festival 123e17 107|34r23
-127K15*Jour_Festival_List[7|43] 107|33r17 59r126
-149R12*tFestival 157e17 107|32r18
-192K15*Ville_List[7|43] 107|70r21
+58K15*Gagnant_Festival_List[7|43] 107|60r159
+91K15*Groupe_List[7|43] 107|55r125 56r126
+116R12*tJour_Festival 123e17 107|35r23
+127K15*Jour_Festival_List[7|43] 107|34r17 60r126
+149R12*tFestival 157e17 107|33r18
+192K15*Ville_List[7|43] 107|71r21
 X 31 festival_io.ads
-12K9*Festival_IO 96e16 106|28w6 107|39r29
-18V13*Next_Free_Id_Festival{integer} 107|39r41
+12K9*Festival_IO 96e16 106|28w6 107|40r29
+18V13*Next_Free_Id_Festival{integer} 107|40r41
 X 50 glade.ads
 32K9*Glade 44e10 106|2r6 2r20 107|2r6 2r20 13r9 15r9 16r9
 X 51 glade-xml.ads
@@ -223,11 +223,11 @@ X 51 glade-xml.ads
 40P9*Glade_XML(39R9) 107|8r7
 42U14*Gtk_New 107|13r19
 86U14*Signal_Connect 107|15R19 16R19
-95V13*Get_Widget{94|71P9} 107|9R53 14R41 44R39 46R48 48R48 49R48 50R48 51R48
-. 52R48
+95V13*Get_Widget{94|71P9} 107|14R41 17R34 45R39 47R48 49R48 50R48 51R48 52R48
+. 53R48
 X 52 glib.ads
 37K9*Glib 397e9 106|6w6 6r16
-56M9*Guint<100|43M9> 107|35r22
+56M9*Guint<100|43M9> 107|36r22
 76A12*UTF8_String{string}<integer>
 X 63 gtk.ads
 41K9*Gtk 77e8 106|4r6 9r6 9r22 10r6 10r22 11r6 11r22 12r6 12r25 13r6 13r21
@@ -236,24 +236,24 @@ X 68 gtk-button.ads
 69K13*Button 419e15 106|10w10 10r26
 X 69 gtk-calendar.ads
 47K13*Calendar 349e17 106|16w10 16r28
-68P9*Gtk_Calendar(67R9) 107|44r26
-110U14*Get_Date 107|44R17
+68P9*Gtk_Calendar(67R9) 107|45r26
+110U14*Get_Date 107|45R17
 X 73 gtk-combo_box.ads
 57K13*Combo_Box 351e18 106|15w10 15r29
 58R9*Gtk_Combo_Box_Record<66|36R9> 58e76 107|9r17
-59P9*Gtk_Combo_Box(58R9) 107|9r39
-178U14*Append_Text 107|74r9
-195V13*Get_Active_Text{string} 107|43r29
+59P9*Gtk_Combo_Box(58R9) 107|17r20
+178U14*Append_Text 107|75r9
+195V13*Get_Active_Text{string} 107|44r29
 X 79 gtk-gentry.ads
 41K13*GEntry 446e15 106|11w10 11r26
-48P9*Gtk_Entry(43R9) 107|46r38 48r38 49r38 50r38 51r38 52r38
-118V13*Get_Text{52|76A12} 107|46R29 48R29 49R29 50R29 51R29 52R29
+48P9*Gtk_Entry(43R9) 107|47r38 49r38 50r38 51r38 52r38 53r38
+118V13*Get_Text{52|76A12} 107|47R29 49R29 50R29 51R29 52R29 53R29
 X 81 gtk-label.ads
 94K13*Label 511e14 106|13w10 13r25
 X 82 gtk-main.ads
 41K13*Main 507e13 106|4w10
 X 84 gtk-object.ads
-107U14*Destroy 107|21R17
+107U14*Destroy 107|22R17
 X 86 gtk-scrolled_window.ads
 64K13*Scrolled_Window 275e24 106|14w10 14r35
 X 92 gtk-tree_view.ads
@@ -267,51 +267,51 @@ X 96 gtkada.ads
 30K9*Gtkada 34e11 106|5r6 5r25
 X 97 gtkada-dialogs.ads
 37K16*Dialogs 128e19 106|5w13 5r32
-40M9*Message_Dialog_Buttons 107|25r15
-50m4*Button_OK{40M9} 107|65r69 65r79
-67n7*Confirmation{57E9} 107|65r56
-77V13*Message_Dialog{40M9} 107|65r24
+40M9*Message_Dialog_Buttons 107|26r15
+50m4*Button_OK{40M9} 107|66r69 66r79
+67n7*Confirmation{57E9} 107|66r56
+77V13*Message_Dialog{40M9} 107|66r24
 X 100 i-c.ads
 43M9*unsigned
 X 103 jour_festival_io.ads
-12K9*Jour_Festival_IO 93e21 106|29w6 107|54r27 55r27
-18V13*Next_Free_Id_Jour_Festival{integer} 107|54r44 55r44
+12K9*Jour_Festival_IO 93e21 106|29w6 107|55r27 56r27
+18V13*Next_Free_Id_Jour_Festival{integer} 107|55r44 56r44
 X 104 p_appli_creerfestival.ads
 9K9*p_appli_creerfestival 21e26 106|19w6 19r33
-13V10*GetVillesSansFestival{7|53R9[29|192]} 107|70r40
-15U11*CreateFestival 107|61r17
+13V10*GetVillesSansFestival{7|53R9[29|192]} 107|71r40
+15U11*CreateFestival 107|62r17
 X 105 p_conversion.ads
 8K9*p_Conversion 95e17 106|23w6 23r24
-16U11*to_ada_type 107|48r17 49r17 50r17 51r17 52r17
-36U11*to_ada_type 107|43r17 46r17
+16U11*to_ada_type 107|49r17 50r17 51r17 52r17 53r17
+36U11*to_ada_type 107|44r17 47r17
 X 106 p_window_creerfestival.ads
-32K9*P_window_creerfestival 37l5 37e27 107|4b14 78l5 78t27
-33U13*init 107|10b11 17l5 17t9
-34U13*fermerFenetre 107|15r66 19b19 22l13 22t26
-35U13*validerfestival 107|16r66 24b19 67l13 67t28
-36U13*initcombobox 107|69b19 76l13 76t25
+32K9*P_window_creerfestival 37l5 37e27 107|4b14 79l5 79t27
+33U13*init 107|10b11 18l5 18t9
+34U13*fermerFenetre 107|15r66 20b19 23l13 23t26
+35U13*validerfestival 107|16r66 25b19 68l13 68t28
+36U13*initcombobox 107|70b19 77l13 77t25
 X 107 p_window_creerfestival.adb
-7p1 windowcreerfestival{95|63P9} 14m9 21r25
-8p1 XML{51|40P9} 9r64 13m27 14r52 15r35 16r35 44r50 46r59 48r59 49r59 50r59
-. 51r59 52r59
-25m9 b_box{97|40M9} 65m17
-26r9 resultcomboboxVille{17|42R9} 43m55 59r40
-27i9 resultcalendardatedebut{2|38I9} 45m17 59r61
-28r9 resultEntryLieu{17|42R9} 46m78 59r86
-29i9 resultentryPrixEntree{integer} 48m84 59r103
-30i9 resultentryNbgroupes1{integer} 49m84 54r84
-31i9 resultentryNbgroupes2{integer} 50m84 55r86
-32r9 festival{29|149R12} 59m17 61r32
-33r9 jours{7|53R9[29|127]}
-34r9 jour1{29|116R12} 54m17
-34r15 jour2{29|116R12} 55m17
-35m9 an{52|56M9} 44m76 45r58
-35m12 mois{52|56M9} 44m79 45r70
-35m17 jour{52|56M9} 44m84 45r84
-37i9 resultentryHeure1{integer} 51m80 54r107
-38i9 resultentryHeure2{integer} 52m80 55r108
-39i9 IDFESTIVAL{integer} 54r71 55r73 59r28
-70r9 Liste_ville{7|53R9[29|192]}
+7p1 windowcreerfestival{95|63P9} 14m9 22r25
+8p1 XML{51|40P9} 13m27 14r52 15r35 16r35 17r45 45r50 47r59 49r59 50r59 51r59
+. 52r59 53r59
+26m9 b_box{97|40M9} 66m17
+27r9 resultcomboboxVille{17|42R9} 44m55 60r40
+28i9 resultcalendardatedebut{2|38I9} 46m17 60r61
+29r9 resultEntryLieu{17|42R9} 47m78 60r86
+30i9 resultentryPrixEntree{integer} 49m84 60r103
+31i9 resultentryNbgroupes1{integer} 50m84 55r84
+32i9 resultentryNbgroupes2{integer} 51m84 56r86
+33r9 festival{29|149R12} 60m17 62r32
+34r9 jours{7|53R9[29|127]}
+35r9 jour1{29|116R12} 55m17
+35r15 jour2{29|116R12} 56m17
+36m9 an{52|56M9} 45m76 46r58
+36m12 mois{52|56M9} 45m79 46r70
+36m17 jour{52|56M9} 45m84 46r84
+38i9 resultentryHeure1{integer} 52m80 55r107
+39i9 resultentryHeure2{integer} 53m80 56r108
+40i9 IDFESTIVAL{integer} 55r71 56r73 60r28
+71r9 Liste_ville{7|53R9[29|192]}
 X 115 system.ads
 37K9*System 106|3w6 3r18 115|153e11
 64M9*Address

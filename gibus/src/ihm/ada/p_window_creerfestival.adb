@@ -6,7 +6,7 @@ package body P_window_creerfestival is
 
 windowcreerfestival:gtk_window;
 XML : Glade_XML;
-combobox:access Gtk_Combo_Box_Record:=Gtk_combo_box(Get_Widget(XML,"comboboxVille"));
+combobox:access Gtk_Combo_Box_Record;
 procedure init is
 
 begin
@@ -14,6 +14,7 @@ begin
 	windowcreerfestival:=Gtk_Window(Get_Widget(XML,"windowcreerfestival"));
 	Glade.XML.signal_connect (XML,"on_buttonAnnuler_clicked",fermerFenetre'address,Null_Address);
 	Glade.XML.signal_connect (XML,"on_buttonValider_clicked",validerfestival'address,Null_Address);
+	combobox :=Gtk_combo_box(Get_Widget(XML,"comboboxVille"));
 end init;
 ---------------------------------------------------------------------
 	procedure fermerFenetre is
