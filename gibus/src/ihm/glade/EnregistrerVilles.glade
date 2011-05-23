@@ -130,7 +130,7 @@
             </child>
             <child>
               <widget class="GtkButton" id="buttonSuivant">
-                <property name="label" translatable="yes">Suivant</property>
+                <property name="label" translatable="yes">Enregistrer</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>

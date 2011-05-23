@@ -6,6 +6,7 @@ package body P_window_creerfestival is
 
 windowcreerfestival:gtk_window;
 XML : Glade_XML;
+combobox:access Gtk_Combo_Box_Record:=Gtk_combo_box(Get_Widget(XML,"comboboxVille"));
 procedure init is
 
 begin
@@ -39,7 +40,7 @@ end init;
 	begin
 	
 	
-		to_ada_type(Get_Active_Text(Gtk_combo_box(Get_Widget(XML,"comboboxVille"))),resultcomboboxVille);
+		to_ada_type(Get_Active_Text(combobox),resultcomboboxVille);
 		Get_Date(Gtk_calendar(Get_Widget(XML,"calendardatedebut")),an,mois,jour);
 		resultcalendardatedebut:=Time_Of(integer(an),integer(mois),integer(jour));	
 		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryLieu"))),resultEntryLieu);
@@ -60,11 +61,18 @@ end init;
 		CreateFestival(festival);
 		
 
-
-	
 	
 		b_box:=message_dialog("Festival crée",Confirmation,Button_Ok,Button_Ok);
 		
 	end validerfestival;
 --------------------------------------------------------------------------
+	procedure initcombobox is
+	Liste_ville:Ville_list.Vector:=GetVillesSansFestival;
+	begin
+	
+	
+	Append_Text(combobox,"");
+	
+	end initcombobox;
+----------------------------------------------------------------------
 end P_window_creerfestival;

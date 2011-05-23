@@ -12,33 +12,33 @@ A -march=i586
 P ZX
 R nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvvnnvnnnnnnnnnnnnnnn
 
-U ada_main%b		b~main.adb		2f5288e0 NE OO PK IL
+U ada_main%b		b~main.adb		14da56df NE OO PK IL
 W system%s		system.ads		system.ali
 W system.restrictions%s	s-restri.adb		s-restri.ali
 
-U ada_main%s		b~main.ads		6ebfa3b3 EE NE OO PK IL
+U ada_main%s		b~main.ads		fb6504e9 EE NE OO PK IL
 W system%s		system.ads		system.ali
 
-D b~main.ads		20110520133901 7b5eaafb
-D b~main.adb		20110520133901 b97e4910
+D b~main.ads		20110523102937 ee840da1
+D b~main.adb		20110523102937 172c3075
 D system.ads		20101024233633 15e10948
 D s-restri.ads		20090409232307 ed726b0b
 D s-rident.ads		20090409232307 e38f8060
 X 1 b~main.ads
-3K9*ada_main 1459l5 1459e13 2|7b14 614l5 614t13
-6i4*gnat_argc{integer} 10m22 2|559m7
-7m4*gnat_argv{3|64M9} 11m22 2|560m7
-8m4*gnat_envp{3|64M9} 12m22 2|561m7
-14i4*gnat_exit_status{integer} 15m22 2|569r15
+3K9*ada_main 1459l5 1459e13 2|7b14 615l5 615t13
+6i4*gnat_argc{integer} 10m22 2|560m7
+7m4*gnat_argv{3|64M9} 11m22 2|561m7
+8m4*gnat_envp{3|64M9} 12m22 2|562m7
+14i4*gnat_exit_status{integer} 15m22 2|570r15
 17a4*GNAT_Version{string} 19r22
-21a4*Ada_Main_Program_Name{string} 22r22 2|555r52
-24U14*adafinal 25r22 2|533b14 536l8 536t16
-27U14*adainit 28r22 2|16b14 531l8 531t15 564r7
-30U14*Break_Start 31b<c,__gnat_break_start>22 2|565r7
-33V13*main{integer} 34>7 35>7 36>7 38r22 2|538b13 570t7
-34i7 argc{integer} 2|539b7 559r20
-35m7 argv{3|64M9} 2|540b7 560r20
-36m7 envp{3|64M9} 2|541b7 561r20
+21a4*Ada_Main_Program_Name{string} 22r22 2|556r52
+24U14*adafinal 25r22 2|534b14 537l8 537t16
+27U14*adainit 28r22 2|16b14 532l8 532t15 565r7
+30U14*Break_Start 31b<c,__gnat_break_start>22 2|566r7
+33V13*main{integer} 34>7 35>7 36>7 38r22 2|539b13 571t7
+34i7 argc{integer} 2|540b7 560r20
+35m7 argv{3|64M9} 2|541b7 561r20
+36m7 envp{3|64M9} 2|542b7 562r20
 40M9*Version_32 41r22 42r22 43r22 44r22 45r22 46r22 47r22 48r22 49r22 50r22
 . 51r22 52r22 53r22 54r22 55r22 56r22 57r22 58r22 59r22 60r22 61r22 62r22
 . 63r22 64r22 65r22 66r22 67r22 68r22 69r22 70r22 71r22 72r22 73r22 74r22
@@ -554,7 +554,7 @@ X 1 b~main.ads
 510m4*u00470{40M9} 982r22
 511m4*u00471{40M9} 983r22
 X 2 b~main.adb
-10U14 Do_Finalize 11b<c,system__standard_library__adafinal>22 535r7 567r7
+10U14 Do_Finalize 11b<c,system__standard_library__adafinal>22 536r7 568r7
 13a4 Local_Priority_Specific_Dispatching{string} 238r9
 14a4 Local_Interrupt_States{string} 240r27
 17b7*E022{boolean} 17m43 255m7
@@ -706,9 +706,9 @@ X 2 b~main.adb
 163b7*E449{boolean} 163m43 522m7
 164b7*E461{boolean} 164m43 524m7
 165b7*E467{boolean} 165m43 525m7
-166b7*E264{boolean} 166m43 526m7
-167b7*E459{boolean} 167m43 529m7
-168b7*E463{boolean} 168m43 530m7
+166b7*E264{boolean} 166m43 527m7
+167b7*E459{boolean} 167m43 530m7
+168b7*E463{boolean} 168m43 531m7
 170i7*Main_Priority{integer} 171m25 207m7
 172i7*Time_Slice_Value{integer} 173m25 208m7
 174e7*WC_Encoding{character} 175m25 209m7
@@ -726,17 +726,17 @@ X 2 b~main.adb
 198i7*Leap_Seconds_Support{integer} 199m25 246m7
 201U17*Install_Handler 202b<c,__gnat_install_handler>25 249r10
 204i7*Handler_Installed{integer} 205m25 248r10
-544U17*initialize 544>29 545b<c,__gnat_initialize>25 563r7
-544m29 Addr{3|64M9}
-547U17*finalize 548b<c,__gnat_finalize>25 568r7
-550U17*Ada_Main_Program 551b<ada,_ada_main>27 566r7
-553a7 SEH(integer) 563m19
-555m7 Ensure_Reference{3|64M9} 556r24
+545U17*initialize 545>29 546b<c,__gnat_initialize>25 564r7
+545m29 Addr{3|64M9}
+548U17*finalize 549b<c,__gnat_finalize>25 569r7
+551U17*Ada_Main_Program 552b<ada,_ada_main>27 567r7
+554a7 SEH(integer) 564m19
+556m7 Ensure_Reference{3|64M9} 557r24
 X 3 system.ads
-37K9*System 1|2w6 7r16 8r16 35r14 36r14 2|5r6 182r39 186r26 213r7 540r14
-. 541r14 544r36 555r34 3|153e11
-64M9*Address 1|7r23 8r23 35r21 36r21 2|182r46 186r33 540r21 541r21 544r43
-. 555r41
+37K9*System 1|2w6 7r16 8r16 35r14 36r14 2|5r6 182r39 186r26 213r7 541r14
+. 542r14 545r36 556r34 3|153e11
+64M9*Address 1|7r23 8r23 35r21 36r21 2|182r46 186r33 541r21 542r21 545r43
+. 556r41
 X 4 s-restri.ads
 43K16*Restrictions 2|5w13 213r14 4|71e24
 49r4*Run_Time_Restrictions{5|255R9[47]} 2|213m27

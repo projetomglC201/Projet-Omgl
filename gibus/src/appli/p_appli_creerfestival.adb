@@ -7,24 +7,28 @@ package body p_appli_creerfestival is
 ---------------------------------------------------------
 function GetVillesSansFestival return Ville_list.vector is
 
+
+
+
+
 VillesSansFestival:Ville_list.vector;
---Villes:Ville_list.vector;
---criteria:db_commons.criteria;
---i:Ada.Containers.Vectors.Index_Type;
---j:Ada.Containers.Vectors.Index_Type:=1;
+Villes:Ville_list.vector;
+criteria:db_commons.criteria;
+i:positive;
+j:positive:=1;
 
 begin
 
 
---	Villes:=Ville_io.retrieve(criteria);
---	
---	for i in first_index(Villes)..last_index(Villes) loop
---		if Festival_io.Is_Empty(Ville_io.Retrieve_Associated_Festivals(Villes.element(i))) then
---			VillesSansFestival.element(j) := Villes.element(i);
---			j := j+1;
---		end if;
---		
---	end loop;
+	Villes:=Ville_io.retrieve(criteria);
+	
+	for i in Ville_list.first_index(Villes)..Ville_list.last_index(Villes) loop
+		if Festival_io.Is_Empty(Ville_io.Retrieve_Associated_Festivals(Villes.element(i))) then
+			VillesSansFestival(j) := Villes.element(i);
+			j := j+1;
+		end if;
+		
+	end loop;
 	
 	return VillesSansFestival;
 

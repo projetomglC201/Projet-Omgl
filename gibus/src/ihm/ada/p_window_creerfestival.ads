@@ -33,4 +33,5 @@ package P_window_creerfestival is
   procedure init;
   procedure fermerFenetre;
   procedure validerfestival;
+  procedure initcombobox;
 end P_window_creerfestival;
