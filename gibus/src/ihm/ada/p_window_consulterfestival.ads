@@ -18,8 +18,15 @@ with Gtk.Tree_Store; use Gtk.Tree_Store;-- le modèle associé à la vue
 with Gtk.Tree_Selection; use Gtk.Tree_Selection;  -- pour la sélection dans la vue
 with p_util_treeview; use p_util_treeview;  -- utilitaire de gestion d'une treeView
 
+with Ada.Containers.Vectors;
+with p_appli_consulterfestival; use p_appli_consulterfestival;
+with Basec201_Data; use basec201_data;
+with p_conversion; use p_conversion;
+with ada.calendar; use ada.calendar;
 
 package P_window_consulterfestival is
   procedure init;
   procedure fermerFenetre;
+  procedure remplirentry;
+
 end P_window_consulterfestival;

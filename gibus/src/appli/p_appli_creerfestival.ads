@@ -1,5 +1,6 @@
 with ville_io;
 with festival_io;
+with jour_festival_io;
 with basec201_data; use basec201_data;
 with db_commons;
 with Ada.Containers.Vectors;
@@ -14,7 +15,7 @@ function GetVillesSansFestival return Ville_list.Vector;
 
 procedure CreateFestival (Festival: in tFestival);
 
-
+procedure CreateJourFestival (Jour_Festival : in tJour_Festival);
 
 
 

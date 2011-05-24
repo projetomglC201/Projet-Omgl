@@ -8,13 +8,10 @@ package body p_appli_creerfestival is
 function GetVillesSansFestival return Ville_list.vector is
 
 
-
-
-
 VillesSansFestival:Ville_list.vector;
 Villes:Ville_list.vector;
 criteria:db_commons.criteria;
-j:positive:=1;
+
 
 begin
 
@@ -24,9 +21,7 @@ begin
 	for i in Ville_list.first_index(Villes)..Ville_list.last_index(Villes) loop
 		if Festival_io.Is_Empty(Ville_io.Retrieve_Associated_Festivals(Villes.element(i))) then
 			ville_list.append(VillesSansFestival,ville_list.element(villes,i));
-			j := j+1;
-		end if;
-		
+		end if;		
 	end loop;
 	
 	return VillesSansFestival;
@@ -40,8 +35,13 @@ begin
 
 end CreateFestival;
 -----------------------------------------------------------
+procedure CreateJourFestival (Jour_Festival : in tJour_Festival) is
 
+begin
 
+jour_festival_io.save(Jour_Festival,false);
+end CreateJourFestival;
+-----------------------------------------------------------
 
 
 end p_appli_creerfestival;

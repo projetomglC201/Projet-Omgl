@@ -12,6 +12,7 @@
       <widget class="GtkVBox" id="vbox1">
         <property name="visible">True</property>
         <property name="orientation">vertical</property>
+        <property name="spacing">1</property>
         <child>
           <widget class="GtkHBox" id="hbox1">
             <property name="visible">True</property>
@@ -28,9 +29,17 @@
               </packing>
             </child>
             <child>
-              <widget class="GtkComboBox" id="comboboxVille">
+              <widget class="GtkScrolledWindow" id="scrolledwindow1">
                 <property name="visible">True</property>
-                <property name="button_sensitivity">on</property>
+                <property name="can_focus">True</property>
+                <property name="hadjustment">0 0 313 31.300000000000001 281.69999999999999 313</property>
+                <property name="hscrollbar_policy">never</property>
+                <child>
+                  <widget class="GtkTreeView" id="treeview1">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                  </widget>
+                </child>
               </widget>
               <packing>
                 <property name="position">1</property>
@@ -217,8 +226,9 @@
                   <widget class="GtkEntry" id="entryNbgroupes2">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="tooltip" translatable="yes">0 si pas de jour 2</property>
                     <property name="invisible_char">&#x2022;</property>
-                    <property name="text" translatable="yes">0 (si pas de jour 2)</property>
+                    <property name="text" translatable="yes">0</property>
                   </widget>
                   <packing>
                     <property name="padding">4</property>
@@ -250,6 +260,7 @@
                     <property name="invisible_char">&#x2022;</property>
                   </widget>
                   <packing>
+                    <property name="padding">4</property>
                     <property name="position">1</property>
                   </packing>
                 </child>
@@ -260,6 +271,7 @@
                     <property name="invisible_char">&#x2022;</property>
                   </widget>
                   <packing>
+                    <property name="padding">4</property>
                     <property name="position">2</property>
                   </packing>
                 </child>
