@@ -12,33 +12,33 @@ A -march=i586
 P ZX
 R nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvvnnvnnnnnnnnnnnnnnn
 
-U ada_main%b		b~main.adb		fdec6146 NE OO PK IL
+U ada_main%b		b~main.adb		a5e76efb NE OO PK IL
 W system%s		system.ads		system.ali
 W system.restrictions%s	s-restri.adb		s-restri.ali
 
-U ada_main%s		b~main.ads		773dee4a EE NE OO PK IL
+U ada_main%s		b~main.ads		8a1688a0 EE NE OO PK IL
 W system%s		system.ads		system.ali
 
-D b~main.ads		20110524082536 62dce702
-D b~main.adb		20110524082536 7242ed4f
+D b~main.ads		20110525104124 9ff781e8
+D b~main.adb		20110525104124 d7628418
 D system.ads		20101024233633 15e10948
 D s-restri.ads		20090409232307 ed726b0b
 D s-rident.ads		20090409232307 e38f8060
 X 1 b~main.ads
-3K9*ada_main 1465l5 1465e13 2|7b14 620l5 620t13
-6i4*gnat_argc{integer} 10m22 2|564m7
-7m4*gnat_argv{3|64M9} 11m22 2|565m7
-8m4*gnat_envp{3|64M9} 12m22 2|566m7
-14i4*gnat_exit_status{integer} 15m22 2|574r15
+3K9*ada_main 1465l5 1465e13 2|7b14 621l5 621t13
+6i4*gnat_argc{integer} 10m22 2|565m7
+7m4*gnat_argv{3|64M9} 11m22 2|566m7
+8m4*gnat_envp{3|64M9} 12m22 2|567m7
+14i4*gnat_exit_status{integer} 15m22 2|575r15
 17a4*GNAT_Version{string} 19r22
-21a4*Ada_Main_Program_Name{string} 22r22 2|560r52
-24U14*adafinal 25r22 2|538b14 541l8 541t16
-27U14*adainit 28r22 2|16b14 536l8 536t15 569r7
-30U14*Break_Start 31b<c,__gnat_break_start>22 2|570r7
-33V13*main{integer} 34>7 35>7 36>7 38r22 2|543b13 575t7
-34i7 argc{integer} 2|544b7 564r20
-35m7 argv{3|64M9} 2|545b7 565r20
-36m7 envp{3|64M9} 2|546b7 566r20
+21a4*Ada_Main_Program_Name{string} 22r22 2|561r52
+24U14*adafinal 25r22 2|539b14 542l8 542t16
+27U14*adainit 28r22 2|16b14 537l8 537t15 570r7
+30U14*Break_Start 31b<c,__gnat_break_start>22 2|571r7
+33V13*main{integer} 34>7 35>7 36>7 38r22 2|544b13 576t7
+34i7 argc{integer} 2|545b7 565r20
+35m7 argv{3|64M9} 2|546b7 566r20
+36m7 envp{3|64M9} 2|547b7 567r20
 40M9*Version_32 41r22 42r22 43r22 44r22 45r22 46r22 47r22 48r22 49r22 50r22
 . 51r22 52r22 53r22 54r22 55r22 56r22 57r22 58r22 59r22 60r22 61r22 62r22
 . 63r22 64r22 65r22 66r22 67r22 68r22 69r22 70r22 71r22 72r22 73r22 74r22
@@ -556,76 +556,76 @@ X 1 b~main.ads
 512m4*u00472{40M9} 986r22
 513m4*u00473{40M9} 987r22
 X 2 b~main.adb
-10U14 Do_Finalize 11b<c,system__standard_library__adafinal>22 540r7 572r7
+10U14 Do_Finalize 11b<c,system__standard_library__adafinal>22 541r7 573r7
 13a4 Local_Priority_Specific_Dispatching{string} 239r9
 14a4 Local_Interrupt_States{string} 241r27
 17b7*E022{boolean} 17m43 256m7
 18b7*E018{boolean} 18m43 254m7
 19b7*E028{boolean} 19m43 258m7
-20b7*E183{boolean} 20m43 261m7
+20b7*E178{boolean} 20m43 261m7
 21b7*E073{boolean} 21m43 263m7
-22b7*E194{boolean} 22m43 265m7
+22b7*E184{boolean} 22m43 265m7
 23b7*E060{boolean} 23m43 304m7
 24b7*E058{boolean} 24m43 268m7
 25b7*E010{boolean} 25m43 270m7
-26b7*E181{boolean} 26m43 272m7
-27b7*E189{boolean} 27m43 308m7
+26b7*E204{boolean} 26m43 272m7
+27b7*E206{boolean} 27m43 308m7
 28b7*E051{boolean} 28m43 275m7
 29b7*E090{boolean} 29m43 277m7
 30b7*E057{boolean} 30m43 279m7
 31b7*E218{boolean} 31m43 281m7
-32b7*E196{boolean} 32m43 283m7
-33b7*E199{boolean} 33m43 285m7
+32b7*E190{boolean} 32m43 283m7
+33b7*E209{boolean} 33m43 285m7
 34b7*E068{boolean} 34m43 288m7
 35b7*E055{boolean} 35m43 290m7
 36b7*E053{boolean} 36m43 292m7
-37b7*E201{boolean} 37m43 294m7
-38b7*E356{boolean} 38m43 296m7
+37b7*E186{boolean} 37m43 294m7
+38b7*E351{boolean} 38m43 296m7
 39b7*E219{boolean} 39m43 298m7
 40b7*E281{boolean} 40m43 302m7
 41b7*E216{boolean} 41m43 301m7
 42b7*E211{boolean} 42m43 307m7
-43b7*E351{boolean} 43m43 310m7
+43b7*E357{boolean} 43m43 310m7
 44b7*E229{boolean} 44m43 312m7
-45b7*E179{boolean} 45m43 314m7
-46b7*E349{boolean} 46m43 316m7
-47b7*E391{boolean} 47m43 317m7
-48b7*E360{boolean} 48m43 410m7
-49b7*E393{boolean} 49m43 409m7
+45b7*E202{boolean} 45m43 314m7
+46b7*E355{boolean} 46m43 316m7
+47b7*E389{boolean} 47m43 317m7
+48b7*E433{boolean} 48m43 410m7
+49b7*E425{boolean} 49m43 409m7
 50b7*E283{boolean} 50m43 318m7
 51b7*E007{boolean} 51m43 320m7
 52b7*E105{boolean} 52m43 321m7
 53b7*E092{boolean} 53m43 322m7
 54b7*E113{boolean} 54m43 324m7
 55b7*E094{boolean} 55m43 325m7
-56b7*E366{boolean} 56m43 328m7
-57b7*E362{boolean} 57m43 350m7
-58b7*E395{boolean} 58m43 329m7
-59b7*E370{boolean} 59m43 330m7
-60b7*E411{boolean} 60m43 331m7
-61b7*E409{boolean} 61m43 332m7
-62b7*E375{boolean} 62m43 333m7
-63b7*E373{boolean} 63m43 334m7
-64b7*E415{boolean} 64m43 335m7
-65b7*E413{boolean} 65m43 336m7
-66b7*E419{boolean} 66m43 337m7
-67b7*E417{boolean} 67m43 338m7
-68b7*E379{boolean} 68m43 339m7
-69b7*E377{boolean} 69m43 340m7
-70b7*E425{boolean} 70m43 341m7
-71b7*E423{boolean} 71m43 342m7
-72b7*E383{boolean} 72m43 343m7
-73b7*E381{boolean} 73m43 344m7
-74b7*E387{boolean} 74m43 345m7
-75b7*E385{boolean} 75m43 346m7
-76b7*E368{boolean} 76m43 349m7
-77b7*E401{boolean} 77m43 351m7
-78b7*E399{boolean} 78m43 352m7
-79b7*E397{boolean} 79m43 355m7
-80b7*E421{boolean} 80m43 358m7
-81b7*E405{boolean} 81m43 361m7
-82b7*E433{boolean} 82m43 408m7
-83b7*E431{boolean} 83m43 407m7
+56b7*E364{boolean} 56m43 328m7
+57b7*E360{boolean} 57m43 350m7
+58b7*E391{boolean} 58m43 329m7
+59b7*E368{boolean} 59m43 330m7
+60b7*E407{boolean} 60m43 331m7
+61b7*E405{boolean} 61m43 332m7
+62b7*E373{boolean} 62m43 333m7
+63b7*E371{boolean} 63m43 334m7
+64b7*E411{boolean} 64m43 335m7
+65b7*E409{boolean} 65m43 336m7
+66b7*E415{boolean} 66m43 337m7
+67b7*E413{boolean} 67m43 338m7
+68b7*E377{boolean} 68m43 339m7
+69b7*E375{boolean} 69m43 340m7
+70b7*E421{boolean} 70m43 341m7
+71b7*E419{boolean} 71m43 342m7
+72b7*E381{boolean} 72m43 343m7
+73b7*E379{boolean} 73m43 344m7
+74b7*E385{boolean} 74m43 345m7
+75b7*E383{boolean} 75m43 346m7
+76b7*E366{boolean} 76m43 349m7
+77b7*E397{boolean} 77m43 351m7
+78b7*E395{boolean} 78m43 352m7
+79b7*E393{boolean} 79m43 355m7
+80b7*E417{boolean} 80m43 358m7
+81b7*E401{boolean} 81m43 361m7
+82b7*E429{boolean} 82m43 408m7
+83b7*E423{boolean} 83m43 407m7
 84b7*E086{boolean} 84m43 362m7
 85b7*E080{boolean} 85m43 363m7
 86b7*E088{boolean} 86m43 365m7
@@ -652,7 +652,7 @@ X 2 b~main.adb
 107b7*E319{boolean} 107m43 400m7
 108b7*E287{boolean} 108m43 401m7
 109b7*E339{boolean} 109m43 403m7
-110b7*E429{boolean} 110m43 406m7
+110b7*E347{boolean} 110m43 406m7
 111b7*E427{boolean} 111m43 405m7
 112b7*E435{boolean} 112m43 515m7
 113b7*E467{boolean} 113m43 412m7
@@ -704,14 +704,14 @@ X 2 b~main.adb
 159b7*E459{boolean} 159m43 519m7
 160b7*E471{boolean} 160m43 520m7
 161b7*E439{boolean} 161m43 521m7
-162b7*E347{boolean} 162m43 522m7
+162b7*E431{boolean} 162m43 522m7
 163b7*E457{boolean} 163m43 523m7
 164b7*E463{boolean} 164m43 525m7
 165b7*E469{boolean} 165m43 526m7
-166b7*E176{boolean} 166m43 528m7
-167b7*E449{boolean} 167m43 531m7
-168b7*E461{boolean} 168m43 534m7
-169b7*E465{boolean} 169m43 535m7
+166b7*E176{boolean} 166m43 529m7
+167b7*E449{boolean} 167m43 532m7
+168b7*E461{boolean} 168m43 535m7
+169b7*E465{boolean} 169m43 536m7
 171i7*Main_Priority{integer} 172m25 208m7
 173i7*Time_Slice_Value{integer} 174m25 209m7
 175e7*WC_Encoding{character} 176m25 210m7
@@ -729,17 +729,17 @@ X 2 b~main.adb
 199i7*Leap_Seconds_Support{integer} 200m25 247m7
 202U17*Install_Handler 203b<c,__gnat_install_handler>25 250r10
 205i7*Handler_Installed{integer} 206m25 249r10
-549U17*initialize 549>29 550b<c,__gnat_initialize>25 568r7
-549m29 Addr{3|64M9}
-552U17*finalize 553b<c,__gnat_finalize>25 573r7
-555U17*Ada_Main_Program 556b<ada,_ada_main>27 571r7
-558a7 SEH(integer) 568m19
-560m7 Ensure_Reference{3|64M9} 561r24
+550U17*initialize 550>29 551b<c,__gnat_initialize>25 569r7
+550m29 Addr{3|64M9}
+553U17*finalize 554b<c,__gnat_finalize>25 574r7
+556U17*Ada_Main_Program 557b<ada,_ada_main>27 572r7
+559a7 SEH(integer) 569m19
+561m7 Ensure_Reference{3|64M9} 562r24
 X 3 system.ads
-37K9*System 1|2w6 7r16 8r16 35r14 36r14 2|5r6 183r39 187r26 214r7 545r14
-. 546r14 549r36 560r34 3|153e11
-64M9*Address 1|7r23 8r23 35r21 36r21 2|183r46 187r33 545r21 546r21 549r43
-. 560r41
+37K9*System 1|2w6 7r16 8r16 35r14 36r14 2|5r6 183r39 187r26 214r7 546r14
+. 547r14 550r36 561r34 3|153e11
+64M9*Address 1|7r23 8r23 35r21 36r21 2|183r46 187r33 546r21 547r21 550r43
+. 561r41
 X 4 s-restri.ads
 43K16*Restrictions 2|5w13 214r14 4|71e24
 49r4*Run_Time_Restrictions{5|255R9[47]} 2|214m27

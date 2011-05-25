@@ -23,10 +23,15 @@ with p_appli_consulterfestival; use p_appli_consulterfestival;
 with Basec201_Data; use basec201_data;
 with p_conversion; use p_conversion;
 with ada.calendar; use ada.calendar;
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with jour_festival_io;
 
 package P_window_consulterfestival is
+
+  EX_AUCUNE_VILLE_SELECTIONNEE:exception;
   procedure init;
   procedure fermerFenetre;
   procedure remplirentry;
+  procedure inittreeview;
 
 end P_window_consulterfestival;

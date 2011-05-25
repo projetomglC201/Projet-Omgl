@@ -11,7 +11,7 @@ with p_conversion; use p_conversion;
 package p_appli_consulterfestival is
 
 	function GetVille(entryVille: in Unbounded_String) return tville;
-	function GetFestivalAssocie(entryVille:in string) return Festival_List.vector;
+	function GetFestivalAssocie(entryVille: in Unbounded_String) return Festival_List.vector;
 	function GetJoursFestivalAssocie(IdFestival: in integer) return Jour_Festival_List.vector;
 	function GetVillesAvecFestival return Ville_list.vector;
 	
