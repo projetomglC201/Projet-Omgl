@@ -264,10 +264,11 @@
             <property name="layout_style">spread</property>
             <child>
               <widget class="GtkButton" id="buttonFermer">
-                <property name="label" translatable="yes">Fermer</property>
+                <property name="label" translatable="yes">_Fermer</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="use_underline">True</property>
                 <signal name="clicked" handler="on_buttonFermer_clicked"/>
               </widget>
               <packing>
