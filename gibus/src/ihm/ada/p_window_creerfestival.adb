@@ -10,7 +10,7 @@ XML : Glade_XML;
 treeview_ville: Gtk_Tree_View;
 modele_ville: Gtk_Tree_Store; -- le modèle associé à la vue
 rang_ville: Gtk_Tree_Iter := Null_Iter; -- ligne dans le modèle
-
+jour2:boolean := false;
 
 ----------------------------------------------------------------------
 procedure init is
@@ -24,7 +24,7 @@ begin
 	
 	Glade.XML.signal_connect (XML,"on_buttonAnnuler_clicked",fermerFenetre'address,Null_Address);
 	Glade.XML.signal_connect (XML,"on_buttonValider_clicked",validerfestival'address,Null_Address);
-	
+	Glade.XML.signal_connect (XML,"on_entryNbgroupes2_changed",activerjour2'address,Null_Address);
 	inittreeview;
 end init;
 ---------------------------------------------------------------------
@@ -55,7 +55,7 @@ end init;
 		Get_Selected(Get_Selection(treeview_ville),Gtk_Tree_Model(modele_ville), 
 		rang_ville);
 		if rang_ville = Null_Iter then
-			b_box:=Message_Dialog ("Aucune ville selectionnée",Error,Button_Ok,Button_Ok);
+
 			raise EX_AUCUNE_VILLE_SELECTIONNEE;
 		else
 			to_ada_type(Get_String (modele_ville, rang_ville, 0), resulttreeviewville);
@@ -91,8 +91,10 @@ end init;
 		b_box:=message_dialog("Festival crée",Confirmation,Button_Ok,Button_Ok);
 		
 	exception
-		when EX_AUCUNE_VILLE_SELECTIONNEE => null;	
-	
+		when EX_AUCUNE_VILLE_SELECTIONNEE => 	
+			b_box:=Message_Dialog ("Aucune ville selectionnée.",Error,Button_Ok,Button_Ok);
+		when P_CONVERSION.EXCONVERSION =>
+			b_box:=Message_Dialog ("Le prix des places doit être un entier.",Error,Button_Ok,Button_Ok);
 		
 	end validerfestival;
 --------------------------------------------------------------------------
@@ -120,4 +122,17 @@ end init;
 	
 	end inittreeview;
 ----------------------------------------------------------------------
+	procedure activerJour2 is
+		resultNbJour2 : unbounded_string;
+	begin
+		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryNbGroupes2"))),resultNbJour2);
+		if length(resultNbJour2) = 0 then
+			jour2 := false;
+			Set_Editable(Gtk_Entry(Get_Widget(XML,"entryNbGroupes2")), false);
+		else
+			jour2 := true;
+			Set_Editable(Gtk_Entry(Get_Widget(XML,"entryNbGroupes2")), true);
+		end if;
+	end activerJour2;
+
 end P_window_creerfestival;
