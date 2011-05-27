@@ -5,37 +5,15 @@ A -g
 A -gnatv
 A -gnato
 A -gnatA
-P SS ZX
-R nnnnnnnnnvnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnnvnnnnnnnnnnnnnvnnvnnnnnnnnnnnnnnnnnn
+P CE NO SS ZX
+R nnnnnnnnnvnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnnvnnnnnnnnnnnnnvnnvnvnnnnnnnnnnnnnnnn
 
-U p_window_consultgroupe%b  p_window_consultgroupe.adb  b4c5563d NE OO PK IL
+U p_window_consultgroupe%b  p_window_consultgroupe.adb  b345d3c4 OO PK IL
 W ada.tags%s		a-tags.adb		a-tags.ali
 W glade%s		glade.adb		glade.ali
 W glade.xml%s		glade-xml.adb		glade-xml.ali
 W system%s		system.ads		system.ali
 W system.storage_elements%s  s-stoele.adb	s-stoele.ali
-
-U p_window_consultgroupe%s  p_window_consultgroupe.ads  7e84fa8a EE NE OO PK IL
-W ada%s			ada.ads			ada.ali
-W ada.containers%s	a-contai.ads		a-contai.ali
-W ada.containers.vectors%s
-W glade%s		glade.adb		glade.ali
-W glade.xml%s		glade-xml.adb		glade-xml.ali
-W gtk%s			gtk.ads			gtk.ali
-W gtk.button%s		gtk-button.adb		gtk-button.ali
-W gtk.gentry%s		gtk-gentry.adb		gtk-gentry.ali
-W gtk.label%s		gtk-label.adb		gtk-label.ali
-W gtk.main%s		gtk-main.adb		gtk-main.ali
-W gtk.scrolled_window%s	gtk-scrolled_window.adb	gtk-scrolled_window.ali
-W gtk.tree_model%s	gtk-tree_model.adb	gtk-tree_model.ali
-W gtk.tree_selection%s	gtk-tree_selection.adb	gtk-tree_selection.ali
-W gtk.tree_store%s	gtk-tree_store.adb	gtk-tree_store.ali
-W gtk.tree_view%s	gtk-tree_view.adb	gtk-tree_view.ali
-W gtk.window%s		gtk-window.adb		gtk-window.ali
-W gtkada%s		gtkada.ads		gtkada.ali
-W gtkada.dialogs%s	gtkada-dialogs.adb	gtkada-dialogs.ali
-W p_util_treeview%s	p_util_treeview.adb	p_util_treeview.ali
-W system%s		system.ads		system.ali
 
 D ada.ads		20070406091342 9c7dd3ea
 D a-contai.ads		20070406091342 7b35f559
@@ -119,7 +97,7 @@ D i-c.ads		20070406091342 bc3ef662
 D i-cstrin.ads		20090409232307 841d8a31
 D p_util_treeview.ads	20100331082247 f118f0fc
 D p_window_consultgroupe.ads  20110513121635 ceedc9ba
-D p_window_consultgroupe.adb  20110519101203 77cd9568
+D p_window_consultgroupe.adb  20110527123210 704d1091
 D pango.ads		20091225112832 567c5424
 D pango-attributes.ads	20091225112832 21e060ad
 D pango-context.ads	20091225112832 dbda6b1f
@@ -150,13 +128,13 @@ X 2 a-contai.ads
 X 3 a-convec.ads
 43k24*Vectors 379e27 82|20w21
 X 29 glade.ads
-32K9*Glade 44e10 82|2r6 2r20 83|2r6 2r20 20r17 23r17 24r17
+32K9*Glade 44e10 82|2r6 2r20 83|2r6 2r20 20r17 23r17 25r17
 X 30 glade-xml.ads
-37K15*XML 126e14 82|2w12 2r26 83|2w12 2r26 20r23 23r23 24r23
+37K15*XML 126e14 82|2w12 2r26 83|2w12 2r26 20r23 23r23 25r23
 40P9*Glade_XML(39R9) 83|17r23
 42U14*Gtk_New 83|20r27
-86U14*Signal_Connect 83|23R27 24R27
-95V13*Get_Widget{73|71P9} 83|21R49
+86U14*Signal_Connect 83|23R27 25R27
+95V13*Get_Widget{73|71P9} 83|21R49 44r36 45r36 46r36 47r36 48r36 49r36
 X 42 gtk.ads
 41K9*Gtk 77e8 82|4r6 8r6 8r22 9r6 9r22 10r6 10r22 11r6 11r25 12r6 12r21 13r6
 . 13r31 16r6 16r26 17r6 17r26 18r6 18r30
@@ -164,22 +142,34 @@ X 47 gtk-button.ads
 69K13*Button 419e15 82|9w10 9r26
 X 55 gtk-gentry.ads
 41K13*GEntry 446e15 82|10w10 10r26
+48P9*Gtk_Entry(43R9) 83|44r26 45r26 46r26 47r26 48r26 49r26
+116U14*Set_Text 83|44R17 45R17 46R17 47R17 48R17 49R17
 X 57 gtk-label.ads
 94K13*Label 511e14 82|12w10 12r25
 X 58 gtk-main.ads
 41K13*Main 507e13 82|4w10
 X 60 gtk-object.ads
-107U14*Destroy 83|33R17
+107U14*Destroy 83|30R17
 X 62 gtk-scrolled_window.ads
 64K13*Scrolled_Window 275e24 82|13w10 13r35
 X 67 gtk-tree_model.ads
 56K13*Tree_Model 518e19 82|16w10 16r30
+60P9*Gtk_Tree_Model(58R9) 83|38r61
+64R9*Gtk_Tree_Iter 492e14 83|9r13
+229r4*Null_Iter{64R9} 83|9r28 60r63
 X 68 gtk-tree_selection.ads
 55K13*Tree_Selection 194e23 82|18w10 18r34
+59P9*Gtk_Tree_Selection(57R9)
+83U14*Get_Selected 83|38r17
 X 70 gtk-tree_store.ads
 43K13*Tree_Store 366e19 82|17w10 17r30
+47P9*Gtk_Tree_Store(45R9) 83|8r15
+152U14*Set 83|61R27
+217U14*Append 83|60R27
 X 71 gtk-tree_view.ads
 48K13*Tree_View 955e18 82|11w10 11r29
+52P9*Gtk_Tree_View(50R9) 83|7r17
+88V13*Get_Selection{68|59P9} 83|38R30
 X 73 gtk-widget.ads
 71P9*Gtk_Widget(70R9)
 X 74 gtk-window.ads
@@ -191,16 +181,30 @@ X 76 gtkada-dialogs.ads
 37K16*Dialogs 128e19 82|5w13 5r32
 X 81 p_util_treeview.ads
 10K10*p_util_treeview 22e20 82|19w6 19r27
+15U11*creerColonne 83|65r17
+20U11*creerModele 83|66r17
 X 82 p_window_consultgroupe.ads
-22K9*P_window_consultgroupe 26l5 26e27 83|4b14 42l13 42t35
-23U13*init 83|16b19 29l13 29t17
-24U13*fermerFenetre 83|23r73 31b19 34l13 34t26
-25U13*remplirinfo 83|24r70 36b19 39l13 39t24
+22K9*P_window_consultgroupe 26l5 26e27 83|4b14 71l13 71t35
+23U13*init 83|16b19 26l13 26t17
+24U13*fermerFenetre 83|23r73 28b19 31l13 31t26
+25U13*remplirinfo 83|25r76 33b19 50l13 50t24
 X 83 p_window_consultgroupe.adb
-6p1 windowconsultgroupe{74|63P9} 21m17 33r25
-17p17 XML{30|40P9} 20m35 21r60 23r43 24r43
+6p1 windowconsultgroupe{74|63P9} 21m17 30r25
+7p1 treeview_groupe{71|52P9} 38r44 65r43 66r29
+8p1 modele_groupe{70|47P9} 38m76 60r35 61r32 66m45
+9r1 rang_groupe{67|64R9} 38m91 60m50 61r47
+17p17 XML{30|40P9} 20m35 21r60 23r43 25r43
+34i17 Groupe{any type}
+35i17 resulttreeviewgroupe{any type} 41r44
+36i17 Groupe{any type} 41r17
+52U19 inittreeview 52b19 69l13 69t25
+53i17 liste_groupe{any type} 67r17
+54i17 groupe{any type}
+56U27 alimente 56b27 56>37 62l21 62t29
+56i37 pos{any type} 59r58
+57i25 groupe{any type} 59r27 61r86
 X 91 system.ads
 37K9*System 82|3w6 3r18 91|153e11
 64M9*Address
-66m4*Null_Address{64M9} 83|23r95 24r90
+66m4*Null_Address{64M9} 83|23r95 25r96
 

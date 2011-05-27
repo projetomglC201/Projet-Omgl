@@ -8,7 +8,7 @@ A -gnatA
 P SS ZX
 R nnnnnvvnnvnnnnnvnnvnnnnvvnnnnnnvnnnnnnvnnvnnnnnnnnnnnnnvnnvnvnnnnnnnnnnnnnnnn
 
-U p_window_consulterfestival%b  p_window_consulterfestival.adb  7e71093c OO PK IL
+U p_window_consulterfestival%b  p_window_consulterfestival.adb  6a9da1af OO PK IL
 W ada.exceptions%s	a-except.adb		a-except.ali
 W system.finalization_implementation%s  s-finimp.adb  s-finimp.ali
 W system.finalization_root%s  s-finroo.adb	s-finroo.ali
@@ -158,7 +158,7 @@ D p_appli_consulterfestival.ads  20110527112910 77d7ede3
 D p_conversion.ads	20110411141559 02c76134
 D p_util_treeview.ads	20100331082247 f118f0fc
 D p_window_consulterfestival.ads  20110527112910 7f155a7b
-D p_window_consulterfestival.adb  20110527112910 01645347
+D p_window_consulterfestival.adb  20110527120614 1588fbd4
 D pango.ads		20091225112832 567c5424
 D pango-attributes.ads	20091225112832 21e060ad
 D pango-context.ads	20091225112832 dbda6b1f
@@ -285,7 +285,7 @@ X 96 gtkada.ads
 30K9*Gtkada 34e11 107|5r6 5r25
 X 97 gtkada-dialogs.ads
 37K16*Dialogs 128e19 107|5w13 5r32
-40M9*Message_Dialog_Buttons 108|37r15
+40M9*Message_Dialog_Buttons 108|4r7
 50m4*Button_OK{40M9} 108|43r83 43r93
 61n7*Error{57E9} 108|43r77
 77V13*Message_Dialog{40M9} 108|43r32
@@ -314,6 +314,7 @@ X 107 p_window_consulterfestival.ads
 34U13*remplirentry 108|22r68 32b19 61l13 61t25
 35U13*inittreeview 108|24r9 63b19 85l13 85t25
 X 108 p_window_consulterfestival.adb
+4m1 b_box{97|40M9} 43m25
 5p1 XML{51|40P9} 17m27 19r58 20r50 21r35 22r35 53r47 54r47 55r47 56r47 57r47
 . 58r47
 6p1 windowconsulterfestival{95|63P9} 19m9 29r25
@@ -324,7 +325,6 @@ X 108 p_window_consulterfestival.adb
 34r9 Jours_Festival{7|53R9[29|127]} 50m17 56r111
 35r9 resulttreeviewville{17|42R9} 46m79 49r46 51r33
 36r9 Ville{29|184R12} 51m17 53r89 58r91
-37m9 b_box{97|40M9} 43m25
 64r17 liste_ville{7|53R9[29|192]} 81m17 83r36
 65r17 ville{29|184R12}
 67U27 alimente 67b27 67>37 73l21 73t29 83r49

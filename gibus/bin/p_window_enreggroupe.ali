@@ -5,41 +5,15 @@ A -g
 A -gnatv
 A -gnato
 A -gnatA
-P SS ZX
-R nnnnnnnnnvnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnnvnnnnnnnnnnnnnvnnvnnnnnnnnnnnnnnnnnn
+P CE NO SS ZX
+R nnnnnnnnnvnnnnnnnnvnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvnnvnvnnnnnnnnnnnnnnnn
 
-U p_window_enreggroupe%b  p_window_enreggroupe.adb  da61347b NE OO PK IL
-W ada.tags%s		a-tags.adb		a-tags.ali
+U p_window_enreggroupe%b  p_window_enreggroupe.adb  5858b3df OO PK IL
 W glade%s		glade.adb		glade.ali
 W glade.xml%s		glade-xml.adb		glade-xml.ali
-W system%s		system.ads		system.ali
-W system.storage_elements%s  s-stoele.adb	s-stoele.ali
-
-U p_window_enreggroupe%s  p_window_enreggroupe.ads  04e8fd7b EE NE OO PK IL
-W glade%s		glade.adb		glade.ali
-W glade.xml%s		glade-xml.adb		glade-xml.ali
-W gtk%s			gtk.ads			gtk.ali
-W gtk.button%s		gtk-button.adb		gtk-button.ali
-W gtk.gentry%s		gtk-gentry.adb		gtk-gentry.ali
-W gtk.label%s		gtk-label.adb		gtk-label.ali
-W gtk.main%s		gtk-main.adb		gtk-main.ali
-W gtk.scrolled_window%s	gtk-scrolled_window.adb	gtk-scrolled_window.ali
-W gtk.tree_model%s	gtk-tree_model.adb	gtk-tree_model.ali
-W gtk.tree_selection%s	gtk-tree_selection.adb	gtk-tree_selection.ali
-W gtk.tree_store%s	gtk-tree_store.adb	gtk-tree_store.ali
-W gtk.tree_view%s	gtk-tree_view.adb	gtk-tree_view.ali
-W gtk.window%s		gtk-window.adb		gtk-window.ali
-W gtkada%s		gtkada.ads		gtkada.ali
-W gtkada.dialogs%s	gtkada-dialogs.adb	gtkada-dialogs.ali
-W p_util_treeview%s	p_util_treeview.adb	p_util_treeview.ali
 W system%s		system.ads		system.ali
 
 D ada.ads		20070406091342 9c7dd3ea
-D a-except.ads		20090409232307 b54b55de
-D a-finali.ads		20090409232307 9eaacebd
-D a-filico.ads		20090409232307 9299732a
-D a-stream.ads		20090409232307 34aca5be
-D a-tags.ads		20090409232307 bfa07446
 D a-unccon.ads		20070406091342 51e09df2
 D a-uncdea.ads		20070406091342 dc667e6d
 D gdk.ads		20091225112831 c70a781f
@@ -113,8 +87,8 @@ D interfac.ads		20090409232307 a69cad5c
 D i-c.ads		20070406091342 bc3ef662
 D i-cstrin.ads		20090409232307 841d8a31
 D p_util_treeview.ads	20100331082247 f118f0fc
-D p_window_enreggroupe.ads  20110513121635 85ff84c7
-D p_window_enreggroupe.adb  20110519101203 527bba53
+D p_window_enreggroupe.ads  20110527120614 ef29ed65
+D p_window_enreggroupe.adb  20110527120614 ba945455
 D pango.ads		20091225112832 567c5424
 D pango-attributes.ads	20091225112832 21e060ad
 D pango-context.ads	20091225112832 dbda6b1f
@@ -123,78 +97,111 @@ D pango-font.ads	20091225112832 4df735fa
 D pango-layout.ads	20091225112832 501b6bc2
 D pango-tabs.ads	20091225112832 06755cb4
 D system.ads		20101024233633 15e10948
-D s-exctab.ads		20090409232307 5c1c61ae
-D s-finimp.ads		20090409232307 9449f4cb
-D s-finroo.ads		20090409232307 1408f9d1
 D s-parame.ads		20090409232307 f32e56e9
-D s-secsta.ads		20090409232307 7bae3621
-D s-soflin.ads		20090409232307 0c6fd39d
-D s-stache.ads		20090409232307 257b3be8
-D s-stalib.ads		20090409232307 52b793d5
-D s-stoele.ads		20090409232307 ed966df3
-D s-stoele.adb		20090409232307 e9998c78
-D s-stratt.ads		20090409232307 fef7c1da
 D s-string.ads		20090409232307 04f2ee70
-D s-traent.ads		20090409232307 bd5f2753
-D s-unstyp.ads		20090409232307 c0f9fae5
 D unchconv.ads		20070406091342 34860a55
-X 27 glade.ads
-32K9*Glade 44e10 80|2r6 2r20 81|2r6 2r20 15r9 17r9 18r9
-X 28 glade-xml.ads
-37K15*XML 126e14 80|2w12 2r26 81|2w12 2r26 15r15 17r15 18r15
-40P9*Glade_XML(39R9) 81|13r7
-42U14*Gtk_New 81|15r19
-86U14*Signal_Connect 81|17R19 18R19
-95V13*Get_Widget{71|71P9} 81|16R30
-X 40 gtk.ads
-41K9*Gtk 77e8 80|4r6 8r6 8r22 9r6 9r22 10r6 10r22 11r6 11r25 12r6 12r21 13r6
+X 22 glade.ads
+32K9*Glade 44e10 75|2r6 2r20 76|2r6 2r20 28r9 35r9 36r9 37r9
+X 23 glade-xml.ads
+37K15*XML 126e14 75|2w12 2r26 76|2w12 2r26 28r15 35r15 36r15 37r15
+40P9*Glade_XML(39R9) 76|9r7
+42U14*Gtk_New 76|28r19
+86U14*Signal_Connect 76|35R19 36R19 37R19
+95V13*Get_Widget{66|71P9} 76|29R30 30R39 31R39 32R39 145R36
+X 35 gtk.ads
+41K9*Gtk 77e8 75|4r6 8r6 8r22 9r6 9r22 10r6 10r22 11r6 11r25 12r6 12r21 13r6
 . 13r31 16r6 16r26 17r6 17r26 18r6 18r30
-X 45 gtk-button.ads
-69K13*Button 419e15 80|9w10 9r26
-X 53 gtk-gentry.ads
-41K13*GEntry 446e15 80|10w10 10r26
-X 55 gtk-label.ads
-94K13*Label 511e14 80|12w10 12r25
-X 56 gtk-main.ads
-41K13*Main 507e13 80|4w10
-X 58 gtk-object.ads
-107U14*Destroy 81|24R17
-X 60 gtk-scrolled_window.ads
-64K13*Scrolled_Window 275e24 80|13w10 13r35
-X 65 gtk-tree_model.ads
-56K13*Tree_Model 518e19 80|16w10 16r30
-X 66 gtk-tree_selection.ads
-55K13*Tree_Selection 194e23 80|18w10 18r34
-X 68 gtk-tree_store.ads
-43K13*Tree_Store 366e19 80|17w10 17r30
-X 69 gtk-tree_view.ads
-48K13*Tree_View 955e18 80|11w10 11r29
-X 71 gtk-widget.ads
+X 40 gtk-button.ads
+69K13*Button 419e15 75|9w10 9r26
+X 48 gtk-gentry.ads
+41K13*GEntry 446e15 75|10w10 10r26
+48P9*Gtk_Entry(43R9) 76|145r26
+116U14*Set_Text 76|145R17
+X 50 gtk-label.ads
+94K13*Label 511e14 75|12w10 12r25
+X 51 gtk-main.ads
+41K13*Main 507e13 75|4w10
+X 53 gtk-object.ads
+107U14*Destroy 76|43R17
+X 55 gtk-scrolled_window.ads
+64K13*Scrolled_Window 275e24 75|13w10 13r35
+X 60 gtk-tree_model.ads
+56K13*Tree_Model 518e19 75|16w10 16r30
+60P9*Gtk_Tree_Model(58R9) 76|135r60
+64R9*Gtk_Tree_Iter 492e14 76|14r13 18r13 22r13
+229r4*Null_Iter{64R9} 76|14r30 18r30 22r30 60r61 84r61 110r61 137r33
+X 61 gtk-tree_selection.ads
+55K13*Tree_Selection 194e23 75|18w10 18r34
+59P9*Gtk_Tree_Selection(57R9)
+83U14*Get_Selected 76|135r17
+X 63 gtk-tree_store.ads
+43K13*Tree_Store 366e19 75|17w10 17r30
+47P9*Gtk_Tree_Store(45R9) 76|13r15 17r15 21r15
+152U14*Set 76|61R27 85R27 86R27 111R27 112R27
+217U14*Append 76|60R27 84R27 110R27
+X 64 gtk-tree_view.ads
+48K13*Tree_View 955e18 75|11w10 11r29
+52P9*Gtk_Tree_View(50R9) 76|12r17 16r17 20r17 30r25 31r25 32r25
+88V13*Get_Selection{61|59P9} 76|135R30
+X 66 gtk-widget.ads
 71P9*Gtk_Widget(70R9)
-X 72 gtk-window.ads
-60K13*Window 1189e15 80|8w10 8r26
-63P9*Gtk_Window(62R9) 81|9r8 16r19
-X 73 gtkada.ads
-30K9*Gtkada 34e11 80|5r6 5r25
-X 74 gtkada-dialogs.ads
-37K16*Dialogs 128e19 80|5w13 5r32
-40M9*Message_Dialog_Buttons 81|28r25
-50m4*Button_OK{40M9} 81|30r74 30r84
-64n7*Information{57E9} 81|30r62
-77V13*Message_Dialog{40M9} 81|30r24
-X 79 p_util_treeview.ads
-10K10*p_util_treeview 22e20 80|19w6 19r27
-X 80 p_window_enreggroupe.ads
-21K9*P_window_enreggroupe 26l5 26e25 81|7b14 34l5 34t25
-22U13*init 81|12b11 20l5 20t9
-23U13*fermerFenetre 81|17r66 22b19 25l13 25t26
-24U13*enregistrergroupe 81|18r70 27b19 31l13 31t30
-X 81 p_window_enreggroupe.adb
-9p1 window{72|63P9} 16m9 24r25
-13p1 XML{28|40P9} 15m27 16r41 17r35 18r35
-28m17 b_box{74|40M9} 30m17
-X 89 system.ads
-37K9*System 80|3w6 3r18 89|153e11
+X 67 gtk-window.ads
+60K13*Window 1189e15 75|8w10 8r26
+63P9*Gtk_Window(62R9) 76|10r8 29r19
+X 68 gtkada.ads
+30K9*Gtkada 34e11 75|5r6 5r25
+X 69 gtkada-dialogs.ads
+37K16*Dialogs 128e19 75|5w13 5r32
+40M9*Message_Dialog_Buttons 76|8r7
+50m4*Button_OK{40M9} 76|49r74 49r84 138r83 138r93
+61n7*Error{57E9} 76|138r77
+64n7*Information{57E9} 76|49r62
+77V13*Message_Dialog{40M9} 76|49r24 138r32
+X 74 p_util_treeview.ads
+10K10*p_util_treeview 22e20 75|19w6 19r27
+15U11*creerColonne 76|66r17 90r17 91r17 117r17 118r17
+20U11*creerModele 76|68r17 93r17 120r17
+X 75 p_window_enreggroupe.ads
+21K9*P_window_enreggroupe 30l5 30e25 76|7b14 149l5 149t25
+22U13*init 76|25b11 39l5 39t9
+23U13*fermerFenetre 76|35r66 41b19 44l13 44t26
+24U13*enregistrergroupe 76|36r70 46b19 50l13 50t30
+25U13*inittreeviewville 76|52b19
+26U13*inittreeviewjour1 76|76b19
+27U13*inittreeviewjour2 76|102b19
+28U13*initentry 76|37r72 128b19 146l13 146t22
+X 76 p_window_enreggroupe.adb
+8m1 b_box{69|40M9} 49m17 138m25
+9p1 XML{23|40P9} 28m27 29r41 30r50 31r50 32r50 35r35 36r35 37r35 145r47
+10p1 window{67|63P9} 29m9 43r25
+12p1 treeview_ville{64|52P9} 30m9 66r42 68r29 135r44
+13p1 modele_ville{63|47P9} 60r35 61r32 68m44 135m75
+14r1 rang_ville{60|64R9} 60m49 61r46 136m17 137r20
+16p1 treeview_jour1{64|52P9} 31m9 90r42 91r39 93r29
+17p1 modele_jour1{63|47P9} 84r35 85r32 86r32 93m44
+18r1 rang_jour1{60|64R9} 84m49 85r46 86r46
+20p1 treeview_jour2{64|52P9} 32m9 117r42 118r39 120r29
+21p1 modele_jour2{63|47P9} 110r35 111r32 112r32 120m44
+22r1 rang_jour2{60|64R9} 110m49 111r46 112r46
+53i17 liste_ville{any type} 70r17
+54i17 ville{any type}
+56U27 alimente 56b27 56>37 62l21 62t29
+56i37 pos{any type} 59r56
+57i25 ville{any type} 59r27 61r84
+77i17 liste_groupe{any type} 95r17
+78i17 groupe{any type}
+80U27 alimente 80b27 80>37 87l21 87t29
+80i37 pos{any type} 83r58
+81i25 Groupe{any type} 83r27 85r84
+103i17 liste_groupe{any type} 122r17
+104i17 groupe{any type}
+106U27 alimente 106b27 106>37 113l21 113t29
+106i37 pos{any type} 109r58
+107i25 Groupe{any type} 109r27 111r84
+129i9 Festival{any type} 143r17 145r117 145r186 145r254
+130i9 resulttreeviewville{any type} 143r46
+X 84 system.ads
+37K9*System 75|3w6 3r18 84|153e11
 64M9*Address
-66m4*Null_Address{64M9} 81|17r88 18r96
+66m4*Null_Address{64M9} 76|35r88 36r96 37r90
 
