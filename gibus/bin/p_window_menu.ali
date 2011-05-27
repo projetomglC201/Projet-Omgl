@@ -15,7 +15,7 @@ W p_esiut%s		p_esiut.adb		p_esiut.ali
 W system%s		system.ads		system.ali
 W system.storage_elements%s  s-stoele.adb	s-stoele.ali
 
-U p_window_menu%s	p_window_menu.ads	fd0b82fb EE NE OO PK IL
+U p_window_menu%s	p_window_menu.ads	d8403872 EE NE OO PK IL
 W glade%s		glade.adb		glade.ali
 W glade.xml%s		glade-xml.adb		glade-xml.ali
 W gtk%s			gtk.ads			gtk.ali
@@ -69,11 +69,11 @@ D a-tiflio.ads		20090409232307 5d91823c
 D a-tiinio.ads		20090409232307 949a7272
 D a-unccon.ads		20070406091342 51e09df2
 D a-uncdea.ads		20070406091342 dc667e6d
-D base_types.ads	20110513121635 e4ff315f
-D basec201_data.ads	20110513121635 71ef6054
-D db_commons.ads	20110513121635 bd9843a1
-D festival_io.ads	20110513121635 cfbf0da9
-D gagnant_festival_io.ads  20110513121635 b52c391d
+D base_types.ads	20110513115553 e4ff315f
+D basec201_data.ads	20110513115553 71ef6054
+D db_commons.ads	20110513115554 bd9843a1
+D festival_io.ads	20110524072846 cfbf0da9
+D gagnant_festival_io.ads  20110513115553 b52c391d
 D gdk.ads		20091225112831 c70a781f
 D gdk-bitmap.ads	20091225112831 21c4d147
 D gdk-color.ads		20091225112831 25c4c95e
@@ -105,8 +105,8 @@ D glib-types.ads	20091225112831 effe6732
 D glib-values.ads	20091225112831 233fe8b3
 D gnat.ads		20050905075125 96410e68
 D g-string.ads		20090409232307 8ea3f1a8
-D grande_finale_io.ads	20110513121635 585382ce
-D groupe_io.ads		20110513121635 abb21f8e
+D grande_finale_io.ads	20110513115554 585382ce
+D groupe_io.ads		20110513115553 abb21f8e
 D gtk.ads		20091225112832 a8a2c9c9
 D gtk-accel_group.ads	20091225112831 ba2d338c
 D gtk-adjustment.ads	20091225112831 d1313f1c
@@ -150,23 +150,24 @@ D interfac.ads		20090409232307 a69cad5c
 D i-c.ads		20070406091342 bc3ef662
 D i-cstrin.ads		20090409232307 841d8a31
 D i-cstrea.ads		20090409232307 e1e064a9
-D jour_festival_io.ads	20110513121635 52750015
-D p_appli_consulterfestival.ads  20110527112910 77d7ede3
-D p_appli_creerfestival.ads  20110524182119 2933d279
-D p_appli_enregville.ads  20110520114953 b4f34d59
-D p_appli_menu.ads	20110520114140 052ba878
+D jour_festival_io.ads	20110513115553 52750015
+D p_appli_consulterfestival.ads  20110525103728 77d7ede3
+D p_appli_creerfestival.ads  20110524061521 2933d279
+D p_appli_enreggroupe.ads  20110527122415 9f213f8b
+D p_appli_enregville.ads  20110520114252 b4f34d59
+D p_appli_menu.ads	20110520091631 052ba878
 D p_conversion.ads	20110411141559 02c76134
 D p_esiut.ads		20050920104637 eadcfb09
 D p_util_treeview.ads	20100331082247 f118f0fc
-D p_window_consulterfestival.ads  20110527112910 7f155a7b
-D p_window_consultgroupe.ads  20110513121635 ceedc9ba
-D p_window_consultprogramme.ads  20110513121635 202e77c1
-D p_window_creerfestival.ads  20110527115929 17938135
-D p_window_enreggroupe.ads  20110513121635 85ff84c7
-D p_window_enregville.ads  20110520114140 8326bda7
-D p_window_menu.ads	20110520114140 68fe1f1b
-D p_window_menu.adb	20110520114140 235a782f
-D p_window_progfestival.ads  20110513121635 91551071
+D p_window_consulterfestival.ads  20110525103849 7f155a7b
+D p_window_consultgroupe.ads  20110511104700 ceedc9ba
+D p_window_consultprogramme.ads  20110418112510 202e77c1
+D p_window_creerfestival.ads  20110527120437 17938135
+D p_window_enreggroupe.ads  20110527122305 a0b43e4e
+D p_window_enregville.ads  20110520090307 8326bda7
+D p_window_menu.ads	20110520091920 68fe1f1b
+D p_window_menu.adb	20110523091712 235a782f
+D p_window_progfestival.ads  20110509105654 91551071
 D pango.ads		20091225112832 567c5424
 D pango-attributes.ads	20091225112832 21e060ad
 D pango-context.ads	20091225112832 dbda6b1f
@@ -194,103 +195,103 @@ D s-unstyp.ads		20090409232307 c0f9fae5
 D s-wchcon.ads		20090409232307 ab028799
 D text_io.ads		20070406091342 7c37c8ff
 D unchconv.ads		20070406091342 34860a55
-D ville_io.ads		20110513121635 847d103e
+D ville_io.ads		20110513115553 847d103e
 X 51 glade.ads
-32K9*Glade 44e10 123|2r6 2r20 124|11r9 15r9 16r9 17r9 18r9 19r9 20r9 21r9
+32K9*Glade 44e10 124|2r6 2r20 125|11r9 15r9 16r9 17r9 18r9 19r9 20r9 21r9
 . 22r9 23r9 24r9
 X 52 glade-xml.ads
-37K15*XML 126e14 123|2w12 2r26 124|11r15 15r15 16r15 17r15 18r15 19r15 20r15
+37K15*XML 126e14 124|2w12 2r26 125|11r15 15r15 16r15 17r15 18r15 19r15 20r15
 . 21r15 22r15 23r15 24r15
-40P9*Glade_XML(39R9) 124|9r7
-42U14*Gtk_New 124|11r19
-86U14*Signal_Connect 124|15R19 16R19 17R19 18R19 19R19 20R19 21R19 22R19
+40P9*Glade_XML(39R9) 125|9r7
+42U14*Gtk_New 125|11r19
+86U14*Signal_Connect 125|15R19 16R19 17R19 18R19 19R19 20R19 21R19 22R19
 . 23R19 24R19
-95V13*Get_Widget{100|71P9} 124|13R34
+95V13*Get_Widget{100|71P9} 125|13R34
 X 66 gtk.ads
-41K9*Gtk 77e8 123|4r6 8r6 8r22 9r6 9r22 10r6 10r22 11r6 11r25 12r6 12r21
-. 13r6 13r31 16r6 16r26 17r6 17r26 18r6 18r30 124|43r17
+41K9*Gtk 77e8 124|4r6 8r6 8r22 9r6 9r22 10r6 10r22 11r6 11r25 12r6 12r21
+. 13r6 13r31 16r6 16r26 17r6 17r26 18r6 18r30 125|43r17
 X 71 gtk-button.ads
-69K13*Button 419e15 123|9w10 9r26
+69K13*Button 419e15 124|9w10 9r26
 X 82 gtk-gentry.ads
-41K13*GEntry 446e15 123|10w10 10r26
+41K13*GEntry 446e15 124|10w10 10r26
 X 84 gtk-label.ads
-94K13*Label 511e14 123|12w10 12r25
+94K13*Label 511e14 124|12w10 12r25
 X 85 gtk-main.ads
-41K13*Main 507e13 123|4w10 124|43r21
-195U14*Main_Quit 124|43r26
+41K13*Main 507e13 124|4w10 125|43r21
+195U14*Main_Quit 125|43r26
 X 89 gtk-scrolled_window.ads
-64K13*Scrolled_Window 275e24 123|13w10 13r35
+64K13*Scrolled_Window 275e24 124|13w10 13r35
 X 94 gtk-tree_model.ads
-56K13*Tree_Model 518e19 123|16w10 16r30
+56K13*Tree_Model 518e19 124|16w10 16r30
 X 95 gtk-tree_selection.ads
-55K13*Tree_Selection 194e23 123|18w10 18r34
+55K13*Tree_Selection 194e23 124|18w10 18r34
 X 97 gtk-tree_store.ads
-43K13*Tree_Store 366e19 123|17w10 17r30
+43K13*Tree_Store 366e19 124|17w10 17r30
 X 98 gtk-tree_view.ads
-48K13*Tree_View 955e18 123|11w10 11r29
+48K13*Tree_View 955e18 124|11w10 11r29
 X 100 gtk-widget.ads
 71P9*Gtk_Widget(70R9)
 X 101 gtk-window.ads
-60K13*Window 1189e15 123|8w10 8r26
-63P9*Gtk_Window(62R9) 124|4r14 13r23
+60K13*Window 1189e15 124|8w10 8r26
+63P9*Gtk_Window(62R9) 125|4r14 13r23
 X 102 gtkada.ads
-30K9*Gtkada 34e11 123|5r6 5r25
+30K9*Gtkada 34e11 124|5r6 5r25
 X 103 gtkada-dialogs.ads
-37K16*Dialogs 128e19 123|5w13 5r32
-40M9*Message_Dialog_Buttons 124|29r15
-47m4*Button_Yes{40M9} 124|31r101 31r125
-48m4*Button_No{40M9} 124|31r115
-67n7*Confirmation{57E9} 124|31r88
-77V13*Message_Dialog{40M9} 124|31r16
-X 113 p_appli_menu.ads
-10K9*p_appli_menu 23e17 123|31w6 124|33r27
-12U11*reinitDB 124|33r40
-X 115 p_esiut.ads
-12K11*p_esiut 157e14 124|1w6 1r19
-83U16*ECRIRE_LIGNE=84:42 124|34r25 36r27
-X 116 p_util_treeview.ads
-10K10*p_util_treeview 22e20 123|19w6 19r27
-X 117 p_window_consulterfestival.ads
-29K9*P_window_consulterfestival 37e31 123|23w6 124|74r17
-32U13*init 124|74r44
-X 118 p_window_consultgroupe.ads
-22K9*P_window_consultgroupe 26e27 123|22w6 124|90r17
-23U13*init 124|90r40
-X 119 p_window_consultprogramme.ads
-21K9*P_window_consultprogramme 25e30 123|27w6 124|95r17
-22U13*init 124|95r43
-X 120 p_window_creerfestival.ads
-37K9*P_window_creerfestival 47e27 123|24w6 124|69r17
-42U13*init 124|69r40
-X 121 p_window_enreggroupe.ads
-21K9*P_window_enreggroupe 26e25 123|28w6 124|85r17
-22U13*init 124|85r38
-X 122 p_window_enregville.ads
-28K9*P_window_enregville 36e24 123|25w6 124|64r17
-31U13*init 124|64r37
-X 123 p_window_menu.ads
-34K9*p_window_menu 51l6 51e19 124|2b14 102l5 102t18
-37U11*Init 124|8b11 26l5 26t9
-38U11*Reinit 124|15r68 28b19 39l13 39t19
-39U11*fermerFenetre 124|16r66 24r63 41b19 60l13 60t26
-40U11*Openenregvilles 124|17r73 62b19 65l13 65t28
-41U11*Opencreerfestival 124|18r75 67b19 70l13 70t30
-42U11*Openconsultfestival 124|19r77 72b19 75l13 75t32
-43U11*Openprogfestival 124|20r74 78b19 81l13 81t29
-44U11*Openenreggroupe 124|21r74 83b19 86l13 86t28
-45U11*Openconsultgroupe 124|22r75 88b19 91l13 91t30
-46U11*Openconsultprogramme 124|23r78 93b19 96l13 96t33
-X 124 p_window_menu.adb
+37K16*Dialogs 128e19 124|5w13 5r32
+40M9*Message_Dialog_Buttons 125|29r15
+47m4*Button_Yes{40M9} 125|31r101 31r125
+48m4*Button_No{40M9} 125|31r115
+67n7*Confirmation{57E9} 125|31r88
+77V13*Message_Dialog{40M9} 125|31r16
+X 114 p_appli_menu.ads
+10K9*p_appli_menu 23e17 124|31w6 125|33r27
+12U11*reinitDB 125|33r40
+X 116 p_esiut.ads
+12K11*p_esiut 157e14 125|1w6 1r19
+83U16*ECRIRE_LIGNE=84:42 125|34r25 36r27
+X 117 p_util_treeview.ads
+10K10*p_util_treeview 22e20 124|19w6 19r27
+X 118 p_window_consulterfestival.ads
+29K9*P_window_consulterfestival 37e31 124|23w6 125|74r17
+32U13*init 125|74r44
+X 119 p_window_consultgroupe.ads
+22K9*P_window_consultgroupe 26e27 124|22w6 125|90r17
+23U13*init 125|90r40
+X 120 p_window_consultprogramme.ads
+21K9*P_window_consultprogramme 25e30 124|27w6 125|95r17
+22U13*init 125|95r43
+X 121 p_window_creerfestival.ads
+37K9*P_window_creerfestival 47e27 124|24w6 125|69r17
+42U13*init 125|69r40
+X 122 p_window_enreggroupe.ads
+28K9*P_window_enreggroupe 38e25 124|28w6 125|85r17
+30U13*init 125|85r38
+X 123 p_window_enregville.ads
+28K9*P_window_enregville 36e24 124|25w6 125|64r17
+31U13*init 125|64r37
+X 124 p_window_menu.ads
+34K9*p_window_menu 51l6 51e19 125|2b14 102l5 102t18
+37U11*Init 125|8b11 26l5 26t9
+38U11*Reinit 125|15r68 28b19 39l13 39t19
+39U11*fermerFenetre 125|16r66 24r63 41b19 60l13 60t26
+40U11*Openenregvilles 125|17r73 62b19 65l13 65t28
+41U11*Opencreerfestival 125|18r75 67b19 70l13 70t30
+42U11*Openconsultfestival 125|19r77 72b19 75l13 75t32
+43U11*Openprogfestival 125|20r74 78b19 81l13 81t29
+44U11*Openenreggroupe 125|21r74 83b19 86l13 86t28
+45U11*Openconsultgroupe 125|22r75 88b19 91l13 91t30
+46U11*Openconsultprogramme 125|23r78 93b19 96l13 96t33
+X 125 p_window_menu.adb
 4p1 windowmenu{101|63P9} 13m9
 9p1 XML{52|40P9} 11m27 13r45 15r35 16r35 17r35 18r35 19r35 20r35 21r35 22r35
 . 23r35 24r35
 29m9 b_box{103|40M9} 31m9 32r14
-X 125 p_window_progfestival.ads
-22K9*P_window_progfestival 123|26w6 124|80r17 125|31e26
-23U13*init 124|80r39
-X 133 system.ads
-37K9*System 123|3w6 3r18 133|153e11
+X 126 p_window_progfestival.ads
+22K9*P_window_progfestival 124|26w6 125|80r17 126|31e26
+23U13*init 125|80r39
+X 134 system.ads
+37K9*System 124|3w6 3r18 134|153e11
 64M9*Address
-66m4*Null_Address{64M9} 124|15r83 16r88 17r97 18r101 19r105 20r99 21r98 22r101
+66m4*Null_Address{64M9} 125|15r83 16r88 17r97 18r101 19r105 20r99 21r98 22r101
 . 23r107 24r85
 

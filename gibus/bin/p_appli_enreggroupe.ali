@@ -6,9 +6,10 @@ A -gnatv
 A -gnato
 A -gnatA
 P SS ZX
-R nnnnnnnnnnnnnnnnnnnnnnnnnnnnvnnvnnnnnnvnnvnnnnnnnnnnnnnvnnvnnnnnnnnnnnnnnnnnn
+R nnnnnnnnnnnnnnnvnnvnnnnvnnnnvnnvnnnnnnvnnvnnnnnnnnnnnnnvnnvnnnnnnnnnnnnnnnnnn
 
-U p_appli_creerfestival%b  p_appli_creerfestival.adb  e0d2fb93 NE OO PK IL
+U p_appli_enreggroupe%b	p_appli_enreggroupe.adb	cc70d973 NE OO PK IL
+W ada.exceptions%s	a-except.adb		a-except.ali
 W ada.tags%s		a-tags.adb		a-tags.ali
 W system%s		system.ads		system.ali
 W system.finalization_implementation%s  s-finimp.adb  s-finimp.ali
@@ -16,11 +17,12 @@ W system.finalization_root%s  s-finroo.adb	s-finroo.ali
 W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
 W system.soft_links%s	s-soflin.adb		s-soflin.ali
 W system.standard_library%s  s-stalib.adb	s-stalib.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
 
-U p_appli_creerfestival%s  p_appli_creerfestival.ads  cd8da682 EE NE OO PK IL
+U p_appli_enreggroupe%s	p_appli_enreggroupe.ads	bab59df8 EE NE OO PK IL
 W ada%s			ada.ads			ada.ali
-W ada.containers%s	a-contai.ads		a-contai.ali
-W ada.containers.vectors%s
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
 W basec201_data%s	basec201_data.adb	basec201_data.ali
 W db_commons%s		db_commons.adb		db_commons.ali
 W festival_io%s		festival_io.adb		festival_io.ali
@@ -60,8 +62,8 @@ D festival_io.ads	20110524072846 cfbf0da9
 D interfac.ads		20090409232307 a69cad5c
 D i-cstrea.ads		20090409232307 e1e064a9
 D jour_festival_io.ads	20110513115553 52750015
-D p_appli_creerfestival.ads  20110524061521 2933d279
-D p_appli_creerfestival.adb  20110524074501 c9e129ea
+D p_appli_enreggroupe.ads  20110527122415 9f213f8b
+D p_appli_enreggroupe.adb  20110527122607 5351e6f8
 D system.ads		20101024233633 15e10948
 D s-crtl.ads		20090409232307 997234a1
 D s-exctab.ads		20090409232307 5c1c61ae
@@ -81,46 +83,65 @@ D s-unstyp.ads		20090409232307 c0f9fae5
 D s-wchcon.ads		20090409232307 ab028799
 D ville_io.ads		20110513115553 847d103e
 X 1 ada.ads
-16K9*Ada 19e8 34|6r6
-X 6 a-contai.ads
-16K13*Containers 22e19 34|6r10
+16K9*Ada 19e8 34|6r6 6r33
 X 7 a-convec.ads
-43k24*Vectors 379e27 34|6w21
 47I12*Extended_Index{integer}
-53R9*Vector 34|14r50[28|192] 35|8r50[28|192] 11r31[28|192] 12r19[28|192]
-101V13*Element{28|184R12} 35|22r87[28|192] 23r73[28|192]
+53R9*Vector 34|15r50[28|192] 16r70[28|91] 17r70[28|91] 18r83[28|161] 35|8r50[28|192]
+. 11r31[28|192] 12r19[28|192] 31r70[28|91] 47r70[28|91] 64r83[28|161]
+101V13*Element{28|184R12} 35|22r91[28|192] 23r73[28|192]
 197U14*Append 35|23r36[28|192]
 237V13*First_Index{integer} 35|21r29[28|192]
+241V13*First_Element{28|116R12} 35|40r60[28|127] 58r60[28|127]
 243V13*Last_Index{47I12[28|192]} 35|21r61[28|192]
+X 13 a-string.ads
+16K13*Strings 35e16 34|6r10 6r37
+X 17 a-strunb.ads
+39K21*Unbounded 428e26 34|6w18 6r45
+42R9*Unbounded_String 395e14 34|18r44 35|64r44
 X 28 basec201_data.ads
-14K9*Basec201_Data 210e18 34|4w6 4r25
-116R12*tJour_Festival 123e17 34|18r50 35|38r50
-149R12*tFestival 157e17 34|16r40 35|31r40
-192K15*Ville_List[7|43] 34|14r39 35|8r39 11r20 12r8 21r18 21r50 23r25 23r62
+14K9*Basec201_Data 210e18 34|2w6 2r25
+91K15*Groupe_List[7|43] 34|16r58 17r58 35|31r58 47r58
+116R12*tJour_Festival 123e17 35|33r16 49r16
+149R12*tFestival 157e17 34|16r40 17r40 35|31r40 47r40
+150i10*Id_Festival{integer} 35|37r57 55r57
+161K15*Festival_List[7|43] 34|18r69 35|64r69
+184R12*tVille 188e17 35|65r7
+192K15*Ville_List[7|43] 34|15r39 35|8r39 11r20 12r8 21r18 21r50 23r25 23r62
 X 29 db_commons.ads
-11K9*DB_Commons 125e15 34|5w6 35|13r10
-45R9*Criteria 123e14 35|13r21
+11K9*DB_Commons 125e15 34|7w6 35|13r10 34r10 50r10
+45R9*Criteria 123e14 35|13r21 34r21 50r21
 X 30 festival_io.ads
-12K9*Festival_IO 96e16 34|2w6 35|22r20 34r2
-28V13*Is_Empty{boolean} 35|22r32
-56U14*Save 35|34r14
+12K9*Festival_IO 96e16 34|3w6 35|22r24
+28V13*Is_Empty{boolean} 35|22r36
 X 33 jour_festival_io.ads
-12K9*Jour_Festival_IO 93e21 34|3w6 35|42r1
-56U14*Save 35|42r18
-X 34 p_appli_creerfestival.ads
-10K9*p_appli_creerfestival 22l5 22e26 35|3b14 47l5 47t26
-14V10*GetVillesSansFestival{7|53R9[28|192]} 35|8b10 29l5 29t26
-16U11*CreateFestival 16>27 35|31b11 36l5 36t19
-16r27 Festival{28|149R12} 35|31b27 34r19
-18U11*CreateJourFestival 18>31 35|38b11 43l5 43t23
-18r31 Jour_Festival{28|116R12} 35|38b31 42r23
-X 35 p_appli_creerfestival.adb
+12K9*Jour_Festival_IO 93e21 34|5w6 35|36r9 37r9 40r24 42r16 54r9 55r9 58r24
+. 60r16
+45V13*Retrieve{7|53R9[28|127]} 35|40r41 58r41
+74V13*Retrieve_Associated_Groupes{7|53R9[28|91]} 35|42r33 60r33
+80U14*Add_Festival 35|37r26 55r26
+81U14*Add_Num_Ordre 35|36r26 54r26
+X 34 p_appli_enreggroupe.ads
+12K9*p_appli_enreggroupe 24l5 24e24 35|6b14 80l5 80t24
+15V10*GetVillesAvecFestival{7|53R9[28|192]} 35|8b10 29l5 29t26
+16V10*GetGroupesJour1{7|53R9[28|91]} 16>27 35|31b10 45l5 45t20
+16r27 festival{28|149R12} 35|31b27 37r48
+17V10*GetGroupesJour2{7|53R9[28|91]} 17>27 35|47b10 62l5 62t20
+17r27 festival{28|149R12} 35|47b27 55r48
+18V10*GetFestivalAssocie{7|53R9[28|161]} 18>29 35|64b10 72l5 72t23
+18r29 entryVille{17|42R9} 35|64b29 68r40
+X 35 p_appli_enreggroupe.adb
 11r1 VillesSansFestival{7|53R9[28|192]} 23m43 27r16
-12r1 Villes{7|53R9[28|192]} 19m9 21r41 21r72 22r80 23r81
+12r1 Villes{7|53R9[28|192]} 19m9 21r41 21r72 22r84 23r81
 13r1 criteria{29|45R9} 19r35
-21i13 i{integer} 22r95 23r88
+21i13 i{integer} 22r99 23r88
+33r1 Jour1festival{28|116R12} 40m9 42r61
+34r1 criteria{29|45R9} 36m40 37m39 40r50
+49r1 Jour2festival{28|116R12} 58m9 60r61
+50r1 criteria{29|45R9} 54m40 55m39 58r50
+65r1 Ville{28|184R12} 68m9 69r55
 X 53 ville_io.ads
-12K9*Ville_IO 34|1w6 35|19r17 22r41 53|88e13
+12K9*Ville_IO 34|4w6 35|19r17 22r45 68r16 69r16 53|88e13
+39V13*Retrieve_By_PK{28|184R12} 35|68r25
 44V13*Retrieve{7|53R9[28|192]} 35|19r26
-73V13*Retrieve_Associated_Festivals{7|53R9[28|161]} 35|22r50
+73V13*Retrieve_Associated_Festivals{7|53R9[28|161]} 35|22r54 69r25
 

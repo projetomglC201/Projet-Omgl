@@ -110,7 +110,7 @@ package body ada_main is
       E347 : Boolean; pragma Import (Ada, E347, "jour_festival_io_E");
       E427 : Boolean; pragma Import (Ada, E427, "logger_E");
       E435 : Boolean; pragma Import (Ada, E435, "p_conversion_E");
-      E467 : Boolean; pragma Import (Ada, E467, "p_esiut_E");
+      E469 : Boolean; pragma Import (Ada, E469, "p_esiut_E");
       E128 : Boolean; pragma Import (Ada, E128, "pango__enums_E");
       E148 : Boolean; pragma Import (Ada, E148, "pango__attributes_E");
       E120 : Boolean; pragma Import (Ada, E120, "pango__font_E");
@@ -156,17 +156,18 @@ package body ada_main is
       E441 : Boolean; pragma Import (Ada, E441, "p_util_treeview_E");
       E445 : Boolean; pragma Import (Ada, E445, "p_window_consultgroupe_E");
       E447 : Boolean; pragma Import (Ada, E447, "p_window_consultprogramme_E");
-      E459 : Boolean; pragma Import (Ada, E459, "p_window_enreggroupe_E");
-      E471 : Boolean; pragma Import (Ada, E471, "p_window_progfestival_E");
+      E473 : Boolean; pragma Import (Ada, E473, "p_window_progfestival_E");
       E439 : Boolean; pragma Import (Ada, E439, "ville_io_E");
       E431 : Boolean; pragma Import (Ada, E431, "p_appli_consulterfestival_E");
       E457 : Boolean; pragma Import (Ada, E457, "p_appli_creerfestival_E");
-      E463 : Boolean; pragma Import (Ada, E463, "p_appli_enregville_E");
-      E469 : Boolean; pragma Import (Ada, E469, "p_appli_menu_E");
+      E461 : Boolean; pragma Import (Ada, E461, "p_appli_enreggroupe_E");
+      E465 : Boolean; pragma Import (Ada, E465, "p_appli_enregville_E");
+      E471 : Boolean; pragma Import (Ada, E471, "p_appli_menu_E");
       E176 : Boolean; pragma Import (Ada, E176, "p_window_consulterfestival_E");
       E449 : Boolean; pragma Import (Ada, E449, "p_window_creerfestival_E");
-      E461 : Boolean; pragma Import (Ada, E461, "p_window_enregville_E");
-      E465 : Boolean; pragma Import (Ada, E465, "p_window_menu_E");
+      E459 : Boolean; pragma Import (Ada, E459, "p_window_enreggroupe_E");
+      E463 : Boolean; pragma Import (Ada, E463, "p_window_enregville_E");
+      E467 : Boolean; pragma Import (Ada, E467, "p_window_menu_E");
 
       Main_Priority : Integer;
       pragma Import (C, Main_Priority, "__gl_main_priority");
@@ -409,7 +410,7 @@ package body ada_main is
       E425 := True;
       E433 := True;
       p_conversion'elab_spec;
-      E467 := True;
+      E469 := True;
       E128 := True;
       E148 := True;
       Pango.Font'Elab_Spec;
@@ -516,24 +517,27 @@ package body ada_main is
       E441 := True;
       E445 := True;
       E447 := True;
-      E459 := True;
-      E471 := True;
+      E473 := True;
       E439 := True;
       E431 := True;
       E457 := True;
+      E461 := True;
       p_appli_enregville'elab_spec;
-      E463 := True;
-      E469 := True;
+      E465 := True;
+      E471 := True;
       p_window_consulterfestival'elab_spec;
       p_window_consulterfestival'elab_body;
       E176 := True;
       p_window_creerfestival'elab_spec;
       p_window_creerfestival'elab_body;
       E449 := True;
+      p_window_enreggroupe'elab_spec;
+      p_window_enreggroupe'elab_body;
+      E459 := True;
       p_window_enregville'elab_spec;
       p_window_enregville'elab_body;
-      E461 := True;
-      E465 := True;
+      E463 := True;
+      E467 := True;
    end adainit;
 
    procedure adafinal is
@@ -576,35 +580,36 @@ package body ada_main is
    end;
 
 --  BEGIN Object file/option list
-   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/base_types.o
-   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/basec201_data.o
-   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/db_commons.o
-   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/environment.o
-   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/db_commons-odbc.o
-   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/logger.o
-   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/jour_festival_io.o
-   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/groupe_io.o
-   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/grande_finale_io.o
-   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/gagnant_festival_io.o
-   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/festival_io.o
-   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/p_esiut.o
-   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/p_conversion.o
-   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/p_util_treeview.o
-   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/p_window_consultgroupe.o
-   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/p_window_consultprogramme.o
-   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/p_window_enreggroupe.o
-   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/p_window_progfestival.o
-   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/ville_io.o
-   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/p_appli_consulterfestival.o
-   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/p_appli_creerfestival.o
-   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/p_appli_enregville.o
-   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/p_appli_menu.o
-   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/p_window_consulterfestival.o
-   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/p_window_creerfestival.o
-   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/p_window_enregville.o
-   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/p_window_menu.o
-   --   /users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/main.o
-   --   -L/users/info/etu-s2/andrepot/Projet-Omgl/gibus/bin/
+   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/base_types.o
+   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/basec201_data.o
+   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/db_commons.o
+   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/environment.o
+   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/db_commons-odbc.o
+   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/logger.o
+   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/jour_festival_io.o
+   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/groupe_io.o
+   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/grande_finale_io.o
+   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/gagnant_festival_io.o
+   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/festival_io.o
+   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/p_esiut.o
+   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/p_conversion.o
+   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/p_util_treeview.o
+   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/p_window_consultgroupe.o
+   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/p_window_consultprogramme.o
+   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/p_window_progfestival.o
+   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/ville_io.o
+   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/p_appli_consulterfestival.o
+   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/p_appli_creerfestival.o
+   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/p_appli_enreggroupe.o
+   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/p_appli_enregville.o
+   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/p_appli_menu.o
+   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/p_window_consulterfestival.o
+   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/p_window_creerfestival.o
+   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/p_window_enreggroupe.o
+   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/p_window_enregville.o
+   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/p_window_menu.o
+   --   /users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/main.o
+   --   -L/users/info/etu-s2/bobow/Projet-Omgl/gibus/bin/
    --   -L/usr/lib/ada/adalib/gnadecommon/
    --   -L/usr/lib/ada/adalib/gnadeodbc/
    --   -L/usr/lib/ada/adalib/aunit/

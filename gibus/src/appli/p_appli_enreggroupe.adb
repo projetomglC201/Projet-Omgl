@@ -37,9 +37,9 @@ begin
 	Jour_Festival_IO.Add_Festival(criteria,festival.ID_festival);
 	
 	
-	Jour1festival:=jour_festival_io.retrieve(criteria);
+	Jour1festival:=jour_festival_io.retrieve(criteria).first_element;
 
-	return Retrieve_Associated_Groupes(Jour1Festival);
+	return Jour_festival_io.Retrieve_Associated_Groupes(Jour1Festival);
 
 
 end GetGroupesJour1;
@@ -55,9 +55,9 @@ begin
 	Jour_Festival_IO.Add_Festival(criteria,festival.ID_festival);
 	
 	
-	Jour2festival:=jour_festival_io.retrieve(criteria);
+	Jour2festival:=jour_festival_io.retrieve(criteria).first_element;
 
-	return Retrieve_Associated_Groupes(Jour1Festival);
+	return Jour_festival_io.Retrieve_Associated_Groupes(Jour2Festival);
 
 end GetGroupesJour2;
 ---------------------------------------------------------------------------------
