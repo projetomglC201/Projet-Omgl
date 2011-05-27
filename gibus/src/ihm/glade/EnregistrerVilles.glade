@@ -115,18 +115,7 @@
             <property name="visible">True</property>
             <property name="layout_style">spread</property>
             <child>
-              <widget class="GtkButton" id="buttonAnnuler">
-                <property name="label" translatable="yes">Annuler</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <signal name="clicked" handler="on_buttonAnnuler_clicked"/>
-              </widget>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">False</property>
-                <property name="position">0</property>
-              </packing>
+              <placeholder/>
             </child>
             <child>
               <widget class="GtkButton" id="buttonSuivant">
@@ -144,10 +133,11 @@
             </child>
             <child>
               <widget class="GtkButton" id="buttonTerminer">
-                <property name="label" translatable="yes">Terminer</property>
+                <property name="label" translatable="yes">Quitter</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="xalign">0.47999998927116394</property>
                 <signal name="clicked" handler="on_buttonTerminer_clicked"/>
               </widget>
               <packing>

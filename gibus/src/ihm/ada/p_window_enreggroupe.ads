@@ -22,5 +22,9 @@ package P_window_enreggroupe is
   procedure init;
   procedure fermerFenetre;
   procedure enregistrergroupe;
+  procedure inittreeviewville;
+  procedure inittreeviewjour1;
+  procedure inittreeviewjour2;
+  procedure initentry;
 
 end P_window_enreggroupe;

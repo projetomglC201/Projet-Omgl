@@ -19,8 +19,8 @@ W system.restrictions%s	s-restri.adb		s-restri.ali
 U ada_main%s		b~main.ads		8a1688a0 EE NE OO PK IL
 W system%s		system.ads		system.ali
 
-D b~main.ads		20110525104124 9ff781e8
-D b~main.adb		20110525104124 d7628418
+D b~main.ads		20110527084029 9ff781e8
+D b~main.adb		20110527084029 d7628418
 D system.ads		20101024233633 15e10948
 D s-restri.ads		20090409232307 ed726b0b
 D s-rident.ads		20090409232307 e38f8060

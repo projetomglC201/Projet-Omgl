@@ -1,7 +1,7 @@
 
 
 package body P_window_consulterfestival is
-
+b_box:message_dialog_buttons;
 XML : Glade_XML;
 windowconsulterfestival : Gtk_window;
 -- déclaration des variables utiles pour la suite 1. 2. 3.
@@ -34,7 +34,7 @@ end init;
 	Jours_Festival:Jour_Festival_List.vector;
 	resulttreeviewville:Unbounded_String;
 	Ville:tville;
-	b_box:message_dialog_buttons;
+	
 	begin
 		--Recuperation de la selection dans la treeview
 		Get_Selected(Get_Selection(treeview_ville),Gtk_Tree_Model(modele_ville), 
