@@ -34,7 +34,7 @@ begin
 	
 	Glade.XML.signal_connect (XML,"on_buttonAnnuler_clicked",fermerFenetre'address,Null_Address);
 	Glade.XML.signal_connect (XML,"on_buttonEnregistrer_clicked",enregistrergroupe'address,Null_Address);
-	Glade.XML.signal_connect (XML,"on_treeviewville_row_activated",initentry'address,Null_Address);
+	Glade.XML.signal_connect (XML,"on_treeviewville_row_activated",initselect'address,Null_Address);
 
 end init;
 ------------------------------------------------------------------------------
@@ -71,9 +71,9 @@ end init;
 		
 		Ville_List.iterate(liste_ville, alimente'Access);
 	
-	end inittreeview;
+	end inittreeviewville;
 -----------------------------------------------------------------------------
-	procedure inittreeviewjour1 is
+	procedure inittreeviewjour1 (festival : in tfestival) is
 		liste_groupe:Basec201_Data.Groupe_List.Vector;
 		groupe : Basec201_Data.tGroupe;
 		
@@ -92,14 +92,14 @@ end init;
 		
 		creerModele(treeView_jour1,modele_jour1);
 		
-		liste_groupe :=p_appli_enreggroupe.GetGroupesJour1;
+		liste_groupe :=p_appli_enreggroupe.GetGroupesJour1(festival);
 		
-		Ville_groupe.iterate(liste_groupe, alimente'Access);
+		groupe_list.iterate(liste_groupe, alimente'Access);
 	
-	end inittreeview;
+	end inittreeviewjour1;
 
 -----------------------------------------------------------------------------
-	procedure inittreeviewjour2 is
+	procedure inittreeviewjour2 (festival : in tfestival) is
 		liste_groupe:Basec201_Data.Groupe_List.Vector;
 		groupe : Basec201_Data.tgroupe;
 		
@@ -119,13 +119,13 @@ end init;
 		
 		creerModele(treeView_jour2,modele_jour2);
 		
-		liste_groupe :=p_appli_enreggroupe.GetGroupesJour1;
+		liste_groupe :=p_appli_enreggroupe.GetGroupesJour1(festival);
 		
-		Ville_groupe.iterate(liste_groupe, alimente'Access);
+		groupe_list.iterate(liste_groupe, alimente'Access);
 	
-	end inittreeview;
+	end inittreeviewjour2;
 ---------------------------------------------------------------------------
-	procedure initentry is
+	procedure initselect is
 	Festival:festival_list.vector;
 	resulttreeviewville:Unbounded_String;
 	
@@ -143,7 +143,7 @@ end init;
 		Festival:=GetFestivalAssocie(resulttreeviewville);
 		
 		Set_Text(Gtk_Entry(Get_Widget(XML,"entryDateJour1")),(integer'image(Day(Festival_list.First_Element(Festival).Date))&"/"&integer'image(Month(Festival_list.First_Element(festival).Date))&"/"&integer'image(Year(Festival_list.First_Element(festival).Date))));
-	end initentry;
+	end initselect;
 ------------------------------------------------------------------------
 
 end P_window_enreggroupe;
