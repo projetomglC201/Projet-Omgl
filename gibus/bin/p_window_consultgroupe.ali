@@ -118,8 +118,8 @@ D interfac.ads		20090409232307 a69cad5c
 D i-c.ads		20070406091342 bc3ef662
 D i-cstrin.ads		20090409232307 841d8a31
 D p_util_treeview.ads	20100331082247 f118f0fc
-D p_window_consultgroupe.ads  20110511104700 ceedc9ba
-D p_window_consultgroupe.adb  20110517150949 77cd9568
+D p_window_consultgroupe.ads  20110513121635 ceedc9ba
+D p_window_consultgroupe.adb  20110519101203 77cd9568
 D pango.ads		20091225112832 567c5424
 D pango-attributes.ads	20091225112832 21e060ad
 D pango-context.ads	20091225112832 dbda6b1f

@@ -43,4 +43,5 @@ package P_window_creerfestival is
   procedure fermerFenetre;
   procedure validerfestival;
   procedure inittreeview;
+  procedure activerJour2;
 end P_window_creerfestival;

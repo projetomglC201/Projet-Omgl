@@ -50,7 +50,7 @@ rang_ville: Gtk_Tree_Iter := Null_Iter; -- ligne dans le modèle
 		end if;
 		for i in 2..length(resultEntryNomVille) loop
 			c:= element(resultEntryNomVille,i);
-			if c <= 'a' then
+			if c < 'a' then
 				c := character'val(character'pos(c)+16#20#);
 			end if;
 			replace_element(resultEntryNomVille,i,c);
