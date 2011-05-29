@@ -511,7 +511,7 @@ package ada_main is
    u00471 : constant Version_32 := 16#96eb33f6#;
    u00472 : constant Version_32 := 16#1923a960#;
    u00473 : constant Version_32 := 16#96263252#;
-   u00474 : constant Version_32 := 16#2c993f06#;
+   u00474 : constant Version_32 := 16#6e4018d3#;
    u00475 : constant Version_32 := 16#d8b23bc4#;
    u00476 : constant Version_32 := 16#842c78ec#;
    u00477 : constant Version_32 := 16#11b6422c#;
