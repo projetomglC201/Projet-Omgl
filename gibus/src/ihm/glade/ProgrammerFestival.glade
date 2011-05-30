@@ -42,19 +42,18 @@ du festival &#xE0; programmer :</property>
                   <widget class="GtkHBox" id="hbox3">
                     <property name="visible">True</property>
                     <child>
-                      <widget class="GtkComboBox" id="comboboxville">
-                        <property name="width_request">200</property>
+                      <widget class="GtkScrolledWindow" id="scrolledwindow1">
                         <property name="visible">True</property>
-                        <property name="has_tooltip">True</property>
-                        <property name="tooltip" translatable="yes">
-</property>
-                        <property name="items" translatable="yes">Paris
-Grenoble
-Lyon</property>
+                        <property name="can_focus">True</property>
+                        <property name="hscrollbar_policy">never</property>
+                        <child>
+                          <widget class="GtkTreeView" id="treeview1">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                          </widget>
+                        </child>
                       </widget>
                       <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">False</property>
                         <property name="position">0</property>
                       </packing>
                     </child>

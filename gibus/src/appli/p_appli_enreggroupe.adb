@@ -1,8 +1,5 @@
 
 
-
-
-
 package body p_appli_enreggroupe is
 -------------------------------------------------------------------------------------------
 function GetVillesAvecFestival return Ville_list.vector is
@@ -71,7 +68,21 @@ begin
 
 end GetFestivalAssocie;
 ------------------------------------------------------------------------------------
+function Nbgroupeinscrit(Festival : in tfestival: OrdreJour: in integer) return integer is
+Jourfestival: tJour_Festival;
+criteria:db_commons.criteria;
+begin
+	Jour_Festival_IO.Add_Num_Ordre(criteria,OrdreJour);
+	Jour_Festival_IO.Add_Festival(criteria,festival.ID_festival);
+	
+	
+	Jourfestival:=jour_festival_io.retrieve(criteria).first_element;
 
+	return integer(Groupe_IO.Card(Jour_festival_io.Retrieve_Associated_Groupes(JourFestival)));
+
+
+end Nbgroupeinscrit;
+----------------------------------------------------------------------------------
 
 
 

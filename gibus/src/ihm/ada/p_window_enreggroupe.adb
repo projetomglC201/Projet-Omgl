@@ -35,6 +35,8 @@ begin
 	Glade.XML.signal_connect (XML,"on_buttonAnnuler_clicked",fermerFenetre'address,Null_Address);
 	Glade.XML.signal_connect (XML,"on_buttonEnregistrer_clicked",enregistrergroupe'address,Null_Address);
 	Glade.XML.signal_connect (XML,"on_treeviewville_row_activated",initselect'address,Null_Address);
+	
+	inittreeviewville;
 
 end init;
 ------------------------------------------------------------------------------
@@ -128,6 +130,8 @@ end init;
 	procedure initselect is
 	Festival:festival_list.vector;
 	resulttreeviewville:Unbounded_String;
+	groupesjour1:groupe_list.vector;
+	groupesjour2:groupe_list.vector;
 	
 	
 	begin
@@ -141,8 +145,15 @@ end init;
 			to_ada_type(Get_String (modele_ville, rang_ville, 0), resulttreeviewville);
 		end if;
 		Festival:=GetFestivalAssocie(resulttreeviewville);
-		
+		inittreeviewjour1(festival.first_element);
+		groupesjour1:=
+			
 		Set_Text(Gtk_Entry(Get_Widget(XML,"entryDateJour1")),(integer'image(Day(Festival_list.First_Element(Festival).Date))&"/"&integer'image(Month(Festival_list.First_Element(festival).Date))&"/"&integer'image(Year(Festival_list.First_Element(festival).Date))));
+		
+		
+		
+		inittreeviewjour2(festival.first_element);
+		Set_Text(Gtk_Entry(Get_Widget(XML,"entryDateJour2")),(integer'image(Day(Festival_list.First_Element(Festival).Date)+1)&"/"&integer'image(Month(Festival_list.First_Element(festival).Date))&"/"&integer'image(Year(Festival_list.First_Element(festival).Date))));
 	end initselect;
 ------------------------------------------------------------------------
 

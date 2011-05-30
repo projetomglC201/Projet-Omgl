@@ -133,7 +133,7 @@ D jour_festival_io.ads	20110513115553 52750015
 D main.adb		20110513120120 e36717cb
 D p_appli_consulterfestival.ads  20110525103728 77d7ede3
 D p_appli_creerfestival.ads  20110524061521 2933d279
-D p_appli_enreggroupe.ads  20110527122415 9f213f8b
+D p_appli_enreggroupe.ads  20110527125909 6ba4f591
 D p_appli_enregville.ads  20110520114252 b4f34d59
 D p_appli_menu.ads	20110520091631 052ba878
 D p_conversion.ads	20110411141559 02c76134
