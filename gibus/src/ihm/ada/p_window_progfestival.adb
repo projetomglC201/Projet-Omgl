@@ -41,7 +41,6 @@ end init;
 		--activations
 		Set_Sensitive(Gtk_button(Get_Widget(XML,"buttonAnnuler1")),true);
 		Set_Sensitive(Gtk_button(Get_Widget(XML,"buttonValider")),true);
-		Set_Sensitive(Gtk_combo_box(Get_Widget(XML,"comboboxville")),true);
 	end selectionregion1;
 ----------------------------------------------------------------------
 	procedure selectionregion2 is
@@ -49,7 +48,6 @@ end init;
 		--Desactivations
 		Set_Sensitive(Gtk_button(Get_Widget(XML,"buttonAnnuler1")),false);
 		Set_Sensitive(Gtk_button(Get_Widget(XML,"buttonValider")),false);
-		Set_Sensitive(Gtk_combo_box(Get_Widget(XML,"comboboxville")),false);
 		--activations
 				Set_Sensitive(Gtk_button(Get_Widget(XML,"buttonAnnuler2")),true);
 		Set_Sensitive(Gtk_button(Get_Widget(XML,"buttonTerminer")),true);
