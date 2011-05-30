@@ -3,6 +3,7 @@ with basec201_data; use basec201_data;
 with festival_io;
 with ville_io;
 with jour_festival_io;
+with groupe_io;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with db_commons;
 

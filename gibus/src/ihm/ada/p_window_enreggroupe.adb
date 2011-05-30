@@ -146,7 +146,6 @@ end init;
 		end if;
 		Festival:=GetFestivalAssocie(resulttreeviewville);
 		inittreeviewjour1(festival.first_element);
-		groupesjour1:=
 			
 		Set_Text(Gtk_Entry(Get_Widget(XML,"entryDateJour1")),(integer'image(Day(Festival_list.First_Element(Festival).Date))&"/"&integer'image(Month(Festival_list.First_Element(festival).Date))&"/"&integer'image(Year(Festival_list.First_Element(festival).Date))));
 		

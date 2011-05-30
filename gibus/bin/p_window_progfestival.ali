@@ -8,7 +8,7 @@ A -gnatA
 P SS ZX
 R nnnnnnnnnvnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnnvnnnnnnnnnnnnnvnnvnnnnnnnnnnnnnnnnnn
 
-U p_window_progfestival%b  p_window_progfestival.adb  2c993f06 NE OO PK IL
+U p_window_progfestival%b  p_window_progfestival.adb  6e4018d3 NE OO PK IL
 W ada.tags%s		a-tags.adb		a-tags.ali
 W glade%s		glade.adb		glade.ali
 W glade.xml%s		glade-xml.adb		glade-xml.ali
@@ -117,7 +117,7 @@ D i-c.ads		20070406091342 bc3ef662
 D i-cstrin.ads		20090409232307 841d8a31
 D p_util_treeview.ads	20100331082247 f118f0fc
 D p_window_progfestival.ads  20110509105654 91551071
-D p_window_progfestival.adb  20110527123026 b0292598
+D p_window_progfestival.adb  20110530061647 f2f0024d
 D pango.ads		20091225112832 567c5424
 D pango-attributes.ads	20091225112832 21e060ad
 D pango-context.ads	20091225112832 dbda6b1f
