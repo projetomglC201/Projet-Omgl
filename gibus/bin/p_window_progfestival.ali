@@ -8,7 +8,7 @@ A -gnatA
 P SS ZX
 R nnnnnnnnnvnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnnvnnnnnnnnnnnnnvnnvnnnnnnnnnnnnnnnnnn
 
-U p_window_progfestival%b  p_window_progfestival.adb  6e4018d3 NE OO PK IL
+U p_window_progfestival%b  p_window_progfestival.adb  5f1c296b NE OO PK IL
 W ada.tags%s		a-tags.adb		a-tags.ali
 W glade%s		glade.adb		glade.ali
 W glade.xml%s		glade-xml.adb		glade-xml.ali
@@ -117,7 +117,7 @@ D i-c.ads		20070406091342 bc3ef662
 D i-cstrin.ads		20090409232307 841d8a31
 D p_util_treeview.ads	20100331082247 f118f0fc
 D p_window_progfestival.ads  20110509105654 91551071
-D p_window_progfestival.adb  20110530061647 f2f0024d
+D p_window_progfestival.adb  20110530073929 c3ac33f5
 D pango.ads		20091225112832 567c5424
 D pango-attributes.ads	20091225112832 21e060ad
 D pango-context.ads	20091225112832 dbda6b1f
@@ -150,18 +150,17 @@ X 28 glade-xml.ads
 42U14*Gtk_New 83|12r19
 86U14*Signal_Connect 83|14R19 15R19 16R19 17R19 18R19 19R19
 95V13*Get_Widget{73|71P9} 83|13R40 33R42 34R42 35R42 36R42 37R42 38R42 39R42
-. 40R42 42R42 43R42 44R45 50R42 51R42 52R45 54R58 55R42 56R42 57R42 58R42
-. 59R42 60R42 61R42
+. 40R42 42R42 43R42 49R42 50R42 52R58 53R42 54R42 55R42 56R42 57R42 58R42
+. 59R42
 X 40 gtk.ads
 41K9*Gtk 77e8 82|4r6 8r6 8r22 9r6 9r22 10r6 10r22 11r6 11r25 12r6 12r21 13r6
 . 13r31 14r6 14r25 17r6 17r26 18r6 18r26 19r6 19r30
 X 45 gtk-button.ads
 69K13*Button 419e15 82|9w10 9r26
 72P9*Gtk_Button(71R9) 83|33r31 34r31 35r31 36r31 37r31 38r31 39r31 40r31
-. 42r31 43r31 50r31 51r31 54r47 55r31 56r31 57r31 58r31 59r31 60r31 61r31
+. 42r31 43r31 49r31 50r31 52r47 53r31 54r31 55r31 56r31 57r31 58r31 59r31
 X 49 gtk-combo_box.ads
 57K13*Combo_Box 351e18 82|14w10 14r29
-59P9*Gtk_Combo_Box(58R9) 83|44r31 52r31
 X 55 gtk-gentry.ads
 41K13*GEntry 446e15 82|10w10 10r26
 X 57 gtk-label.ads
@@ -183,8 +182,7 @@ X 71 gtk-tree_view.ads
 X 73 gtk-widget.ads
 71P9*Gtk_Widget(70R9)
 940U14*Set_Sensitive 83|33R17 34R17 35R17 36R17 37R17 38R17 39R17 40R17 42R17
-. 43R17 44R17 50R17 51R17 52R17 54R33 55R17 56R17 57R17 58R17 59R17 60R17
-. 61R17
+. 43R17 49R17 50R17 52R33 53R17 54R17 55R17 56R17 57R17 58R17 59R17
 X 74 gtk-window.ads
 60K13*Window 1189e15 82|8w10 8r26
 63P9*Gtk_Window(62R9) 83|6r20 13r29
@@ -192,28 +190,28 @@ X 75 gtkada.ads
 30K9*Gtkada 34e11 82|5r6 5r25
 X 76 gtkada-dialogs.ads
 37K16*Dialogs 128e19 82|5w13 5r32
-40M9*Message_Dialog_Buttons 83|71r15
-50m4*Button_OK{40M9} 83|73r74 73r84
-64n7*Information{57E9} 83|73r62
-77V13*Message_Dialog{40M9} 83|73r24
+40M9*Message_Dialog_Buttons 83|69r15
+50m4*Button_OK{40M9} 83|71r74 71r84
+64n7*Information{57E9} 83|71r62
+77V13*Message_Dialog{40M9} 83|71r24
 X 81 p_util_treeview.ads
 10K10*p_util_treeview 22e20 82|20w6 20r27
 X 82 p_window_progfestival.ads
-22K9*P_window_progfestival 31l5 31e26 83|4b14 88l5 88t26
+22K9*P_window_progfestival 31l5 31e26 83|4b14 86l5 86t26
 23U13*init 83|9b11 23l5 23t9
-24U13*fermerFenetre 83|14r67 25b19 28l13 28t26 75r17
-25U13*selectionregion1 83|15r67 22r9 30b19 45l13 45t29
-26U13*selectionregion2 83|47b19 62l13 62t29 67r17
-27U13*rechercherprog 83|16r66 64b19 68l13 68t27
-28U13*finprogrammation 83|17r67 70b19 76l13 76t29
-29U13*gojour2 83|18r64 78b19 81l13 81t20
-30U13*gojour1 83|19r63 83b19 86l13 86t20
+24U13*fermerFenetre 83|14r67 25b19 28l13 28t26 73r17
+25U13*selectionregion1 83|15r67 22r9 30b19 44l13 44t29
+26U13*selectionregion2 83|46b19 60l13 60t29 65r17
+27U13*rechercherprog 83|16r66 62b19 66l13 66t27
+28U13*finprogrammation 83|17r67 68b19 74l13 74t29
+29U13*gojour2 83|18r64 76b19 79l13 79t20
+30U13*gojour1 83|19r63 81b19 84l13 84t20
 X 83 p_window_progfestival.adb
 6p1 windowprogfestival{74|63P9} 13m9 27r25
 7p1 XML{28|40P9} 12m27 13r51 14r35 15r35 16r35 17r35 18r35 19r35 33r53 34r53
-. 35r53 36r53 37r53 38r53 39r53 40r53 42r53 43r53 44r56 50r53 51r53 52r56
-. 54r69 55r53 56r53 57r53 58r53 59r53 60r53 61r53
-71m9 b_box{76|40M9} 73m17
+. 35r53 36r53 37r53 38r53 39r53 40r53 42r53 43r53 49r53 50r53 52r69 53r53
+. 54r53 55r53 56r53 57r53 58r53 59r53
+69m9 b_box{76|40M9} 71m17
 X 91 system.ads
 37K9*System 82|3w6 3r18 91|153e11
 64M9*Address
