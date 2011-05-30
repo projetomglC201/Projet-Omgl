@@ -127,10 +127,10 @@ end init;
 		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryNbgroupes2"))),resultNbJour2);
 		if length(resultNbJour2) = 0 then
 			jour2 := false;
-			Set_Sensitive(Get_Widget(XML,"entryNbgroupes2"), false);
+			Set_Sensitive(Get_Widget(XML,"entryHeure2"), false);
 		else
 			jour2 := true;
-			Set_Sensitive(Get_Widget(XML,"entryNbgroupes2"), true);
+			Set_Sensitive(Get_Widget(XML,"entryHeure2"), true);
 		end if;
 	end activerJour2;
 
