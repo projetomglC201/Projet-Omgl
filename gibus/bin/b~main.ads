@@ -481,41 +481,7 @@ package ada_main is
    u00441 : constant Version_32 := 16#b3775cbe#;
    u00442 : constant Version_32 := 16#299df660#;
    u00443 : constant Version_32 := 16#77aad308#;
-<<<<<<< HEAD
-   u00444 : constant Version_32 := 16#b4c5563d#;
-   u00445 : constant Version_32 := 16#7e84fa8a#;
-   u00446 : constant Version_32 := 16#fd2bf8b3#;
-   u00447 : constant Version_32 := 16#a1390e7d#;
-   u00448 : constant Version_32 := 16#fa37c2a3#;
-   u00449 : constant Version_32 := 16#c840c829#;
-   u00450 : constant Version_32 := 16#ca8f5bc9#;
-   u00451 : constant Version_32 := 16#4703730d#;
-   u00452 : constant Version_32 := 16#28798b48#;
-   u00453 : constant Version_32 := 16#69ec71ba#;
-   u00454 : constant Version_32 := 16#575033ed#;
-   u00455 : constant Version_32 := 16#bf556269#;
-   u00456 : constant Version_32 := 16#e0d2fb93#;
-   u00457 : constant Version_32 := 16#cd8da682#;
-   u00458 : constant Version_32 := 16#d7827791#;
-   u00459 : constant Version_32 := 16#c049b872#;
-   u00460 : constant Version_32 := 16#cc70d973#;
-   u00461 : constant Version_32 := 16#bab59df8#;
-   u00462 : constant Version_32 := 16#6ba93a7d#;
-   u00463 : constant Version_32 := 16#04c05eaa#;
-   u00464 : constant Version_32 := 16#981a17c6#;
-   u00465 : constant Version_32 := 16#0cade296#;
-   u00466 : constant Version_32 := 16#a1789c3d#;
-   u00467 : constant Version_32 := 16#d8403872#;
-   u00468 : constant Version_32 := 16#f6fb9621#;
-   u00469 : constant Version_32 := 16#96eb33f6#;
-   u00470 : constant Version_32 := 16#1923a960#;
-   u00471 : constant Version_32 := 16#96263252#;
-   u00472 : constant Version_32 := 16#2c993f06#;
-   u00473 : constant Version_32 := 16#d8b23bc4#;
-   u00474 : constant Version_32 := 16#842c78ec#;
-   u00475 : constant Version_32 := 16#11b6422c#;
-=======
-   u00444 : constant Version_32 := 16#512fea17#;
+   u00444 : constant Version_32 := 16#85fd2f7f#;
    u00445 : constant Version_32 := 16#4bbaed7a#;
    u00446 : constant Version_32 := 16#b1a65f55#;
    u00447 : constant Version_32 := 16#7b388dca#;
@@ -531,10 +497,10 @@ package ada_main is
    u00457 : constant Version_32 := 16#bf556269#;
    u00458 : constant Version_32 := 16#e0d2fb93#;
    u00459 : constant Version_32 := 16#cd8da682#;
-   u00460 : constant Version_32 := 16#6303d579#;
-   u00461 : constant Version_32 := 16#c049b872#;
-   u00462 : constant Version_32 := 16#cc70d973#;
-   u00463 : constant Version_32 := 16#bab59df8#;
+   u00460 : constant Version_32 := 16#e18e54a8#;
+   u00461 : constant Version_32 := 16#005bd4cb#;
+   u00462 : constant Version_32 := 16#66700ae5#;
+   u00463 : constant Version_32 := 16#d115eecf#;
    u00464 : constant Version_32 := 16#6ba93a7d#;
    u00465 : constant Version_32 := 16#04c05eaa#;
    u00466 : constant Version_32 := 16#981a17c6#;
@@ -549,7 +515,6 @@ package ada_main is
    u00475 : constant Version_32 := 16#d8b23bc4#;
    u00476 : constant Version_32 := 16#842c78ec#;
    u00477 : constant Version_32 := 16#11b6422c#;
->>>>>>> 1053deb2ba7dc6105db0794b91a4fc5ff8d1c673
 
    pragma Export (C, u00001, "mainB");
    pragma Export (C, u00002, "system__standard_libraryB");

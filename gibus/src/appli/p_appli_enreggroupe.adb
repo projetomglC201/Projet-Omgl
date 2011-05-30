@@ -68,7 +68,7 @@ begin
 
 end GetFestivalAssocie;
 ------------------------------------------------------------------------------------
-function Nbgroupeinscrit(Festival : in tfestival: OrdreJour: in integer) return integer is
+function Nbgroupeinscrit(Festival : in tfestival; OrdreJour: in integer) return integer is
 Jourfestival: tJour_Festival;
 criteria:db_commons.criteria;
 begin
