@@ -6,6 +6,7 @@ with Gtkada.Dialogs;use Gtkada.Dialogs;
 with Glib; use Glib;
 
 -- pour gérer les composants de la fenetre
+with Gtk.Widget; use Gtk.Widget;
 with Gtk.Window; use Gtk.Window;
 with Gtk.Button; use Gtk.Button;
 with Gtk.Gentry; use Gtk.Gentry;

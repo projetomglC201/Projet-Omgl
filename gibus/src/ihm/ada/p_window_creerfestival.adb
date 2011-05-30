@@ -93,8 +93,7 @@ end init;
 	exception
 		when EX_AUCUNE_VILLE_SELECTIONNEE => 	
 			b_box:=Message_Dialog ("Aucune ville selectionnée.",Error,Button_Ok,Button_Ok);
-		when P_CONVERSION.EXCONVERSION =>
-			b_box:=Message_Dialog ("Le prix des places doit être un entier.",Error,Button_Ok,Button_Ok);
+		when P_CONVERSION.EXCONVERSION => null;
 		
 	end validerfestival;
 --------------------------------------------------------------------------
@@ -125,13 +124,13 @@ end init;
 	procedure activerJour2 is
 		resultNbJour2 : unbounded_string;
 	begin
-		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryNbGroupes2"))),resultNbJour2);
+		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryNbgroupes2"))),resultNbJour2);
 		if length(resultNbJour2) = 0 then
 			jour2 := false;
-			Set_Editable(Gtk_Entry(Get_Widget(XML,"entryNbGroupes2")), false);
+			Set_Sensitive(Get_Widget(XML,"entryNbgroupes2"), false);
 		else
 			jour2 := true;
-			Set_Editable(Gtk_Entry(Get_Widget(XML,"entryNbGroupes2")), true);
+			Set_Sensitive(Get_Widget(XML,"entryNbgroupes2"), true);
 		end if;
 	end activerJour2;
 

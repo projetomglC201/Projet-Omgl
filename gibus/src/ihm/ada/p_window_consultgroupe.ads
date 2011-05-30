@@ -18,9 +18,15 @@ with Gtk.Tree_Store; use Gtk.Tree_Store;-- le modèle associé à la vue
 with Gtk.Tree_Selection; use Gtk.Tree_Selection;  -- pour la sélection dans la vue
 with p_util_treeview; use p_util_treeview;  -- utilitaire de gestion d'une treeView
 with Ada.Containers.Vectors;
+with Ada.Strings.Unbounded; use ada.strings.unbounded;
+with basec201_data; use basec201_data;
+with p_conversion; use p_conversion;
+with p_appli_consultgroupe; use p_appli_consultgroupe;
+with base_types; use base_types;
 
 package P_window_consultgroupe is
   procedure init;
   procedure fermerFenetre;
   procedure remplirinfo;
+  procedure inittreeview;
 end P_window_consultgroupe;

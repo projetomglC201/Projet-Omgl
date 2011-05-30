@@ -38,7 +38,7 @@ package ada_main is
    pragma Export (C, main, "main");
 
    type Version_32 is mod 2 ** 32;
-   u00001 : constant Version_32 := 16#11b7ecdb#;
+   u00001 : constant Version_32 := 16#3247b0c7#;
    u00002 : constant Version_32 := 16#4b33036a#;
    u00003 : constant Version_32 := 16#03570e27#;
    u00004 : constant Version_32 := 16#fdd1129e#;
@@ -481,6 +481,7 @@ package ada_main is
    u00441 : constant Version_32 := 16#b3775cbe#;
    u00442 : constant Version_32 := 16#299df660#;
    u00443 : constant Version_32 := 16#77aad308#;
+<<<<<<< HEAD
    u00444 : constant Version_32 := 16#b4c5563d#;
    u00445 : constant Version_32 := 16#7e84fa8a#;
    u00446 : constant Version_32 := 16#fd2bf8b3#;
@@ -513,6 +514,42 @@ package ada_main is
    u00473 : constant Version_32 := 16#d8b23bc4#;
    u00474 : constant Version_32 := 16#842c78ec#;
    u00475 : constant Version_32 := 16#11b6422c#;
+=======
+   u00444 : constant Version_32 := 16#512fea17#;
+   u00445 : constant Version_32 := 16#4bbaed7a#;
+   u00446 : constant Version_32 := 16#b1a65f55#;
+   u00447 : constant Version_32 := 16#7b388dca#;
+   u00448 : constant Version_32 := 16#fd2bf8b3#;
+   u00449 : constant Version_32 := 16#a1390e7d#;
+   u00450 : constant Version_32 := 16#857e3041#;
+   u00451 : constant Version_32 := 16#028b1186#;
+   u00452 : constant Version_32 := 16#ca8f5bc9#;
+   u00453 : constant Version_32 := 16#4703730d#;
+   u00454 : constant Version_32 := 16#28798b48#;
+   u00455 : constant Version_32 := 16#69ec71ba#;
+   u00456 : constant Version_32 := 16#575033ed#;
+   u00457 : constant Version_32 := 16#bf556269#;
+   u00458 : constant Version_32 := 16#e0d2fb93#;
+   u00459 : constant Version_32 := 16#cd8da682#;
+   u00460 : constant Version_32 := 16#6303d579#;
+   u00461 : constant Version_32 := 16#c049b872#;
+   u00462 : constant Version_32 := 16#cc70d973#;
+   u00463 : constant Version_32 := 16#bab59df8#;
+   u00464 : constant Version_32 := 16#6ba93a7d#;
+   u00465 : constant Version_32 := 16#04c05eaa#;
+   u00466 : constant Version_32 := 16#981a17c6#;
+   u00467 : constant Version_32 := 16#0cade296#;
+   u00468 : constant Version_32 := 16#a1789c3d#;
+   u00469 : constant Version_32 := 16#fbb0646e#;
+   u00470 : constant Version_32 := 16#f6fb9621#;
+   u00471 : constant Version_32 := 16#96eb33f6#;
+   u00472 : constant Version_32 := 16#1923a960#;
+   u00473 : constant Version_32 := 16#96263252#;
+   u00474 : constant Version_32 := 16#6e4018d3#;
+   u00475 : constant Version_32 := 16#d8b23bc4#;
+   u00476 : constant Version_32 := 16#842c78ec#;
+   u00477 : constant Version_32 := 16#11b6422c#;
+>>>>>>> 1053deb2ba7dc6105db0794b91a4fc5ff8d1c673
 
    pragma Export (C, u00001, "mainB");
    pragma Export (C, u00002, "system__standard_libraryB");
@@ -959,36 +996,38 @@ package ada_main is
    pragma Export (C, u00443, "gtk__cell_renderer_textS");
    pragma Export (C, u00444, "p_window_consultgroupeB");
    pragma Export (C, u00445, "p_window_consultgroupeS");
-   pragma Export (C, u00446, "p_window_consultprogrammeB");
-   pragma Export (C, u00447, "p_window_consultprogrammeS");
-   pragma Export (C, u00448, "p_window_creerfestivalB");
-   pragma Export (C, u00449, "p_window_creerfestivalS");
-   pragma Export (C, u00450, "gtk__calendarB");
-   pragma Export (C, u00451, "gtk__calendarS");
-   pragma Export (C, u00452, "gtk__combo_boxB");
-   pragma Export (C, u00453, "gtk__combo_boxS");
-   pragma Export (C, u00454, "gtk__cell_layoutB");
-   pragma Export (C, u00455, "gtk__cell_layoutS");
-   pragma Export (C, u00456, "p_appli_creerfestivalB");
-   pragma Export (C, u00457, "p_appli_creerfestivalS");
-   pragma Export (C, u00458, "p_window_enreggroupeB");
-   pragma Export (C, u00459, "p_window_enreggroupeS");
-   pragma Export (C, u00460, "p_appli_enreggroupeB");
-   pragma Export (C, u00461, "p_appli_enreggroupeS");
-   pragma Export (C, u00462, "p_window_enregvilleB");
-   pragma Export (C, u00463, "p_window_enregvilleS");
-   pragma Export (C, u00464, "p_appli_enregvilleB");
-   pragma Export (C, u00465, "p_appli_enregvilleS");
-   pragma Export (C, u00466, "p_window_menuB");
-   pragma Export (C, u00467, "p_window_menuS");
-   pragma Export (C, u00468, "p_esiutB");
-   pragma Export (C, u00469, "p_esiutS");
-   pragma Export (C, u00470, "p_appli_menuB");
-   pragma Export (C, u00471, "p_appli_menuS");
-   pragma Export (C, u00472, "p_window_progfestivalB");
-   pragma Export (C, u00473, "p_window_progfestivalS");
-   pragma Export (C, u00474, "system__memoryB");
-   pragma Export (C, u00475, "system__memoryS");
+   pragma Export (C, u00446, "p_appli_consultgroupeB");
+   pragma Export (C, u00447, "p_appli_consultgroupeS");
+   pragma Export (C, u00448, "p_window_consultprogrammeB");
+   pragma Export (C, u00449, "p_window_consultprogrammeS");
+   pragma Export (C, u00450, "p_window_creerfestivalB");
+   pragma Export (C, u00451, "p_window_creerfestivalS");
+   pragma Export (C, u00452, "gtk__calendarB");
+   pragma Export (C, u00453, "gtk__calendarS");
+   pragma Export (C, u00454, "gtk__combo_boxB");
+   pragma Export (C, u00455, "gtk__combo_boxS");
+   pragma Export (C, u00456, "gtk__cell_layoutB");
+   pragma Export (C, u00457, "gtk__cell_layoutS");
+   pragma Export (C, u00458, "p_appli_creerfestivalB");
+   pragma Export (C, u00459, "p_appli_creerfestivalS");
+   pragma Export (C, u00460, "p_window_enreggroupeB");
+   pragma Export (C, u00461, "p_window_enreggroupeS");
+   pragma Export (C, u00462, "p_appli_enreggroupeB");
+   pragma Export (C, u00463, "p_appli_enreggroupeS");
+   pragma Export (C, u00464, "p_window_enregvilleB");
+   pragma Export (C, u00465, "p_window_enregvilleS");
+   pragma Export (C, u00466, "p_appli_enregvilleB");
+   pragma Export (C, u00467, "p_appli_enregvilleS");
+   pragma Export (C, u00468, "p_window_menuB");
+   pragma Export (C, u00469, "p_window_menuS");
+   pragma Export (C, u00470, "p_esiutB");
+   pragma Export (C, u00471, "p_esiutS");
+   pragma Export (C, u00472, "p_appli_menuB");
+   pragma Export (C, u00473, "p_appli_menuS");
+   pragma Export (C, u00474, "p_window_progfestivalB");
+   pragma Export (C, u00475, "p_window_progfestivalS");
+   pragma Export (C, u00476, "system__memoryB");
+   pragma Export (C, u00477, "system__memoryS");
 
    --  BEGIN ELABORATION ORDER
    --  ada%s
@@ -1341,6 +1380,8 @@ package ada_main is
    --  grande_finale_io%b
    --  gagnant_festival_io%b
    --  festival_io%b
+   --  p_appli_consultgroupe%s
+   --  p_appli_consultgroupe%b
    --  p_conversion%s
    --  p_esiut%s
    --  p_esiut%b
