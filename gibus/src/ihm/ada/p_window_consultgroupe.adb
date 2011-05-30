@@ -47,7 +47,7 @@ rang_groupe:Gtk_tree_iter:=Null_Iter;
                 Set_Text(Gtk_Entry(Get_Widget(XML,"entryAdresseContact")),p_conversion.to_string(Groupe.Coord_Contact));
                 Set_Text(Gtk_Entry(Get_Widget(XML,"entryGenre")),tgenre_Enum'image(Groupe.Genre));
                 Set_Text(Gtk_Entry(Get_Widget(XML,"entrySite")),p_conversion.to_string(Groupe.Adr_Site));
-                Set_Text(Gtk_Entry(Get_Widget(XML,"entryVille")),p_conversion.to_string(groupe.Ville));
+--                Set_Text(Gtk_Entry(Get_Widget(XML,"entryVille")),p_conversion.to_string(groupe.Ville));
 	end remplirinfo;
 --------------------------------------------------------------------------
 	procedure inittreeview is
