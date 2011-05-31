@@ -158,7 +158,7 @@ D p_appli_consulterfestival.ads  20110525103728 77d7ede3
 D p_conversion.ads	20110411141559 02c76134
 D p_util_treeview.ads	20100331082247 f118f0fc
 D p_window_consulterfestival.ads  20110525103849 7f155a7b
-D p_window_consulterfestival.adb  20110527115124 1588fbd4
+D p_window_consulterfestival.adb  20110530105410 1588fbd4
 D pango.ads		20091225112832 567c5424
 D pango-attributes.ads	20091225112832 21e060ad
 D pango-context.ads	20091225112832 dbda6b1f
@@ -199,45 +199,45 @@ X 2 a-calend.ads
 44I12*Year_Number{integer}
 45I12*Month_Number{integer}
 46I12*Day_Number{integer}
-58V13*Year{44I12} 108|55r216
-59V13*Month{45I12} 108|55r147
-60V13*Day{46I12} 108|55r80
+58V13*Year{44I12} 108|56r216
+59V13*Month{45I12} 108|56r147
+60V13*Day{46I12} 108|56r80
 X 6 a-contai.ads
 16K13*Containers 22e19 107|21r10
 20I9*Count_Type<integer>
 X 7 a-convec.ads
 43k24*Vectors 379e27 107|21w21
-53R9*Vector 108|33r32[29|161] 34r43[29|127] 64r54[29|192]
-56R9*Cursor 108|67r54[29|192]
-105V13*Element{29|184R12} 108|70r47[29|192]
-241V13*First_Element{29|149R12} 108|50r71[29|161] 54r102[29|161] 55r98[29|161]
-. 55r167[29|161] 55r235[29|161] 57r93[29|161]
-283U14*Iterate 108|83r28[29|192]
+53R9*Vector 108|34r32[29|161] 35r43[29|127] 65r54[29|192]
+56R9*Cursor 108|68r54[29|192]
+105V13*Element{29|184R12} 108|71r47[29|192]
+241V13*First_Element{29|149R12} 108|51r71[29|161] 55r102[29|161] 56r98[29|161]
+. 56r167[29|161] 56r235[29|161] 58r93[29|161]
+283U14*Iterate 108|84r28[29|192]
 X 13 a-string.ads
 16K13*Strings 35e16 107|26r10 26r37
 X 17 a-strunb.ads
 39K21*Unbounded 428e26 107|26w18 26r45
-42R9*Unbounded_String 395e14 108|35r29
+42R9*Unbounded_String 395e14 108|36r29
 X 29 basec201_data.ads
-14K9*Basec201_Data 210e18 107|23w6 23r25 108|64r29 65r25 68r33
-127K15*Jour_Festival_List[7|43] 108|34r24
-150i10*Id_Festival{integer} 108|50r95
-152i10*Date{2|38I9} 108|55r122 55r191 55r259
-153r10*Lieu{17|42R9} 108|54r126
-154i10*Prix_Place{integer} 108|57r117
-161K15*Festival_List[7|43] 108|33r18 50r57 54r88 55r84 55r153 55r221 57r79
-184R12*tVille 188e17 108|36r15 65r39 68r47
-185r10*Nom_Ville{17|42R9} 108|53r95 72r90
-186r10*Mel_Contact{17|42R9} 108|58r97
-192K15*Ville_List[7|43] 108|64r43 67r43 70r36 83r17
+14K9*Basec201_Data 210e18 107|23w6 23r25 108|65r29 66r25 69r33
+127K15*Jour_Festival_List[7|43] 108|35r24
+150i10*Id_Festival{integer} 108|51r95
+152i10*Date{2|38I9} 108|56r122 56r191 56r259
+153r10*Lieu{17|42R9} 108|55r126
+154i10*Prix_Place{integer} 108|58r117
+161K15*Festival_List[7|43] 108|34r18 51r57 55r88 56r84 56r153 56r221 58r79
+184R12*tVille 188e17 108|37r15 66r39 69r47
+185r10*Nom_Ville{17|42R9} 108|54r95 73r90
+186r10*Mel_Contact{17|42R9} 108|59r97
+192K15*Ville_List[7|43] 108|65r43 68r43 71r36 84r17
 X 50 glade.ads
-32K9*Glade 44e10 107|2r6 2r20 108|17r9 21r9 22r9
+32K9*Glade 44e10 107|2r6 2r20 108|18r9 22r9 23r9
 X 51 glade-xml.ads
-37K15*XML 126e14 107|2w12 2r26 108|17r15 21r15 22r15
+37K15*XML 126e14 107|2w12 2r26 108|18r15 22r15 23r15
 40P9*Glade_XML(39R9) 108|5r7
-42U14*Gtk_New 108|17r19
-86U14*Signal_Connect 108|21R19 22R19
-95V13*Get_Widget{94|71P9} 108|19R47 20R39 53R36 54R36 55R36 56R36 57R36 58R36
+42U14*Gtk_New 108|18r19
+86U14*Signal_Connect 108|22R19 23R19
+95V13*Get_Widget{94|71P9} 108|20R47 21R39 54R36 55R36 56R36 57R36 58R36 59R36
 X 52 glib.ads
 76A12*UTF8_String{string}<integer>
 X 63 gtk.ads
@@ -247,91 +247,91 @@ X 68 gtk-button.ads
 69K13*Button 419e15 107|9w10 9r26
 X 76 gtk-gentry.ads
 41K13*GEntry 446e15 107|10w10 10r26
-48P9*Gtk_Entry(43R9) 108|53r26 54r26 55r26 56r26 57r26 58r26
-116U14*Set_Text 108|53R17 54R17 55R17 56R17 57R17 58R17
+48P9*Gtk_Entry(43R9) 108|54r26 55r26 56r26 57r26 58r26 59r26
+116U14*Set_Text 108|54R17 55R17 56R17 57R17 58R17 59R17
 X 78 gtk-label.ads
 94K13*Label 511e14 107|12w10 12r25
 X 79 gtk-main.ads
 41K13*Main 507e13 107|4w10
 X 81 gtk-object.ads
-107U14*Destroy 108|29R17
+107U14*Destroy 108|30R17
 X 83 gtk-scrolled_window.ads
 64K13*Scrolled_Window 275e24 107|13w10 13r35
 X 88 gtk-tree_model.ads
 56K13*Tree_Model 518e19 107|16w10 16r30
-60P9*Gtk_Tree_Model(58R9) 108|40r60
-64R9*Gtk_Tree_Iter 492e14 108|10r13
-229r4*Null_Iter{64R9} 108|10r30 42r33 71r61
-379V13*Get_String{52|76A12} 108|46R37
+60P9*Gtk_Tree_Model(58R9) 108|41r60
+64R9*Gtk_Tree_Iter 492e14 108|11r13
+229r4*Null_Iter{64R9} 108|11r30 43r33 72r61
+379V13*Get_String{52|76A12} 108|47R37
 X 89 gtk-tree_selection.ads
 55K13*Tree_Selection 194e23 107|18w10 18r34
 59P9*Gtk_Tree_Selection(57R9)
-83U14*Get_Selected 108|40r17
+83U14*Get_Selected 108|41r17
 X 91 gtk-tree_store.ads
 43K13*Tree_Store 366e19 107|17w10 17r30
-47P9*Gtk_Tree_Store(45R9) 108|9r15
-117U14*Set 108|72R27
-217U14*Append 108|71R27
+47P9*Gtk_Tree_Store(45R9) 108|10r15
+117U14*Set 108|73R27
+217U14*Append 108|72R27
 X 92 gtk-tree_view.ads
 48K13*Tree_View 955e18 107|11w10 11r29
-52P9*Gtk_Tree_View(50R9) 108|8r17 20r25
-88V13*Get_Selection{89|59P9} 108|40R30
+52P9*Gtk_Tree_View(50R9) 108|9r17 21r25
+88V13*Get_Selection{89|59P9} 108|41R30
 X 94 gtk-widget.ads
 71P9*Gtk_Widget(70R9)
 X 95 gtk-window.ads
 60K13*Window 1189e15 107|8w10 8r26
-63P9*Gtk_Window(62R9) 108|6r27 19r36
+63P9*Gtk_Window(62R9) 108|6r27 20r36
 X 96 gtkada.ads
 30K9*Gtkada 34e11 107|5r6 5r25
 X 97 gtkada-dialogs.ads
 37K16*Dialogs 128e19 107|5w13 5r32
 40M9*Message_Dialog_Buttons 108|4r7
-50m4*Button_OK{40M9} 108|43r83 43r93
-61n7*Error{57E9} 108|43r77
-77V13*Message_Dialog{40M9} 108|43r32
+50m4*Button_OK{40M9} 108|44r83 44r93
+61n7*Error{57E9} 108|44r77
+77V13*Message_Dialog{40M9} 108|44r32
 X 103 jour_festival_io.ads
-12K9*Jour_Festival_IO 93e21 107|27w6 108|56r89
-34V13*Card{6|20I9} 108|56r106
+12K9*Jour_Festival_IO 93e21 107|27w6 108|57r89
+34V13*Card{6|20I9} 108|57r106
 X 104 p_appli_consulterfestival.ads
-11K9*p_appli_consulterfestival 20e30 107|22w6 22r37 108|81r32
-13V18*GetVille{29|184R12} 108|51r24
-14V18*GetFestivalAssocie{7|53R9[29|161]} 108|49r27
-15V18*GetJoursFestivalAssocie{7|53R9[29|127]} 108|50r33
-16V18*GetVillesAvecFestival{7|53R9[29|192]} 108|81r58
+11K9*p_appli_consulterfestival 20e30 107|22w6 22r37 108|82r32
+13V18*GetVille{29|184R12} 108|52r24
+14V18*GetFestivalAssocie{7|53R9[29|161]} 108|50r27
+15V18*GetJoursFestivalAssocie{7|53R9[29|127]} 108|51r33
+16V18*GetVillesAvecFestival{7|53R9[29|192]} 108|82r58
 X 105 p_conversion.ads
-8K9*p_Conversion 95e17 107|24w6 24r24 108|53r66 54r65 58r68 72r61
-36U11*to_ada_type 108|46r25
-47V10*to_string{string} 108|53r79 54r78 58r81 72r74
+8K9*p_Conversion 95e17 107|24w6 24r24 108|54r66 55r65 59r68 73r61
+36U11*to_ada_type 108|47r25
+47V10*to_string{string} 108|54r79 55r78 59r81 73r74
 X 106 p_util_treeview.ads
 10K10*p_util_treeview 22e20 107|19w6 19r27
-15U11*creerColonne 108|77r17
-20U11*creerModele 108|79r17
+15U11*creerColonne 108|78r17
+20U11*creerModele 108|80r17
 X 107 p_window_consulterfestival.ads
-29K9*P_window_consulterfestival 37l5 37e31 108|3b14 89l5 89t31
-31X3*EX_AUCUNE_VILLE_SELECTIONNEE 108|44r31
-32U13*init 108|13b11 25l5 25t9
-33U13*fermerFenetre 108|21r65 27b19 30l13 30t26
-34U13*remplirentry 108|22r68 32b19 61l13 61t25
-35U13*inittreeview 108|24r9 63b19 85l13 85t25
+29K9*P_window_consulterfestival 37l5 37e31 108|3b14 90l5 90t31
+31X3*EX_AUCUNE_VILLE_SELECTIONNEE 108|45r31
+32U13*init 108|14b11 26l5 26t9
+33U13*fermerFenetre 108|22r65 28b19 31l13 31t26
+34U13*remplirentry 108|23r68 33b19 62l13 62t25
+35U13*inittreeview 108|25r9 64b19 86l13 86t25
 X 108 p_window_consulterfestival.adb
-4m1 b_box{97|40M9} 43m25
-5p1 XML{51|40P9} 17m27 19r58 20r50 21r35 22r35 53r47 54r47 55r47 56r47 57r47
-. 58r47
-6p1 windowconsulterfestival{95|63P9} 19m9 29r25
-8p1 treeview_ville{92|52P9} 20m9 40r44 77r42 79r29
-9p1 modele_ville{91|47P9} 40m75 46r49 71r35 72r32 79m44
-10r1 rang_ville{88|64R9} 41m17 42r20 46r63 71m49 72r46
-33r9 Festival{7|53R9[29|161]} 49m17 50r85 54r116 55r112 55r181 55r249 57r107
-34r9 Jours_Festival{7|53R9[29|127]} 50m17 56r111
-35r9 resulttreeviewville{17|42R9} 46m79 49r46 51r33
-36r9 Ville{29|184R12} 51m17 53r89 58r91
-64r17 liste_ville{7|53R9[29|192]} 81m17 83r36
-65r17 ville{29|184R12}
-67U27 alimente 67b27 67>37 73l21 73t29 83r49
-67r37 pos{7|56R9[29|192]} 70r56
-68r25 ville{29|184R12} 70m27 72r84
+4m1 b_box{97|40M9} 44m25
+5p1 XML{51|40P9} 18m27 20r58 21r50 22r35 23r35 54r47 55r47 56r47 57r47 58r47
+. 59r47
+6p1 windowconsulterfestival{95|63P9} 20m9 30r25
+9p1 treeview_ville{92|52P9} 21m9 41r44 78r42 80r29
+10p1 modele_ville{91|47P9} 41m75 47r49 72r35 73r32 80m44
+11r1 rang_ville{88|64R9} 42m17 43r20 47r63 72m49 73r46
+34r9 Festival{7|53R9[29|161]} 50m17 51r85 55r116 56r112 56r181 56r249 58r107
+35r9 Jours_Festival{7|53R9[29|127]} 51m17 57r111
+36r9 resulttreeviewville{17|42R9} 47m79 50r46 52r33
+37r9 Ville{29|184R12} 52m17 54r89 59r91
+65r17 liste_ville{7|53R9[29|192]} 82m17 84r36
+66r17 ville{29|184R12}
+68U27 alimente 68b27 68>37 74l21 74t29 84r49
+68r37 pos{7|56R9[29|192]} 71r56
+69r25 ville{29|184R12} 71m27 73r84
 X 116 system.ads
 37K9*System 107|3w6 3r18 116|153e11
 64M9*Address
-66m4*Null_Address{64M9} 108|21r87 22r89
+66m4*Null_Address{64M9} 108|22r87 23r89
 

@@ -38,7 +38,7 @@ package ada_main is
    pragma Export (C, main, "main");
 
    type Version_32 is mod 2 ** 32;
-   u00001 : constant Version_32 := 16#3247b0c7#;
+   u00001 : constant Version_32 := 16#a2abc23b#;
    u00002 : constant Version_32 := 16#4b33036a#;
    u00003 : constant Version_32 := 16#03570e27#;
    u00004 : constant Version_32 := 16#fdd1129e#;
@@ -497,16 +497,16 @@ package ada_main is
    u00457 : constant Version_32 := 16#bf556269#;
    u00458 : constant Version_32 := 16#e0d2fb93#;
    u00459 : constant Version_32 := 16#cd8da682#;
-   u00460 : constant Version_32 := 16#e18e54a8#;
-   u00461 : constant Version_32 := 16#005bd4cb#;
-   u00462 : constant Version_32 := 16#66700ae5#;
-   u00463 : constant Version_32 := 16#d115eecf#;
+   u00460 : constant Version_32 := 16#1f79eda9#;
+   u00461 : constant Version_32 := 16#be3b33f6#;
+   u00462 : constant Version_32 := 16#0ea21696#;
+   u00463 : constant Version_32 := 16#e5b7ad7c#;
    u00464 : constant Version_32 := 16#6ba93a7d#;
    u00465 : constant Version_32 := 16#04c05eaa#;
    u00466 : constant Version_32 := 16#981a17c6#;
    u00467 : constant Version_32 := 16#0cade296#;
    u00468 : constant Version_32 := 16#a1789c3d#;
-   u00469 : constant Version_32 := 16#fbb0646e#;
+   u00469 : constant Version_32 := 16#6b5c1692#;
    u00470 : constant Version_32 := 16#f6fb9621#;
    u00471 : constant Version_32 := 16#96eb33f6#;
    u00472 : constant Version_32 := 16#1923a960#;

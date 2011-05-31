@@ -8,7 +8,7 @@ A -gnatA
 P SS ZX
 R nnnnnnnnnnnnnnnvnnvnnnnvnnnnvnnvnnnnnnvnnvnnnnnnnnnnnnnvnnvnnnnnnnnnnnnnnnnnn
 
-U p_appli_enreggroupe%b	p_appli_enreggroupe.adb	66700ae5 NE OO PK IL
+U p_appli_enreggroupe%b	p_appli_enreggroupe.adb	0ea21696 NE OO PK IL
 W ada.exceptions%s	a-except.adb		a-except.ali
 W ada.tags%s		a-tags.adb		a-tags.ali
 W system%s		system.ads		system.ali
@@ -19,7 +19,7 @@ W system.soft_links%s	s-soflin.adb		s-soflin.ali
 W system.standard_library%s  s-stalib.adb	s-stalib.ali
 W system.storage_elements%s  s-stoele.adb	s-stoele.ali
 
-U p_appli_enreggroupe%s	p_appli_enreggroupe.ads	d115eecf EE NE OO PK IL
+U p_appli_enreggroupe%s	p_appli_enreggroupe.ads	e5b7ad7c EE NE OO PK IL
 W ada%s			ada.ads			ada.ali
 W ada.strings%s		a-string.ads		a-string.ali
 W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
@@ -64,8 +64,8 @@ D groupe_io.ads		20110513115553 abb21f8e
 D interfac.ads		20090409232307 a69cad5c
 D i-cstrea.ads		20090409232307 e1e064a9
 D jour_festival_io.ads	20110513115553 52750015
-D p_appli_enreggroupe.ads  20110530064021 5f335332
-D p_appli_enreggroupe.adb  20110530064008 394359d7
+D p_appli_enreggroupe.ads  20110530112811 6b911081
+D p_appli_enreggroupe.adb  20110530112805 65330617
 D system.ads		20101024233633 15e10948
 D s-crtl.ads		20090409232307 997234a1
 D s-exctab.ads		20090409232307 5c1c61ae
@@ -90,8 +90,9 @@ X 6 a-contai.ads
 20I9*Count_Type<integer>
 X 7 a-convec.ads
 47I12*Extended_Index{integer}
-53R9*Vector 35|16r50[28|192] 17r70[28|91] 18r70[28|91] 19r83[28|161] 36|5r50[28|192]
-. 8r31[28|192] 9r19[28|192] 28r70[28|91] 44r70[28|91] 61r83[28|161]
+53R9*Vector 35|16r50[28|192] 17r70[28|91] 18r70[28|91] 19r83[28|161] 21r84[28|127]
+. 36|5r50[28|192] 8r31[28|192] 9r19[28|192] 28r70[28|91] 44r70[28|91] 61r83[28|161]
+. 86r84[28|127]
 101V13*Element{28|184R12} 36|19r91[28|192] 20r73[28|192]
 197U14*Append 36|20r36[28|192]
 237V13*First_Index{integer} 36|18r29[28|192]
@@ -106,7 +107,8 @@ X 28 basec201_data.ads
 14K9*Basec201_Data 210e18 35|2w6 2r25
 91K15*Groupe_List[7|43] 35|17r58 18r58 36|28r58 44r58
 116R12*tJour_Festival 123e17 36|30r16 46r16 72r15
-149R12*tFestival 157e17 35|17r40 18r40 20r40 36|28r40 44r40 71r40
+127K15*Jour_Festival_List[7|43] 35|21r65 36|86r65
+149R12*tFestival 157e17 35|17r40 18r40 20r40 21r47 36|28r40 44r40 71r40 86r47
 150i10*Id_Festival{integer} 36|34r57 52r57 76r57
 161K15*Festival_List[7|43] 35|19r69 36|61r69
 184R12*tVille 188e17 36|62r7
@@ -115,8 +117,9 @@ X 29 db_commons.ads
 11K9*DB_Commons 125e15 35|8w6 36|10r10 31r10 47r10 73r10
 45R9*Criteria 123e14 36|10r21 31r21 47r21 73r21
 X 30 festival_io.ads
-12K9*Festival_IO 96e16 35|3w6 36|19r24
+12K9*Festival_IO 96e16 35|3w6 36|19r24 90r16
 28V13*Is_Empty{boolean} 36|19r36
+74V13*Retrieve_Associated_Jour_Festivals{7|53R9[28|127]} 36|90r28
 X 31 groupe_io.ads
 12K9*Groupe_IO 101e14 35|6w6 36|81r24
 33V13*Card{6|20I9} 36|81r34
@@ -128,7 +131,7 @@ X 34 jour_festival_io.ads
 80U14*Add_Festival 36|34r26 52r26 76r26
 81U14*Add_Num_Ordre 36|33r26 51r26 75r26
 X 35 p_appli_enreggroupe.ads
-13K9*p_appli_enreggroupe 25l5 25e24 36|3b14 91l5 91t24
+13K9*p_appli_enreggroupe 25l5 25e24 36|3b14 99l5 99t24
 16V10*GetVillesAvecFestival{7|53R9[28|192]} 36|5b10 26l5 26t26
 17V10*GetGroupesJour1{7|53R9[28|91]} 17>27 36|28b10 42l5 42t20
 17r27 festival{28|149R12} 36|28b27 34r48
@@ -139,6 +142,8 @@ X 35 p_appli_enreggroupe.ads
 20V10*Nbgroupeinscrit{integer} 20>26 20>51 36|71b10 84l5 84t20
 20r26 Festival{28|149R12} 36|71b26 76r48
 20i51 OrdreJour{integer} 36|71b51 75r49
+21V10*GetJourFestivalAssocie{7|53R9[28|127]} 21>33 36|86b10 93l5 93t27
+21r33 Festival{28|149R12} 36|86b33 90r63
 X 36 p_appli_enreggroupe.adb
 8r1 VillesSansFestival{7|53R9[28|192]} 20m43 24r16
 9r1 Villes{7|53R9[28|192]} 16m9 18r41 18r72 19r84 20r81

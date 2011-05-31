@@ -16,6 +16,7 @@ with Gtk.Scrolled_Window; use Gtk.Scrolled_Window;
 with Gtk.Tree_Model; use Gtk.Tree_Model;-- l'itérateur rang dans le modèle
 with Gtk.Tree_Store; use Gtk.Tree_Store;-- le modèle associé à la vue
 with Gtk.Tree_Selection; use Gtk.Tree_Selection;  -- pour la sélection dans la vue
+with Gtk.Tree_View_column; use Gtk.Tree_View_column;
 with p_util_treeview; use p_util_treeview;  -- utilitaire de gestion d'une treeView
 
 with p_appli_enreggroupe; use p_appli_enreggroupe;
@@ -31,8 +32,10 @@ package P_window_enreggroupe is
   procedure fermerFenetre;
   procedure enregistrergroupe;
   procedure inittreeviewville;
-  procedure inittreeviewjour1(festival : in tfestival);
-  procedure inittreeviewjour2(festival : in tfestival);
+  procedure inittreeviewjour1;
+  procedure inittreeviewjour2;
   procedure initselect;
+  procedure remplirtreeviewjour1(festival : in tfestival);
+  procedure remplirtreeviewjour2(festival : in tfestival);
 
 end P_window_enreggroupe;

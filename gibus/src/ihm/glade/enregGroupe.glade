@@ -206,6 +206,7 @@
                   <widget class="GtkEntry" id="entryPrevuJour2">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="editable">False</property>
                     <property name="invisible_char">&#x2022;</property>
                     <property name="shadow_type">none</property>
                   </widget>
@@ -246,9 +247,10 @@
                   </packing>
                 </child>
                 <child>
-                  <widget class="GtkEntry" id="entry10">
+                  <widget class="GtkEntry" id="entryPlaceJour2">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="editable">False</property>
                     <property name="invisible_char">&#x2022;</property>
                     <property name="shadow_type">none</property>
                   </widget>

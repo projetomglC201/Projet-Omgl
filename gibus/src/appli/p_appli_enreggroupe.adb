@@ -83,7 +83,15 @@ begin
 
 end Nbgroupeinscrit;
 ----------------------------------------------------------------------------------
+function GetJourFestivalAssocie(Festival : in tfestival) return Jour_Festival_List.Vector is
 
+begin
+	
+	return Festival_io.Retrieve_Associated_Jour_Festivals(Festival);
+
+
+end GetJourFestivalAssocie;
+------------------------------------------------------------------------------------------
 
 
 

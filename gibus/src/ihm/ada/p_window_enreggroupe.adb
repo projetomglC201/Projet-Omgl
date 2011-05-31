@@ -8,6 +8,7 @@ package body P_window_enreggroupe is
 b_box:message_dialog_buttons;
 XML : Glade_XML;
 window:Gtk_window;
+
 -- déclaration des variables utiles pour la suite 1. 2. 3.
 treeview_ville: Gtk_Tree_View;
 modele_ville: Gtk_Tree_Store; -- le modèle associé à la vue
@@ -37,6 +38,8 @@ begin
 	Glade.XML.signal_connect (XML,"on_treeviewville_row_activated",initselect'address,Null_Address);
 	
 	inittreeviewville;
+	inittreeviewjour1;
+	inittreeviewjour2;
 
 end init;
 ------------------------------------------------------------------------------
@@ -64,21 +67,92 @@ end init;
 		end alimente;
 
 	begin
-		
+
 		creerColonne("nomVille", treeView_ville, false);
 		
 		creerModele(treeView_ville,modele_ville);
-		
+
+
 		liste_ville := p_appli_enreggroupe.GetVillesAvecFestival;
 		
 		Ville_List.iterate(liste_ville, alimente'Access);
 	
 	end inittreeviewville;
 -----------------------------------------------------------------------------
-	procedure inittreeviewjour1 (festival : in tfestival) is
+	procedure inittreeviewjour1 is
+
+		
+
+	begin
+
+		
+		creerColonne("NomVille", treeView_jour1, false);
+		creerColonne("Genre", treeView_jour1, false);
+		
+		creerModele(treeView_jour1,modele_jour1);
+
+
+	
+	end inittreeviewjour1;
+
+-----------------------------------------------------------------------------
+	procedure inittreeviewjour2  is
+
+	begin
+
+		creerColonne("NomVille", treeView_jour2, false);
+		creerColonne("Genre", treeView_jour2, false);
+		
+		creerModele(treeView_jour2,modele_jour2);
+
+	
+	end inittreeviewjour2;
+---------------------------------------------------------------------------
+	procedure initselect is
+	Festival:festival_list.vector;
+	resulttreeviewville:Unbounded_String;
+	groupesjour1:groupe_list.vector;
+	groupesjour2:groupe_list.vector;
+	jour1:tjour_festival;
+	jour2:tjour_festival;
+	
+	begin
+		--Recuperation de la selection dans la treeview
+		Get_Selected(Get_Selection(treeview_ville),Gtk_Tree_Model(modele_ville), 
+		rang_ville);
+		if rang_ville = Null_Iter then
+			b_box:=Message_Dialog ("Aucune ville selectionnée",Error,Button_Ok,Button_Ok);
+			raise EX_AUCUNE_VILLE_SELECTIONNEE;
+		else
+			to_ada_type(Get_String (modele_ville, rang_ville, 0), resulttreeviewville);
+		end if;
+		Festival:=GetFestivalAssocie(resulttreeviewville);
+		remplirtreeviewjour1(festival.first_element);
+		jour1:=GetJourFestivalAssocie(festival.first_element).element(1);
+		If jour1=GetJourFestivalAssocie(festival.first_element).element(2) then
+			jour2:=Null_Jour_Festival;
+		else
+		jour2:=GetJourFestivalAssocie(festival.first_element).element(2);
+		end if;
+		
+		Set_Text(Gtk_Entry(Get_Widget(XML,"entryDateJour1")),(integer'image(Day(Festival_list.First_Element(Festival).Date))&"/"&integer'image(Month(Festival_list.First_Element(festival).Date))&"/"&integer'image(Year(Festival_list.First_Element(festival).Date))));
+		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPlaceJour1")),integer'image(jour1.Nbre_Concert_Max));
+		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPrevuJour1")),integer'image(jour2.Nbre_Concert_Max-Nbgroupeinscrit(festival.first_element,1)));
+
+		if jour2/=Null_Jour_Festival then
+		remplirtreeviewjour2(festival.first_element);
+		Set_Text(Gtk_Entry(Get_Widget(XML,"entryDateJour2")),(integer'image(Day(Festival_list.First_Element(Festival).Date)+1)&"/"&integer'image(Month(Festival_list.First_Element(festival).Date))&"/"&integer'image(Year(Festival_list.First_Element(festival).Date))));
+		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPlaceJour2")),integer'image(jour2.Nbre_Concert_Max));
+		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPrevuJour2")),integer'image(jour2.Nbre_Concert_Max-Nbgroupeinscrit(festival.first_element,2)));
+		end if;
+		
+	end initselect;
+------------------------------------------------------------------------
+	procedure remplirtreeviewjour1  (festival : in tfestival) is
+	
 		liste_groupe:Basec201_Data.Groupe_List.Vector;
 		groupe : Basec201_Data.tGroupe;
-		
+	
 		procedure alimente( pos : Groupe_List.Cursor ) is
 			Groupe : Basec201_Data.tGroupe;
 		begin
@@ -88,20 +162,16 @@ end init;
 			  Set (modele_jour1, rang_jour1, 1, tgenre_Enum'image(groupe.Genre));
 		end alimente;
 	begin
-		
-		creerColonne("NomVille", treeView_jour1, false);
-		creerColonne("Genre", treeView_jour1, false);
-		
-		creerModele(treeView_jour1,modele_jour1);
-		
+		Clear(modele_jour1);
+
 		liste_groupe :=p_appli_enreggroupe.GetGroupesJour1(festival);
 		
 		groupe_list.iterate(liste_groupe, alimente'Access);
+		
+	end remplirtreeviewjour1;
+-------------------------------------------------------------------------
+	procedure remplirtreeviewjour2 (festival : in tfestival) is
 	
-	end inittreeviewjour1;
-
------------------------------------------------------------------------------
-	procedure inittreeviewjour2 (festival : in tfestival) is
 		liste_groupe:Basec201_Data.Groupe_List.Vector;
 		groupe : Basec201_Data.tgroupe;
 		
@@ -115,46 +185,14 @@ end init;
 		end alimente;
 
 	begin
+		Clear(modele_jour2);
 		
-		creerColonne("NomVille", treeView_jour2, false);
-		creerColonne("Genre", treeView_jour2, false);
-		
-		creerModele(treeView_jour2,modele_jour2);
-		
-		liste_groupe :=p_appli_enreggroupe.GetGroupesJour1(festival);
+		liste_groupe :=p_appli_enreggroupe.GetGroupesJour2(festival);
 		
 		groupe_list.iterate(liste_groupe, alimente'Access);
 	
-	end inittreeviewjour2;
----------------------------------------------------------------------------
-	procedure initselect is
-	Festival:festival_list.vector;
-	resulttreeviewville:Unbounded_String;
-	groupesjour1:groupe_list.vector;
-	groupesjour2:groupe_list.vector;
-	
-	
-	begin
-		--Recuperation de la selection dans la treeview
-		Get_Selected(Get_Selection(treeview_ville),Gtk_Tree_Model(modele_ville), 
-		rang_ville);
-		if rang_ville = Null_Iter then
-			b_box:=Message_Dialog ("Aucune ville selectionnée",Error,Button_Ok,Button_Ok);
-			raise EX_AUCUNE_VILLE_SELECTIONNEE;
-		else
-			to_ada_type(Get_String (modele_ville, rang_ville, 0), resulttreeviewville);
-		end if;
-		Festival:=GetFestivalAssocie(resulttreeviewville);
-		inittreeviewjour1(festival.first_element);
-			
-		Set_Text(Gtk_Entry(Get_Widget(XML,"entryDateJour1")),(integer'image(Day(Festival_list.First_Element(Festival).Date))&"/"&integer'image(Month(Festival_list.First_Element(festival).Date))&"/"&integer'image(Year(Festival_list.First_Element(festival).Date))));
-		
-		
-		
-		inittreeviewjour2(festival.first_element);
-		Set_Text(Gtk_Entry(Get_Widget(XML,"entryDateJour2")),(integer'image(Day(Festival_list.First_Element(Festival).Date)+1)&"/"&integer'image(Month(Festival_list.First_Element(festival).Date))&"/"&integer'image(Year(Festival_list.First_Element(festival).Date))));
-	end initselect;
-------------------------------------------------------------------------
+	end remplirtreeviewjour2;
+---------------------------------------------------------------------
 
 end P_window_enreggroupe;
 

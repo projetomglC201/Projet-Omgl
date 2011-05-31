@@ -8,7 +8,7 @@ A -gnatA
 P SS ZX
 R nnnnnvvnnvnnvnnvnnvnnnnvvnnnnnnvnnnnnnvnnvnnnnnnnnnnnnnvnnvnvnnnnnnnnnnnnnnnn
 
-U p_window_enreggroupe%b  p_window_enreggroupe.adb  e18e54a8 OO PK IL
+U p_window_enreggroupe%b  p_window_enreggroupe.adb  1f79eda9 OO PK IL
 W ada.exceptions%s	a-except.adb		a-except.ali
 W glade%s		glade.adb		glade.ali
 W glade.xml%s		glade-xml.adb		glade-xml.ali
@@ -23,7 +23,7 @@ W system.soft_links%s	s-soflin.adb		s-soflin.ali
 W system.storage_elements%s  s-stoele.adb	s-stoele.ali
 W system.string_ops_concat_5%s  s-sopco5.adb	s-sopco5.ali
 
-U p_window_enreggroupe%s  p_window_enreggroupe.ads  005bd4cb EE OO PK IL
+U p_window_enreggroupe%s  p_window_enreggroupe.ads  be3b33f6 EE OO PK IL
 W ada%s			ada.ads			ada.ali
 W ada.calendar%s	a-calend.adb		a-calend.ali
 W ada.strings%s		a-string.ads		a-string.ali
@@ -43,6 +43,7 @@ W gtk.tree_model%s	gtk-tree_model.adb	gtk-tree_model.ali
 W gtk.tree_selection%s	gtk-tree_selection.adb	gtk-tree_selection.ali
 W gtk.tree_store%s	gtk-tree_store.adb	gtk-tree_store.ali
 W gtk.tree_view%s	gtk-tree_view.adb	gtk-tree_view.ali
+W gtk.tree_view_column%s  gtk-tree_view_column.adb  gtk-tree_view_column.ali
 W gtk.window%s		gtk-window.adb		gtk-window.ali
 W gtkada%s		gtkada.ads		gtkada.ali
 W gtkada.dialogs%s	gtkada-dialogs.adb	gtkada-dialogs.ali
@@ -157,11 +158,11 @@ D i-c.ads		20070406091342 bc3ef662
 D i-cstrin.ads		20090409232307 841d8a31
 D i-cstrea.ads		20090409232307 e1e064a9
 D jour_festival_io.ads	20110513115553 52750015
-D p_appli_enreggroupe.ads  20110530064021 5f335332
+D p_appli_enreggroupe.ads  20110530112811 6b911081
 D p_conversion.ads	20110411141559 02c76134
 D p_util_treeview.ads	20100331082247 f118f0fc
-D p_window_enreggroupe.ads  20110527122305 a0b43e4e
-D p_window_enreggroupe.adb  20110530063743 4cdf6009
+D p_window_enreggroupe.ads  20110530110309 30584cb2
+D p_window_enreggroupe.adb  20110530125221 22c4abf4
 D pango.ads		20091225112832 567c5424
 D pango-attributes.ads	20091225112832 21e060ad
 D pango-context.ads	20091225112832 dbda6b1f
@@ -196,167 +197,184 @@ D s-wchcon.ads		20090409232307 ab028799
 D unchconv.ads		20070406091342 34860a55
 D ville_io.ads		20110513115553 847d103e
 X 1 ada.ads
-16K9*Ada 19e8 108|25r6 25r33 26r6 26r24
+16K9*Ada 19e8 108|26r6 26r33 27r6 27r24
 X 2 a-calend.ads
-36K13*Calendar 358e17 108|26w10 26r28
+36K13*Calendar 358e17 108|27w10 27r28
 38I9*Time
 44I12*Year_Number{integer}
 45I12*Month_Number{integer}
 46I12*Day_Number{integer}
-58V13*Year{44I12} 109|150r221 155r223
-59V13*Month{45I12} 109|150r152 155r154
-60V13*Day{46I12} 109|150r85 155r85
+58V13*Year{44I12} 109|138r221 144r223
+59V13*Month{45I12} 109|138r152 144r154
+60V13*Day{46I12} 109|138r85 144r85
 X 7 a-convec.ads
-53R9*Vector 109|55r54[29|192] 79r56[29|91] 105r56[29|91] 131r32[29|161] 133r34[29|91]
-. 134r34[29|91]
-56R9*Cursor 109|58r54[29|192] 82r55[29|91] 108r55[29|91]
-105V13*Element{29|184R12} 109|61r47[29|192] 85r49[29|91] 111r49[29|91]
-241V13*First_Element{29|149R12} 109|148r44[29|161] 150r103[29|161] 150r172[29|161]
-. 150r240[29|161] 154r44[29|161] 155r103[29|161] 155r174[29|161] 155r242[29|161]
-283U14*Iterate 109|74r28[29|192] 99r29[29|91] 126r29[29|91]
+53R9*Vector 109|58r54[29|192] 112r32[29|161] 114r34[29|91] 115r34[29|91]
+. 153r56[29|91] 175r56[29|91]
+56R9*Cursor 109|61r54[29|192] 156r55[29|91] 178r55[29|91]
+101V13*Element{29|116R12} 109|131r71[29|127] 132r73[29|127] 135r71[29|127]
+105V13*Element{29|184R12} 109|64r47[29|192] 159r49[29|91] 181r49[29|91]
+241V13*First_Element{29|149R12} 109|130r47[29|161] 131r56[29|161] 132r58[29|161]
+. 135r56[29|161] 138r103[29|161] 138r172[29|161] 138r240[29|161] 140r133[29|161]
+. 143r47[29|161] 144r103[29|161] 144r174[29|161] 144r242[29|161] 146r133[29|161]
+283U14*Iterate 109|78r28[29|192] 169r29[29|91] 192r29[29|91]
 X 13 a-string.ads
-16K13*Strings 35e16 108|25r10 25r37
+16K13*Strings 35e16 108|26r10 26r37
 X 17 a-strunb.ads
-39K21*Unbounded 428e26 108|25w18 25r45
-42R9*Unbounded_String 395e14 109|132r29
+39K21*Unbounded 428e26 108|26w18 26r45
+42R9*Unbounded_String 395e14 109|113r29
 X 28 base_types.ads
-14K9*base_types 67e15 108|24w6 24r22
-34E9*tgenre_Enum 34e76 109|88r61 114r61
+14K9*base_types 67e15 108|25w6 25r22
+34E9*tgenre_Enum 34e76 109|162r61 184r61
 X 29 basec201_data.ads
-14K9*Basec201_Data 210e18 108|22w6 22r25 109|55r29 56r25 59r33 79r30 80r26
-. 83r34 105r30 106r26 109r34
-77R12*tGroupe 87e17 109|80r40 83r48 106r40 109r48
-78r10*Nom_Groupe{17|42R9} 109|87r91 113r91
-84e10*Genre{28|34E9} 109|88r86 114r86
-91K15*Groupe_List[7|43] 109|79r44 82r43 85r37 99r17 105r44 108r43 111r37
-. 126r17 133r22 134r22
-149R12*tFestival 157e17 108|34r45 35r45 109|78r52 104r52
-152i10*Date{2|38I9} 109|150r127 150r196 150r264 155r127 155r198 155r266
-161K15*Festival_List[7|43] 109|131r18 150r89 150r158 150r226 155r89 155r160
-. 155r228
-184R12*tVille 188e17 109|56r39 59r47
-185r10*Nom_Ville{17|42R9} 109|63r90
-192K15*Ville_List[7|43] 109|55r43 58r43 61r36 74r17
+14K9*Basec201_Data 210e18 108|23w6 23r25 109|58r29 59r25 62r33 153r30 154r26
+. 157r34 175r30 176r26 179r34
+77R12*tGroupe 87e17 109|154r40 157r48 176r40 179r48
+78r10*Nom_Groupe{17|42R9} 109|161r91 183r91
+84e10*Genre{28|34E9} 109|162r86 184r86
+91K15*Groupe_List[7|43] 109|114r22 115r22 153r44 156r43 159r37 169r17 175r44
+. 178r43 181r37 192r17
+116R12*tJour_Festival 123e17 109|116r15 117r15
+120i10*Nbre_Concert_Max{integer} 109|139r91 140r91 145r91 146r91
+133r7*Null_Jour_Festival{116R12} 109|133r32 142r27
+149R12*tFestival 157e17 108|38r48 39r48 109|151r56 173r55
+152i10*Date{2|38I9} 109|138r127 138r196 138r264 144r127 144r198 144r266
+161K15*Festival_List[7|43] 109|112r18 138r89 138r158 138r226 144r89 144r160
+. 144r228
+184R12*tVille 188e17 109|59r39 62r47
+185r10*Nom_Ville{17|42R9} 109|66r90
+192K15*Ville_List[7|43] 109|58r43 61r43 64r36 78r17
 X 50 glade.ads
-32K9*Glade 44e10 108|2r6 2r20 109|2r6 2r20 28r9 35r9 36r9 37r9
+32K9*Glade 44e10 108|2r6 2r20 109|2r6 2r20 29r9 36r9 37r9 38r9
 X 51 glade-xml.ads
-37K15*XML 126e14 108|2w12 2r26 109|2w12 2r26 28r15 35r15 36r15 37r15
+37K15*XML 126e14 108|2w12 2r26 109|2w12 2r26 29r15 36r15 37r15 38r15
 40P9*Glade_XML(39R9) 109|9r7
-42U14*Gtk_New 109|28r19
-86U14*Signal_Connect 109|35R19 36R19 37R19
-95V13*Get_Widget{95|71P9} 109|29R30 30R39 31R39 32R39 150R36 155R36
+42U14*Gtk_New 109|29r19
+86U14*Signal_Connect 109|36R19 37R19 38R19
+95V13*Get_Widget{95|71P9} 109|30R30 31R39 32R39 33R39 138R36 139R36 140R36
+. 144R36 145R36 146R36
 X 52 glib.ads
 76A12*UTF8_String{string}<integer>
 X 64 gtk.ads
 41K9*Gtk 77e8 108|4r6 8r6 8r22 9r6 9r22 10r6 10r22 11r6 11r25 12r6 12r21
-. 13r6 13r31 16r6 16r26 17r6 17r26 18r6 18r30
+. 13r6 13r31 16r6 16r26 17r6 17r26 18r6 18r30 19r6 19r32
 X 69 gtk-button.ads
 69K13*Button 419e15 108|9w10 9r26
 X 77 gtk-gentry.ads
 41K13*GEntry 446e15 108|10w10 10r26
-48P9*Gtk_Entry(43R9) 109|150r26 155r26
-116U14*Set_Text 109|150R17 155R17
+48P9*Gtk_Entry(43R9) 109|138r26 139r26 140r26 144r26 145r26 146r26
+116U14*Set_Text 109|138R17 139R17 140R17 144R17 145R17 146R17
 X 79 gtk-label.ads
 94K13*Label 511e14 108|12w10 12r25
 X 80 gtk-main.ads
 41K13*Main 507e13 108|4w10
 X 82 gtk-object.ads
-107U14*Destroy 109|45R17
+107U14*Destroy 109|48R17
 X 84 gtk-scrolled_window.ads
 64K13*Scrolled_Window 275e24 108|13w10 13r35
 X 89 gtk-tree_model.ads
 56K13*Tree_Model 518e19 108|16w10 16r30
-60P9*Gtk_Tree_Model(58R9) 109|139r60
-64R9*Gtk_Tree_Iter 492e14 109|14r13 18r13 22r13
-229r4*Null_Iter{64R9} 109|14r30 18r30 22r30 62r61 86r61 112r61 141r33
-379V13*Get_String{52|76A12} 109|145R37
+60P9*Gtk_Tree_Model(58R9) 109|121r60
+64R9*Gtk_Tree_Iter 492e14 109|15r13 19r13 23r13
+229r4*Null_Iter{64R9} 109|15r30 19r30 23r30 65r61 123r33 160r61 182r61
+379V13*Get_String{52|76A12} 109|127R37
 X 90 gtk-tree_selection.ads
 55K13*Tree_Selection 194e23 108|18w10 18r34
 59P9*Gtk_Tree_Selection(57R9)
-83U14*Get_Selected 109|139r17
+83U14*Get_Selected 109|121r17
 X 92 gtk-tree_store.ads
 43K13*Tree_Store 366e19 108|17w10 17r30
-47P9*Gtk_Tree_Store(45R9) 109|13r15 17r15 21r15
-117U14*Set 109|63R27 87R27 88R27 113R27 114R27
-217U14*Append 109|62R27 86R27 112R27
+47P9*Gtk_Tree_Store(45R9) 109|14r15 18r15 22r15
+117U14*Set 109|66R27 161R27 162R27 183R27 184R27
+217U14*Append 109|65R27 160R27 182R27
+268U14*Clear 109|165R17 188R17
 X 93 gtk-tree_view.ads
 48K13*Tree_View 955e18 108|11w10 11r29
-52P9*Gtk_Tree_View(50R9) 109|12r17 16r17 20r17 30r25 31r25 32r25
-88V13*Get_Selection{90|59P9} 109|139R30
+52P9*Gtk_Tree_View(50R9) 109|13r17 17r17 21r17 31r25 32r25 33r25
+88V13*Get_Selection{90|59P9} 109|121R30
+X 94 gtk-tree_view_column.ads
+70K13*Tree_View_Column 610e25 108|19w10 19r36
 X 95 gtk-widget.ads
 71P9*Gtk_Widget(70R9)
 X 96 gtk-window.ads
 60K13*Window 1189e15 108|8w10 8r26
-63P9*Gtk_Window(62R9) 109|10r8 29r19
+63P9*Gtk_Window(62R9) 109|10r8 30r19
 X 97 gtkada.ads
 30K9*Gtkada 34e11 108|5r6 5r25
 X 98 gtkada-dialogs.ads
 37K16*Dialogs 128e19 108|5w13 5r32
 40M9*Message_Dialog_Buttons 109|8r7
-50m4*Button_OK{40M9} 109|51r74 51r84 142r83 142r93
-61n7*Error{57E9} 109|142r77
-64n7*Information{57E9} 109|51r62
-77V13*Message_Dialog{40M9} 109|51r24 142r32
+50m4*Button_OK{40M9} 109|54r74 54r84 124r83 124r93
+61n7*Error{57E9} 109|124r77
+64n7*Information{57E9} 109|54r62
+77V13*Message_Dialog{40M9} 109|54r24 124r32
 X 105 p_appli_enreggroupe.ads
-13K9*p_appli_enreggroupe 25e24 108|21w6 21r31 109|72r32 97r32 124r32
-16V10*GetVillesAvecFestival{7|53R9[29|192]} 109|72r52
-17V10*GetGroupesJour1{7|53R9[29|91]} 109|97r52 124r52
-19V10*GetFestivalAssocie{7|53R9[29|161]} 109|147r27
+13K9*p_appli_enreggroupe 25e24 108|22w6 22r31 109|76r32 167r32 190r32
+16V10*GetVillesAvecFestival{7|53R9[29|192]} 109|76r52
+17V10*GetGroupesJour1{7|53R9[29|91]} 109|167r52
+18V10*GetGroupesJour2{7|53R9[29|91]} 109|190r52
+19V10*GetFestivalAssocie{7|53R9[29|161]} 109|129r27
+20V10*Nbgroupeinscrit{integer} 109|140r108 146r108
+21V10*GetJourFestivalAssocie{7|53R9[29|127]} 109|131r24 132r26 135r24
 X 106 p_conversion.ads
-8K9*p_Conversion 95e17 108|23w6 23r24 109|63r61 87r61 113r61
-36U11*to_ada_type 109|145r25
-47V10*to_string{string} 109|63r74 87r74 113r74
+8K9*p_Conversion 95e17 108|24w6 24r24 109|66r61 161r61 183r61
+36U11*to_ada_type 109|127r25
+47V10*to_string{string} 109|66r74 161r74 183r74
 X 107 p_util_treeview.ads
-10K10*p_util_treeview 22e20 108|19w6 19r27
-15U11*creerColonne 109|68r17 92r17 93r17 119r17 120r17
-20U11*creerModele 109|70r17 95r17 122r17
+10K10*p_util_treeview 22e20 108|20w6 20r27
+15U11*creerColonne 109|71r17 89r17 90r17 103r17 104r17
+20U11*creerModele 109|73r17 92r17 106r17
 X 108 p_window_enreggroupe.ads
-28K9*P_window_enreggroupe 38l5 38e25 109|7b14 159l5 159t25
-29X3*EX_AUCUNE_VILLE_SELECTIONNEE 109|143r31
-30U13*init 109|25b11 41l5 41t9
-31U13*fermerFenetre 109|35r66 43b19 46l13 46t26
-32U13*enregistrergroupe 109|36r70 48b19 52l13 52t30
-33U13*inittreeviewville 109|39r9 54b19 76l13 76t30
-34U13*inittreeviewjour1 34>31 109|78b19 101l13 101t30 148r17
-34r31 festival{29|149R12} 109|78b38 97r68
-35U13*inittreeviewjour2 35>31 109|104b19 128l13 128t30 154r17
-35r31 festival{29|149R12} 109|104b38 124r68
-36U13*initselect 109|37r72 130b19 156l13 156t23
+29K9*P_window_enreggroupe 41l5 41e25 109|7b14 197l5 197t25
+30X3*EX_AUCUNE_VILLE_SELECTIONNEE 109|125r31
+31U13*init 109|26b11 44l5 44t9
+32U13*fermerFenetre 109|36r66 46b19 49l13 49t26
+33U13*enregistrergroupe 109|37r70 51b19 55l13 55t30
+34U13*inittreeviewville 109|40r9 57b19 80l13 80t30
+35U13*inittreeviewjour1 109|41r9 82b19 96l13 96t30
+36U13*inittreeviewjour2 109|42r9 99b19 109l13 109t30
+37U13*initselect 109|38r72 111b19 149l13 149t23
+38U13*remplirtreeviewjour1 38>34 109|130r17 151b19 171l13 171t33
+38r34 festival{29|149R12} 109|151b42 167r68
+39U13*remplirtreeviewjour2 39>34 109|143r17 173b19 194l13 194t33
+39r34 festival{29|149R12} 109|173b41 190r68
 X 109 p_window_enreggroupe.adb
-8m1 b_box{98|40M9} 51m17 142m25
-9p1 XML{51|40P9} 28m27 29r41 30r50 31r50 32r50 35r35 36r35 37r35 150r47 155r47
-10p1 window{96|63P9} 29m9 45r25
-12p1 treeview_ville{93|52P9} 30m9 68r42 70r29 139r44
-13p1 modele_ville{92|47P9} 62r35 63r32 70m44 139m75 145r49
-14r1 rang_ville{89|64R9} 62m49 63r46 140m17 141r20 145r63
-16p1 treeview_jour1{93|52P9} 31m9 92r42 93r39 95r29
-17p1 modele_jour1{92|47P9} 86r35 87r32 88r32 95m44
-18r1 rang_jour1{89|64R9} 86m49 87r46 88r46
-20p1 treeview_jour2{93|52P9} 32m9 119r42 120r39 122r29
-21p1 modele_jour2{92|47P9} 112r35 113r32 114r32 122m44
-22r1 rang_jour2{89|64R9} 112m49 113r46 114r46
-55r17 liste_ville{7|53R9[29|192]} 72m17 74r36
-56r17 ville{29|184R12}
-58U27 alimente 58b27 58>37 64l21 64t29 74r49
-58r37 pos{7|56R9[29|192]} 61r56
-59r25 ville{29|184R12} 61m27 63r84
-79r17 liste_groupe{7|53R9[29|91]} 97m17 99r37
-80r17 groupe{29|77R12}
-82U27 alimente 82b27 82>37 89l21 89t29 99r51
-82r37 pos{7|56R9[29|91]} 85r58
-83r25 Groupe{29|77R12} 85m27 87r84 88r79
-105r17 liste_groupe{7|53R9[29|91]} 124m17 126r37
-106r17 groupe{29|77R12}
-108U27 alimente 108b27 108>37 115l21 115t29 126r51
-108r37 pos{7|56R9[29|91]} 111r58
-109r25 Groupe{29|77R12} 111m27 113r84 114r79
-131r9 Festival{7|53R9[29|161]} 147m17 148r35 150r117 150r186 150r254 154r35
-. 155r117 155r188 155r256
-132r9 resulttreeviewville{17|42R9} 145m79 147r46
-133r9 groupesjour1{7|53R9[29|91]}
-134r9 groupesjour2{7|53R9[29|91]}
+8m1 b_box{98|40M9} 54m17 124m25
+9p1 XML{51|40P9} 29m27 30r41 31r50 32r50 33r50 36r35 37r35 38r35 138r47 139r47
+. 140r47 144r47 145r47 146r47
+10p1 window{96|63P9} 30m9 48r25
+13p1 treeview_ville{93|52P9} 31m9 71r42 73r29 121r44
+14p1 modele_ville{92|47P9} 65r35 66r32 73m44 121m75 127r49
+15r1 rang_ville{89|64R9} 65m49 66r46 122m17 123r20 127r63
+17p1 treeview_jour1{93|52P9} 32m9 89r42 90r39 92r29
+18p1 modele_jour1{92|47P9} 92m44 160r35 161r32 162r32 165r23
+19r1 rang_jour1{89|64R9} 160m49 161r46 162r46
+21p1 treeview_jour2{93|52P9} 33m9 103r42 104r39 106r29
+22p1 modele_jour2{92|47P9} 106m44 182r35 183r32 184r32 188r23
+23r1 rang_jour2{89|64R9} 182m49 183r46 184r46
+58r17 liste_ville{7|53R9[29|192]} 76m17 78r36
+59r17 ville{29|184R12}
+61U27 alimente 61b27 61>37 67l21 67t29 78r49
+61r37 pos{7|56R9[29|192]} 64r56
+62r25 ville{29|184R12} 64m27 66r84
+112r9 Festival{7|53R9[29|161]} 129m17 130r38 131r47 132r49 135r47 138r117
+. 138r186 138r254 140r124 143r38 144r117 144r188 144r256 146r124
+113r9 resulttreeviewville{17|42R9} 127m79 129r46
+114r9 groupesjour1{7|53R9[29|91]}
+115r9 groupesjour2{7|53R9[29|91]}
+116r9 jour1{29|116R12} 131m17 132r20 139r85
+117r9 jour2{29|116R12} 133m25 135m17 140r85 142r20 145r85 146r85
+153r17 liste_groupe{7|53R9[29|91]} 167m17 169r37
+154r17 groupe{29|77R12}
+156U27 alimente 156b27 156>37 163l21 163t29 169r51
+156r37 pos{7|56R9[29|91]} 159r58
+157r25 Groupe{29|77R12} 159m27 161r84 162r79
+175r17 liste_groupe{7|53R9[29|91]} 190m17 192r37
+176r17 groupe{29|77R12}
+178U27 alimente 178b27 178>37 185l21 185t29 192r51
+178r37 pos{7|56R9[29|91]} 181r58
+179r25 Groupe{29|77R12} 181m27 183r84 184r79
 X 117 system.ads
 37K9*System 108|3w6 3r18 117|153e11
 64M9*Address
-66m4*Null_Address{64M9} 109|35r88 36r96 37r91
+66m4*Null_Address{64M9} 109|36r88 37r96 38r91
 
