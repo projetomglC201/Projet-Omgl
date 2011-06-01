@@ -4,6 +4,7 @@ package body P_window_consulterfestival is
 b_box:message_dialog_buttons;
 XML : Glade_XML;
 windowconsulterfestival : Gtk_window;
+
 -- déclaration des variables utiles pour la suite 1. 2. 3.
 treeview_ville: Gtk_Tree_View;
 modele_ville: Gtk_Tree_Store; -- le modèle associé à la vue
@@ -73,11 +74,11 @@ end init;
 		end alimente;
 
 	begin
-		
+
 		creerColonne("nomVille", treeView_ville, false);
 		
 		creerModele(treeView_ville,modele_ville);
-		
+
 		liste_ville := p_appli_consulterfestival.GetVillesAvecFestival;
 		
 		Ville_List.iterate(liste_ville, alimente'Access);
