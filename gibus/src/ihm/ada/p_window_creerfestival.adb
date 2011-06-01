@@ -92,7 +92,7 @@ end init;
 
 	
 		b_box:=message_dialog("Festival crée",Confirmation,Button_Ok,Button_Ok);
-		
+		fermerfenetre;
 	exception
 		when EX_AUCUNE_VILLE_SELECTIONNEE => 	
 			b_box:=Message_Dialog ("Aucune ville selectionnée.",Error,Button_Ok,Button_Ok);
@@ -126,15 +126,25 @@ end init;
 ----------------------------------------------------------------------
 	procedure activerJour2 is
 		resultNbJour2 : unbounded_string;
+		b_box : message_dialog_buttons;
+		intNbJour2 : integer;
 	begin
 		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryNbgroupes2"))),resultNbJour2);
-		if length(resultNbJour2) = 0 then
+		if length(resultNbJour2) = 0  then
 			jour2 := false;
 			Set_Sensitive(Get_Widget(XML,"entryHeure2"), false);
 		else
-			jour2 := true;
-			Set_Sensitive(Get_Widget(XML,"entryHeure2"), true);
+			intNbJour2 := integer'value(p_conversion.to_string(resultNbJour2));
+			if intNbJour2 = 0 then
+				jour2 := false;
+				Set_Sensitive(Get_Widget(XML,"entryHeure2"), false);
+			else
+				jour2 := true;
+				Set_Sensitive(Get_Widget(XML,"entryHeure2"), true);
+			end if;
 		end if;
+		exception
+			when CONSTRAINT_ERROR => b_box:=message_dialog("Caractère interdit",Error,Button_Ok,Button_Ok);
 	end activerJour2;
 
 end P_window_creerfestival;
