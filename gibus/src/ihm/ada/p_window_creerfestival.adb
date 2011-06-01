@@ -61,11 +61,11 @@ end init;
 			to_ada_type(Get_String (modele_ville, rang_ville, 0), resulttreeviewville);
 		end if;
 		--Recuperation de la date du calendar
-		put("avant get_date");
+		
 		Get_Date(Gtk_calendar(Get_Widget(XML,"calendardatedebut")),an,mois,jour);
-		put("apres get_date");
+		
 		resultcalendardatedebut:=Time_Of(integer(an),integer(mois),integer(jour));	
-		put("apres time_of");
+		
 		--Recuperation des entry
 		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryLieu"))),resultEntryLieu);
 		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryPrixEntree"))),resultentryPrixEntree);
