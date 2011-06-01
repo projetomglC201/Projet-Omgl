@@ -2,4 +2,6 @@
 
 *.ali
 
-main
+gibus/main
+
+gibus/bin
