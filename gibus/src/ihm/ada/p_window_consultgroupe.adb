@@ -36,18 +36,20 @@ rang_groupe:Gtk_tree_iter:=Null_Iter;
 		Groupes:Groupe_List.vector;
         	resulttreeviewgroupe:Unbounded_String;
 	        Groupe:tgroupe;
+		Ville:Unbounded_String;
 	begin
                 Get_Selected(Get_Selection(treeview_groupe),Gtk_Tree_Model(modele_groupe),rang_groupe);
                 to_ada_type(Get_String (modele_groupe, rang_groupe, 0), resulttreeviewgroupe);
 
 		Groupe := p_appli_consultgroupe.getTGroupe(resulttreeviewgroupe);
+		Ville := p_appli_consultgroupe.getVilleGroupe(Groupe);
 
                 Set_Text(Gtk_Entry(Get_Widget(XML,"entryGroupe")),p_conversion.to_string(groupe.Nom_Groupe));
                 Set_Text(Gtk_Entry(Get_Widget(XML,"entryNomContact")),p_conversion.to_string(Groupe.Nom_Contact));
                 Set_Text(Gtk_Entry(Get_Widget(XML,"entryAdresseContact")),p_conversion.to_string(Groupe.Coord_Contact));
                 Set_Text(Gtk_Entry(Get_Widget(XML,"entryGenre")),tgenre_Enum'image(Groupe.Genre));
                 Set_Text(Gtk_Entry(Get_Widget(XML,"entrySite")),p_conversion.to_string(Groupe.Adr_Site));
---                Set_Text(Gtk_Entry(Get_Widget(XML,"entryVille")),p_conversion.to_string(groupe.Ville));
+                Set_Text(Gtk_Entry(Get_Widget(XML,"entryVille")),p_conversion.to_string(Ville));
 	end remplirinfo;
 --------------------------------------------------------------------------
 	procedure inittreeview is
