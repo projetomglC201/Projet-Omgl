@@ -98,9 +98,9 @@
               <widget class="GtkCalendar" id="calendardatedebut">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-                <property name="year">2011</property>
-                <property name="month">3</property>
-                <property name="day">20</property>
+                <property name="year">2012</property>
+                <property name="month">1</property>
+                <property name="day">1</property>
                 <property name="show_week_numbers">True</property>
               </widget>
               <packing>
