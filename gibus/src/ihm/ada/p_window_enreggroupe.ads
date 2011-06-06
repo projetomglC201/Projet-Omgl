@@ -31,6 +31,9 @@ with ada.calendar; use ada.calendar;
 
 package P_window_enreggroupe is
   EX_AUCUNE_VILLE_SELECTIONNEE:exception;
+  EXEntryGroupeEmpty:exception;
+  EXEntryContactEmpty:exception;
+  EXEntryCoordEmpty:exception;
   procedure init;
   procedure fermerFenetre;
   procedure enregistrergroupe;
@@ -43,4 +46,5 @@ package P_window_enreggroupe is
   function GetActiveButtonGenre return Gtk_radio_Button;
   function GetActiveButtonJour return Gtk_radio_Button;
   procedure convertirnom (nom :in out Unbounded_String);
+  procedure SetSensitiveJourSelect;
 end P_window_enreggroupe;
