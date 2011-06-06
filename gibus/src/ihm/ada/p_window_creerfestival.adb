@@ -48,7 +48,7 @@ end init;
 	resultentryHeure1:integer;
 	resultentryHeure2:integer;
 	IDFESTIVAL:integer:=festival_io.next_free_id_festival;
-	Ex_HeureIncorrecte : Exception;
+
 	begin
 		--Recuperation de la selection dans la treeview
 		Get_Selected(Get_Selection(treeview_ville),Gtk_Tree_Model(modele_ville), 
@@ -66,10 +66,27 @@ end init;
 		resultcalendardatedebut:=Time_Of(integer(an),integer(mois),integer(jour));	
 		
 		--Recuperation des entry
-		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryLieu"))),resultEntryLieu);
-		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryPrixEntree"))),resultentryPrixEntree);
-		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryNbgroupes1"))),resultentryNbgroupes1);
-		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryHeure1"))),resultentryHeure1);
+		if not (Get_Text(Gtk_Entry(Get_Widget(XML,"entryLieu")))'length=0) then
+			to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryLieu"))),resultEntryLieu);
+		else
+			raise EXEntryLieuEmpty;
+		end if;
+		if not (Get_Text(Gtk_Entry(Get_Widget(XML,"entryPrixEntree")))'length=0) then
+			to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryPrixEntree"))),resultentryPrixEntree);
+		else
+			raise EXEntryPrixEntreeEmpty;
+		end if;
+		if not (Get_Text(Gtk_Entry(Get_Widget(XML,"entryNbgroupes1")))'length=0) then
+			to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryNbgroupes1"))),resultentryNbgroupes1);
+		else
+			raise EXEntryNbgroupes1Empty;
+		end if;		
+		if not (Get_Text(Gtk_Entry(Get_Widget(XML,"entryHeure1")))'length=0) then
+			to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryHeure1"))),resultentryHeure1);
+		else
+			raise EXEntryHeure1Empty;
+		end if;				
+		
 		if not (resultentryHeure1 in 0..23) then
 			raise Ex_HeureIncorrecte;
 		end if;
@@ -109,6 +126,11 @@ end init;
 			b_box:=Message_Dialog ("Aucune ville selectionnée.",Error,Button_Ok,Button_Ok);
 		when P_CONVERSION.EXCONVERSION => null;
 		when Ex_HeureIncorrecte => b_box:= Message_Dialog("L'heure doit être comprise entre 0 et 23.");
+		when EXEntryLieuEmpty => b_box:=Message_Dialog ("Entrez un lieu",Error,Button_Ok,Button_Ok);
+		when EXEntryPrixEntreeEmpty => b_box:=Message_Dialog ("Entrez un prix d'entrée",Error,Button_Ok,Button_Ok);
+		when EXEntryNbgroupes1Empty => b_box:=Message_Dialog ("Entrez un nombre de concert limite pour le jour 1",Error,Button_Ok,Button_Ok);
+		when EXEntryHeure1Empty => b_box:=Message_Dialog ("Entrez une heure de debut pour le jour 1",Error,Button_Ok,Button_Ok);
+		
 		
 	end validerfestival;
 --------------------------------------------------------------------------

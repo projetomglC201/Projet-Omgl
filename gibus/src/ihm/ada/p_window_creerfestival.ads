@@ -38,8 +38,11 @@ with jour_festival_io;
 package P_window_creerfestival is
 
 	EX_AUCUNE_VILLE_SELECTIONNEE:exception;
-
-
+	Ex_HeureIncorrecte : Exception;
+	EXEntryLieuEmpty:exception;
+	EXEntryPrixEntreeEmpty:exception;
+	EXEntryNbgroupes1Empty:exception;
+	EXEntryHeure1Empty:exception;
   procedure init;
 
   procedure fermerFenetre;
