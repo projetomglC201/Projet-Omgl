@@ -21,4 +21,5 @@ with p_util_treeview; use p_util_treeview;  -- utilitaire de gestion d'une treeV
 package P_window_consultprogramme is
   procedure init;
   procedure fermerFenetre;
+  procedure selectfest;
 end P_window_consultprogramme;

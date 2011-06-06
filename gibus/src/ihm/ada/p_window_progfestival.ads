@@ -37,8 +37,8 @@ package P_window_progfestival is
   procedure finprogrammation;
   procedure switchjour2;
   procedure switchjour1; 
-  procedure up;
+  procedure upgroupe;
   procedure top;
-  procedure down;
+  procedure downGroupe;
   procedure bot;
 end P_window_progfestival;

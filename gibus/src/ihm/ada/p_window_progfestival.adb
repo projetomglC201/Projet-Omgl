@@ -30,6 +30,11 @@ begin
 	Glade.XML.signal_connect (XML,"on_buttonTerminer_clicked",finprogrammation'address,Null_Address);
 	Glade.XML.signal_connect (XML,"on_buttonright_clicked",switchJour2'address,Null_Address);
 	Glade.XML.signal_connect (XML,"on_buttonleft_clicked",switchJour1'address,Null_Address);
+
+        Glade.XML.signal_connect (XML,"on_buttonup_clicked",upGroupe'address,Null_Address);
+        Glade.XML.signal_connect (XML,"on_buttontop_clicked",top'address,Null_Address);
+        Glade.XML.signal_connect (XML,"on_buttondown_clicked",downGroupe'address,Null_Address);
+        Glade.XML.signal_connect (XML,"on_buttonbot_clicked",bot'address,Null_Address);
 	
 	Treeview_Festival := Gtk_Tree_View(Get_Widget(XML,"treeviewNomFestival"));
 	treeview_jour1 := Gtk_Tree_View(Get_Widget(XML,"treeviewGauche"));
@@ -210,25 +215,24 @@ end init;
 
 	end switchJour2;
 --------------------------------------------------------------------
-procedure up is
+procedure upGroupe is
 begin
-
-end up;
-
+null;
+end upGroupe;
 --------------------------------------------------------------------
 procedure top is
 begin
-
+null;
 end top;
 --------------------------------------------------------------------
-procedure down is
+procedure downGroupe is
 begin
-
-end down;
+null;
+end downGroupe;
 --------------------------------------------------------------------
 procedure bot is
 begin
-
+null;
 end bot;
 --------------------------------------------------------------------
 end P_window_progfestival;
