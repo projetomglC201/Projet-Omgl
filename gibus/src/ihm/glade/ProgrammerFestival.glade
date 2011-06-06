@@ -47,7 +47,7 @@ du festival &#xE0; programmer :</property>
                         <property name="can_focus">True</property>
                         <property name="hscrollbar_policy">never</property>
                         <child>
-                          <widget class="GtkTreeView" id="treeview1">
+                          <widget class="GtkTreeView" id="treeviewNomFestival">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                           </widget>
@@ -143,7 +143,7 @@ du festival &#xE0; programmer :</property>
                     <property name="can_focus">True</property>
                     <property name="hscrollbar_policy">never</property>
                     <child>
-                      <widget class="GtkTreeView" id="treeview3">
+                      <widget class="GtkTreeView" id="treeviewGauche">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="has_tooltip">True</property>
@@ -371,7 +371,7 @@ du festival &#xE0; programmer :</property>
                     <property name="tooltip" translatable="yes">Programmation jour 2</property>
                     <property name="hscrollbar_policy">never</property>
                     <child>
-                      <widget class="GtkTreeView" id="treeview2">
+                      <widget class="GtkTreeView" id="treeviewDroite">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                       </widget>
