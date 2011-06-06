@@ -42,11 +42,14 @@ begin
 	
 	Glade.XML.signal_connect (XML,"on_buttonAnnuler_clicked",fermerFenetre'address,Null_Address);
 	Glade.XML.signal_connect (XML,"on_buttonEnregistrer_clicked",enregistrergroupe'address,Null_Address);
-	Glade.XML.signal_connect (XML,"on_treeviewville_row_activated",initselect'address,Null_Address);
+	Glade.XML.signal_connect (XML,"on_treeviewville_cursor_changed",initselect'address,Null_Address);
+	Glade.XML.signal_connect (XML,"on_radiobuttonJour1_toggled",SetSensitiveJourSelect'address,Null_Address);
+
 	
 	inittreeviewville;
 	inittreeviewgroupejour1;
 	inittreeviewgroupejour2;
+	SetSensitiveJourSelect;
 
 end init;
 ------------------------------------------------------------------------------
@@ -65,36 +68,61 @@ end init;
 	resultentryCoord:Unbounded_String;
 	resultentrySite:Unbounded_String;
 	begin
-	
-		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryGroupe"))),resultEntryGroupe);
-		convertirnom(resultEntryGroupe);
+		if not (Get_Text(Gtk_Entry(Get_Widget(XML,"entryGroupe")))'length=0) then
+		
+			to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryGroupe"))),resultEntryGroupe);
+			convertirnom(resultEntryGroupe);
+		else
+			raise EXEntryGroupeEmpty;
+		end if;
+		
+		
 		to_ada_type(Get_Label(Gtk_Button(GetActiveButtonGenre)),resultGenre);
 		
 		if GetActiveButtonJour=radiobuttonJour1 then
 		resultjour:=jour1.Id_Jour_Festival;
-		else
-		resultjour:=jour2.Id_Jour_Festival;
-		end if;
-		
-		if GetActiveButtonJour=radiobuttonJour1 then
 		resultOrdre:=1+Nbgroupeinscrit(festival.first_element,1);
 		else
+		resultjour:=jour2.Id_Jour_Festival;
 		resultOrdre:=1+Nbgroupeinscrit(festival.first_element,2);
 		end if;
-
-		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryContact"))),resultentryContact);
-		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryCoord"))),resultentryCoord);
-		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entrySite"))),resultentrySite);
 		
-		
+		if not (Get_Text(Gtk_Entry(Get_Widget(XML,"entryContact")))'length=0) then	
+			to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryContact"))),resultentryContact);
+		else
+			raise EXEntryContactEmpty;
+		end if;
+		if not (Get_Text(Gtk_Entry(Get_Widget(XML,"entryCoord")))'length=0) then	
+			to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryCoord"))),resultentryCoord);
+		else
+			raise EXEntryCoordEmpty;
+		end if;	
+		if not (Get_Text(Gtk_Entry(Get_Widget(XML,"entrySite")))'length=0) then	
+			to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entrySite"))),resultentrySite);
+		end if;		
+	
 		SaveGroupe(resultEntryGroupe,resultentryContact,resultEntryCoord,ResultentrySite,resultGenre,resultOrdre,resultjour);
 	
 		b_box:=message_dialog("Groupe enregistré !",Information,Button_Ok,Button_Ok);
 		remplirtreeviewgroupejour1(festival.first_element);
-		remplirtreeviewgroupejour2(festival.first_element);	
+		remplirtreeviewgroupejour2(festival.first_element);
+		
+		Set_Text(Gtk_Entry(Get_Widget(XML,"entryDateJour1")),"");
+		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPrevuJour1")),"");
+		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPlaceJour1")),"");
+		Set_Text(Gtk_Entry(Get_Widget(XML,"entryDateJour2")),"");
+		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPrevuJour2")),"");
+		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPlaceJour2")),"");
+		
 	exception
 		when EXGroupeExistant
 			=> b_box:=message_dialog("Groupe déjà existant",Error,Button_Ok,Button_Ok);
+		when EXEntryGroupeEmpty
+			=> b_box:=message_dialog("Entrez un nom de groupe",Error,Button_Ok,Button_Ok);
+		when EXEntryContactEmpty
+			=> b_box:=message_dialog("Entrez le nom du contact",Error,Button_Ok,Button_Ok);
+		when EXEntryCoordEmpty
+			=> b_box:=message_dialog("Entrez les coordonnées du contact",Error,Button_Ok,Button_Ok);
 		
 	end enregistrergroupe;
 -----------------------------------------------------------------------------
@@ -156,6 +184,7 @@ end init;
 
 	
 	begin
+
 		--Recuperation de la selection dans la treeview
 		Get_Selected(Get_Selection(treeview_ville),Gtk_Tree_model(modele_ville), 
 		rang_ville);
@@ -166,6 +195,13 @@ end init;
 			to_ada_type(Get_String (modele_ville, rang_ville, 0), resulttreeviewville);
 		end if;
 		Festival:=GetFestivalAssocie(resulttreeviewville);
+		
+		Clear(modele_jour2);
+		Set_Text(Gtk_Entry(Get_Widget(XML,"entryDateJour2")),"");
+		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPrevuJour2")),"");
+		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPlaceJour2")),"");
+		
+		
 		remplirtreeviewgroupejour1(festival.first_element);
 		jour1:=GetJourFestivalAssocie(festival.first_element).element(1);
 		If  integer(Jour_Festival_List.Length(GetJourFestivalAssocie(festival.first_element)))=1 then
@@ -180,11 +216,13 @@ end init;
 
 
 		if jour2/=Null_Jour_Festival then
-		remplirtreeviewgroupejour2(festival.first_element);
-		Set_Text(Gtk_Entry(Get_Widget(XML,"entryDateJour2")),(integer'image(Day(Festival_list.First_Element(Festival).Date)+1)&"/"&integer'image(Month(Festival_list.First_Element(festival).Date))&"/"&integer'image(Year(Festival_list.First_Element(festival).Date))));
-		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPrevuJour2")),integer'image(jour2.Nbre_Concert_Max));
+			Set_Sensitive(radiobuttonJour2,true);
+			remplirtreeviewgroupejour2(festival.first_element);
+			Set_Text(Gtk_Entry(Get_Widget(XML,"entryDateJour2")),(integer'image(Day(Festival_list.First_Element(Festival).Date+86400.0))&"/"&integer'image(Month(Festival_list.First_Element(festival).Date+86400.0))&"/"&integer'image(Year(Festival_list.First_Element(festival).Date+86400.0))));
+			Set_Text(Gtk_Entry(Get_Widget(XML,"entryPrevuJour2")),integer'image(jour2.Nbre_Concert_Max));
 		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPlaceJour2")),integer'image(jour2.Nbre_Concert_Max-Nbgroupeinscrit(festival.first_element,2)));
-
+			else
+			Set_Sensitive(radiobuttonJour2,false);
 		end if;
 		
 		
@@ -301,5 +339,31 @@ end init;
 	
 	end convertirnom;
 ------------------------------------------------------------------------------------
+	procedure SetSensitiveJourSelect is
+		
+	begin
+		if GetActiveButtonJour=radiobuttonJour1 then	
+			Set_Sensitive(Gtk_entry(Get_Widget(XML,"entryDateJour2")),false);
+			Set_Sensitive(Gtk_entry(Get_Widget(XML,"entryPrevuJour2")),false);
+			Set_Sensitive(Gtk_entry(Get_Widget(XML,"entryPlaceJour2")),false);
+
+			Set_Sensitive(Gtk_entry(Get_Widget(XML,"entryDateJour1")),true);
+			Set_Sensitive(Gtk_entry(Get_Widget(XML,"entryPrevuJour1")),true);
+			Set_Sensitive(Gtk_entry(Get_Widget(XML,"entryPlaceJour1")),true);
+	
+		else
+			Set_Sensitive(Gtk_entry(Get_Widget(XML,"entryDateJour1")),false);
+			Set_Sensitive(Gtk_entry(Get_Widget(XML,"entryPrevuJour1")),false);
+			Set_Sensitive(Gtk_entry(Get_Widget(XML,"entryPlaceJour1")),false);
+
+			Set_Sensitive(Gtk_entry(Get_Widget(XML,"entryDateJour2")),true);
+			Set_Sensitive(Gtk_entry(Get_Widget(XML,"entryPrevuJour2")),true);
+			Set_Sensitive(Gtk_entry(Get_Widget(XML,"entryPlaceJour2")),true);
+
+		end if;
+	
+	end SetSensitiveJourSelect;
+-----------------------------------------------------------------------------------
+
 end P_window_enreggroupe;
 
