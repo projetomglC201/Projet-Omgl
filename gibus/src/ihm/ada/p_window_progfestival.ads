@@ -19,11 +19,20 @@ with Gtk.Tree_Store; use Gtk.Tree_Store;-- le modèle associé à la vue
 with Gtk.Tree_Selection; use Gtk.Tree_Selection;  -- pour la sélection dans la vue
 with p_util_treeview; use p_util_treeview;  -- utilitaire de gestion d'une treeView
 
+with p_appli_progfestival;
+with basec201_data; use basec201_data;
+with p_conversion;
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+
 package P_window_progfestival is
   procedure init;
   procedure fermerFenetre;
+  procedure initregion1;
+  procedure initregion2;
+  procedure fillTreeviewJour1(groupes: in Groupe_List.vector);
+  procedure fillTreeViewJour2(groupes: in Groupe_List.vector);
   procedure selectionregion1;
-  procedure selectionregion2;
+  procedure selectionregion2(jour1,jour2: in Groupe_List.vector);
   procedure rechercherprog;
   procedure finprogrammation;
   procedure gojour2;

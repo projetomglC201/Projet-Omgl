@@ -10,7 +10,6 @@ XML : Glade_XML;
 treeview_ville: Gtk_Tree_View;
 modele_ville: Gtk_Tree_Store; -- le modèle associé à la vue
 rang_ville: Gtk_Tree_Iter := Null_Iter; -- ligne dans le modèle
-jour2:boolean := false;
 
 ----------------------------------------------------------------------
 procedure init is
@@ -49,8 +48,8 @@ end init;
 	resultentryHeure1:integer;
 	resultentryHeure2:integer;
 	IDFESTIVAL:integer:=festival_io.next_free_id_festival;
+	Ex_HeureIncorrecte : Exception;
 	begin
-	
 		--Recuperation de la selection dans la treeview
 		Get_Selected(Get_Selection(treeview_ville),Gtk_Tree_Model(modele_ville), 
 		rang_ville);
@@ -70,9 +69,19 @@ end init;
 		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryLieu"))),resultEntryLieu);
 		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryPrixEntree"))),resultentryPrixEntree);
 		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryNbgroupes1"))),resultentryNbgroupes1);
-		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryNbgroupes2"))),resultentryNbgroupes2);		
 		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryHeure1"))),resultentryHeure1);
-		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryHeure2"))),resultentryHeure2);
+		if not (resultentryHeure1 in 0..23) then
+			raise Ex_HeureIncorrecte;
+		end if;
+
+		if not (Get_Text(Gtk_Entry(Get_Widget(XML,"entryNbgroupes2")))'length = 0)  then
+			to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryNbgroupes2"))),resultentryNbgroupes2); 
+			to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryHeure2"))),resultentryHeure2);
+			if not (resultentryHeure2 in 0..23) then
+				raise Ex_HeureIncorrecte;
+			end if;
+		end if;
+
 
 
 		--Creation du festival	EXAucuneVilleSelectionnée;
@@ -83,10 +92,12 @@ end init;
 		--Creation des jourfestival
 		jour1 := (jour_festival_io.Next_Free_Id_Jour_Festival,IDFESTIVAL,1,resultEntryNbGroupes1, resultentryHeure1,Groupe_List.Empty_Vector);
 		CreateJourFestival(jour1);
-		
-		jour2 := (jour_festival_io.Next_Free_Id_Jour_Festival,IDFESTIVAL,2,resultEntryNbGroupes2,resultentryHeure2,Groupe_List.Empty_Vector);	
-		CreateJourFestival(jour2);
-		
+
+		--Creation du jour 2 si le champ n'est pas vide
+		 if not (Get_Text(Gtk_Entry(Get_Widget(XML,"entryNbgroupes2")))'length = 0)  then
+			jour2 := (jour_festival_io.Next_Free_Id_Jour_Festival,IDFESTIVAL,2,resultEntryNbGroupes2,resultentryHeure2,Groupe_List.Empty_Vector);	
+			CreateJourFestival(jour2);
+		end if;	
 
 		
 
@@ -97,6 +108,7 @@ end init;
 		when EX_AUCUNE_VILLE_SELECTIONNEE => 	
 			b_box:=Message_Dialog ("Aucune ville selectionnée.",Error,Button_Ok,Button_Ok);
 		when P_CONVERSION.EXCONVERSION => null;
+		when Ex_HeureIncorrecte => b_box:= Message_Dialog("L'heure doit être comprise entre 0 et 23.");
 		
 	end validerfestival;
 --------------------------------------------------------------------------
@@ -131,20 +143,20 @@ end init;
 	begin
 		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryNbgroupes2"))),resultNbJour2);
 		if length(resultNbJour2) = 0  then
-			jour2 := false;
 			Set_Sensitive(Get_Widget(XML,"entryHeure2"), false);
+			Set_Text(Gtk_Entry(Get_Widget(XML,"entryHeure2")),""); --On vide le champ heure si on le désactive.
 		else
 			intNbJour2 := integer'value(p_conversion.to_string(resultNbJour2));
 			if intNbJour2 = 0 then
-				jour2 := false;
 				Set_Sensitive(Get_Widget(XML,"entryHeure2"), false);
+				Set_Text(Gtk_Entry(Get_Widget(XML,"entryHeure2")),"");
 			else
-				jour2 := true;
 				Set_Sensitive(Get_Widget(XML,"entryHeure2"), true);
 			end if;
 		end if;
 		exception
 			when CONSTRAINT_ERROR => b_box:=message_dialog("Caractère interdit",Error,Button_Ok,Button_Ok);
+						 Set_Text(Gtk_Entry(Get_Widget(XML,"entryNbgroupes2")),"");
 	end activerJour2;
 
 end P_window_creerfestival;
