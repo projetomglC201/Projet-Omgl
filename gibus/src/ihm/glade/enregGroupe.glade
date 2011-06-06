@@ -6,6 +6,7 @@
     <property name="visible">True</property>
     <property name="border_width">8</property>
     <property name="title" translatable="yes">Enregistrer un groupe</property>
+    <property name="resizable">False</property>
     <property name="modal">True</property>
     <property name="window_position">center</property>
     <child>
@@ -92,7 +93,7 @@
                   <widget class="GtkLabel" id="label6">
                     <property name="visible">True</property>
                     <property name="xalign">0.89999997615814209</property>
-                    <property name="label" translatable="yes">Selectionnez l'une de ces villes :</property>
+                    <property name="label" translatable="yes">Selectionnez l'un de ces jours :</property>
                   </widget>
                   <packing>
                     <property name="position">0</property>
@@ -139,7 +140,7 @@
                 <child>
                   <widget class="GtkLabel" id="label2">
                     <property name="visible">True</property>
-                    <property name="xalign">0.89999997615814209</property>
+                    <property name="xalign">0.99000000953674316</property>
                     <property name="label" translatable="yes">Date du jour :</property>
                   </widget>
                   <packing>
@@ -183,7 +184,7 @@
                 <child>
                   <widget class="GtkLabel" id="label5">
                     <property name="visible">True</property>
-                    <property name="xalign">0.89999997615814209</property>
+                    <property name="xalign">0.97000002861022949</property>
                     <property name="label" translatable="yes">Nombre de concerts pr&#xE9;vus :</property>
                   </widget>
                   <packing>
@@ -271,7 +272,7 @@
                 <child>
                   <widget class="GtkLabel" id="label3">
                     <property name="visible">True</property>
-                    <property name="xalign">0.89999997615814209</property>
+                    <property name="xalign">0.98000001907348633</property>
                     <property name="label" translatable="yes">Groupes d&#xE9;j&#xE0; inscrits :</property>
                   </widget>
                   <packing>
@@ -354,7 +355,6 @@
                     <property name="can_focus">True</property>
                     <property name="invisible_char">&#x2022;</property>
                     <property name="width_chars">30</property>
-                    <property name="xalign">1</property>
                   </widget>
                   <packing>
                     <property name="expand">False</property>
@@ -513,7 +513,7 @@
             <child>
               <widget class="GtkLabel" id="label11">
                 <property name="visible">True</property>
-                <property name="xalign">0.89999997615814209</property>
+                <property name="xalign">0.92000001668930054</property>
                 <property name="label" translatable="yes">Nom du contact :</property>
               </widget>
               <packing>
@@ -524,7 +524,7 @@
               <widget class="GtkHBox" id="hbox7">
                 <property name="visible">True</property>
                 <child>
-                  <widget class="GtkEntry" id="entry6">
+                  <widget class="GtkEntry" id="entryContact">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="invisible_char">&#x2022;</property>
@@ -568,7 +568,7 @@
               <widget class="GtkHBox" id="hbox8">
                 <property name="visible">True</property>
                 <child>
-                  <widget class="GtkEntry" id="entry7">
+                  <widget class="GtkEntry" id="entryCoord">
                     <property name="width_request">249</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
@@ -602,7 +602,7 @@
             <child>
               <widget class="GtkLabel" id="label13">
                 <property name="visible">True</property>
-                <property name="xalign">0.89999997615814209</property>
+                <property name="xalign">0.92000001668930054</property>
                 <property name="label" translatable="yes">Adresse du site :</property>
               </widget>
               <packing>
@@ -613,7 +613,7 @@
               <widget class="GtkHBox" id="hbox9">
                 <property name="visible">True</property>
                 <child>
-                  <widget class="GtkEntry" id="entry8">
+                  <widget class="GtkEntry" id="entrySite">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="invisible_char">&#x2022;</property>

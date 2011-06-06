@@ -32,7 +32,7 @@ package Basec201_Data is
          Index_Type => Positive );
       --
       -- default value for grande_finale : La Grande Finale des Festivals
-      --
+      --Nom_Contact
       Null_Grande_Finale : constant tGrande_Finale := (
          Id_Finale => MISSING_I_KEY,
          Date => FIRST_DATE,

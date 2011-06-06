@@ -40,21 +40,12 @@ rang_ville: Gtk_Tree_Iter := Null_Iter; -- ligne dans le modèle
 	ville : Basec201_Data.tVille;
 	i : integer;
 	ex_PasNomVille,ex_PasMail: exception;
-	c:character;
+
 	begin
 		
 		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryNomVille"))),resultEntryNomVille);
 		
-		if element(resultEntryNomVille,1) >= 'a' and element(resultEntryNomVille,1) <= 'z' then
-			replace_element(resultEntryNomVille,1,(character'val(character'pos(element(resultEntryNomVille,1)) -16#20#)));
-		end if;
-		for i in 2..length(resultEntryNomVille) loop
-			c:= element(resultEntryNomVille,i);
-			if c < 'a' and c >= 'A' then
-				c := character'val(character'pos(c)+16#20#);
-			end if;
-			replace_element(resultEntryNomVille,i,c);
-		end loop;
+		convertirnom(resultEntryNomVille);
 
 		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryMail"))),resultEntryMail);
 		
@@ -134,4 +125,20 @@ rang_ville: Gtk_Tree_Iter := Null_Iter; -- ligne dans le modèle
 	
 	end inittreeview;
 --------------------------------------------------------------------------------
+	procedure convertirnom (nom :in out Unbounded_String) is
+			c:character;
+	begin
+			if element(nom,1) >= 'a' and element(nom,1) <= 'z' then
+			replace_element(nom,1,(character'val(character'pos(element(nom,1)) -16#20#)));
+		end if;
+		for i in 2..length(nom) loop
+			c:= element(nom,i);
+			if c < 'a' and c >= 'A' then
+				c := character'val(character'pos(c)+16#20#);
+			end if;
+			replace_element(nom,i,c);
+		end loop;
+	
+	end convertirnom;
+----------------------------------------------------------------------------------
 end P_window_enregville;

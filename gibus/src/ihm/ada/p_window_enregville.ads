@@ -33,4 +33,5 @@ package P_window_enregville is
   procedure villesuivante;
   procedure finenregistrementville;
   procedure inittreeview;
+  procedure convertirnom (nom :in out Unbounded_String);
 end P_window_enregville;

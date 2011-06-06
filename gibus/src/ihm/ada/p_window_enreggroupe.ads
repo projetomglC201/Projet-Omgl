@@ -11,6 +11,8 @@ with Gtk.Gentry; use Gtk.Gentry;
 with Gtk.Tree_View; use Gtk.Tree_View;
 with Gtk.Label; use Gtk.Label;
 with Gtk.Scrolled_Window; use Gtk.Scrolled_Window; 
+with Gtk.Toggle_button; Use Gtk.Toggle_Button;
+with Gtk.Radio_Button; Use Gtk.Radio_Button;
 
 -- pour gérer le composant Tree_View
 with Gtk.Tree_Model; use Gtk.Tree_Model;-- l'itérateur rang dans le modèle
@@ -26,16 +28,19 @@ with base_types; use base_types;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with ada.calendar; use ada.calendar;
 
+
 package P_window_enreggroupe is
   EX_AUCUNE_VILLE_SELECTIONNEE:exception;
   procedure init;
   procedure fermerFenetre;
   procedure enregistrergroupe;
   procedure inittreeviewville;
-  procedure inittreeviewjour1;
-  procedure inittreeviewjour2;
+  procedure inittreeviewgroupejour1;
+  procedure inittreeviewgroupejour2;
   procedure initselect;
-  procedure remplirtreeviewjour1(festival : in tfestival);
-  procedure remplirtreeviewjour2(festival : in tfestival);
-
+  procedure remplirtreeviewgroupejour1(festival : in tfestival);
+  procedure remplirtreeviewgroupejour2(festival : in tfestival);
+  function GetActiveButtonGenre return Gtk_radio_Button;
+  function GetActiveButtonJour return Gtk_radio_Button;
+  procedure convertirnom (nom :in out Unbounded_String);
 end P_window_enreggroupe;

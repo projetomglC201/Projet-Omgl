@@ -91,9 +91,19 @@ begin
 
 
 end GetJourFestivalAssocie;
-------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+procedure SaveGroupe(Nom,Contact,Coord,Site :in Unbounded_String; genre:string; ordre,jour:integer) is
 
+begin
 
+	Groupe_IO.save((Nom,jour,Contact,Coord,Site,Ordre,tGenre_Enum'value(Genre),Gagnant_Festival_List.Empty_Vector,Grande_Finale_List.Empty_Vector),false);
+	
+exception
+	when GNU.DB.SQLCLI.INTEGRITY_VIOLATION
+		=> raise EXGroupeExistant;
+
+end SaveGroupe;
+----------------------------------------------------------------------------------------------------
 
 
 end p_appli_enreggroupe;

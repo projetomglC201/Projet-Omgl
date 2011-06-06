@@ -22,6 +22,12 @@ treeview_jour2: Gtk_Tree_View;
 modele_jour2: Gtk_Tree_Store; -- le modèle associé à la vue
 rang_jour2: Gtk_Tree_Iter := Null_Iter; -- ligne dans le modèle
 
+
+Festival:festival_list.vector;
+jour1:tjour_festival;
+jour2:tjour_festival;
+radiobuttonJour1:Gtk_radio_Button;
+radiobuttonJour2:Gtk_radio_Button;
 ----------------------------------------------------------------------------
 procedure init is
 
@@ -31,15 +37,16 @@ begin
 	treeview_ville:=Gtk_Tree_View(Get_Widget(XML,"treeviewville"));
 	treeview_jour1:=Gtk_Tree_View(Get_Widget(XML,"treeviewjour1"));
 	treeview_jour2:=Gtk_Tree_View(Get_Widget(XML,"treeviewjour2"));
-	
+	radiobuttonJour1:=Gtk_radio_Button(Get_Widget(XML,"radiobuttonJour1"));
+	radiobuttonJour2:=Gtk_radio_Button(Get_Widget(XML,"radiobuttonJour2"));	
 	
 	Glade.XML.signal_connect (XML,"on_buttonAnnuler_clicked",fermerFenetre'address,Null_Address);
 	Glade.XML.signal_connect (XML,"on_buttonEnregistrer_clicked",enregistrergroupe'address,Null_Address);
 	Glade.XML.signal_connect (XML,"on_treeviewville_row_activated",initselect'address,Null_Address);
 	
 	inittreeviewville;
-	inittreeviewjour1;
-	inittreeviewjour2;
+	inittreeviewgroupejour1;
+	inittreeviewgroupejour2;
 
 end init;
 ------------------------------------------------------------------------------
@@ -50,8 +57,45 @@ end init;
 ---------------------------------------------------------------------------
 	procedure enregistrergroupe is
 		
+	resultEntryGroupe:Unbounded_String;
+	resultGenre:string(1..10);
+	resultjour:integer;
+	resultOrdre:integer;
+	resultentryContact:Unbounded_String;
+	resultentryCoord:Unbounded_String;
+	resultentrySite:Unbounded_String;
 	begin
+	
+		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryGroupe"))),resultEntryGroupe);
+		convertirnom(resultEntryGroupe);
+		to_ada_type(Get_Label(Gtk_Button(GetActiveButtonGenre)),resultGenre);
+		
+		if GetActiveButtonJour=radiobuttonJour1 then
+		resultjour:=jour1.Id_Jour_Festival;
+		else
+		resultjour:=jour2.Id_Jour_Festival;
+		end if;
+		
+		if GetActiveButtonJour=radiobuttonJour1 then
+		resultOrdre:=1+Nbgroupeinscrit(festival.first_element,1);
+		else
+		resultOrdre:=1+Nbgroupeinscrit(festival.first_element,2);
+		end if;
+
+		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryContact"))),resultentryContact);
+		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryCoord"))),resultentryCoord);
+		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entrySite"))),resultentrySite);
+		
+		
+		SaveGroupe(resultEntryGroupe,resultentryContact,resultEntryCoord,ResultentrySite,resultGenre,resultOrdre,resultjour);
+	
 		b_box:=message_dialog("Groupe enregistré !",Information,Button_Ok,Button_Ok);
+		remplirtreeviewgroupejour1(festival.first_element);
+		remplirtreeviewgroupejour2(festival.first_element);	
+	exception
+		when EXGroupeExistant
+			=> b_box:=message_dialog("Groupe déjà existant",Error,Button_Ok,Button_Ok);
+		
 	end enregistrergroupe;
 -----------------------------------------------------------------------------
 	procedure inittreeviewville is
@@ -79,13 +123,10 @@ end init;
 	
 	end inittreeviewville;
 -----------------------------------------------------------------------------
-	procedure inittreeviewjour1 is
-
-		
+	procedure inittreeviewgroupejour1 is	
 
 	begin
-
-		
+	
 		creerColonne("NomVille", treeView_jour1, false);
 		creerColonne("Genre", treeView_jour1, false);
 		
@@ -93,10 +134,9 @@ end init;
 
 
 	
-	end inittreeviewjour1;
-
+	end inittreeviewgroupejour1;
 -----------------------------------------------------------------------------
-	procedure inittreeviewjour2  is
+	procedure inittreeviewgroupejour2  is
 
 	begin
 
@@ -106,19 +146,18 @@ end init;
 		creerModele(treeView_jour2,modele_jour2);
 
 	
-	end inittreeviewjour2;
+	end inittreeviewgroupejour2;
 ---------------------------------------------------------------------------
 	procedure initselect is
-	Festival:festival_list.vector;
+
 	resulttreeviewville:Unbounded_String;
 	groupesjour1:groupe_list.vector;
 	groupesjour2:groupe_list.vector;
-	jour1:tjour_festival;
-	jour2:tjour_festival;
+
 	
 	begin
 		--Recuperation de la selection dans la treeview
-		Get_Selected(Get_Selection(treeview_ville),Gtk_Tree_Model(modele_ville), 
+		Get_Selected(Get_Selection(treeview_ville),Gtk_Tree_model(modele_ville), 
 		rang_ville);
 		if rang_ville = Null_Iter then
 			b_box:=Message_Dialog ("Aucune ville selectionnée",Error,Button_Ok,Button_Ok);
@@ -127,28 +166,32 @@ end init;
 			to_ada_type(Get_String (modele_ville, rang_ville, 0), resulttreeviewville);
 		end if;
 		Festival:=GetFestivalAssocie(resulttreeviewville);
-		remplirtreeviewjour1(festival.first_element);
+		remplirtreeviewgroupejour1(festival.first_element);
 		jour1:=GetJourFestivalAssocie(festival.first_element).element(1);
-		If jour1=GetJourFestivalAssocie(festival.first_element).element(2) then
+		If  integer(Jour_Festival_List.Length(GetJourFestivalAssocie(festival.first_element)))=1 then
 			jour2:=Null_Jour_Festival;
 		else
 		jour2:=GetJourFestivalAssocie(festival.first_element).element(2);
 		end if;
 		
 		Set_Text(Gtk_Entry(Get_Widget(XML,"entryDateJour1")),(integer'image(Day(Festival_list.First_Element(Festival).Date))&"/"&integer'image(Month(Festival_list.First_Element(festival).Date))&"/"&integer'image(Year(Festival_list.First_Element(festival).Date))));
-		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPlaceJour1")),integer'image(jour1.Nbre_Concert_Max));
-		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPrevuJour1")),integer'image(jour2.Nbre_Concert_Max-Nbgroupeinscrit(festival.first_element,1)));
+		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPrevuJour1")),integer'image(jour1.Nbre_Concert_Max));
+		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPlaceJour1")),integer'image(jour1.Nbre_Concert_Max-Nbgroupeinscrit(festival.first_element,1)));
+
 
 		if jour2/=Null_Jour_Festival then
-		remplirtreeviewjour2(festival.first_element);
+		remplirtreeviewgroupejour2(festival.first_element);
 		Set_Text(Gtk_Entry(Get_Widget(XML,"entryDateJour2")),(integer'image(Day(Festival_list.First_Element(Festival).Date)+1)&"/"&integer'image(Month(Festival_list.First_Element(festival).Date))&"/"&integer'image(Year(Festival_list.First_Element(festival).Date))));
-		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPlaceJour2")),integer'image(jour2.Nbre_Concert_Max));
-		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPrevuJour2")),integer'image(jour2.Nbre_Concert_Max-Nbgroupeinscrit(festival.first_element,2)));
+		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPrevuJour2")),integer'image(jour2.Nbre_Concert_Max));
+		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPlaceJour2")),integer'image(jour2.Nbre_Concert_Max-Nbgroupeinscrit(festival.first_element,2)));
+
 		end if;
+		
+		
 		
 	end initselect;
 ------------------------------------------------------------------------
-	procedure remplirtreeviewjour1  (festival : in tfestival) is
+	procedure remplirtreeviewgroupejour1  (festival : in tfestival) is
 	
 		liste_groupe:Basec201_Data.Groupe_List.Vector;
 		groupe : Basec201_Data.tGroupe;
@@ -168,9 +211,9 @@ end init;
 		
 		groupe_list.iterate(liste_groupe, alimente'Access);
 		
-	end remplirtreeviewjour1;
+	end remplirtreeviewgroupejour1;
 -------------------------------------------------------------------------
-	procedure remplirtreeviewjour2 (festival : in tfestival) is
+	procedure remplirtreeviewgroupejour2 (festival : in tfestival) is
 	
 		liste_groupe:Basec201_Data.Groupe_List.Vector;
 		groupe : Basec201_Data.tgroupe;
@@ -191,8 +234,72 @@ end init;
 		
 		groupe_list.iterate(liste_groupe, alimente'Access);
 	
-	end remplirtreeviewjour2;
----------------------------------------------------------------------
+	end remplirtreeviewgroupejour2;
 
+------------------------------------------------------------------------
+	function GetActiveButtonGenre return Gtk_radio_Button is
+		radioButtonHard:Gtk_radio_Button:=Gtk_radio_Button(Get_Widget(XML,"radiobuttonHard"));
+		radioButtonPunk:Gtk_radio_Button:=Gtk_radio_Button(Get_Widget(XML,"radiobuttonPunk"));
+		radioButtonPop:Gtk_radio_Button:=Gtk_radio_Button(Get_Widget(XML,"radiobuttonPop"));
+		radioButtonAlternatif:Gtk_radio_Button:=Gtk_radio_Button(Get_Widget(XML,"radiobuttonAlternatif"));
+		radioButtonFusion:Gtk_radio_Button:=Gtk_radio_Button(Get_Widget(XML,"radiobuttonFusion"));
+		radioButtonRockabilly:Gtk_radio_Button:=Gtk_radio_Button(Get_Widget(XML,"radiobuttonRockabilly"));
+	begin
+		
+		if Get_active(Gtk_Toggle_Button(radioButtonHard)) then
+			return radioButtonHard;
+		
+		elsif Get_active(Gtk_Toggle_Button(radiobuttonPunk)) then
+			return radiobuttonPunk;
+		
+		elsif Get_active(Gtk_Toggle_Button(radiobuttonPop)) then
+			return radiobuttonPop;
+		
+		elsif Get_active(Gtk_Toggle_Button(radiobuttonAlternatif)) then
+			return radiobuttonAlternatif;
+		
+		elsif Get_active(Gtk_Toggle_Button(radiobuttonFusion)) then
+			return radiobuttonFusion;
+		
+		else 
+			return radiobuttonRockabilly;
+
+		end if;
+		
+	
+	end GetActiveButtonGenre;
+---------------------------------------------------------------------------
+	function GetActiveButtonJour return Gtk_radio_Button is
+
+
+	begin
+		
+		
+		if Get_active(Gtk_Toggle_Button(radiobuttonJour1)) then
+			return radiobuttonJour1;
+		else
+			return radiobuttonJour2;
+
+		end if;
+
+	
+	end GetActiveButtonJour;
+--------------------------------------------------------------------------------
+	procedure convertirnom (nom :in out Unbounded_String) is
+		c:character;
+	begin
+		if element(nom,1) >= 'a' and element(nom,1) <= 'z' then
+			replace_element(nom,1,(character'val(character'pos(element(nom,1)) -16#20#)));
+		end if;
+		for i in 2..length(nom) loop
+			c:= element(nom,i);
+			if c < 'a' and c >= 'A' then
+				c := character'val(character'pos(c)+16#20#);
+			end if;
+			replace_element(nom,i,c);
+		end loop;
+	
+	end convertirnom;
+------------------------------------------------------------------------------------
 end P_window_enreggroupe;
 
