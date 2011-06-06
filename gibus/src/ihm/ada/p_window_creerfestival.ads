@@ -41,8 +41,14 @@ package P_window_creerfestival is
 
 
   procedure init;
+
   procedure fermerFenetre;
+
   procedure validerfestival;
+
   procedure inittreeview;
+
   procedure activerJour2;
+  --Cette procedure permet d'empecher l'écriture dans le champ Heure du jour 2 si il n'y a pas de jour 2.
+
 end P_window_creerfestival;
