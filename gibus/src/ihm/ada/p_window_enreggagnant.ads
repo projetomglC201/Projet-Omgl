@@ -11,44 +11,31 @@ with Gtk.Gentry; use Gtk.Gentry;
 with Gtk.Tree_View; use Gtk.Tree_View;
 with Gtk.Label; use Gtk.Label;
 with Gtk.Scrolled_Window; use Gtk.Scrolled_Window; 
+with Gtk.Toggle_button; Use Gtk.Toggle_Button;
+with Gtk.Radio_Button; Use Gtk.Radio_Button;
 
 -- pour gérer le composant Tree_View
 with Gtk.Tree_Model; use Gtk.Tree_Model;-- l'itérateur rang dans le modèle
 with Gtk.Tree_Store; use Gtk.Tree_Store;-- le modèle associé à la vue
 with Gtk.Tree_Selection; use Gtk.Tree_Selection;  -- pour la sélection dans la vue
+with Gtk.Tree_View_column; use Gtk.Tree_View_column;
 with p_util_treeview; use p_util_treeview;  -- utilitaire de gestion d'une treeView
 
---Pour les autres fenêtres
-with p_window_consultgroupe;
-with p_window_consulterfestival;
-with p_window_creerfestival;
-with p_window_enregville;
-with p_window_progfestival;
-with p_window_consultprogramme;
-with p_window_enreggroupe;
-with p_window_creerfinale;
-with p_window_enreggagnant;
-
---Couche appli
-with p_appli_menu;
+with p_appli_enreggagnant; use p_appli_enreggagnant;
+with Basec201_Data; use basec201_data;
+with p_conversion; use p_conversion;
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 
 
-package p_window_menu is  
+package p_window_enreggagnant is
 
-
-procedure Init;
-procedure Reinit;  
+procedure init;
 procedure fermerFenetre;
-procedure Openenregvilles;  
-procedure Opencreerfestival;  
-procedure Openconsultfestival;  
-procedure Openprogfestival;  
-procedure Openenreggroupe;  
-procedure Openconsultgroupe;
-procedure Openconsultprogramme;
-procedure Opencreerfinale;
-procedure OpenEnregGagnant;
+procedure enregistrergagnant;
+procedure remplirtreeviewgroupe;
+procedure inittreeviewville;
+procedure inittreeviewgroupe;
 
 
-end  p_window_menu;
 
+end p_window_enreggagnant;

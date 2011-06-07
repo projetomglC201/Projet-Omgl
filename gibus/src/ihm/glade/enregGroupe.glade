@@ -604,7 +604,7 @@
               <widget class="GtkLabel" id="label13">
                 <property name="visible">True</property>
                 <property name="xalign">0.92000001668930054</property>
-                <property name="label" translatable="yes">Adresse du site :</property>
+                <property name="label" translatable="yes">Adresse du site (facultative) :</property>
               </widget>
               <packing>
                 <property name="position">0</property>
@@ -646,7 +646,7 @@
             <property name="layout_style">spread</property>
             <child>
               <widget class="GtkButton" id="buttonAnnuler">
-                <property name="label" translatable="yes">Annuler</property>
+                <property name="label" translatable="yes">Fermer</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>

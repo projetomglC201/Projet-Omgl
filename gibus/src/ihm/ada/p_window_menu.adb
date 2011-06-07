@@ -2,7 +2,7 @@ with p_esiut; use p_esiut;
 package body p_window_menu is
 
 windowmenu : Gtk_window;
-
+b_box:message_dialog_buttons;
 
 ---------------------------------------------------------------------------------
 procedure init is
@@ -21,19 +21,21 @@ begin
 	Glade.XML.signal_connect (XML,"on_imagemenuEnreggroupe_activate",Openenreggroupe'address,Null_Address);
 	Glade.XML.signal_connect (XML,"on_menuitemConsultGroupe_activate",Openconsultgroupe'address,Null_Address);
 	Glade.XML.signal_connect (XML,"on_menuitemConsultProgramme_activate",Openconsultprogramme'address,Null_Address);
+	Glade.XML.signal_connect (XML,"on_imagemenuitemCreerFinale_activate",Opencreerfinale'address,Null_Address);
+	Glade.XML.signal_connect (XML,"on_menuitemEnregGagnant_activate",Opencreerfinale'address,Null_Address);
 	Glade.XML.signal_connect (XML,"on_windowmenu_destroy",fermerFenetre'address,Null_Address);
 	
 end init;
 --------------------------------------------------------------------------
 	procedure Reinit is
-	b_box:message_dialog_buttons;
+
 	begin
 	b_box:=message_dialog("Êtes-vous sûr de vouloir reinit la base de donnée ?",Confirmation,Button_Yes or Button_No,Button_Yes);
 	case b_box is
 		when 1 => p_appli_menu.reinitDB;
-			ecrire_ligne("Base reinitialisée"); -- + commande de reinit
+			ecrire_ligne("Base reinitialisée"); 
 				
-		when 2 => ecrire_ligne("Reinitialisation annulée"); -- null;
+		when 2 => ecrire_ligne("Reinitialisation annulée");
 		when others => null;
 	end case;
 	end Reinit;
@@ -95,7 +97,16 @@ end init;
 		p_window_consultprogramme.init;
 	end Openconsultprogramme;
 --------------------------------------------------------------------------
-
+	procedure Opencreerfinale is
+	begin
+		p_window_creerfinale.init;
+	end Opencreerfinale;
+--------------------------------------------------------------------
+	procedure OpenEnregGagnant is
+	begin
+		p_window_enreggagnant.init;
+	end OpenEnregGagnant;
+--------------------------------------------------------------------		
 
 
 

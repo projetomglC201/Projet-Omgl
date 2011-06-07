@@ -145,6 +145,20 @@
                         </child>
                       </widget>
                     </child>
+                    <child>
+                      <widget class="GtkImageMenuItem" id="menuitemEnregGagnant">
+                        <property name="label" translatable="yes">Enregistrer les gagnants</property>
+                        <property name="visible">True</property>
+                        <property name="use_stock">False</property>
+                        <signal name="activate" handler="on_menuitemEnregGagnant_activate"/>
+                        <child internal-child="image">
+                          <widget class="GtkImage" id="image11">
+                            <property name="visible">True</property>
+                            <property name="stock">gtk-missing-image</property>
+                          </widget>
+                        </child>
+                      </widget>
+                    </child>
                   </widget>
                 </child>
               </widget>
@@ -181,6 +195,32 @@
                           <widget class="GtkImage" id="image7">
                             <property name="visible">True</property>
                             <property name="stock">gnome-stock-blank</property>
+                          </widget>
+                        </child>
+                      </widget>
+                    </child>
+                  </widget>
+                </child>
+              </widget>
+            </child>
+            <child>
+              <widget class="GtkMenuItem" id="menuitemFinale">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Finale</property>
+                <property name="use_underline">True</property>
+                <child>
+                  <widget class="GtkMenu" id="menuFinale">
+                    <property name="visible">True</property>
+                    <child>
+                      <widget class="GtkImageMenuItem" id="imagemenuitemCreerFinale">
+                        <property name="label" translatable="yes">Cr&#xE9;er la finale</property>
+                        <property name="visible">True</property>
+                        <property name="use_stock">False</property>
+                        <signal name="activate" handler="on_imagemenuitemCreerFinale_activate"/>
+                        <child internal-child="image">
+                          <widget class="GtkImage" id="image10">
+                            <property name="visible">True</property>
+                            <property name="stock">gtk-missing-image</property>
                           </widget>
                         </child>
                       </widget>

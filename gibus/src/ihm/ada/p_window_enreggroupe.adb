@@ -113,6 +113,11 @@ end init;
 		Set_Text(Gtk_Entry(Get_Widget(XML,"entryDateJour2")),"");
 		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPrevuJour2")),"");
 		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPlaceJour2")),"");
+		Set_Text(Gtk_Entry(Get_Widget(XML,"entryGroupe")),"");
+		Set_Text(Gtk_Entry(Get_Widget(XML,"entryContact")),"");
+		Set_Text(Gtk_Entry(Get_Widget(XML,"entryCoord")),"");
+		Set_Text(Gtk_Entry(Get_Widget(XML,"entrySite")),"");
+		
 		
 	exception
 		when EXGroupeExistant
