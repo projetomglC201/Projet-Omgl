@@ -35,6 +35,10 @@ package P_window_progfestival is
   procedure selectionregion2(jour1,jour2: in Groupe_List.vector);
   procedure rechercherprog;
   procedure finprogrammation;
-  procedure gojour2;
-  procedure gojour1; 
+  procedure switchjour2;
+  procedure switchjour1; 
+  procedure upgroupe;
+  procedure top;
+  procedure downGroupe;
+  procedure bot;
 end P_window_progfestival;

@@ -28,8 +28,13 @@ begin
 	Glade.XML.signal_connect (XML,"on_buttonAnnuler2_clicked",selectionregion1'address,Null_Address);
 	Glade.XML.signal_connect (XML,"on_buttonValider_clicked",rechercherprog'address,Null_Address);
 	Glade.XML.signal_connect (XML,"on_buttonTerminer_clicked",finprogrammation'address,Null_Address);
-	Glade.XML.signal_connect (XML,"on_buttonright_clicked",gojour2'address,Null_Address);
-	Glade.XML.signal_connect (XML,"on_buttonleft_clicked",gojour1'address,Null_Address);
+	Glade.XML.signal_connect (XML,"on_buttonright_clicked",switchJour2'address,Null_Address);
+	Glade.XML.signal_connect (XML,"on_buttonleft_clicked",switchJour1'address,Null_Address);
+
+        Glade.XML.signal_connect (XML,"on_buttonup_clicked",upGroupe'address,Null_Address);
+        Glade.XML.signal_connect (XML,"on_buttontop_clicked",top'address,Null_Address);
+        Glade.XML.signal_connect (XML,"on_buttondown_clicked",downGroupe'address,Null_Address);
+        Glade.XML.signal_connect (XML,"on_buttonbot_clicked",bot'address,Null_Address);
 	
 	Treeview_Festival := Gtk_Tree_View(Get_Widget(XML,"treeviewNomFestival"));
 	treeview_jour1 := Gtk_Tree_View(Get_Widget(XML,"treeviewGauche"));
@@ -175,14 +180,59 @@ end init;
 		fermerfenetre;
 	end finprogrammation;
 -------------------------------------------------------------------------
-	procedure gojour2 is
+	procedure switchJour1 is
+		groupe : Unbounded_String;
+		b_box:message_dialog_buttons;
 	begin
-		null;
-	end gojour2;
+		Get_Selected(Get_Selection(treeview_jour2),Gtk_Tree_Model(modele_jour2),rang_jour2);
+		if rang_jour2 = Null_Iter then
+			b_box := message_dialog("Aucun groupe sélectionné",Error,Button_Ok,Button_Ok);
+		else
+			p_conversion.to_ada_type(Get_String(modele_jour2,rang_jour2,0), groupe);
+			p_appli_progfestival.switchJour(groupe,1);
+			rechercherProg;
+		end if;
+		exception
+			when p_appli_progfestival.EX_TROP_DE_GROUPES => 
+				b_box := message_dialog("Pas de place pour un groupe supplémentaire dans le jour 1",Error,Button_Ok,Button_Ok);
+	end switchJour1;
 --------------------------------------------------------------------
-	procedure gojour1 is
-	begin
-		null;
-	end gojour1;
+	procedure switchJour2 is
+		groupe : Unbounded_String;
+		b_box:message_dialog_buttons;
+        begin
+                Get_Selected(Get_Selection(treeview_jour1),Gtk_Tree_Model(modele_jour1),rang_jour1);
+                if rang_jour1 = Null_Iter then
+                        b_box := message_dialog("Aucun groupe sélectionné",Error,Button_Ok,Button_Ok);
+                else
+                        p_conversion.to_ada_type(Get_String(modele_jour1,rang_jour1,0), groupe);
+                        p_appli_progfestival.switchJour(groupe,2);
+			rechercherProg;
+                end if;
+		exception
+                         when p_appli_progfestival.EX_TROP_DE_GROUPES =>
+                                 b_box := message_dialog("Pas de place pour un groupe supplémentaire dans le jour 2",Error,Button_Ok,Button_Ok);
+
+	end switchJour2;
+--------------------------------------------------------------------
+procedure upGroupe is
+begin
+null;
+end upGroupe;
+--------------------------------------------------------------------
+procedure top is
+begin
+null;
+end top;
+--------------------------------------------------------------------
+procedure downGroupe is
+begin
+null;
+end downGroupe;
+--------------------------------------------------------------------
+procedure bot is
+begin
+null;
+end bot;
 --------------------------------------------------------------------
 end P_window_progfestival;

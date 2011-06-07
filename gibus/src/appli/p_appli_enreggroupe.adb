@@ -5,7 +5,7 @@ package body p_appli_enreggroupe is
 function GetVillesAvecFestival return Ville_list.vector is
 
 
-VillesSansFestival:Ville_list.vector;
+VillesAvecFestival:Ville_list.vector;
 Villes:Ville_list.vector;
 criteria:db_commons.criteria;
 
@@ -17,11 +17,11 @@ begin
 	
 	for i in Ville_list.first_index(Villes)..Ville_list.last_index(Villes) loop
 		if not Festival_io.Is_Empty(Ville_io.Retrieve_Associated_Festivals(Villes.element(i))) then
-			ville_list.append(VillesSansFestival,ville_list.element(villes,i));
+			ville_list.append(VillesAvecFestival,ville_list.element(villes,i));
 		end if;		
 	end loop;
 	
-	return VillesSansFestival;
+	return VillesAvecFestival;
 
 end GetVillesAvecFestival;
 ---------------------------------------------------------------------------------------------

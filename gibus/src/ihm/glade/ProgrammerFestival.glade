@@ -179,6 +179,7 @@ du festival &#xE0; programmer :</property>
                     <property name="receives_default">True</property>
                     <property name="tooltip" translatable="yes">Mettre dans le jour 1</property>
                     <property name="xalign">1</property>
+                    <signal name="clicked" handler="on_buttonleft_clicked"/>
                     <child>
                       <widget class="GtkImage" id="image6">
                         <property name="visible">True</property>
