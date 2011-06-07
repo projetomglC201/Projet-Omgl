@@ -194,7 +194,7 @@ end init;
 		Get_Selected(Get_Selection(treeview_ville),Gtk_Tree_model(modele_ville), 
 		rang_ville);
 		if rang_ville = Null_Iter then
-			b_box:=Message_Dialog ("Aucune ville selectionnée",Error,Button_Ok,Button_Ok);
+		
 			raise EX_AUCUNE_VILLE_SELECTIONNEE;
 		else
 			to_ada_type(Get_String (modele_ville, rang_ville, 0), resulttreeviewville);
@@ -230,6 +230,9 @@ end init;
 			Set_Sensitive(radiobuttonJour2,false);
 		end if;
 		
+	exception
+		when EX_AUCUNE_VILLE_SELECTIONNEE
+			=> b_box:=Message_Dialog ("Aucune ville selectionnée",Error,Button_Ok,Button_Ok);
 		
 		
 	end initselect;

@@ -29,6 +29,11 @@ with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 
 package p_window_enreggagnant is
 
+EX_AUCUN_GROUPE_SELECTIONNEE:exception;
+EX_AUCUNE_VILLE_SELECTIONNEE:exception;
+
+
+
 procedure init;
 procedure fermerFenetre;
 procedure enregistrergagnant;

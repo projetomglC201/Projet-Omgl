@@ -42,9 +42,19 @@ end init;
 -----------------------------------------------------------------------------
 	procedure enregistrergagnant is
 	
-	
+	resulttreeviewgroupe:unbounded_string;
 	begin
-	null;
+	
+		Get_Selected(Get_Selection(treeview_groupe),Gtk_Tree_model(modele_groupe), 
+		rang_groupe);
+		if rang_ville = Null_Iter then
+			b_box:=Message_Dialog ("Aucune groupe selectionnée",Error,Button_Ok,Button_Ok);
+			raise EX_AUCUN_GROUPE_SELECTIONNEE;
+		else
+			to_ada_type(Get_String (modele_ville, rang_ville, 0), resulttreeviewgroupe);
+		end if;
+
+		
 	
 	end enregistrergagnant;
 -------------------------------------------------------------------------------
@@ -67,7 +77,7 @@ end init;
 		rang_ville);
 		if rang_ville = Null_Iter then
 			b_box:=Message_Dialog ("Aucune ville selectionnée",Error,Button_Ok,Button_Ok);
-			--raise EX_AUCUNE_VILLE_SELECTIONNEE;
+			raise EX_AUCUNE_VILLE_SELECTIONNEE;
 		else
 			to_ada_type(Get_String (modele_ville, rang_ville, 0), resulttreeviewville);
 		end if;
