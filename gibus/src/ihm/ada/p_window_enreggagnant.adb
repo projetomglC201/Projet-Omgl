@@ -1,4 +1,4 @@
-
+with p_esiut; use p_esiut;
 
 
 
@@ -30,6 +30,7 @@ begin
 	Glade.XML.signal_connect (XML,"on_treeviewville_cursor_changed",remplirtreeviewgroupe'address,Null_Address);
 	
 	inittreeviewville;
+	remplirtreeviewville;
 	inittreeviewgroupe;
 
 
@@ -48,17 +49,24 @@ end init;
 		Get_Selected(Get_Selection(treeview_groupe),Gtk_Tree_model(modele_groupe), 
 		rang_groupe);
 		if rang_ville = Null_Iter then
-			b_box:=Message_Dialog ("Aucune groupe selectionnée",Error,Button_Ok,Button_Ok);
+			
 			raise EX_AUCUN_GROUPE_SELECTIONNEE;
 		else
-			to_ada_type(Get_String (modele_ville, rang_ville, 0), resulttreeviewgroupe);
+			to_ada_type(Get_String (modele_groupe, rang_groupe, 0), resulttreeviewgroupe);
 		end if;
-
+	
+	SaveGagnantFestival(festival,resulttreeviewgroupe);
+	clear(modele_groupe);
+	remplirtreeviewville;
 		
+	exception
+		when EX_AUCUN_GROUPE_SELECTIONNEE
+			=> b_box:=Message_Dialog ("Aucune groupe selectionnée",Error,Button_Ok,Button_Ok);
 	
 	end enregistrergagnant;
 -------------------------------------------------------------------------------
 	procedure remplirtreeviewgroupe is
+		
 		resulttreeviewville:unbounded_string;
 		liste_groupe:Basec201_Data.Groupe_List.Vector;
 		groupe : Basec201_Data.tGroupe;
@@ -66,31 +74,48 @@ end init;
 		procedure alimente( pos : Groupe_List.Cursor ) is
 			Groupe : Basec201_Data.tGroupe;
 		begin
+			ecrire("alimente");
 			  Groupe := Groupe_List.element( pos );
 			  append (modele_groupe, rang_groupe, Null_Iter);
 			  Set (modele_groupe, rang_groupe, 0, p_conversion.to_string(groupe.Nom_Groupe));
 		end alimente;
 	begin
+
 		Clear(modele_groupe);
-		
+
 		Get_Selected(Get_Selection(treeview_ville),Gtk_Tree_model(modele_ville), 
 		rang_ville);
 		if rang_ville = Null_Iter then
-			b_box:=Message_Dialog ("Aucune ville selectionnée",Error,Button_Ok,Button_Ok);
+			
 			raise EX_AUCUNE_VILLE_SELECTIONNEE;
 		else
 			to_ada_type(Get_String (modele_ville, rang_ville, 0), resulttreeviewville);
 		end if;
 		Festival:=GetFestivalAssocie(resulttreeviewville);
-		
+
 		liste_groupe :=p_appli_enreggagnant.GetGroupes(festival);
-		
+
 		groupe_list.iterate(liste_groupe, alimente'Access);
+	exception
+		when EX_AUCUNE_VILLE_SELECTIONNEE
+			=> b_box:=Message_Dialog ("Aucune ville selectionnée",Error,Button_Ok,Button_Ok);
 	
 	end remplirtreeviewgroupe;
 ---------------------------------------------------------------------------------
 	procedure inittreeviewville is
 	
+
+	begin
+
+		creerColonne("nomVille", treeView_ville, false);
+		
+		creerModele(treeView_ville,modele_ville);
+
+	
+	end inittreeviewville;
+-------------------------------------------------------------------------------
+	procedure remplirtreeviewville is
+
 		liste_ville:Basec201_Data.Ville_List.Vector;
 		ville : Basec201_Data.tVille;
 		
@@ -101,20 +126,18 @@ end init;
 			  append (modele_ville, rang_ville, Null_Iter);
 			  Set (modele_ville, rang_ville, 0, p_conversion.to_string(ville.Nom_Ville));
 		end alimente;
+		
 
 	begin
-
-		creerColonne("nomVille", treeView_ville, false);
-		
-		creerModele(treeView_ville,modele_ville);
-
-
-		liste_ville := p_appli_enreggagnant.GetVillesAvecFestival;
+	
+		clear(modele_ville);
+	
+		liste_ville := p_appli_enreggagnant.GetVillesSansFinaliste;
 		
 		Ville_List.iterate(liste_ville, alimente'Access);
 	
 	
-	end inittreeviewville;
+	end remplirtreeviewville;
 ------------------------------------------------------------------------------
 	procedure inittreeviewgroupe is
 

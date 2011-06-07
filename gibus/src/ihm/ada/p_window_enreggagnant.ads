@@ -38,6 +38,7 @@ procedure init;
 procedure fermerFenetre;
 procedure enregistrergagnant;
 procedure remplirtreeviewgroupe;
+procedure remplirtreeviewville;
 procedure inittreeviewville;
 procedure inittreeviewgroupe;
 

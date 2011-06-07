@@ -25,38 +25,22 @@ begin
 
 end GetVillesAvecFestival;
 ---------------------------------------------------------------------------------------------
-function GetGroupesJour1 (festival :in tfestival) return Groupe_list.vector is
+function GetGroupesJour (festival :in tfestival; numjour:integer) return Groupe_list.vector is
 
-Jour1festival: tJour_Festival;
+Jourfestival: tJour_Festival;
 criteria:db_commons.criteria;
 begin
-	Jour_Festival_IO.Add_Num_Ordre(criteria,1);
+	Jour_Festival_IO.Add_Num_Ordre(criteria,numjour);
 	Jour_Festival_IO.Add_Festival(criteria,festival.ID_festival);
 	
 	
-	Jour1festival:=jour_festival_io.retrieve(criteria).first_element;
+	Jourfestival:=jour_festival_io.retrieve(criteria).first_element;
 
-	return Jour_festival_io.Retrieve_Associated_Groupes(Jour1Festival);
+	return Jour_festival_io.Retrieve_Associated_Groupes(JourFestival);
 
 
-end GetGroupesJour1;
-------------------------------------------------------------------------------------------------
-function GetGroupesJour2 (festival :in tfestival) return Groupe_list.vector is
+end GetGroupesJour;
 
-Jour2festival: tJour_Festival;
-criteria:db_commons.criteria;
-
-begin
-
-	Jour_Festival_IO.Add_Num_Ordre(criteria,2);
-	Jour_Festival_IO.Add_Festival(criteria,festival.ID_festival);
-	
-	
-	Jour2festival:=jour_festival_io.retrieve(criteria).first_element;
-
-	return Jour_festival_io.Retrieve_Associated_Groupes(Jour2Festival);
-
-end GetGroupesJour2;
 ---------------------------------------------------------------------------------
 function GetFestivalAssocie(entryVille: in Unbounded_String) return Festival_List.vector is
 Ville:tville;

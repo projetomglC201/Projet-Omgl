@@ -253,7 +253,7 @@ end init;
 	begin
 		Clear(modele_jour1);
 
-		liste_groupe :=p_appli_enreggroupe.GetGroupesJour1(festival);
+		liste_groupe :=p_appli_enreggroupe.GetGroupesJour(festival,1);
 		
 		groupe_list.iterate(liste_groupe, alimente'Access);
 		
@@ -276,7 +276,7 @@ end init;
 	begin
 		Clear(modele_jour2);
 		
-		liste_groupe :=p_appli_enreggroupe.GetGroupesJour2(festival);
+		liste_groupe :=p_appli_enreggroupe.GetGroupesJour(festival,2);
 		
 		groupe_list.iterate(liste_groupe, alimente'Access);
 	

@@ -22,7 +22,7 @@ begin
 	Glade.XML.signal_connect (XML,"on_menuitemConsultGroupe_activate",Openconsultgroupe'address,Null_Address);
 	Glade.XML.signal_connect (XML,"on_menuitemConsultProgramme_activate",Openconsultprogramme'address,Null_Address);
 	Glade.XML.signal_connect (XML,"on_imagemenuitemCreerFinale_activate",Opencreerfinale'address,Null_Address);
-	Glade.XML.signal_connect (XML,"on_menuitemEnregGagnant_activate",Opencreerfinale'address,Null_Address);
+	Glade.XML.signal_connect (XML,"on_menuitemEnregGagnant_activate",OpenEnregGagnant'address,Null_Address);
 	Glade.XML.signal_connect (XML,"on_windowmenu_destroy",fermerFenetre'address,Null_Address);
 	
 end init;
