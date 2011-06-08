@@ -1,6 +1,3 @@
---with tp_Intl; use tp_Intl;
-with Glade.XML;use Glade.XML;
-
 
 
 
@@ -107,17 +104,16 @@ end init;
 		remplirtreeviewgroupejour1(festival.first_element);
 		remplirtreeviewgroupejour2(festival.first_element);
 		
-		Set_Text(Gtk_Entry(Get_Widget(XML,"entryDateJour1")),"");
-		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPrevuJour1")),"");
-		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPlaceJour1")),"");
-		Set_Text(Gtk_Entry(Get_Widget(XML,"entryDateJour2")),"");
-		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPrevuJour2")),"");
-		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPlaceJour2")),"");
-		Set_Text(Gtk_Entry(Get_Widget(XML,"entryGroupe")),"");
-		Set_Text(Gtk_Entry(Get_Widget(XML,"entryContact")),"");
-		Set_Text(Gtk_Entry(Get_Widget(XML,"entryCoord")),"");
-		Set_Text(Gtk_Entry(Get_Widget(XML,"entrySite")),"");
-		
+--		Set_Text(Gtk_Entry(Get_Widget(XML,"entryDateJour1")),"");
+--		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPrevuJour1")),"");
+--		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPlaceJour1")),"");s
+--		Set_Text(Gtk_Entry(Get_Widget(XML,"entryDateJour2")),"");
+--		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPrevuJour2")),"");
+--		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPlaceJour2")),"");
+--		Set_Text(Gtk_Entry(Get_Widget(XML,"entryGroupe")),"");
+--		Set_Text(Gtk_Entry(Get_Widget(XML,"entryContact")),"");
+--		Set_Text(Gtk_Entry(Get_Widget(XML,"entryCoord")),"");
+--		Set_Text(Gtk_Entry(Get_Widget(XML,"entrySite")),"");	
 		
 	exception
 		when EXGroupeExistant
@@ -142,13 +138,11 @@ end init;
 			  append (modele_ville, rang_ville, Null_Iter);
 			  Set (modele_ville, rang_ville, 0, p_conversion.to_string(ville.Nom_Ville));
 		end alimente;
-
 	begin
 
 		creerColonne("nomVille", treeView_ville, false);
 		
 		creerModele(treeView_ville,modele_ville);
-
 
 		liste_ville := p_appli_enreggroupe.GetVillesAvecFestival;
 		
@@ -160,8 +154,8 @@ end init;
 
 	begin
 	
-		creerColonne("NomVille", treeView_jour1, false);
-		creerColonne("Genre", treeView_jour1, false);
+		creerColonne("Groupe", treeView_jour1, true);
+		creerColonne("Genre", treeView_jour1, true);
 		
 		creerModele(treeView_jour1,modele_jour1);
 
@@ -173,8 +167,8 @@ end init;
 
 	begin
 
-		creerColonne("NomVille", treeView_jour2, false);
-		creerColonne("Genre", treeView_jour2, false);
+		creerColonne("Groupe", treeView_jour2, true);
+		creerColonne("Genre", treeView_jour2, true);
 		
 		creerModele(treeView_jour2,modele_jour2);
 
@@ -189,7 +183,6 @@ end init;
 
 	
 	begin
-
 		--Recuperation de la selection dans la treeview
 		Get_Selected(Get_Selection(treeview_ville),Gtk_Tree_model(modele_ville), 
 		rang_ville);
@@ -281,7 +274,6 @@ end init;
 		groupe_list.iterate(liste_groupe, alimente'Access);
 	
 	end remplirtreeviewgroupejour2;
-
 ------------------------------------------------------------------------
 	function GetActiveButtonGenre return Gtk_radio_Button is
 		radioButtonHard:Gtk_radio_Button:=Gtk_radio_Button(Get_Widget(XML,"radiobuttonHard"));
@@ -310,8 +302,7 @@ end init;
 		else 
 			return radiobuttonRockabilly;
 
-		end if;
-		
+		end if;		
 	
 	end GetActiveButtonGenre;
 ---------------------------------------------------------------------------

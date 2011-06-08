@@ -24,7 +24,7 @@ begin
 	
 	for i in Ville_list.first_index(Villes)..Ville_list.last_index(Villes) loop
 			festivals:=Ville_io.Retrieve_Associated_Festivals(Villes.element(i));
-		if  Gagnant_festival_io.Is_Empty(festival_io.Retrieve_Associated_Gagnant_Festivals(festivals.first_element)) then
+		if Gagnant_festival_io.Is_Empty(festival_io.Retrieve_Associated_Gagnant_Festivals(festivals.first_element)) then
 		
 			ville_list.append(VillesSansFinaliste,ville_list.element(villes,i));
 			

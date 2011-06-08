@@ -104,7 +104,7 @@
             <property name="layout_style">spread</property>
             <child>
               <widget class="GtkButton" id="buttonAnnuler">
-                <property name="label" translatable="yes">Annuler</property>
+                <property name="label" translatable="yes">Fermer</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>

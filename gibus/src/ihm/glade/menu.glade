@@ -186,11 +186,11 @@
                       </widget>
                     </child>
                     <child>
-                      <widget class="GtkImageMenuItem" id="menuitemConsultGroupe">
+                      <widget class="GtkImageMenuItem" id="imagemenuitemConsultGroupe">
                         <property name="label" translatable="yes">Consulter un groupe</property>
                         <property name="visible">True</property>
                         <property name="use_stock">False</property>
-                        <signal name="activate" handler="on_menuitemConsultGroupe_activate"/>
+                        <signal name="activate" handler="on_imagemenuitemConsultGroupe_activate"/>
                         <child internal-child="image">
                           <widget class="GtkImage" id="image7">
                             <property name="visible">True</property>
@@ -219,6 +219,20 @@
                         <signal name="activate" handler="on_imagemenuitemCreerFinale_activate"/>
                         <child internal-child="image">
                           <widget class="GtkImage" id="image10">
+                            <property name="visible">True</property>
+                            <property name="stock">gtk-missing-image</property>
+                          </widget>
+                        </child>
+                      </widget>
+                    </child>
+                    <child>
+                      <widget class="GtkImageMenuItem" id="menuitemConsultFInalistes">
+                        <property name="label" translatable="yes">Consulter les finalistes</property>
+                        <property name="visible">True</property>
+                        <property name="use_stock">False</property>
+                        <signal name="activate" handler="on_menuitemConsultFinalistes_activate"/>
+                        <child internal-child="image">
+                          <widget class="GtkImage" id="image12">
                             <property name="visible">True</property>
                             <property name="stock">gtk-missing-image</property>
                           </widget>

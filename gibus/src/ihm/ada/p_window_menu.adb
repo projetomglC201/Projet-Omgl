@@ -19,23 +19,26 @@ begin
 	Glade.XML.signal_connect (XML,"on_menuitemConsultFestival_activate",Openconsultfestival'address,Null_Address);
 	Glade.XML.signal_connect (XML,"on_menuitemProgFestival_activate",Openprogfestival'address,Null_Address);
 	Glade.XML.signal_connect (XML,"on_imagemenuEnreggroupe_activate",Openenreggroupe'address,Null_Address);
-	Glade.XML.signal_connect (XML,"on_menuitemConsultGroupe_activate",Openconsultgroupe'address,Null_Address);
+	Glade.XML.signal_connect (XML,"on_imagemenuitemConsultGroupe_activate",Openconsultgroupe'address,Null_Address);
 	Glade.XML.signal_connect (XML,"on_menuitemConsultProgramme_activate",Openconsultprogramme'address,Null_Address);
 	Glade.XML.signal_connect (XML,"on_imagemenuitemCreerFinale_activate",Opencreerfinale'address,Null_Address);
 	Glade.XML.signal_connect (XML,"on_menuitemEnregGagnant_activate",OpenEnregGagnant'address,Null_Address);
+	Glade.XML.signal_connect (XML,"on_menuitemConsultFinalistes_activate",OpenConsultFinalistes'address,Null_Address);	
 	Glade.XML.signal_connect (XML,"on_windowmenu_destroy",fermerFenetre'address,Null_Address);
+
+	
 	
 end init;
 --------------------------------------------------------------------------
 	procedure Reinit is
-
+	b_box2:message_dialog_buttons;
 	begin
 	b_box:=message_dialog("Êtes-vous sûr de vouloir reinit la base de donnée ?",Confirmation,Button_Yes or Button_No,Button_Yes);
 	case b_box is
 		when 1 => p_appli_menu.reinitDB;
-			ecrire_ligne("Base reinitialisée"); 
+			b_box2:=message_dialog("Base reinit",Information,Button_Ok,Button_Ok);
 				
-		when 2 => ecrire_ligne("Reinitialisation annulée");
+		when 2 => b_box2:=message_dialog("Base non reinit",Information,Button_Ok,Button_Ok);
 		when others => null;
 	end case;
 	end Reinit;
@@ -107,7 +110,11 @@ end init;
 		p_window_enreggagnant.init;
 	end OpenEnregGagnant;
 --------------------------------------------------------------------		
-
+	procedure OpenConsultFinalistes is
+	begin
+		p_window_ConsultFinalistes.init;
+	end OpenConsultFinalistes;
+-----------------------------------------------------------------------
 
 
 end p_window_menu;

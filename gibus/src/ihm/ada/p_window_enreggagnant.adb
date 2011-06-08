@@ -1,5 +1,3 @@
-with p_esiut; use p_esiut;
-
 
 
 package body p_window_enreggagnant is
@@ -74,7 +72,7 @@ end init;
 		procedure alimente( pos : Groupe_List.Cursor ) is
 			Groupe : Basec201_Data.tGroupe;
 		begin
-			ecrire("alimente");
+			
 			  Groupe := Groupe_List.element( pos );
 			  append (modele_groupe, rang_groupe, Null_Iter);
 			  Set (modele_groupe, rang_groupe, 0, p_conversion.to_string(groupe.Nom_Groupe));
