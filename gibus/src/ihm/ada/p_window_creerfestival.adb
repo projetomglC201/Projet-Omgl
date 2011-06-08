@@ -63,7 +63,7 @@ end init;
 		
 		Get_Date(Gtk_calendar(Get_Widget(XML,"calendardatedebut")),an,mois,jour);
 		
-		resultcalendardatedebut:=Time_Of(integer(an),integer(mois),integer(jour));	
+		resultcalendardatedebut:=Time_Of(integer(an),integer(mois)+1,integer(jour));	
 		
 		--Recuperation des entry
 		if not (Get_Text(Gtk_Entry(Get_Widget(XML,"entryLieu")))'length=0) then
