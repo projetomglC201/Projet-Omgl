@@ -2,16 +2,17 @@
 <glade-interface>
   <!-- interface-requires gtk+ 2.16 -->
   <!-- interface-naming-policy project-wide -->
-  <widget class="GtkWindow" id="windowEnregGagnant">
+  <widget class="GtkWindow" id="windowGagnantFinale">
+    <property name="width_request">500</property>
+    <property name="height_request">250</property>
     <property name="visible">True</property>
-    <property name="border_width">5</property>
-    <property name="title" translatable="yes">Enregistrer le gagnant d'un festival</property>
+    <property name="resizable">False</property>
+    <property name="modal">True</property>
     <property name="window_position">center</property>
     <child>
       <widget class="GtkVBox" id="vbox1">
         <property name="visible">True</property>
         <property name="orientation">vertical</property>
-        <property name="homogeneous">True</property>
         <child>
           <widget class="GtkHBox" id="hbox1">
             <property name="visible">True</property>
@@ -19,7 +20,7 @@
             <child>
               <widget class="GtkLabel" id="label1">
                 <property name="visible">True</property>
-                <property name="label" translatable="yes">Selectionnez une ville :</property>
+                <property name="label" translatable="yes">S&#xE9;lectionnez le groupe</property>
               </widget>
               <packing>
                 <property name="position">0</property>
@@ -29,12 +30,12 @@
               <widget class="GtkScrolledWindow" id="scrolledwindow1">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-                <property name="hscrollbar_policy">never</property>
+                <property name="hscrollbar_policy">automatic</property>
+                <property name="vscrollbar_policy">automatic</property>
                 <child>
-                  <widget class="GtkTreeView" id="treeviewville">
+                  <widget class="GtkTreeView" id="treeview1">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <signal name="cursor_changed" handler="on_treeviewville_cursor_changed"/>
                   </widget>
                 </child>
               </widget>
@@ -48,68 +49,17 @@
           </packing>
         </child>
         <child>
-          <widget class="GtkHSeparator" id="hseparator1">
-            <property name="visible">True</property>
-          </widget>
-          <packing>
-            <property name="expand">False</property>
-            <property name="position">1</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="GtkHBox" id="hbox2">
-            <property name="visible">True</property>
-            <property name="homogeneous">True</property>
-            <child>
-              <widget class="GtkLabel" id="label2">
-                <property name="visible">True</property>
-                <property name="label" translatable="yes">Selectionnez le groupe :</property>
-              </widget>
-              <packing>
-                <property name="position">0</property>
-              </packing>
-            </child>
-            <child>
-              <widget class="GtkScrolledWindow" id="scrolledwindow2">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="hscrollbar_policy">never</property>
-                <child>
-                  <widget class="GtkTreeView" id="treeviewgroupe">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                  </widget>
-                </child>
-              </widget>
-              <packing>
-                <property name="position">1</property>
-              </packing>
-            </child>
-          </widget>
-          <packing>
-            <property name="position">2</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="GtkHSeparator" id="hseparator2">
-            <property name="visible">True</property>
-          </widget>
-          <packing>
-            <property name="expand">False</property>
-            <property name="position">3</property>
-          </packing>
-        </child>
-        <child>
           <widget class="GtkHButtonBox" id="hbuttonbox1">
             <property name="visible">True</property>
+            <property name="homogeneous">True</property>
             <property name="layout_style">spread</property>
             <child>
-              <widget class="GtkButton" id="buttonAnnuler">
+              <widget class="GtkButton" id="buttonFermer">
                 <property name="label" translatable="yes">Fermer</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <signal name="clicked" handler="on_buttonAnnuler_clicked"/>
+                <signal name="clicked" handler="on_buttonFermer_clicked"/>
               </widget>
               <packing>
                 <property name="expand">False</property>
@@ -133,7 +83,7 @@
             </child>
           </widget>
           <packing>
-            <property name="position">4</property>
+            <property name="position">1</property>
           </packing>
         </child>
       </widget>

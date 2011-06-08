@@ -1,6 +1,5 @@
 
-with p_esiut; use p_esiut;
-
+with ada.text_io;
 
 
 
@@ -19,11 +18,16 @@ nom_ville:unbounded_string;
 groupes:groupe_list.vector;
 genre:tgenre_enum;
 j:positive:=1;
+fest:festival_list.vector;
+gagnants : gagnant_festival_list.Vector;
 begin
 	
 	For i in villewithfinaliste.first_index..villewithfinaliste.last_index loop
 	
-		nom_groupe:=Ville_IO.Retrieve_Associated_Festivals(villewithfinaliste.element(i)).first_element.Gagnant_Festivals.first_element.groupe;
+		fest := Ville_IO.Retrieve_Associated_Festivals(villewithfinaliste.element(i));
+		gagnants := festival_io.retrieve_associated_gagnant_festivals(fest.first_element);
+		nom_groupe:=gagnants.first_element.groupe;
+		
 		nom_ville:=villewithfinaliste.element(i).nom_ville;
 		
 		groupes:=GetGroupes(Ville_IO.Retrieve_Associated_Festivals(villewithfinaliste.element(i)).first_element);
@@ -33,6 +37,7 @@ begin
 		
 		genre:=groupes.element(j).genre;
 		finaliste_list.Append(finaliste,(nom_groupe,nom_ville,genre));
+		j:=1;
 	end loop;
 		
 	return finaliste;
@@ -55,9 +60,7 @@ begin
 	for i in Ville_list.first_index(VillesAvecFestival)..Ville_list.last_index(VillesAvecFestival) loop
 		
 			festivals:=Ville_io.Retrieve_Associated_Festivals(VillesAvecFestival.element(i));
-		
 			if not Gagnant_festival_io.Is_Empty(festival_io.Retrieve_Associated_Gagnant_Festivals(festivals.first_element)) then
-
 				ville_list.append(VillesAvecFinaliste,ville_list.element(VillesAvecFestival,i));
 
 			end if;		
@@ -104,7 +107,6 @@ criteria:db_commons.criteria;
 
 begin
 
-
 	Villes:=Ville_io.retrieve(criteria);
 	
 	for i in Ville_list.first_index(Villes)..Ville_list.last_index(Villes) loop
@@ -112,7 +114,6 @@ begin
 			ville_list.append(VillesAvecFestival,ville_list.element(villes,i));
 		end if;		
 	end loop;
-	
 	return VillesAvecFestival;
 
 end GetVillesAvecFestival;

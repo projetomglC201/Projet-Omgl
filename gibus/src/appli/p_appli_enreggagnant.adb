@@ -1,5 +1,5 @@
 with p_esiut; use p_esiut;
-
+with p_appli_consultfinalistes;
 
 
 
@@ -20,7 +20,7 @@ criteria:db_commons.criteria;
 begin
 
 
-	Villes:=Ville_io.retrieve(criteria);
+	Villes:=p_appli_consultfinalistes.GetVillesAvecFestival;
 	
 	for i in Ville_list.first_index(Villes)..Ville_list.last_index(Villes) loop
 			festivals:=Ville_io.Retrieve_Associated_Festivals(Villes.element(i));

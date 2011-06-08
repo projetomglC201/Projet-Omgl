@@ -25,6 +25,7 @@ begin
 	Glade.XML.signal_connect (XML,"on_menuitemEnregGagnant_activate",OpenEnregGagnant'address,Null_Address);
 	Glade.XML.signal_connect (XML,"on_menuitemConsultFinalistes_activate",OpenConsultFinalistes'address,Null_Address);	
 	Glade.XML.signal_connect (XML,"on_windowmenu_destroy",fermerFenetre'address,Null_Address);
+	Glade.XML.signal_connect (XML,"on_imagemenuitemEnregGagnantFinale_activate", OpenEnregGagnantFinale'Address,Null_Address);
 
 	
 	
@@ -46,22 +47,6 @@ end init;
 	procedure fermerFenetre is
 	begin
 		Gtk.main.main_quit;
---		Destroy(windowmenu);
---		
---  		p_window_consultgroupe.fermerFenetre;
-
--- 		p_window_consulterfestival.fermerFenetre;
-
---  		p_window_creerfestival.fermerFenetre;
-
--- 		p_window_enregville.fermerFenetre;
---   
---  		p_window_progfestival.fermerFenetre;
---   
---  		p_window_consultprogramme.fermerFenetre;   
---   
---  		p_window_enreggroupe.fermerFenetre;
-		
 	end fermerFenetre;
 ---------------------------------------------------------------------------
 	procedure Openenregvilles is
@@ -115,6 +100,10 @@ end init;
 		p_window_ConsultFinalistes.init;
 	end OpenConsultFinalistes;
 -----------------------------------------------------------------------
-
+	procedure OpenEnregGagnantFinale is
+	begin
+		p_window_EnregGagnantFinale.init;
+	end OpenEnregGagnantFinale;
+---------------------------------------------------------------------
 
 end p_window_menu;

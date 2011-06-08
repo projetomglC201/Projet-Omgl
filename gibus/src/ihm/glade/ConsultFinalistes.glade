@@ -3,6 +3,7 @@
   <!-- interface-requires gtk+ 2.16 -->
   <!-- interface-naming-policy project-wide -->
   <widget class="GtkWindow" id="windowConsultFinalistes">
+    <property name="visible">True</property>
     <property name="border_width">5</property>
     <property name="title" translatable="yes">Liste des finalistes</property>
     <child>
