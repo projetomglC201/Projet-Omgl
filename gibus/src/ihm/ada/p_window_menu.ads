@@ -29,6 +29,7 @@ with p_window_enreggroupe;
 with p_window_creerfinale;
 with p_window_enreggagnant;
 with p_window_consultfinalistes;
+with p_window_enreggagnantfinale;
 
 --Couche appli
 with p_appli_menu;
@@ -50,6 +51,7 @@ procedure Openconsultprogramme;
 procedure Opencreerfinale;
 procedure OpenEnregGagnant;
 procedure OpenConsultFinalistes;
+procedure OpenEnregGagnantFinale;
 
 end  p_window_menu;
 

@@ -29,10 +29,10 @@ package P_window_progfestival is
   procedure fermerFenetre;
   procedure initregion1;
   procedure initregion2;
-  procedure fillTreeviewJour1(groupes: in Groupe_List.vector);
-  procedure fillTreeViewJour2(groupes: in Groupe_List.vector);
+  procedure fillTreeviewJour1(groupes : in groupe_list.vector);
+  procedure fillTreeViewJour2(groupes : in groupe_list.vector);
   procedure selectionregion1;
-  procedure selectionregion2(jour1,jour2: in Groupe_List.vector);
+  procedure selectionregion2;
   procedure rechercherprog;
   procedure finprogrammation;
   procedure switchjour2;
@@ -41,4 +41,6 @@ package P_window_progfestival is
   procedure top;
   procedure downGroupe;
   procedure bot;
+  procedure clearright;
+  procedure clearleft;
 end P_window_progfestival;
