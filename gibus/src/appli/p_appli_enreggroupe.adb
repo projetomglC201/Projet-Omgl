@@ -76,7 +76,7 @@ begin
 
 end GetJourFestivalAssocie;
 -----------------------------------------------------------------------------------------
-procedure SaveGroupe(Nom,Contact,Coord,Site :in Unbounded_String; genre:string; ordre,jour:positive) is
+procedure SaveGroupe(Nom,Contact,Coord,Site :in Unbounded_String; genre:string; ordre:positive; jour:integer) is
 
 begin
 
