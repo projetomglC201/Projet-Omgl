@@ -25,7 +25,7 @@ function Nbgroupeinscrit(Festival : in tfestival; OrdreJour: in positive) return
 	--retourne le nombre de groupes inscrits au jour numéro 'numjour' du festival 'Festival'
 function GetJourFestivalAssocie(Festival : in tfestival) return Jour_Festival_List.Vector;
 	--retourne la liste des jours du festival 'Festival'
-procedure SaveGroupe(Nom,Contact,Coord,Site :in Unbounded_String; genre:string; ordre,jour:positive);
+procedure SaveGroupe(Nom,Contact,Coord,Site :in Unbounded_String; genre:string; ordre:positive; jour: integer);
 	--enregistre dans la DB le groupe avec les infos fournies au jour d'id 'jour'
 
 end p_appli_enreggroupe;
