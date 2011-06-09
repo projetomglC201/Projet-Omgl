@@ -12,11 +12,11 @@ package p_appli_creerfestival is
 
 
 function GetVillesSansFestival return Ville_list.Vector;
-
+	--retourne la liste des villes n'ayant pas de festival
 procedure CreateFestival (Festival: in tFestival);
-
+	--enregistre dans la DB le festival "Festival"
 procedure CreateJourFestival (Jour_Festival : in tJour_Festival);
-
+	--enregistre dans la DB le jour "Jour_Festival"
 
 
 end p_appli_creerfestival;

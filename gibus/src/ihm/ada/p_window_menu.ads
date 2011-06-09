@@ -37,11 +37,18 @@ with p_appli_menu;
 
 
 package p_window_menu is  
+--Ce package gère la fenetre principale et les appels aux fenetres secondaires
 
 
 procedure Init;
+	--initialise la fenetre, les signaux, grise les options de menu inaccessibles en fonction des données présentes
 procedure Reinit;  
+	--demande confirmation puis réinitialise la base de données
 procedure fermerFenetre;
+	--ferme l'application
+
+---------------------------------
+--Ces procedures servent à l'ouverture des fenetres secondaires
 procedure Openenregvilles;  
 procedure Opencreerfestival;  
 procedure Openconsultfestival;  
@@ -53,9 +60,11 @@ procedure Opencreerfinale;
 procedure OpenEnregGagnant;
 procedure OpenConsultFinalistes;
 procedure OpenEnregGagnantFinale;
+--------------------------------
+--Ces procedures servent à la mise à jour des options de menu grisées
 procedure CheckFestival;
 procedure CheckGroupe;
 procedure CheckFinale;
-
+-------------------------------
 end  p_window_menu;
 

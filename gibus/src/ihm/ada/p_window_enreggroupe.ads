@@ -34,16 +34,29 @@ package P_window_enreggroupe is
   EXEntryContactEmpty:exception;
   EXEntryCoordEmpty:exception;
   procedure init;
+	--initialise la fenetre, les signaux, les treeviews
   procedure fermerFenetre;
+	--ferme la fenetre
   procedure enregistrergroupe;
+	--Récupère les infos entrées et enregistre le groupe
   procedure inittreeviewville;
+	--initialise et remplit la treeview des villes
   procedure inittreeviewgroupejour1;
+	--initialise la treeview des groupes du jour 1
   procedure inittreeviewgroupejour2;
+	--initialise la treeview des groupes du jour 2
   procedure initselect;
+	--initialise les treeviews de groupes et les champs de texte
   procedure remplirtreeviewgroupejour1(festival : in tfestival);
+	--remplit la treeview des groupes du jour 1 du festival 'festival'
   procedure remplirtreeviewgroupejour2(festival : in tfestival);
+	--remplit la treeview des groupes du jour 2 du festival 'festival'
   function GetActiveButtonGenre return Gtk_radio_Button;
+	--Retourne la radio_button des genres sélectionné
   function GetActiveButtonJour return Gtk_radio_Button;
+	--Retourne la radio_button du jour sélectionné
   procedure convertirnom (nom :in out Unbounded_String);
+	--Converti le nom 'nom' au format 1ère lettre majuscule, le reste en minuscules
   procedure SetSensitiveJourSelect;
+	--Grise les informations du jour non sélectionné et dégrise celles du jour sélectionné
 end P_window_enreggroupe;

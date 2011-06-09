@@ -12,10 +12,8 @@ with grande_finale_io;
 package p_appli_enreggagnantfinale is
 
 
-function IsFinale return boolean;
-
 function GetInscritsFinale return Basec201_data.Gagnant_Festival_List.Vector;
-
+	--retourne la liste des gagnants des festivals
 procedure Save(groupe : in Unbounded_String);
-
+	--enregistre le groupe de nom "groupe" comme gagnant de la grande finale
 end p_appli_enreggagnantfinale;
