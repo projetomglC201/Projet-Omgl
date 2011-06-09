@@ -28,6 +28,13 @@ begin
 
 	return ville.Nom_Ville;
 end getVilleGroupe;
+----------------------------------------------------
+procedure delete(nomgroupe : in Unbounded_String) is
+groupe : tGroupe;
+begin
+	groupe := groupe_io.retrieve_by_pk(nomgroupe);
+	groupe_io.delete(groupe);
 
+end delete;
 ----------------------------------------------------
 end p_appli_consultgroupe;
