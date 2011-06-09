@@ -47,7 +47,7 @@ end init;
 
 	begin
 		
-		ecrire("AAAAAA");
+		
 		creerColonne("Groupe", treeview_finalistes, true);
 		
 		creerColonne("Ville",treeview_finalistes, true);

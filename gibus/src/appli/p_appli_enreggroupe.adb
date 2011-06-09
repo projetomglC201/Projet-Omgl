@@ -25,7 +25,7 @@ begin
 
 end GetVillesAvecFestival;
 ---------------------------------------------------------------------------------------------
-function GetGroupesJour (festival :in tfestival; numjour:integer) return Groupe_list.vector is
+function GetGroupesJour (festival :in tfestival; numjour:positive) return Groupe_list.vector is
 
 Jourfestival: tJour_Festival;
 criteria:db_commons.criteria;
@@ -52,7 +52,7 @@ begin
 
 end GetFestivalAssocie;
 ------------------------------------------------------------------------------------
-function Nbgroupeinscrit(Festival : in tfestival; OrdreJour: in integer) return integer is
+function Nbgroupeinscrit(Festival : in tfestival; OrdreJour: in positive) return integer is
 Jourfestival: tJour_Festival;
 criteria:db_commons.criteria;
 begin
@@ -76,7 +76,7 @@ begin
 
 end GetJourFestivalAssocie;
 -----------------------------------------------------------------------------------------
-procedure SaveGroupe(Nom,Contact,Coord,Site :in Unbounded_String; genre:string; ordre,jour:integer) is
+procedure SaveGroupe(Nom,Contact,Coord,Site :in Unbounded_String; genre:string; ordre,jour:positive) is
 
 begin
 

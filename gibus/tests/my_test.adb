@@ -115,8 +115,9 @@ end Set_Up;
 
 --  Preparation performed before each routine:
 procedure Shut_Down( t : in out Test_Case ) is
+c: db_commons.criteria;
 begin
-      Null;
+      Ville_io.Delete( c );
 end Shut_Down;
 
 end my_Test;
