@@ -32,7 +32,7 @@
                         <child internal-child="image">
                           <widget class="GtkImage" id="image1">
                             <property name="visible">True</property>
-                            <property name="stock">gnome-stock-blank</property>
+                            <property name="stock">gnome-stock-trash</property>
                           </widget>
                         </child>
                       </widget>
@@ -72,7 +72,7 @@
                         <child internal-child="image">
                           <widget class="GtkImage" id="image2">
                             <property name="visible">True</property>
-                            <property name="stock">gnome-stock-blank</property>
+                            <property name="stock">gtk-add</property>
                           </widget>
                         </child>
                       </widget>
@@ -98,7 +98,7 @@
                         <child internal-child="image">
                           <widget class="GtkImage" id="image3">
                             <property name="visible">True</property>
-                            <property name="stock">gnome-stock-blank</property>
+                            <property name="stock">gtk-add</property>
                           </widget>
                         </child>
                       </widget>
@@ -112,7 +112,7 @@
                         <child internal-child="image">
                           <widget class="GtkImage" id="image4">
                             <property name="visible">True</property>
-                            <property name="stock">gnome-stock-blank</property>
+                            <property name="stock">gtk-find</property>
                           </widget>
                         </child>
                       </widget>
@@ -126,7 +126,7 @@
                         <child internal-child="image">
                           <widget class="GtkImage" id="image5">
                             <property name="visible">True</property>
-                            <property name="stock">gnome-stock-blank</property>
+                            <property name="stock">gtk-refresh</property>
                           </widget>
                         </child>
                       </widget>
@@ -140,7 +140,7 @@
                         <child internal-child="image">
                           <widget class="GtkImage" id="image9">
                             <property name="visible">True</property>
-                            <property name="stock">gnome-stock-blank</property>
+                            <property name="stock">gtk-find</property>
                           </widget>
                         </child>
                       </widget>
@@ -154,7 +154,7 @@
                         <child internal-child="image">
                           <widget class="GtkImage" id="image11">
                             <property name="visible">True</property>
-                            <property name="stock">gtk-missing-image</property>
+                            <property name="stock">gtk-add</property>
                           </widget>
                         </child>
                       </widget>
@@ -180,7 +180,7 @@
                         <child internal-child="image">
                           <widget class="GtkImage" id="image6">
                             <property name="visible">True</property>
-                            <property name="stock">gnome-stock-blank</property>
+                            <property name="stock">gtk-add</property>
                           </widget>
                         </child>
                       </widget>
@@ -194,7 +194,7 @@
                         <child internal-child="image">
                           <widget class="GtkImage" id="image7">
                             <property name="visible">True</property>
-                            <property name="stock">gnome-stock-blank</property>
+                            <property name="stock">gtk-find</property>
                           </widget>
                         </child>
                       </widget>
@@ -220,7 +220,7 @@
                         <child internal-child="image">
                           <widget class="GtkImage" id="image10">
                             <property name="visible">True</property>
-                            <property name="stock">gtk-missing-image</property>
+                            <property name="stock">gtk-add</property>
                           </widget>
                         </child>
                       </widget>
@@ -234,7 +234,7 @@
                         <child internal-child="image">
                           <widget class="GtkImage" id="image12">
                             <property name="visible">True</property>
-                            <property name="stock">gtk-missing-image</property>
+                            <property name="stock">gtk-find</property>
                           </widget>
                         </child>
                       </widget>
@@ -248,7 +248,7 @@
                         <child internal-child="image">
                           <widget class="GtkImage" id="image13">
                             <property name="visible">True</property>
-                            <property name="stock">gtk-missing-image</property>
+                            <property name="stock">gtk-add</property>
                           </widget>
                         </child>
                       </widget>

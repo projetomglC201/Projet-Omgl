@@ -37,6 +37,7 @@ begin
         Glade.XML.signal_connect (XML,"on_buttonTop_clicked",top'address,Null_Address);
         Glade.XML.signal_connect (XML,"on_buttonDown_clicked",downGroupe'address,Null_Address);
         Glade.XML.signal_connect (XML,"on_buttonBot_clicked",bot'address,Null_Address);
+        Glade.XML.signal_connect (XML,"on_buttonDelete_clicked",deleteGroupe'address,Null_Address);
         Glade.XML.signal_connect (XML,"on_treeviewGauche_cursor_changed",clearright'address,Null_Address);
         Glade.XML.signal_connect (XML,"on_treeviewDroite_cursor_changed",clearleft'address,Null_Address);
 	
@@ -77,11 +78,13 @@ end init;
 
 		creerColonne("Ordre",treeview_jour1, false);
                 creerColonne("nomGroupe", treeview_jour1, false);
+		creerColonne("genre",treeview_jour1,false);
                 creerModele(treeview_jour1,modele_jour1);
 
 
                 creerColonne("Ordre",treeview_jour2, false);
                 creerColonne("nomGroupe", treeview_jour2, false);
+		creerColonne("genre",treeview_jour2,false);
                 creerModele(treeview_jour2,modele_jour2);
 
         end initregion2;
@@ -94,6 +97,7 @@ end init;
                          append (modele_jour1, rang_jour1, Null_Iter);
                          Set (modele_jour1, rang_jour1, 1, p_conversion.to_string(groupe.Nom_Groupe));
 			 Set (modele_jour1, rang_jour1, 0, p_conversion.to_string(groupe.Ordre_Passage));
+			Set (modele_jour1,rang_jour1, 2, tGenre_enum'image(groupe.Genre));
                end alimente;
 
 	begin
@@ -109,6 +113,7 @@ end init;
                          append (modele_jour2, rang_jour2, Null_Iter);
                          Set (modele_jour2, rang_jour2, 1, p_conversion.to_string(groupe.Nom_Groupe));
                          Set (modele_jour2, rang_jour2, 0, p_conversion.to_string(groupe.Ordre_Passage));
+			Set (modele_jour2,rang_jour2, 2, tGenre_enum'image(groupe.Genre));
                end alimente;
 
         begin
@@ -336,6 +341,30 @@ begin
 		when p_appli_progfestival.EX_DEJA_EN_BAS =>
 			b_box := message_dialog("Ce groupe est déjà en dernière position",Error,Button_Ok,Button_Ok);
 end bot;
+--------------------------------------------------------------------
+procedure deleteGroupe is
+	b_box:message_dialog_buttons;
+        nomgroupe : Unbounded_String;
+begin
+	Get_Selected(Get_Selection(treeview_jour1),Gtk_Tree_Model(modele_jour1),rang_jour1);
+        if rang_jour1 = Null_Iter then
+                Get_Selected(Get_Selection(treeview_jour2),Gtk_Tree_Model(modele_jour2),rang_jour2);
+                if rang_jour2 = Null_Iter then
+                        b_box := Message_Dialog("Aucun groupe sélectionné",Error,Button_Ok,Button_Ok);
+                else
+                        p_conversion.to_ada_type(Get_String(modele_jour2,rang_jour2,1),nomgroupe);
+                        p_appli_progfestival.delete(nomgroupe,jour2);
+                        creerModele(treeview_jour1,modele_jour1);
+                        SelectionRegion2;
+                end if;
+        else
+                p_conversion.to_ada_type(Get_String(modele_jour1,rang_jour1,1),nomgroupe);
+                p_appli_progfestival.delete(nomgroupe,jour1);
+                SelectionRegion2;
+        end if;
+
+end deleteGroupe;
+
 --------------------------------------------------------------------
 procedure clearleft is
 begin

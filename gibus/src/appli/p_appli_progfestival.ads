@@ -32,4 +32,6 @@ package p_appli_progfestival is
 	procedure top(nomgroupe : in Unbounded_String; liste_groupe : in out Groupe_List.Vector);
 
 	procedure bot(nomgroupe : in Unbounded_String; liste_groupe : in out Groupe_List.Vector);
+	
+	procedure delete(nomgroupe : in Unbounded_String; liste_groupe : in out Groupe_List.Vector);
 end p_appli_progfestival;

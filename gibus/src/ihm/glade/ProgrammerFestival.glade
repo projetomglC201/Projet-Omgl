@@ -326,9 +326,18 @@ du festival &#xE0; programmer :</property>
                   </packing>
                 </child>
                 <child>
-                  <widget class="GtkImage" id="image5">
+                  <widget class="GtkButton" id="buttonDelete">
                     <property name="visible">True</property>
-                    <property name="stock">gtk-close</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="tooltip" translatable="yes">Supprimer le groupe s&#xE9;lectionn&#xE9;</property>
+                    <signal name="clicked" handler="on_buttonDelete_clicked"/>
+                    <child>
+                      <widget class="GtkImage" id="image5">
+                        <property name="visible">True</property>
+                        <property name="stock">gtk-stop</property>
+                      </widget>
+                    </child>
                   </widget>
                   <packing>
                     <property name="position">2</property>
