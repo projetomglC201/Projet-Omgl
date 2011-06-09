@@ -29,4 +29,6 @@ package P_window_consultgroupe is
   procedure fermerFenetre;
   procedure remplirinfo;
   procedure inittreeview;
+  procedure remplirtreeview;
+  procedure deletegroupe;
 end P_window_consultgroupe;

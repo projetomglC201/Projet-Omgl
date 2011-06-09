@@ -353,14 +353,26 @@ begin
                         b_box := Message_Dialog("Aucun groupe sélectionné",Error,Button_Ok,Button_Ok);
                 else
                         p_conversion.to_ada_type(Get_String(modele_jour2,rang_jour2,1),nomgroupe);
-                        p_appli_progfestival.delete(nomgroupe,jour2);
-                        creerModele(treeview_jour1,modele_jour1);
-                        SelectionRegion2;
+			b_box := message_dialog("Êtes-vous sûr de vouloir supprimer le groupe " & to_string(nomgroupe),Confirmation, Button_Yes or Button_No, Button_No);
+			case b_box is
+				when 1=>
+		                        p_appli_progfestival.delete(nomgroupe,jour2);
+	        	                creerModele(treeview_jour1,modele_jour1);
+                	        	SelectionRegion2;
+				when others=>
+					null;
+			end case;
                 end if;
         else
                 p_conversion.to_ada_type(Get_String(modele_jour1,rang_jour1,1),nomgroupe);
-                p_appli_progfestival.delete(nomgroupe,jour1);
-                SelectionRegion2;
+		b_box := message_dialog("Êtes-vous sûr de vouloir supprimer le groupe " & to_string(nomgroupe) & "?",Confirmation, Button_Yes or Button_No, Button_No);
+		case b_box is
+			when 1=>
+		                p_appli_progfestival.delete(nomgroupe,jour1);
+                		SelectionRegion2;
+			when others =>
+				null;
+		end case;
         end if;
 
 end deleteGroupe;
