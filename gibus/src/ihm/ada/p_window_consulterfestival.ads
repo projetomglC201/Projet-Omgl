@@ -30,8 +30,12 @@ package P_window_consulterfestival is
 
   EX_AUCUNE_VILLE_SELECTIONNEE:exception;
   procedure init;
+	--Affiche la fenetre, initialise les signaux et la treeview
   procedure fermerFenetre;
+	--Ferme la fenetre
   procedure remplirentry;
+	--Remplis les champs de texte avec les infos du festival
   procedure inittreeview;
+	--Initialise la treeview
 
 end P_window_consulterfestival;

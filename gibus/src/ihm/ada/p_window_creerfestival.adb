@@ -38,15 +38,15 @@ end init;
 	resulttreeviewville:Unbounded_String;
 	resultcalendardatedebut:time;
 	resultEntryLieu:Unbounded_String;
-	resultentryPrixEntree:integer;
-	resultentryNbgroupes1:integer;
-	resultentryNbgroupes2:integer;
+	resultentryPrixEntree:positive;
+	resultentryNbgroupes1:positive;
+	resultentryNbgroupes2:positive;
 	festival:tfestival;
 	jours : Jour_Festival_List.Vector;
 	jour1,jour2 : tJour_Festival;
 	an,mois,jour:Guint;
-	resultentryHeure1:integer;
-	resultentryHeure2:integer;
+	resultentryHeure1:positive;
+	resultentryHeure2:positive;
 	IDFESTIVAL:integer:=festival_io.next_free_id_festival;
 
 	begin
@@ -130,7 +130,7 @@ end init;
 		when EXEntryPrixEntreeEmpty => b_box:=Message_Dialog ("Entrez un prix d'entrée",Error,Button_Ok,Button_Ok);
 		when EXEntryNbgroupes1Empty => b_box:=Message_Dialog ("Entrez un nombre de concert limite pour le jour 1",Error,Button_Ok,Button_Ok);
 		when EXEntryHeure1Empty => b_box:=Message_Dialog ("Entrez une heure de debut pour le jour 1",Error,Button_Ok,Button_Ok);
-		
+		when CONSTRAINT_ERROR => b_box := Message_Dialog ("Vous avez entré une valeur négative",Error,Button_Ok,Button_Ok);
 		
 	end validerfestival;
 --------------------------------------------------------------------------

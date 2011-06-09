@@ -33,9 +33,13 @@ with base_types; use base_types;
 package p_window_consultfinalistes is
 
 procedure init;
+	--initialise la fenetre, les signaux, les treeviews
 procedure fermerFenetre;
+	--ferme la fenetre
 procedure inittreeviewfinalistes;
+	--initialise la treeview des finalistes
 procedure remplirtreeviewfinalistes;
+	--met à jour les valeurs de la treeview des finalistes.
 
 
 end p_window_consultfinalistes;

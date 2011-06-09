@@ -217,10 +217,11 @@ procedure save(groupesJour1, groupesJour2 : in Groupe_List.Vector) is
 	jour1,jour2 : Basec201_Data.tJour_Festival;
 	crit1,crit2 : db_commons.criteria;
 begin
-	
-	jour1 := jour_festival_io.retrieve_by_pk(groupesJour1.first_element.jour_festival);
-	groupe_io.add_jour_festival(crit1,jour1.Id_Jour_Festival);
-	groupe_io.delete(crit1);
+	if not groupesJour1.is_empty then
+		jour1 := jour_festival_io.retrieve_by_pk(groupesJour1.first_element.jour_festival);
+		groupe_io.add_jour_festival(crit1,jour1.Id_Jour_Festival);
+		groupe_io.delete(crit1);
+	end if;
 	if not groupesJour2.is_empty then
 		jour2 := jour_festival_io.retrieve_by_pk(groupesJour2.first_element.jour_festival);
 		groupe_io.add_jour_festival(crit2,jour2.Id_Jour_Festival);

@@ -44,13 +44,13 @@ package P_window_creerfestival is
 	EXEntryNbgroupes1Empty:exception;
 	EXEntryHeure1Empty:exception;
   procedure init;
-
+	--Initialise la fenetre, les signaux, la treeview
   procedure fermerFenetre;
-
+	--Ferme la fenetre
   procedure validerfestival;
-
+	--Récupère les infos entrées et enregistre le festival
   procedure inittreeview;
-
+	--Initialise et remplit la treeview de villes
   procedure activerJour2;
   --Cette procedure permet d'empecher l'écriture dans le champ Heure du jour 2 si il n'y a pas de jour 2.
 

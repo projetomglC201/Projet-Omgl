@@ -101,6 +101,7 @@ end init;
                end alimente;
 
 	begin
+		CreerModele(treeview_jour1,modele_jour1);
 		Clear(modele_jour1);
 		groupe_List.iterate(groupes,alimente'Access);
 	end fillTreeviewJour1;
@@ -117,6 +118,7 @@ end init;
                end alimente;
 
         begin
+		creerModele(treeview_jour2,modele_jour2);
                 Clear(modele_jour2);
                 groupe_List.iterate(groupes,alimente'Access);
         end fillTreeviewJour2;

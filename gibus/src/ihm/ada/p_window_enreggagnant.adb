@@ -44,22 +44,31 @@ end init;
 	resulttreeviewgroupe:unbounded_string;
 	begin
 	
+		Get_Selected(Get_Selection(treeview_ville),Gtk_Tree_model(modele_ville), 
+		rang_ville);
+		if rang_ville = Null_Iter then
+			
+			raise EX_AUCUNE_VILLE_SELECTIONNEE;
+		end if;
 		Get_Selected(Get_Selection(treeview_groupe),Gtk_Tree_model(modele_groupe), 
 		rang_groupe);
-		if rang_ville = Null_Iter then
+		if rang_groupe = Null_Iter then
 			
 			raise EX_AUCUN_GROUPE_SELECTIONNEE;
 		else
-			to_ada_type(Get_String (modele_groupe, rang_groupe, 0), resulttreeviewgroupe);
+				to_ada_type(Get_String (modele_groupe, rang_groupe, 0), resulttreeviewgroupe);
 		end if;
-	
-	SaveGagnantFestival(festival,resulttreeviewgroupe);
-	clear(modele_groupe);
-	remplirtreeviewville;
-		
+	b_box := Message_Dialog("Êtes-vous sûr de vouloir enregistrer le groupe "&p_conversion.to_string(resulttreeviewgroupe)&"comme gagnant du festival de "&p_conversion.to_string(festival.ville_festival)&"?",Confirmation,Button_Yes or button_no, button_no);
+	if b_box = 1 then
+		SaveGagnantFestival(festival,resulttreeviewgroupe);
+		clear(modele_groupe);
+		remplirtreeviewville;
+	end if;		
 	exception
 		when EX_AUCUN_GROUPE_SELECTIONNEE
-			=> b_box:=Message_Dialog ("Aucune groupe selectionnée",Error,Button_Ok,Button_Ok);
+			=> b_box:=Message_Dialog ("Aucun groupe selectionné",Error,Button_Ok,Button_Ok);
+		when EX_AUCUNE_VILLE_SELECTIONNEE
+			=> b_box := Message_Dialog("Aucune ville sélectionnée",Error,Button_Ok,Button_Ok);
 	
 	end enregistrergagnant;
 -------------------------------------------------------------------------------
@@ -78,7 +87,7 @@ end init;
 			  Set (modele_groupe, rang_groupe, 0, p_conversion.to_string(groupe.Nom_Groupe));
 		end alimente;
 	begin
-
+		CreerModele(treeview_groupe,modele_groupe);
 		Clear(modele_groupe);
 
 		Get_Selected(Get_Selection(treeview_ville),Gtk_Tree_model(modele_ville), 

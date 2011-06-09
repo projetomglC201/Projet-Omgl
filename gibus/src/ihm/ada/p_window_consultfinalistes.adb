@@ -47,7 +47,6 @@ end init;
 
 	begin
 		
-		ecrire("AAAAAA");
 		creerColonne("Groupe", treeview_finalistes, true);
 		
 		creerColonne("Ville",treeview_finalistes, true);
@@ -71,6 +70,7 @@ end init;
 			  Set (modele_finalistes, rang_finalistes, 2, tgenre_Enum'image(finaliste.Genre));
 		end alimente;
 	begin
+		CreerModele(treeview_finalistes,modele_finalistes);
 		Clear(modele_finalistes);
 
 		liste_finaliste :=p_appli_consultfinalistes.GetVilleGroupefinalisteGenre;

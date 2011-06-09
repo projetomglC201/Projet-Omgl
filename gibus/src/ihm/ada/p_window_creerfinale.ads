@@ -32,11 +32,11 @@ package p_window_creerfinale is
 EXEntryPrixEmpty:exception;
 
 procedure Init;
+	--initialise la fenetre, les signaux
 procedure FermerFenetre;
+	--ferme la fenetre
 procedure creerfestival;
-procedure SetSensitiveThenFinaleCreee;
-
-
+	--Récupère les infos entrées et enregistre la finale
 
 
 end p_window_creerfinale;

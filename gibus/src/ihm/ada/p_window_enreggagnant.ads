@@ -35,6 +35,7 @@ EX_AUCUNE_VILLE_SELECTIONNEE:exception;
 
 
 procedure init;
+	--initialise
 procedure fermerFenetre;
 procedure enregistrergagnant;
 procedure remplirtreeviewgroupe;

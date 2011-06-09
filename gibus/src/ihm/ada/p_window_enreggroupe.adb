@@ -112,17 +112,12 @@ end init;
 		If  integer(Jour_Festival_List.Length(GetJourFestivalAssocie(festival.first_element)))=2 then
 			remplirtreeviewgroupejour2(festival.first_element);
 		end if;
-		Set_Text(Gtk_Entry(Get_Widget(XML,"entryDateJour1")),"");
-		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPrevuJour1")),"");
-		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPlaceJour1")),"");
-		Set_Text(Gtk_Entry(Get_Widget(XML,"entryDateJour2")),"");
-		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPrevuJour2")),"");
-		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPlaceJour2")),"");
+		
 		Set_Text(Gtk_Entry(Get_Widget(XML,"entryGroupe")),"");
 		Set_Text(Gtk_Entry(Get_Widget(XML,"entryContact")),"");
 		Set_Text(Gtk_Entry(Get_Widget(XML,"entryCoord")),"");
 		Set_Text(Gtk_Entry(Get_Widget(XML,"entrySite")),"");	
-		
+		initselect;
 	exception
 		when EXGroupeExistant
 			=> b_box:=message_dialog("Groupe déjà existant",Error,Button_Ok,Button_Ok);
