@@ -37,7 +37,7 @@
                   <widget class="GtkTreeView" id="treeview1">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <signal name="row_activated" handler="on_treeview1_row_activated"/>
+                    <signal name="cursor_changed" handler="on_treeview1_cursor_changed"/>
                   </widget>
                 </child>
               </widget>
@@ -175,6 +175,7 @@
                 <property name="can_focus">True</property>
                 <property name="editable">False</property>
                 <property name="invisible_char">&#x2022;</property>
+                <property name="shadow_type">none</property>
               </widget>
               <packing>
                 <property name="padding">5</property>

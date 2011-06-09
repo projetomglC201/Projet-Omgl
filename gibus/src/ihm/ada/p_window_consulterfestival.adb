@@ -20,7 +20,7 @@ begin
 	windowconsulterfestival := Gtk_Window(Get_Widget(XML,"windowconsulterfestival"));
 	treeview_ville:=Gtk_Tree_View(Get_Widget(XML,"treeview1"));
 	Glade.XML.signal_connect (XML,"on_buttonFermer_clicked",fermerFenetre'address,Null_Address);
-	Glade.XML.signal_connect (XML,"on_treeview1_row_activated",remplirentry'address,Null_Address);
+	Glade.XML.signal_connect (XML,"on_treeview1_cursor_changed",remplirentry'address,Null_Address);
 	
 	inittreeview;
 end init;

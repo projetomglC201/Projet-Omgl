@@ -48,7 +48,8 @@ begin
 
 	SaveFinale(resultcalendardate,resultEntryPrix);
 
-
+	b_box := message_dialog("La grande finale a bien été créée",Information,Button_ok,Button_ok);
+	fermerFenetre;
 exception
 	when EXEntryPrixEmpty
 		=> b_box:=message_dialog("Entrez un prix",Error,Button_Ok,Button_Ok);

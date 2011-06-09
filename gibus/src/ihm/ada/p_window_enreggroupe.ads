@@ -28,7 +28,6 @@ with base_types; use base_types;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with ada.calendar; use ada.calendar;
 
-
 package P_window_enreggroupe is
   EX_AUCUNE_VILLE_SELECTIONNEE:exception;
   EXEntryGroupeEmpty:exception;

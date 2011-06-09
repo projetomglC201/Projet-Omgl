@@ -44,7 +44,13 @@ rang_ville: Gtk_Tree_Iter := Null_Iter; -- ligne dans le modèle
 	begin
 		
 		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryNomVille"))),resultEntryNomVille);
+		--test du nomville
 		
+			if length(resultEntryNomVille) <= 0 then
+				raise ex_pasnomville;
+			end if;
+		--
+	
 		convertirnom(resultEntryNomVille);
 
 		to_ada_type(Get_Text(Gtk_Entry(Get_Widget(XML,"entryMail"))),resultEntryMail);
@@ -65,13 +71,7 @@ rang_ville: Gtk_Tree_Iter := Null_Iter; -- ligne dans le modèle
 				raise EX_MAIL_INCORRECT;
 			end if;
 		
-		--test du nomville
-		
-			if length(resultEntryNomVille) <= 0 then
-				raise ex_pasnomville;
-			end if;
-		--
-		
+			
 		CreateVille(resultEntryNomVille,resultEntryMail);
 		
 				

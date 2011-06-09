@@ -24,7 +24,7 @@ rang_finalistes: Gtk_Tree_Iter := Null_Iter; -- ligne dans le modèle
 procedure init is
 
 begin
-	Glade.XML.Gtk_New(XML, "./src/ihm/glade/ConsultFinalistes.glade", "windowConsultFinalistes");
+	Glade.XML.Gtk_New(XML, "./src/ihm/glade/ConsultFinaliste.glade", "windowConsultFinalistes");
 	window := Gtk_Window(Get_Widget(XML,"windowConsultFinalistes"));
 	treeview_finalistes:=Gtk_Tree_View(Get_Widget(XML,"treeviewfinalistes"));
 
