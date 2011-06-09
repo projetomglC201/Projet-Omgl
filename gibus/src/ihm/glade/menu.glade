@@ -86,6 +86,7 @@
                 <property name="visible">True</property>
                 <property name="label" translatable="yes">Festivals</property>
                 <property name="use_underline">True</property>
+                <signal name="activate" handler="on_menuitemFestivals_activate"/>
                 <child>
                   <widget class="GtkMenu" id="menuFestivals">
                     <property name="visible">True</property>
@@ -168,6 +169,7 @@
                 <property name="visible">True</property>
                 <property name="label" translatable="yes">Groupes</property>
                 <property name="use_underline">True</property>
+                <signal name="activate" handler="on_menuitemGroupes_activate"/>
                 <child>
                   <widget class="GtkMenu" id="menuGroupes">
                     <property name="visible">True</property>
@@ -208,6 +210,7 @@
                 <property name="visible">True</property>
                 <property name="label" translatable="yes">Finale</property>
                 <property name="use_underline">True</property>
+                <signal name="activate" handler="on_menuitemFinale_activate"/>
                 <child>
                   <widget class="GtkMenu" id="menuFinale">
                     <property name="visible">True</property>
@@ -226,7 +229,7 @@
                       </widget>
                     </child>
                     <child>
-                      <widget class="GtkImageMenuItem" id="menuitemConsultFInalistes">
+                      <widget class="GtkImageMenuItem" id="menuitemConsultFinalistes">
                         <property name="label" translatable="yes">Consulter les finalistes</property>
                         <property name="visible">True</property>
                         <property name="use_stock">False</property>

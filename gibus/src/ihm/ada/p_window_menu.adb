@@ -4,9 +4,10 @@ package body p_window_menu is
 windowmenu : Gtk_window;
 b_box:message_dialog_buttons;
 
+XML : Glade_XML;
 ---------------------------------------------------------------------------------
 procedure init is
-XML : Glade_XML;
+
 begin
 	Glade.XML.Gtk_New(XML, "./src/ihm/glade/menu.glade", "windowmenu");
 	
@@ -24,22 +25,45 @@ begin
 	Glade.XML.signal_connect (XML,"on_imagemenuitemCreerFinale_activate",Opencreerfinale'address,Null_Address);
 	Glade.XML.signal_connect (XML,"on_menuitemEnregGagnant_activate",OpenEnregGagnant'address,Null_Address);
 	Glade.XML.signal_connect (XML,"on_menuitemConsultFinalistes_activate",OpenConsultFinalistes'address,Null_Address);	
+	Glade.XML.signal_connect (XML,"on_imagemenuitemEnregGagnantFinale_activate",OpenEnregGagnantFinale'address,Null_Address);
 	Glade.XML.signal_connect (XML,"on_windowmenu_destroy",fermerFenetre'address,Null_Address);
-	Glade.XML.signal_connect (XML,"on_imagemenuitemEnregGagnantFinale_activate", OpenEnregGagnantFinale'Address,Null_Address);
+	Glade.XML.signal_connect (XML,"on_menuitemFestivals_activate", CheckFestival'Address,Null_Address);
+	Glade.XML.signal_connect (XML,"on_menuitemGroupes_activate", CheckGroupe'Address,Null_Address);
+	Glade.XML.signal_connect (XML,"on_menuitemFinale_activate", CheckFinale'Address,Null_Address);
+	
 
-	
-	
+	if not p_appli_menu.AuMoins1Ville then
+		Set_Sensitive(Gtk_Image_Menu_Item(Get_Widget(XML,"menuitemCreerFestival")),false);
+	end if;
+
+	if not p_appli_menu.AuMoins1Festival then
+		Set_Sensitive(Gtk_Image_Menu_Item(Get_Widget(XML,"menuitemConsultFestival")),false);
+		Set_Sensitive(Gtk_Image_Menu_Item(Get_Widget(XML,"menuitemProgFestival")),false);
+		Set_Sensitive(Gtk_Image_Menu_Item(Get_Widget(XML,"menuitemConsultProgramme")),false);
+		Set_Sensitive(Gtk_Image_Menu_Item(Get_Widget(XML,"menuitemEnregGagnant")),false);
+		Set_Sensitive(Gtk_Image_Menu_Item(Get_Widget(XML,"menuitemConsultFinalistes")),false);
+		Set_Sensitive(Gtk_Image_Menu_Item(Get_Widget(XML,"imagemenuEnreggroupe")),false);
+	end if;
+
+	if not p_appli_menu.AuMoins1Groupe then
+		Set_Sensitive(Gtk_Image_Menu_Item(Get_Widget(XML,"menuitemEnregGagnant")),false);
+		Set_Sensitive(Gtk_Image_Menu_Item(Get_Widget(XML,"imagemenuitemConsultGroupe")),false);
+	end if;		
+		
+	if not p_appli_menu.Is1Finale then
+		Set_Sensitive(Gtk_Image_Menu_Item(Get_Widget(XML,"imagemenuitemEnregGagnantFinale")),false);
+	else
+		Set_Sensitive(Gtk_Image_Menu_Item(Get_Widget(XML,"imagemenuitemCreerFinale")),false);
+
+	end if;
 end init;
---------------------------------------------------------------------------
+--------------------------------------------------------------
 	procedure Reinit is
-	b_box2:message_dialog_buttons;
 	begin
 	b_box:=message_dialog("Êtes-vous sûr de vouloir reinit la base de donnée ?",Confirmation,Button_Yes or Button_No,Button_Yes);
 	case b_box is
 		when 1 => p_appli_menu.reinitDB;
-			b_box2:=message_dialog("Base reinit",Information,Button_Ok,Button_Ok);
-				
-		when 2 => b_box2:=message_dialog("Base non reinit",Information,Button_Ok,Button_Ok);
+			b_box:=message_dialog("Base reinitialisée",Information,Button_Ok,Button_Ok);
 		when others => null;
 	end case;
 	end Reinit;
@@ -105,5 +129,61 @@ end init;
 		p_window_EnregGagnantFinale.init;
 	end OpenEnregGagnantFinale;
 ---------------------------------------------------------------------
+	procedure CheckFestival is
+	begin
+		if not p_appli_menu.AuMoins1Ville then
+			Set_Sensitive(Gtk_Image_Menu_Item(Get_Widget(XML,"menuitemCreerFestival")),false);
+		else
+			Set_Sensitive(Gtk_Image_Menu_Item(Get_Widget(XML,"menuitemCreerFestival")),true);
+		end if;
 
+		if not p_appli_menu.AuMoins1Festival then
+			Set_Sensitive(Gtk_Image_Menu_Item(Get_Widget(XML,"menuitemConsultFestival")),false);
+			Set_Sensitive(Gtk_Image_Menu_Item(Get_Widget(XML,"menuitemProgFestival")),false);
+			Set_Sensitive(Gtk_Image_Menu_Item(Get_Widget(XML,"menuitemConsultProgramme")),false);
+			Set_Sensitive(Gtk_Image_Menu_Item(Get_Widget(XML,"menuitemEnregGagnant")),false);
+		else
+			Set_Sensitive(Gtk_Image_Menu_Item(Get_Widget(XML,"menuitemConsultFestival")),true);
+			Set_Sensitive(Gtk_Image_Menu_Item(Get_Widget(XML,"menuitemProgFestival")),true);
+			Set_Sensitive(Gtk_Image_Menu_Item(Get_Widget(XML,"menuitemConsultProgramme")),true);
+			Set_Sensitive(Gtk_Image_Menu_Item(Get_Widget(XML,"menuitemEnregGagnant")),true);
+		end if;
+	end;
+---------------------------------------------------------------------
+	procedure CheckGroupe is
+	begin
+		if not p_appli_menu.AuMoins1Groupe then
+			Set_Sensitive(Gtk_Image_Menu_Item(Get_Widget(XML,"imagemenuitemConsultGroupe")),false);
+		else
+			Set_Sensitive(Gtk_Image_Menu_Item(Get_Widget(XML,"imagemenuitemConsultGroupe")),true);
+		end if;		
+		
+		if not p_appli_menu.AuMoins1Festival then
+			Set_Sensitive(Gtk_Image_Menu_Item(Get_Widget(XML,"imagemenuEnreggroupe")),false);
+		else
+			Set_Sensitive(Gtk_Image_Menu_Item(Get_Widget(XML,"imagemenuEnreggroupe")),true);
+		end if;
+
+	end;
+---------------------------------------------------------------------
+	procedure CheckFinale is
+	begin
+		if not p_appli_menu.AuMoins1Festival then
+			Set_Sensitive(Gtk_Image_Menu_Item(Get_Widget(XML,"menuitemConsultFinalistes")),false);
+		else
+			Set_Sensitive(Gtk_Image_Menu_Item(Get_Widget(XML,"menuitemConsultFinalistes")),true);
+		end if;
+		if not p_appli_menu.Is1Finale then
+			Set_Sensitive(Gtk_Image_Menu_Item(Get_Widget(XML,"imagemenuitemEnregGagnantFinale")),false);
+			Set_Sensitive(Gtk_Image_Menu_Item(Get_Widget(XML,"imagemenuitemCreerFinale")),true);
+		else
+			Set_Sensitive(Gtk_Image_Menu_Item(Get_Widget(XML,"imagemenuitemCreerFinale")),false);
+			if not p_appli_menu.IsGagnantFinale then
+				Set_Sensitive(Gtk_Image_Menu_Item(Get_Widget(XML,"imagemenuitemEnregGagnantFinale")),true);
+			else
+				Set_Sensitive(Gtk_Image_Menu_Item(Get_Widget(XML,"imagemenuitemEnregGagnantFinale")),false);
+			end if;
+		end if;
+	end;
+---------------------------------------------------------------------
 end p_window_menu;

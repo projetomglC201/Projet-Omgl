@@ -39,20 +39,20 @@ function GetGroupes (festival :in tfestival) return Groupe_list.vector is
 
 Jour1festival: tJour_Festival;
 Jour2festival: tJour_Festival;
-criteria:db_commons.criteria;
+crit1,crit2:db_commons.criteria;
 vector:Groupe_list.vector;
 begin
 
-	Jour_Festival_IO.Add_Num_Ordre(criteria,1);
-	Jour_Festival_IO.Add_Festival(criteria,festival.ID_festival);
-	Jour1festival:=jour_festival_io.retrieve(criteria).first_element;
+	Jour_Festival_IO.Add_Num_Ordre(crit1,1);
+	Jour_Festival_IO.Add_Festival(crit1,festival.ID_festival);
+	Jour1festival:=jour_festival_io.retrieve(crit1).first_element;
 
 	
-	Jour_Festival_IO.Add_Num_Ordre(criteria,2);
+	Jour_Festival_IO.Add_Num_Ordre(crit2,2);
 
-	Jour_Festival_IO.Add_Festival(criteria,festival.ID_festival);
-	if not (integer(jour_festival_io.retrieve(criteria).length)=0) then
-	Jour2festival:=jour_festival_io.retrieve(criteria).first_element;
+	Jour_Festival_IO.Add_Festival(crit2,festival.ID_festival);
+	if not (integer(jour_festival_io.retrieve(crit2).length)=0) then
+	Jour2festival:=jour_festival_io.retrieve(crit2).first_element;
 	end if;
 	vector:=Jour_festival_io.Retrieve_Associated_Groupes(Jour1Festival);
 	Groupe_List.Append(vector,Jour_festival_io.Retrieve_Associated_Groupes(Jour2Festival));

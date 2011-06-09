@@ -26,9 +26,15 @@ with base_types; use base_types;
 
 package P_window_consultgroupe is
   procedure init;
+	--Initialise la fenetre, la treeview, les signaux
   procedure fermerFenetre;
+	--Ferme la fenetre
   procedure remplirinfo;
+	--Remplis les champs avec les infos du groupe
   procedure inittreeview;
+	--Initialise la treeview des groupes
   procedure remplirtreeview;
+	--Met à jour les informations de la treeview
   procedure deletegroupe;
+	--Supprime le groupe selectionné
 end P_window_consultgroupe;

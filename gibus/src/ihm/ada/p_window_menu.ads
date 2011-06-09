@@ -9,6 +9,7 @@ with Gtk.Window; use Gtk.Window;
 with Gtk.Button; use Gtk.Button;
 with Gtk.Gentry; use Gtk.Gentry;
 with Gtk.Tree_View; use Gtk.Tree_View;
+with Gtk.Image_Menu_Item; use Gtk.Image_Menu_Item;
 with Gtk.Label; use Gtk.Label;
 with Gtk.Scrolled_Window; use Gtk.Scrolled_Window; 
 
@@ -52,6 +53,9 @@ procedure Opencreerfinale;
 procedure OpenEnregGagnant;
 procedure OpenConsultFinalistes;
 procedure OpenEnregGagnantFinale;
+procedure CheckFestival;
+procedure CheckGroupe;
+procedure CheckFinale;
 
 end  p_window_menu;
 

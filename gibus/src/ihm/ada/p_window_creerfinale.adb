@@ -16,7 +16,6 @@ begin
 	
 	Glade.XML.signal_connect (XML,"on_buttonFermer_clicked",FermerFenetre'address,Null_Address);
 	Glade.XML.signal_connect (XML,"on_buttonCreer_clicked",creerfestival'address,Null_Address);
-	SetSensitiveThenFinaleCreee;
 
 	
 end init;
@@ -30,13 +29,13 @@ end FermerFenetre;
 procedure creerfestival is
 an,mois,jour:Guint;
 resultcalendardate:time;
-resultEntryPrix:integer;
+resultEntryPrix:positive;
 begin
 
 	
 	Get_Date(Gtk_calendar(Get_Widget(XML,"calendarDate")),an,mois,jour);
 		
-	resultcalendardate:=Time_Of(integer(an),integer(mois),integer(jour));	
+	resultcalendardate:=Time_Of(integer(an),integer(mois),integer(jour));
 
 
 	if not (Get_Text(Gtk_Entry(Get_Widget(XML,"entryPrix")))'length=0) then
@@ -53,21 +52,9 @@ begin
 exception
 	when EXEntryPrixEmpty
 		=> b_box:=message_dialog("Entrez un prix",Error,Button_Ok,Button_Ok);
-
+	when CONSTRAINT_ERROR =>
+		b_box := Message_Dialog("Le prix doit être positif",Error,Button_Ok,Button_Ok);
 end creerfestival;
 ----------------------------------------------------------------------------------
-procedure SetSensitiveThenFinaleCreee is
-
-begin
-
-	if FinaleCreee then
-		Set_Sensitive(Gtk_Button(Get_Widget(XML,"buttonCreer")),false);
-		Set_Sensitive(Gtk_Entry(Get_Widget(XML,"entryPrix")),false);
-		Set_Sensitive(calendar,false);
-		b_box:=message_dialog("Grande Finale déjà créee",Error,Button_Ok,Button_Ok);
-	end if;
-
-end SetSensitiveThenFinaleCreee;
-------------------------------------------------------------------------------
 
 end p_window_creerfinale;
