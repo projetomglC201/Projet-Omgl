@@ -198,6 +198,20 @@ begin
 	end if;
 end bot;
 
+procedure delete(nomgroupe : in Unbounded_String; liste_groupe : in out Groupe_List.Vector) is
+        pos : integer;
+        groupe : Basec201_data.tGroupe;
+begin
+	for i in  liste_groupe.first_index..liste_groupe.last_index loop
+                if liste_groupe.element(i).nom_groupe=nomgroupe then
+                        pos := i;
+                        exit;
+                end if;
+        end loop;
+                groupe := liste_groupe.element(pos);
+                liste_groupe.delete(pos);
+                MaJOrdrePassage(liste_groupe);
+end delete;
 
 procedure save(groupesJour1, groupesJour2 : in Groupe_List.Vector) is
 	jour1,jour2 : Basec201_Data.tJour_Festival;

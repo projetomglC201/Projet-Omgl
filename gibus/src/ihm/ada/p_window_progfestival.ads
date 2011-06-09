@@ -23,6 +23,7 @@ with p_appli_progfestival;
 with basec201_data; use basec201_data;
 with p_conversion;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with base_types; use base_types;
 
 package P_window_progfestival is
   procedure init;
@@ -41,6 +42,7 @@ package P_window_progfestival is
   procedure top;
   procedure downGroupe;
   procedure bot;
+  procedure deleteGroupe;
   procedure clearright;
   procedure clearleft;
 end P_window_progfestival;

@@ -1,4 +1,4 @@
-
+with ada.text_io;
 
 
 package body P_window_enreggroupe is
@@ -64,6 +64,7 @@ end init;
 	resultentryContact:Unbounded_String;
 	resultentryCoord:Unbounded_String;
 	resultentrySite:Unbounded_String;
+	EX_PLUS_PlACE : exception;
 	begin
 		if not (Get_Text(Gtk_Entry(Get_Widget(XML,"entryGroupe")))'length=0) then
 		
@@ -77,11 +78,17 @@ end init;
 		to_ada_type(Get_Label(Gtk_Button(GetActiveButtonGenre)),resultGenre);
 		
 		if GetActiveButtonJour=radiobuttonJour1 then
-		resultjour:=jour1.Id_Jour_Festival;
-		resultOrdre:=1+Nbgroupeinscrit(festival.first_element,1);
+			resultjour:=jour1.Id_Jour_Festival;
+			resultOrdre:=1+Nbgroupeinscrit(festival.first_element,1);
+			if jour1.Nbre_Concert_Max-Nbgroupeinscrit(festival.first_element,1) = 0 then
+				raise EX_PLUS_PLACE;
+			end if;
 		else
-		resultjour:=jour2.Id_Jour_Festival;
-		resultOrdre:=1+Nbgroupeinscrit(festival.first_element,2);
+			resultjour:=jour2.Id_Jour_Festival;
+			resultOrdre:=1+Nbgroupeinscrit(festival.first_element,2);
+			if jour2.Nbre_Concert_Max-Nbgroupeinscrit(festival.first_element,2) = 0 then
+				raise EX_PLUS_PLACE;
+			end if;
 		end if;
 		
 		if not (Get_Text(Gtk_Entry(Get_Widget(XML,"entryContact")))'length=0) then	
@@ -102,18 +109,19 @@ end init;
 	
 		b_box:=message_dialog("Groupe enregistré !",Information,Button_Ok,Button_Ok);
 		remplirtreeviewgroupejour1(festival.first_element);
-		remplirtreeviewgroupejour2(festival.first_element);
-		
---		Set_Text(Gtk_Entry(Get_Widget(XML,"entryDateJour1")),"");
---		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPrevuJour1")),"");
---		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPlaceJour1")),"");s
---		Set_Text(Gtk_Entry(Get_Widget(XML,"entryDateJour2")),"");
---		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPrevuJour2")),"");
---		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPlaceJour2")),"");
---		Set_Text(Gtk_Entry(Get_Widget(XML,"entryGroupe")),"");
---		Set_Text(Gtk_Entry(Get_Widget(XML,"entryContact")),"");
---		Set_Text(Gtk_Entry(Get_Widget(XML,"entryCoord")),"");
---		Set_Text(Gtk_Entry(Get_Widget(XML,"entrySite")),"");	
+		If  integer(Jour_Festival_List.Length(GetJourFestivalAssocie(festival.first_element)))=2 then
+			remplirtreeviewgroupejour2(festival.first_element);
+		end if;
+		Set_Text(Gtk_Entry(Get_Widget(XML,"entryDateJour1")),"");
+		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPrevuJour1")),"");
+		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPlaceJour1")),"");
+		Set_Text(Gtk_Entry(Get_Widget(XML,"entryDateJour2")),"");
+		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPrevuJour2")),"");
+		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPlaceJour2")),"");
+		Set_Text(Gtk_Entry(Get_Widget(XML,"entryGroupe")),"");
+		Set_Text(Gtk_Entry(Get_Widget(XML,"entryContact")),"");
+		Set_Text(Gtk_Entry(Get_Widget(XML,"entryCoord")),"");
+		Set_Text(Gtk_Entry(Get_Widget(XML,"entrySite")),"");	
 		
 	exception
 		when EXGroupeExistant
@@ -124,6 +132,8 @@ end init;
 			=> b_box:=message_dialog("Entrez le nom du contact",Error,Button_Ok,Button_Ok);
 		when EXEntryCoordEmpty
 			=> b_box:=message_dialog("Entrez les coordonnées du contact",Error,Button_Ok,Button_Ok);
+		when EX_PLUS_PLACE =>
+			b_box := message_dialog("Il n'y a plus de place dans le jour sélectionné",Error,Button_ok,Button_ok);
 		
 	end enregistrergroupe;
 -----------------------------------------------------------------------------
@@ -221,6 +231,7 @@ end init;
 		Set_Text(Gtk_Entry(Get_Widget(XML,"entryPlaceJour2")),integer'image(jour2.Nbre_Concert_Max-Nbgroupeinscrit(festival.first_element,2)));
 			else
 			Set_Sensitive(radiobuttonJour2,false);
+			Set_Active(radiobuttonJour1,true);
 		end if;
 		
 	exception
@@ -249,7 +260,6 @@ end init;
 		liste_groupe :=p_appli_enreggroupe.GetGroupesJour(festival,1);
 		
 		groupe_list.iterate(liste_groupe, alimente'Access);
-		
 	end remplirtreeviewgroupejour1;
 -------------------------------------------------------------------------
 	procedure remplirtreeviewgroupejour2 (festival : in tfestival) is
@@ -268,9 +278,7 @@ end init;
 
 	begin
 		Clear(modele_jour2);
-		
 		liste_groupe :=p_appli_enreggroupe.GetGroupesJour(festival,2);
-		
 		groupe_list.iterate(liste_groupe, alimente'Access);
 	
 	end remplirtreeviewgroupejour2;
