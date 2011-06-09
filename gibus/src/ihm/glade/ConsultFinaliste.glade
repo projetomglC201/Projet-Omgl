@@ -3,6 +3,7 @@
   <!-- interface-requires gtk+ 2.16 -->
   <!-- interface-naming-policy project-wide -->
   <widget class="GtkWindow" id="windowConsultFinalistes">
+    <property name="height_request">255</property>
     <property name="visible">True</property>
     <property name="border_width">5</property>
     <property name="title" translatable="yes">Liste des finalistes</property>
@@ -15,7 +16,6 @@
         <child>
           <widget class="GtkHBox" id="hbox1">
             <property name="visible">True</property>
-            <property name="homogeneous">True</property>
             <child>
               <widget class="GtkLabel" id="label1">
                 <property name="visible">True</property>
@@ -23,6 +23,9 @@
                 <property name="label" translatable="yes">Finalistes :</property>
               </widget>
               <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="padding">14</property>
                 <property name="position">0</property>
               </packing>
             </child>

@@ -118,12 +118,13 @@
               <placeholder/>
             </child>
             <child>
-              <widget class="GtkButton" id="buttonSuivant">
-                <property name="label" translatable="yes">Enregistrer</property>
+              <widget class="GtkButton" id="buttonTerminer">
+                <property name="label" translatable="yes">Quitter</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <signal name="clicked" handler="on_buttonSuivant_clicked"/>
+                <property name="xalign">0.47999998927116394</property>
+                <signal name="clicked" handler="on_buttonTerminer_clicked"/>
               </widget>
               <packing>
                 <property name="expand">False</property>
@@ -132,13 +133,12 @@
               </packing>
             </child>
             <child>
-              <widget class="GtkButton" id="buttonTerminer">
-                <property name="label" translatable="yes">Quitter</property>
+              <widget class="GtkButton" id="buttonSuivant">
+                <property name="label" translatable="yes">Enregistrer</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <property name="xalign">0.47999998927116394</property>
-                <signal name="clicked" handler="on_buttonTerminer_clicked"/>
+                <signal name="clicked" handler="on_buttonSuivant_clicked"/>
               </widget>
               <packing>
                 <property name="expand">False</property>

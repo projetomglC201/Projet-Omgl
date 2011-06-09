@@ -47,13 +47,13 @@ end init;
 
 	begin
 		
-
-		creerColonne("Ville", treeview_finalistes, true);
+		ecrire("AAAAAA");
+		creerColonne("Groupe", treeview_finalistes, true);
 		
-		creerColonne("Groupe",treeview_finalistes, true);
+		creerColonne("Ville",treeview_finalistes, true);
 		creerColonne("Genre",treeview_finalistes, true);
 		creerModele(treeview_finalistes,modele_finalistes);
-
+		
 	
 	end inittreeviewfinalistes;
 ------------------------------------------------------------------------
