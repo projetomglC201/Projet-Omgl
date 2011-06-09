@@ -35,13 +35,19 @@ EX_AUCUNE_VILLE_SELECTIONNEE:exception;
 
 
 procedure init;
-	--initialise
+	--initialise la fenetre, les signaux, les treeviews
 procedure fermerFenetre;
+	--ferme la fenetre
 procedure enregistrergagnant;
+	--récupère le nom du groupe gagnant et l'enregistre
 procedure remplirtreeviewgroupe;
+	--met à jour les infos de la treeview groupe
 procedure remplirtreeviewville;
+	--met à jour les infos de la treeview ville
 procedure inittreeviewville;
+	--initialise la treeview ville
 procedure inittreeviewgroupe;
+	--initialsie la treeview groupe
 
 
 

@@ -14,19 +14,11 @@ begin
 	Glade.XML.Gtk_New(XML, "./src/ihm/glade/enregGagnantFinale.glade", "windowGagnantFinale");
         window := Gtk_Window(Get_Widget(XML,"windowGagnantFinale"));
         Glade.XML.signal_connect (XML,"on_buttonFermer_clicked",fermerFenetre'address,Null_Address);
-	if not p_appli_enreggagnantFinale.IsFinale then
-	        treeview_groupe:=Gtk_Tree_View(Get_Widget(XML,"treeview1"));
+	treeview_groupe:=Gtk_Tree_View(Get_Widget(XML,"treeview1"));
 	
 
-	        Glade.XML.signal_connect (XML,"on_buttonEnregistrer_clicked",enregistrer'address,Null_Address);
-
-        	inittreeview;
-	else
-		b_box := Message_Dialog("Le gagnant de la finale a déjà été enregistré",Error,Button_ok,Button_Ok);
-		set_sensitive(Gtk_Button(Get_Widget(XML,"buttonEnregistrer")), false);
-	end if;
-
-	
+        Glade.XML.signal_connect (XML,"on_buttonEnregistrer_clicked",enregistrer'address,Null_Address);
+       	inittreeview;
 end init;
 
 

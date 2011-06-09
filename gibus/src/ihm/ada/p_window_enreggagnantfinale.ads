@@ -30,10 +30,13 @@ package p_window_enreggagnantfinale is
 
 
 procedure init;
+	--initialise la fenetre, les signaux, la treeview
 procedure inittreeview;
+	--initialise la treeview des groupes
 procedure enregistrer;
+	--récupère le groupe sélectionné et l'enregistre
 procedure fermerfenetre;
-
+	--ferme la fenetre
 
 
 end p_window_enreggagnantfinale;

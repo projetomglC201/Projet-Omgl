@@ -29,9 +29,15 @@ package P_window_enregville is
 
   EX_MAIL_INCORRECT:exception;
   procedure init;
+	--initialise la fenetre, les signaux, la treeview
   procedure fermerFenetre;
+	--ferme la fenetre
   procedure villesuivante;
+	--récupère les infos entrées, enregistre la ville,met à jour la treeview et réinitialise les champs d'entrée
   procedure finenregistrementville;
+	--Ferme la fenetre
   procedure inittreeview;
+	--Initialise la treeview des villes
   procedure convertirnom (nom :in out Unbounded_String);
+	--Convertit le nom 'nom' au format 1ère lettre en majuscule, le reste en minuscules
 end P_window_enregville;

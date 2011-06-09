@@ -6,9 +6,8 @@ with ada.calendar; use ada.calendar;
 
 package p_appli_creerfinale is
 
-function FinaleCreee return boolean;
 procedure SaveFinale (date : time; prix : integer);
-
+	--enregistre dans la DB la grande finale avec les infos fournies
 
 
 
