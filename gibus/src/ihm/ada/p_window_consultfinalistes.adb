@@ -46,11 +46,7 @@ end init;
 	
 
 	begin
-<<<<<<< HEAD
-		
 
-=======
->>>>>>> e59a89a005aa4c64d53d94ce69709514689791e6
 		creerColonne("Groupe", treeview_finalistes, true);
 		
 		creerColonne("Ville",treeview_finalistes, true);
