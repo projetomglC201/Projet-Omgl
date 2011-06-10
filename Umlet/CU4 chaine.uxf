@@ -4,7 +4,7 @@
   <element>
     <type>com.umlet.element.custom.InitialState</type>
     <coordinates>
-      <x>40</x>
+      <x>80</x>
       <y>60</y>
       <w>20</w>
       <h>20</h>
@@ -15,7 +15,7 @@
   <element>
     <type>com.umlet.element.custom.FinalState</type>
     <coordinates>
-      <x>40</x>
+      <x>80</x>
       <y>190</y>
       <w>20</w>
       <h>20</h>
@@ -26,7 +26,7 @@
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>20</x>
+      <x>60</x>
       <y>20</y>
       <w>310</w>
       <h>94</h>
@@ -39,7 +39,7 @@ Recherche des villes avec festival</panel_attributes>
   <element>
     <type>com.umlet.element.custom.State</type>
     <coordinates>
-      <x>310</x>
+      <x>350</x>
       <y>50</y>
       <w>110</w>
       <h>50</h>
@@ -51,7 +51,7 @@ region 1</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>390</x>
+      <x>430</x>
       <y>20</y>
       <w>450</w>
       <h>94</h>
@@ -64,7 +64,7 @@ Rechercher festival, journées possibles et groupes inscrits</panel_attributes>
   <element>
     <type>com.umlet.element.custom.State</type>
     <coordinates>
-      <x>820</x>
+      <x>860</x>
       <y>50</y>
       <w>110</w>
       <h>40</h>
@@ -76,7 +76,7 @@ region 2</panel_attributes>
   <element>
     <type>com.umlet.element.custom.State</type>
     <coordinates>
-      <x>580</x>
+      <x>620</x>
       <y>160</y>
       <w>100</w>
       <h>40</h>
@@ -87,20 +87,20 @@ region 2</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>750</x>
+      <x>780</x>
       <y>60</y>
-      <w>242</w>
+      <w>262</w>
       <h>120</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 Enregistrer /
 Verifie si groupe déjà existant</panel_attributes>
-    <additional_attributes>130;100;130;30</additional_attributes>
+    <additional_attributes>140;100;140;30</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.custom.Decision</type>
     <coordinates>
-      <x>860</x>
+      <x>900</x>
       <y>160</y>
       <w>40</w>
       <h>40</h>
@@ -111,7 +111,7 @@ Verifie si groupe déjà existant</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>650</x>
+      <x>690</x>
       <y>130</y>
       <w>230</w>
       <h>70</h>
@@ -123,7 +123,7 @@ Verifie si groupe déjà existant</panel_attributes>
   <element>
     <type>com.umlet.element.custom.State</type>
     <coordinates>
-      <x>580</x>
+      <x>620</x>
       <y>210</y>
       <w>100</w>
       <h>40</h>
@@ -134,7 +134,7 @@ Verifie si groupe déjà existant</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>20</x>
+      <x>60</x>
       <y>170</y>
       <w>580</w>
       <h>80</h>
@@ -146,7 +146,7 @@ Ok</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>20</x>
+      <x>60</x>
       <y>140</y>
       <w>580</w>
       <h>80</h>
@@ -158,7 +158,7 @@ Ok</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>20</x>
+      <x>60</x>
       <y>60</y>
       <w>830</w>
       <h>160</h>
@@ -170,7 +170,7 @@ Fermer</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>650</x>
+      <x>690</x>
       <y>170</y>
       <w>250</w>
       <h>104</h>

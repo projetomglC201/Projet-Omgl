@@ -64,7 +64,7 @@ Quitter</panel_attributes>
     <coordinates>
       <x>460</x>
       <y>100</y>
-      <w>332</w>
+      <w>344</w>
       <h>150</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
@@ -121,15 +121,15 @@ Enregistrer / Vérifier
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>600</x>
+      <x>590</x>
       <y>240</y>
-      <w>214</w>
+      <w>228</w>
       <h>110</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
       [Unique]
     / Vérifier l'adresse mail</panel_attributes>
-    <additional_attributes>110;90;110;30</additional_attributes>
+    <additional_attributes>120;90;120;30</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.custom.Decision</type>
@@ -159,7 +159,7 @@ Enregistrer / Vérifier
     <coordinates>
       <x>430</x>
       <y>340</y>
-      <w>354</w>
+      <w>352</w>
       <h>114</h>
     </coordinates>
     <panel_attributes>lt=&lt;-

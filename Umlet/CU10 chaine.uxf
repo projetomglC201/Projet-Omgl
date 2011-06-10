@@ -27,11 +27,36 @@
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>70</x>
-      <y>60</y>
-      <w>320</w>
-      <h>50</h>
+      <y>40</y>
+      <w>410</w>
+      <h>94</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>300;30;30;30</additional_attributes>
+    <panel_attributes>lt=&lt;-
+Consulter les finalistes
+/Rechercher les groupes gagnants de festivals</panel_attributes>
+    <additional_attributes>390;50;30;50</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>460</x>
+      <y>70</y>
+      <w>150</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>F.ConsulterFinalistes</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>80</x>
+      <y>80</y>
+      <w>480</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+Fermer</panel_attributes>
+    <additional_attributes>30;120;70;120;460;120;460;30</additional_attributes>
   </element>
 </diagram>

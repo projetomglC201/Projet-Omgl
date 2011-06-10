@@ -5,7 +5,7 @@
 insert into ville (nom_ville, mel_contact  ) values  ( 'Echirolles', 'will@gmail.FR' );
 insert into ville (nom_ville, mel_contact  ) values  ( 'Grenoble', 'Tom@free.fr' );
 insert into ville (nom_ville, mel_contact  ) values  ( 'Paris', 'Parsi@paris.Paris' );
-
+insert into ville (nom_ville, mel_contact  ) values  ( 'Lyon', 'jean@luc.fr' );
 
 --creation des festivals
 insert into festival (id_festival, ville_festival, date, lieu, prix_place  ) values  (  1, 'Echirolles', '2012-01-23 00:00:00', 'La chaufferie',  12 );
