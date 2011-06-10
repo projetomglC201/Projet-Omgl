@@ -29,3 +29,4 @@ insert into groupe (nom_groupe, jour_festival, nom_contact, coord_contact, adr_s
 
 --Insertion de finalistes
 insert into gagnant_festival (id_gagnant_festival, festival, groupe  ) values  (  5,  1, 'Kingston' );
+insert into gagnant_festival (id_gagnant_festival, festival, groupe) values (6, 3, 'Les canards volants' );
