@@ -4,8 +4,8 @@
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>450</x>
-      <y>20</y>
+      <x>700</x>
+      <y>100</y>
       <w>100</w>
       <h>30</h>
     </coordinates>
@@ -15,8 +15,8 @@
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>20</x>
-      <y>20</y>
+      <x>270</x>
+      <y>100</y>
       <w>100</w>
       <h>30</h>
     </coordinates>
@@ -26,8 +26,8 @@
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>40</x>
-      <y>20</y>
+      <x>290</x>
+      <y>100</y>
       <w>50</w>
       <h>590</h>
     </coordinates>
@@ -37,8 +37,8 @@
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>470</x>
-      <y>20</y>
+      <x>720</x>
+      <y>100</y>
       <w>50</w>
       <h>580</h>
     </coordinates>
@@ -48,8 +48,8 @@
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>40</x>
-      <y>30</y>
+      <x>290</x>
+      <y>110</y>
       <w>480</w>
       <h>70</h>
     </coordinates>
@@ -60,8 +60,8 @@
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>40</x>
-      <y>130</y>
+      <x>290</x>
+      <y>210</y>
       <w>480</w>
       <h>70</h>
     </coordinates>
@@ -72,8 +72,8 @@
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>40</x>
-      <y>170</y>
+      <x>290</x>
+      <y>250</y>
       <w>480</w>
       <h>70</h>
     </coordinates>
@@ -84,37 +84,96 @@
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>150</x>
-      <y>210</y>
-      <w>742</w>
+      <x>380</x>
+      <y>290</y>
+      <w>788</w>
       <h>90</h>
     </coordinates>
     <panel_attributes>lt=&lt;
                                                                                                5 : Consulter les informations associées au groupe</panel_attributes>
-    <additional_attributes>350;70;380;70;380;30;350;30</additional_attributes>
+    <additional_attributes>370;70;400;70;400;30;370;30</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>40</x>
-      <y>260</y>
-      <w>480</w>
+      <x>280</x>
+      <y>340</y>
+      <w>508</w>
       <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;
 6 : nomGroupe,nomContact,coordContact,adrSite,genre,nomVille</panel_attributes>
-    <additional_attributes>30;50;460;50</additional_attributes>
+    <additional_attributes>40;50;470;50</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>240</x>
-      <y>70</y>
-      <w>570</w>
+      <x>470</x>
+      <y>150</y>
+      <w>606</w>
       <h>90</h>
     </coordinates>
     <panel_attributes>lt=&lt;
                                                                         2 : Consulter l'ensemble des groupes</panel_attributes>
-    <additional_attributes>260;70;290;70;290;30;260;30</additional_attributes>
+    <additional_attributes>280;70;310;70;310;30;280;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.InteractionFrame</type>
+    <coordinates>
+      <x>200</x>
+      <y>400</y>
+      <w>770</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>opt	
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.Systemborder</type>
+    <coordinates>
+      <x>440</x>
+      <y>400</y>
+      <w>220</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>center:[Si l'utilisateur veut supprimer]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>290</x>
+      <y>420</y>
+      <w>480</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+7: "Supprimer un groupe" nomGroupe</panel_attributes>
+    <additional_attributes>460;50;30;50</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>580</x>
+      <y>450</y>
+      <w>396</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;
+                                            8 : Supprimer le groupe</panel_attributes>
+    <additional_attributes>170;70;200;70;200;30;170;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>290</x>
+      <y>490</y>
+      <w>480</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;
+"Groupe supprimé"</panel_attributes>
+    <additional_attributes>30;50;460;50</additional_attributes>
   </element>
 </diagram>
